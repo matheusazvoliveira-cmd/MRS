@@ -1,0 +1,4464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Cimento acondicionado - MRS</name>
+<Style id="flowLine"><LineStyle><color>CC00FFFF</color><width>3</width></LineStyle></Style>
+<Folder>
+<name>01/2025</name>
+<Placemark>
+<name>Volta Redonda → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 25,125<br/>
+            <b>TKU:</b> 3,634,657<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 25,125<br/>
+            <b>TKU:</b> 3,634,657<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>114.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.659009499999996,-22.699666,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pedra do Sino → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 8,446<br/>
+            <b>TKU:</b> 4,480,923<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 8,446<br/>
+            <b>TKU:</b> 4,480,923<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>164.55</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.5168695,-21.890671,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 6,195<br/>
+            <b>TKU:</b> 1,461,964<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 6,195<br/>
+            <b>TKU:</b> 1,461,964<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>247.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.992733,-22.843534,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Pedrasil</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 3,945<br/>
+            <b>TKU:</b> 661,079<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.342832,-22.911389,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 3,945<br/>
+            <b>TKU:</b> 661,079<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>250.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.721373,-22.712336999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 1,825<br/>
+            <b>TKU:</b> 1,549,830<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 1,825<br/>
+            <b>TKU:</b> 1,549,830<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>211.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.38709,-21.554510999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Benfica</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 1,573<br/>
+            <b>TKU:</b> 340,590<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.435576,-21.676104,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 1,573<br/>
+            <b>TKU:</b> 340,590<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>36.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.767745,-22.0946945,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 1,005<br/>
+            <b>TKU:</b> 361,877<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 1,005<br/>
+            <b>TKU:</b> 361,877<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.03</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.294931499820926,-23.085774500046142,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Mogi das Cruzes</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 646<br/>
+            <b>TKU:</b> 214,791<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.198307,-23.52174,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 646<br/>
+            <b>TKU:</b> 214,791<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.02</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.1491105,-23.017512500000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 574<br/>
+            <b>TKU:</b> 199,812<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 574<br/>
+            <b>TKU:</b> 199,812<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>246.73</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.400907000000004,-23.0158835,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Capuava → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Capuava<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 280<br/>
+            <b>TKU:</b> 7,868<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.489948999641854,-23.658264000092288,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Capuava<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 280<br/>
+            <b>TKU:</b> 7,868<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>305.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.595924499820924,-23.588373000046143,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Deodoro</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 72<br/>
+            <b>TKU:</b> 8,827<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.370328,-22.81494,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 72<br/>
+            <b>TKU:</b> 8,827<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>114.28</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.735121,-22.6641125,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 70<br/>
+            <b>TKU:</b> 60,283<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 70<br/>
+            <b>TKU:</b> 60,283<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.28111449982093,-21.624402000046146,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>02/2025</name>
+<Placemark>
+<name>Volta Redonda → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 28,249<br/>
+            <b>TKU:</b> 4,086,585<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 28,249<br/>
+            <b>TKU:</b> 4,086,585<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>114.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.659009499999996,-22.699666,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pedra do Sino → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 7,274<br/>
+            <b>TKU:</b> 3,859,133<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 7,274<br/>
+            <b>TKU:</b> 3,859,133<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>164.55</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.5168695,-21.890671,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 5,595<br/>
+            <b>TKU:</b> 1,320,369<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 5,595<br/>
+            <b>TKU:</b> 1,320,369<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>247.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.992733,-22.843534,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Pedrasil</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 4,961<br/>
+            <b>TKU:</b> 831,334<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.342832,-22.911389,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 4,961<br/>
+            <b>TKU:</b> 831,334<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>250.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.721373,-22.712336999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 2,940<br/>
+            <b>TKU:</b> 1,058,626<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 2,940<br/>
+            <b>TKU:</b> 1,058,626<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.03</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.294931499820926,-23.085774500046142,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 1,680<br/>
+            <b>TKU:</b> 1,426,692<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 1,680<br/>
+            <b>TKU:</b> 1,426,692<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>211.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.38709,-21.554510999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Benfica</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 1,351<br/>
+            <b>TKU:</b> 292,522<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.435576,-21.676104,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 1,351<br/>
+            <b>TKU:</b> 292,522<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>36.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.767745,-22.0946945,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 861<br/>
+            <b>TKU:</b> 299,719<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 861<br/>
+            <b>TKU:</b> 299,719<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>246.73</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.400907000000004,-23.0158835,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Mogi das Cruzes</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 574<br/>
+            <b>TKU:</b> 190,852<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.198307,-23.52174,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 574<br/>
+            <b>TKU:</b> 190,852<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.02</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.1491105,-23.017512500000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Capuava → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Capuava<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 560<br/>
+            <b>TKU:</b> 15,736<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.489948999641854,-23.658264000092288,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Capuava<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 560<br/>
+            <b>TKU:</b> 15,736<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>305.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.595924499820924,-23.588373000046143,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 350<br/>
+            <b>TKU:</b> 301,417<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 350<br/>
+            <b>TKU:</b> 301,417<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.28111449982093,-21.624402000046146,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>03/2025</name>
+<Placemark>
+<name>Volta Redonda → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 27,918<br/>
+            <b>TKU:</b> 4,038,701<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 27,918<br/>
+            <b>TKU:</b> 4,038,701<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>114.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.659009499999996,-22.699666,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pedra do Sino → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 9,481<br/>
+            <b>TKU:</b> 5,030,030<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 9,481<br/>
+            <b>TKU:</b> 5,030,030<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>164.55</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.5168695,-21.890671,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 6,141<br/>
+            <b>TKU:</b> 1,449,220<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 6,141<br/>
+            <b>TKU:</b> 1,449,220<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>247.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.992733,-22.843534,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Pedrasil</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 4,823<br/>
+            <b>TKU:</b> 808,209<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.342832,-22.911389,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 4,823<br/>
+            <b>TKU:</b> 808,209<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>250.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.721373,-22.712336999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 2,081<br/>
+            <b>TKU:</b> 749,320<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 2,081<br/>
+            <b>TKU:</b> 749,320<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.03</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.294931499820926,-23.085774500046142,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Benfica</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 1,584<br/>
+            <b>TKU:</b> 342,972<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.435576,-21.676104,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 1,584<br/>
+            <b>TKU:</b> 342,972<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>36.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.767745,-22.0946945,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 1,400<br/>
+            <b>TKU:</b> 1,188,910<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 1,400<br/>
+            <b>TKU:</b> 1,188,910<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>211.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.38709,-21.554510999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 420<br/>
+            <b>TKU:</b> 361,701<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 420<br/>
+            <b>TKU:</b> 361,701<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.28111449982093,-21.624402000046146,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Mogi das Cruzes</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 359<br/>
+            <b>TKU:</b> 119,365<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.198307,-23.52174,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 359<br/>
+            <b>TKU:</b> 119,365<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.02</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.1491105,-23.017512500000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 287<br/>
+            <b>TKU:</b> 99,906<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 287<br/>
+            <b>TKU:</b> 99,906<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>246.73</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.400907000000004,-23.0158835,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Capuava → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Capuava<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 140<br/>
+            <b>TKU:</b> 3,934<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.489948999641854,-23.658264000092288,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Capuava<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 140<br/>
+            <b>TKU:</b> 3,934<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>305.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.595924499820924,-23.588373000046143,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>04/2025</name>
+<Placemark>
+<name>Volta Redonda → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 24,290<br/>
+            <b>TKU:</b> 3,513,864<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 24,290<br/>
+            <b>TKU:</b> 3,513,864<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>114.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.659009499999996,-22.699666,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pedra do Sino → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 8,525<br/>
+            <b>TKU:</b> 4,522,836<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 8,525<br/>
+            <b>TKU:</b> 4,522,836<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>164.55</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.5168695,-21.890671,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 4,596<br/>
+            <b>TKU:</b> 1,084,614<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 4,596<br/>
+            <b>TKU:</b> 1,084,614<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>247.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.992733,-22.843534,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Pedrasil</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 3,584<br/>
+            <b>TKU:</b> 600,585<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.342832,-22.911389,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 3,584<br/>
+            <b>TKU:</b> 600,585<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>250.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.721373,-22.712336999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 3,444<br/>
+            <b>TKU:</b> 1,240,105<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 3,444<br/>
+            <b>TKU:</b> 1,240,105<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.03</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.294931499820926,-23.085774500046142,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 1,890<br/>
+            <b>TKU:</b> 1,605,029<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 1,890<br/>
+            <b>TKU:</b> 1,605,029<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>211.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.38709,-21.554510999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Benfica</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 1,449<br/>
+            <b>TKU:</b> 313,741<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.435576,-21.676104,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 1,449<br/>
+            <b>TKU:</b> 313,741<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>36.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.767745,-22.0946945,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 1,076<br/>
+            <b>TKU:</b> 374,562<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 1,076<br/>
+            <b>TKU:</b> 374,562<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>246.73</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.400907000000004,-23.0158835,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 560<br/>
+            <b>TKU:</b> 482,268<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 560<br/>
+            <b>TKU:</b> 482,268<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.28111449982093,-21.624402000046146,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Capuava → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Capuava<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 350<br/>
+            <b>TKU:</b> 9,835<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.489948999641854,-23.658264000092288,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Capuava<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 350<br/>
+            <b>TKU:</b> 9,835<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>305.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.595924499820924,-23.588373000046143,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>05/2025</name>
+<Placemark>
+<name>Volta Redonda → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 25,256<br/>
+            <b>TKU:</b> 3,653,608<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 25,256<br/>
+            <b>TKU:</b> 3,653,608<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>114.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.659009499999996,-22.699666,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pedra do Sino → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 6,172<br/>
+            <b>TKU:</b> 3,274,480<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 6,172<br/>
+            <b>TKU:</b> 3,274,480<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>164.55</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.5168695,-21.890671,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 4,321<br/>
+            <b>TKU:</b> 1,019,717<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 4,321<br/>
+            <b>TKU:</b> 1,019,717<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>247.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.992733,-22.843534,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 3,080<br/>
+            <b>TKU:</b> 2,615,603<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 3,080<br/>
+            <b>TKU:</b> 2,615,603<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>211.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.38709,-21.554510999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Pedrasil</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 3,029<br/>
+            <b>TKU:</b> 507,581<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.342832,-22.911389,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 3,029<br/>
+            <b>TKU:</b> 507,581<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>250.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.721373,-22.712336999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Benfica</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 1,822<br/>
+            <b>TKU:</b> 394,504<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.435576,-21.676104,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 1,822<br/>
+            <b>TKU:</b> 394,504<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>36.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.767745,-22.0946945,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 1,076<br/>
+            <b>TKU:</b> 387,442<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 1,076<br/>
+            <b>TKU:</b> 387,442<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.03</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.294931499820926,-23.085774500046142,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Capuava → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Capuava<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 425<br/>
+            <b>TKU:</b> 11,942<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.489948999641854,-23.658264000092288,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Capuava<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 425<br/>
+            <b>TKU:</b> 11,942<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>305.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.595924499820924,-23.588373000046143,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Deodoro</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 144<br/>
+            <b>TKU:</b> 17,655<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.370328,-22.81494,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 144<br/>
+            <b>TKU:</b> 17,655<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>114.28</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.735121,-22.6641125,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 140<br/>
+            <b>TKU:</b> 120,567<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 140<br/>
+            <b>TKU:</b> 120,567<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.28111449982093,-21.624402000046146,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 72<br/>
+            <b>TKU:</b> 25,063<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 72<br/>
+            <b>TKU:</b> 25,063<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>246.73</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.400907000000004,-23.0158835,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>06/2025</name>
+<Placemark>
+<name>Volta Redonda → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 35,723<br/>
+            <b>TKU:</b> 5,167,796<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 35,723<br/>
+            <b>TKU:</b> 5,167,796<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>114.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.659009499999996,-22.699666,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 5,719<br/>
+            <b>TKU:</b> 1,349,632<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 5,719<br/>
+            <b>TKU:</b> 1,349,632<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>247.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.992733,-22.843534,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pedra do Sino → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 3,488<br/>
+            <b>TKU:</b> 1,850,516<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 3,488<br/>
+            <b>TKU:</b> 1,850,516<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>164.55</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.5168695,-21.890671,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Pedrasil</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 3,232<br/>
+            <b>TKU:</b> 541,599<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.342832,-22.911389,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 3,232<br/>
+            <b>TKU:</b> 541,599<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>250.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.721373,-22.712336999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 2,727<br/>
+            <b>TKU:</b> 981,929<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 2,727<br/>
+            <b>TKU:</b> 981,929<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.03</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.294931499820926,-23.085774500046142,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 2,100<br/>
+            <b>TKU:</b> 1,783,366<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 2,100<br/>
+            <b>TKU:</b> 1,783,366<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>211.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.38709,-21.554510999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Benfica</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 2,083<br/>
+            <b>TKU:</b> 451,017<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.435576,-21.676104,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 2,083<br/>
+            <b>TKU:</b> 451,017<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>36.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.767745,-22.0946945,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Mogi das Cruzes</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 789<br/>
+            <b>TKU:</b> 262,338<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.198307,-23.52174,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 789<br/>
+            <b>TKU:</b> 262,338<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.02</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.1491105,-23.017512500000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 574<br/>
+            <b>TKU:</b> 199,812<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 574<br/>
+            <b>TKU:</b> 199,812<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>246.73</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.400907000000004,-23.0158835,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 70<br/>
+            <b>TKU:</b> 60,283<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 70<br/>
+            <b>TKU:</b> 60,283<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.28111449982093,-21.624402000046146,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>07/2025</name>
+<Placemark>
+<name>Volta Redonda → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 30,653<br/>
+            <b>TKU:</b> 4,434,354<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 30,653<br/>
+            <b>TKU:</b> 4,434,354<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>114.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.659009499999996,-22.699666,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pedra do Sino → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 10,222<br/>
+            <b>TKU:</b> 5,423,159<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 10,222<br/>
+            <b>TKU:</b> 5,423,159<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>164.55</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.5168695,-21.890671,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 7,014<br/>
+            <b>TKU:</b> 1,655,240<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 7,014<br/>
+            <b>TKU:</b> 1,655,240<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>247.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.992733,-22.843534,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Pedrasil</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 4,839<br/>
+            <b>TKU:</b> 810,890<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.342832,-22.911389,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 4,839<br/>
+            <b>TKU:</b> 810,890<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>250.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.721373,-22.712336999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 4,162<br/>
+            <b>TKU:</b> 1,498,640<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 4,162<br/>
+            <b>TKU:</b> 1,498,640<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.03</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.294931499820926,-23.085774500046142,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Benfica</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,513<br/>
+            <b>TKU:</b> 544,122<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.435576,-21.676104,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,513<br/>
+            <b>TKU:</b> 544,122<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>36.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.767745,-22.0946945,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 1,190<br/>
+            <b>TKU:</b> 1,010,574<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 1,190<br/>
+            <b>TKU:</b> 1,010,574<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>211.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.38709,-21.554510999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 646<br/>
+            <b>TKU:</b> 224,876<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 646<br/>
+            <b>TKU:</b> 224,876<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>246.73</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.400907000000004,-23.0158835,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Mogi das Cruzes</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 574<br/>
+            <b>TKU:</b> 190,852<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.198307,-23.52174,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 574<br/>
+            <b>TKU:</b> 190,852<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.02</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.1491105,-23.017512500000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 140<br/>
+            <b>TKU:</b> 120,567<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 140<br/>
+            <b>TKU:</b> 120,567<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.28111449982093,-21.624402000046146,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 70<br/>
+            <b>TKU:</b> 51,597<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 70<br/>
+            <b>TKU:</b> 51,597<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>204.91</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.978916,-21.382161500000002,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>08/2025</name>
+<Placemark>
+<name>Volta Redonda → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 25,909<br/>
+            <b>TKU:</b> 3,748,073<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 25,909<br/>
+            <b>TKU:</b> 3,748,073<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>114.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.659009499999996,-22.699666,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pedra do Sino → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 7,035<br/>
+            <b>TKU:</b> 3,732,334<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 7,035<br/>
+            <b>TKU:</b> 3,732,334<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>164.55</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.5168695,-21.890671,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 3,080<br/>
+            <b>TKU:</b> 2,615,603<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 3,080<br/>
+            <b>TKU:</b> 2,615,603<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>211.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.38709,-21.554510999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Pedrasil</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 2,625<br/>
+            <b>TKU:</b> 439,881<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.342832,-22.911389,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 2,625<br/>
+            <b>TKU:</b> 439,881<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>250.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.721373,-22.712336999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 2,240<br/>
+            <b>TKU:</b> 1,929,072<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 2,240<br/>
+            <b>TKU:</b> 1,929,072<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.28111449982093,-21.624402000046146,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 1,449<br/>
+            <b>TKU:</b> 341,950<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 1,449<br/>
+            <b>TKU:</b> 341,950<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>247.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.992733,-22.843534,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Benfica</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 1,057<br/>
+            <b>TKU:</b> 228,864<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.435576,-21.676104,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 1,057<br/>
+            <b>TKU:</b> 228,864<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>36.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.767745,-22.0946945,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Mogi das Cruzes</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 700<br/>
+            <b>TKU:</b> 583,527<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.198307,-23.52174,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 700<br/>
+            <b>TKU:</b> 583,527<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>206.32</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.1352935,-21.55614,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 431<br/>
+            <b>TKU:</b> 155,193<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 431<br/>
+            <b>TKU:</b> 155,193<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.03</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.294931499820926,-23.085774500046142,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 359<br/>
+            <b>TKU:</b> 124,970<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 359<br/>
+            <b>TKU:</b> 124,970<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>246.73</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.400907000000004,-23.0158835,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Mogi das Cruzes</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 215<br/>
+            <b>TKU:</b> 71,486<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.198307,-23.52174,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 215<br/>
+            <b>TKU:</b> 71,486<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.02</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.1491105,-23.017512500000002,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>09/2025</name>
+<Placemark>
+<name>Volta Redonda → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 26,936<br/>
+            <b>TKU:</b> 3,896,642<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 26,936<br/>
+            <b>TKU:</b> 3,896,642<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>114.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.659009499999996,-22.699666,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Pedrasil</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 5,670<br/>
+            <b>TKU:</b> 950,144<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.342832,-22.911389,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 5,670<br/>
+            <b>TKU:</b> 950,144<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>250.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.721373,-22.712336999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 5,082<br/>
+            <b>TKU:</b> 1,199,306<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 5,082<br/>
+            <b>TKU:</b> 1,199,306<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>247.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.992733,-22.843534,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 4,690<br/>
+            <b>TKU:</b> 4,038,995<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 4,690<br/>
+            <b>TKU:</b> 4,038,995<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.28111449982093,-21.624402000046146,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pedra do Sino → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 4,609<br/>
+            <b>TKU:</b> 2,445,249<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 4,609<br/>
+            <b>TKU:</b> 2,445,249<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>164.55</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.5168695,-21.890671,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 1,960<br/>
+            <b>TKU:</b> 1,664,475<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 1,960<br/>
+            <b>TKU:</b> 1,664,475<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>211.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.38709,-21.554510999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Benfica</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 1,430<br/>
+            <b>TKU:</b> 309,627<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.435576,-21.676104,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 1,430<br/>
+            <b>TKU:</b> 309,627<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>36.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.767745,-22.0946945,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 1,363<br/>
+            <b>TKU:</b> 490,784<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 1,363<br/>
+            <b>TKU:</b> 490,784<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.03</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.294931499820926,-23.085774500046142,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Mogi das Cruzes</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 1,330<br/>
+            <b>TKU:</b> 1,108,702<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.198307,-23.52174,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 1,330<br/>
+            <b>TKU:</b> 1,108,702<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>206.32</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.1352935,-21.55614,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 700<br/>
+            <b>TKU:</b> 515,974<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 700<br/>
+            <b>TKU:</b> 515,974<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>204.91</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.978916,-21.382161500000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Eng. São Paulo</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Eng. São Paulo<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 350<br/>
+            <b>TKU:</b> 293,742<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.599054,-23.544565,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Eng. São Paulo<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 350<br/>
+            <b>TKU:</b> 293,742<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>210.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.335667,-21.567552499999998,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>10/2025</name>
+<Placemark>
+<name>Volta Redonda → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 26,212<br/>
+            <b>TKU:</b> 3,791,906<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 26,212<br/>
+            <b>TKU:</b> 3,791,906<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>114.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.659009499999996,-22.699666,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pedra do Sino → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 7,241<br/>
+            <b>TKU:</b> 3,841,625<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 7,241<br/>
+            <b>TKU:</b> 3,841,625<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>164.55</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.5168695,-21.890671,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 5,838<br/>
+            <b>TKU:</b> 1,377,715<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 5,838<br/>
+            <b>TKU:</b> 1,377,715<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>247.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.992733,-22.843534,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Pedrasil</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 5,436<br/>
+            <b>TKU:</b> 910,932<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.342832,-22.911389,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 5,436<br/>
+            <b>TKU:</b> 910,932<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>250.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.721373,-22.712336999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 4,550<br/>
+            <b>TKU:</b> 3,918,428<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 4,550<br/>
+            <b>TKU:</b> 3,918,428<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.28111449982093,-21.624402000046146,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 2,380<br/>
+            <b>TKU:</b> 2,021,148<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 2,380<br/>
+            <b>TKU:</b> 2,021,148<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>211.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.38709,-21.554510999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Benfica</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 1,566<br/>
+            <b>TKU:</b> 339,075<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.435576,-21.676104,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 1,566<br/>
+            <b>TKU:</b> 339,075<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>36.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.767745,-22.0946945,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Mogi das Cruzes</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 980<br/>
+            <b>TKU:</b> 816,938<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.198307,-23.52174,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 980<br/>
+            <b>TKU:</b> 816,938<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>206.32</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.1352935,-21.55614,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Eng. São Paulo</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Eng. São Paulo<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 700<br/>
+            <b>TKU:</b> 587,485<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.599054,-23.544565,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Eng. São Paulo<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 700<br/>
+            <b>TKU:</b> 587,485<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>210.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.335667,-21.567552499999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 646<br/>
+            <b>TKU:</b> 232,609<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 646<br/>
+            <b>TKU:</b> 232,609<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.03</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.294931499820926,-23.085774500046142,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 420<br/>
+            <b>TKU:</b> 309,584<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 420<br/>
+            <b>TKU:</b> 309,584<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>204.91</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.978916,-21.382161500000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Pedrasil</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 280<br/>
+            <b>TKU:</b> 188,400<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -45.342832,-22.911389,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 280<br/>
+            <b>TKU:</b> 188,400<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>199.40</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.707556,-21.250964500000002,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>11/2025</name>
+<Placemark>
+<name>Volta Redonda → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 23,886<br/>
+            <b>TKU:</b> 3,455,420<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 23,886<br/>
+            <b>TKU:</b> 3,455,420<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>114.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.659009499999996,-22.699666,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 6,020<br/>
+            <b>TKU:</b> 5,184,381<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 6,020<br/>
+            <b>TKU:</b> 5,184,381<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.28111449982093,-21.624402000046146,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pedra do Sino → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 5,549<br/>
+            <b>TKU:</b> 2,943,955<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 5,549<br/>
+            <b>TKU:</b> 2,943,955<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>164.55</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.5168695,-21.890671,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 5,266<br/>
+            <b>TKU:</b> 1,242,728<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 5,266<br/>
+            <b>TKU:</b> 1,242,728<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>247.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.992733,-22.843534,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Pedrasil</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 4,606<br/>
+            <b>TKU:</b> 771,845<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.342832,-22.911389,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 4,606<br/>
+            <b>TKU:</b> 771,845<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>250.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.721373,-22.712336999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Benfica</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 2,450<br/>
+            <b>TKU:</b> 530,481<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.435576,-21.676104,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 2,450<br/>
+            <b>TKU:</b> 530,481<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>36.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.767745,-22.0946945,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Mogi das Cruzes</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 2,030<br/>
+            <b>TKU:</b> 1,692,230<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.198307,-23.52174,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 2,030<br/>
+            <b>TKU:</b> 1,692,230<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>206.32</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.1352935,-21.55614,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 1,820<br/>
+            <b>TKU:</b> 1,545,584<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 1,820<br/>
+            <b>TKU:</b> 1,545,584<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>211.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.38709,-21.554510999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 1,190<br/>
+            <b>TKU:</b> 877,157<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 1,190<br/>
+            <b>TKU:</b> 877,157<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>204.91</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.978916,-21.382161500000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 789<br/>
+            <b>TKU:</b> 284,100<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 789<br/>
+            <b>TKU:</b> 284,100<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.03</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.294931499820926,-23.085774500046142,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Pedrasil</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 560<br/>
+            <b>TKU:</b> 376,800<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -45.342832,-22.911389,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 560<br/>
+            <b>TKU:</b> 376,800<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>199.40</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.707556,-21.250964500000002,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>12/2025</name>
+<Placemark>
+<name>Volta Redonda → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 11,956<br/>
+            <b>TKU:</b> 1,729,590<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 11,956<br/>
+            <b>TKU:</b> 1,729,590<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>114.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.659009499999996,-22.699666,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 7,630<br/>
+            <b>TKU:</b> 6,570,902<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 7,630<br/>
+            <b>TKU:</b> 6,570,902<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.28111449982093,-21.624402000046146,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pedra do Sino → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 6,109<br/>
+            <b>TKU:</b> 3,241,056<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 6,109<br/>
+            <b>TKU:</b> 3,241,056<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>164.55</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.5168695,-21.890671,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Pedrasil</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 3,012<br/>
+            <b>TKU:</b> 504,732<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.342832,-22.911389,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 3,012<br/>
+            <b>TKU:</b> 504,732<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>250.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.721373,-22.712336999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 2,842<br/>
+            <b>TKU:</b> 670,686<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 2,842<br/>
+            <b>TKU:</b> 670,686<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>247.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.992733,-22.843534,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Mogi das Cruzes</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 2,100<br/>
+            <b>TKU:</b> 1,750,583<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.198307,-23.52174,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Mogi das Cruzes<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 2,100<br/>
+            <b>TKU:</b> 1,750,583<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>206.32</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.1352935,-21.55614,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 1,890<br/>
+            <b>TKU:</b> 1,605,029<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 1,890<br/>
+            <b>TKU:</b> 1,605,029<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>211.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.38709,-21.554510999999998,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Benfica</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 980<br/>
+            <b>TKU:</b> 212,192<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -43.435576,-21.676104,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Benfica<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 980<br/>
+            <b>TKU:</b> 212,192<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>36.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.767745,-22.0946945,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → São José dos Campos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 770<br/>
+            <b>TKU:</b> 567,572<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -45.885552,-23.173783,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> São José dos Campos<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 770<br/>
+            <b>TKU:</b> 567,572<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>204.91</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.978916,-21.382161500000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Capuava</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 431<br/>
+            <b>TKU:</b> 155,193<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.489948999641854,-23.658264000092288,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Capuava<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 431<br/>
+            <b>TKU:</b> 155,193<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>242.03</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.294931499820926,-23.085774500046142,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Pedrasil</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 350<br/>
+            <b>TKU:</b> 235,500<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -45.342832,-22.911389,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Pedrasil<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 350<br/>
+            <b>TKU:</b> 235,500<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>199.40</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.707556,-21.250964500000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Volta Redonda → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 144<br/>
+            <b>TKU:</b> 50,127<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.099914,-22.513285,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Volta Redonda<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 144<br/>
+            <b>TKU:</b> 50,127<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>246.73</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.400907000000004,-23.0158835,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Capuava → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Capuava<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 140<br/>
+            <b>TKU:</b> 50,701<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.489948999641854,-23.658264000092288,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento acondicionado</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento acondicionado<br/>
+            <b>Origem:</b> Capuava<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 140<br/>
+            <b>TKU:</b> 50,701<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>62.96</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.294931499820926,-23.085774500046142,0</coordinates></Point>
+</Placemark>
+</Folder>
+</Document></kml>

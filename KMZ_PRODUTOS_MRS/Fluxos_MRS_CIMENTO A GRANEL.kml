@@ -1,0 +1,1362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Cimento a Granel - MRS</name>
+<Style id="flowLine"><LineStyle><color>CC00FFFF</color><width>3</width></LineStyle></Style>
+<Folder>
+<name>01/2025</name>
+<Placemark>
+<name>Pedra do Sino → São Bento</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 31,331<br/>
+            <b>TKU:</b> 20,416,062<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -46.255792,-23.434794,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 31,331<br/>
+            <b>TKU:</b> 20,416,062<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>221.21</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.035713,-22.1650445,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Barbacena → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 25,297<br/>
+            <b>TKU:</b> 16,749,548<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769312,-21.224988,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 25,297<br/>
+            <b>TKU:</b> 16,749,548<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>225.89</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.148675999999995,-22.438539499999997,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Terminal Cimento Barroso → Deodoro</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 6,009<br/>
+            <b>TKU:</b> 2,144,221<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769778,-21.212603,0 -43.370328,-22.81494,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 6,009<br/>
+            <b>TKU:</b> 2,144,221<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>167.06</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.570053,-22.0137715,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>02/2025</name>
+<Placemark>
+<name>Pedra do Sino → São Bento</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 34,841<br/>
+            <b>TKU:</b> 22,703,266<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -46.255792,-23.434794,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 34,841<br/>
+            <b>TKU:</b> 22,703,266<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>221.21</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.035713,-22.1650445,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Barbacena → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 30,751<br/>
+            <b>TKU:</b> 20,360,729<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769312,-21.224988,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 30,751<br/>
+            <b>TKU:</b> 20,360,729<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>225.89</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.148675999999995,-22.438539499999997,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Terminal Cimento Barroso → Deodoro</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 8,144<br/>
+            <b>TKU:</b> 2,906,064<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769778,-21.212603,0 -43.370328,-22.81494,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 8,144<br/>
+            <b>TKU:</b> 2,906,064<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>167.06</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.570053,-22.0137715,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>03/2025</name>
+<Placemark>
+<name>Pedra do Sino → São Bento</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 42,434<br/>
+            <b>TKU:</b> 27,651,055<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -46.255792,-23.434794,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 42,434<br/>
+            <b>TKU:</b> 27,651,055<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>221.21</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.035713,-22.1650445,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Barbacena → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 39,789<br/>
+            <b>TKU:</b> 26,344,933<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769312,-21.224988,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 39,789<br/>
+            <b>TKU:</b> 26,344,933<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>225.89</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.148675999999995,-22.438539499999997,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Terminal Cimento Barroso → Deodoro</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 8,429<br/>
+            <b>TKU:</b> 3,007,762<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769778,-21.212603,0 -43.370328,-22.81494,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 8,429<br/>
+            <b>TKU:</b> 3,007,762<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>167.06</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.570053,-22.0137715,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>04/2025</name>
+<Placemark>
+<name>Pedra do Sino → São Bento</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 42,076<br/>
+            <b>TKU:</b> 27,417,773<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -46.255792,-23.434794,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 42,076<br/>
+            <b>TKU:</b> 27,417,773<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>221.21</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.035713,-22.1650445,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Barbacena → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 39,962<br/>
+            <b>TKU:</b> 26,459,479<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769312,-21.224988,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 39,962<br/>
+            <b>TKU:</b> 26,459,479<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>225.89</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.148675999999995,-22.438539499999997,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Terminal Cimento Barroso → Deodoro</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 3,382<br/>
+            <b>TKU:</b> 1,206,815<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769778,-21.212603,0 -43.370328,-22.81494,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 3,382<br/>
+            <b>TKU:</b> 1,206,815<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>167.06</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.570053,-22.0137715,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>05/2025</name>
+<Placemark>
+<name>Pedra do Sino → São Bento</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 40,896<br/>
+            <b>TKU:</b> 26,648,856<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -46.255792,-23.434794,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 40,896<br/>
+            <b>TKU:</b> 26,648,856<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>221.21</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.035713,-22.1650445,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Barbacena → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 37,150<br/>
+            <b>TKU:</b> 24,597,609<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769312,-21.224988,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 37,150<br/>
+            <b>TKU:</b> 24,597,609<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>225.89</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.148675999999995,-22.438539499999997,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>06/2025</name>
+<Placemark>
+<name>Pedra do Sino → São Bento</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 48,686<br/>
+            <b>TKU:</b> 31,725,014<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -46.255792,-23.434794,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 48,686<br/>
+            <b>TKU:</b> 31,725,014<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>221.21</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.035713,-22.1650445,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Barbacena → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 45,090<br/>
+            <b>TKU:</b> 29,854,810<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769312,-21.224988,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 45,090<br/>
+            <b>TKU:</b> 29,854,810<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>225.89</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.148675999999995,-22.438539499999997,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Terminal Cimento Barroso → Deodoro</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 1,990<br/>
+            <b>TKU:</b> 710,101<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769778,-21.212603,0 -43.370328,-22.81494,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 1,990<br/>
+            <b>TKU:</b> 710,101<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>167.06</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.570053,-22.0137715,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 881<br/>
+            <b>TKU:</b> 765,992<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 881<br/>
+            <b>TKU:</b> 765,992<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.30016,-21.6213155,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>07/2025</name>
+<Placemark>
+<name>Pedra do Sino → São Bento</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 53,640<br/>
+            <b>TKU:</b> 34,953,165<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -46.255792,-23.434794,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 53,640<br/>
+            <b>TKU:</b> 34,953,165<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>221.21</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.035713,-22.1650445,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Barbacena → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 45,911<br/>
+            <b>TKU:</b> 30,398,407<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769312,-21.224988,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 45,911<br/>
+            <b>TKU:</b> 30,398,407<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>225.89</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.148675999999995,-22.438539499999997,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 1,824<br/>
+            <b>TKU:</b> 1,585,891<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 1,824<br/>
+            <b>TKU:</b> 1,585,891<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.30016,-21.6213155,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Terminal Cimento Barroso → Deodoro</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 1,008<br/>
+            <b>TKU:</b> 359,689<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769778,-21.212603,0 -43.370328,-22.81494,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 1,008<br/>
+            <b>TKU:</b> 359,689<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>167.06</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.570053,-22.0137715,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>08/2025</name>
+<Placemark>
+<name>Pedra do Sino → São Bento</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 60,553<br/>
+            <b>TKU:</b> 39,457,848<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -46.255792,-23.434794,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 60,553<br/>
+            <b>TKU:</b> 39,457,848<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>221.21</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.035713,-22.1650445,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Barbacena → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 50,716<br/>
+            <b>TKU:</b> 33,579,875<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769312,-21.224988,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 50,716<br/>
+            <b>TKU:</b> 33,579,875<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>225.89</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.148675999999995,-22.438539499999997,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Terminal Cimento Barroso → Deodoro</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 3,739<br/>
+            <b>TKU:</b> 1,334,206<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769778,-21.212603,0 -43.370328,-22.81494,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 3,739<br/>
+            <b>TKU:</b> 1,334,206<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>167.06</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.570053,-22.0137715,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 771<br/>
+            <b>TKU:</b> 670,352<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 771<br/>
+            <b>TKU:</b> 670,352<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.30016,-21.6213155,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>09/2025</name>
+<Placemark>
+<name>Pedra do Sino → São Bento</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 47,945<br/>
+            <b>TKU:</b> 31,242,160<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -46.255792,-23.434794,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 47,945<br/>
+            <b>TKU:</b> 31,242,160<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>221.21</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.035713,-22.1650445,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Barbacena → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 28,860<br/>
+            <b>TKU:</b> 19,108,667<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769312,-21.224988,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 28,860<br/>
+            <b>TKU:</b> 19,108,667<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>225.89</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.148675999999995,-22.438539499999997,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Terminal Cimento Barroso → Deodoro</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 10,145<br/>
+            <b>TKU:</b> 3,620,091<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769778,-21.212603,0 -43.370328,-22.81494,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 10,145<br/>
+            <b>TKU:</b> 3,620,091<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>167.06</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.570053,-22.0137715,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 145<br/>
+            <b>TKU:</b> 126,071<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 145<br/>
+            <b>TKU:</b> 126,071<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.30016,-21.6213155,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>10/2025</name>
+<Placemark>
+<name>Pedra do Sino → São Bento</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 57,033<br/>
+            <b>TKU:</b> 37,164,128<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -46.255792,-23.434794,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 57,033<br/>
+            <b>TKU:</b> 37,164,128<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>221.21</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.035713,-22.1650445,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Barbacena → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 38,238<br/>
+            <b>TKU:</b> 25,317,991<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769312,-21.224988,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 38,238<br/>
+            <b>TKU:</b> 25,317,991<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>225.89</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.148675999999995,-22.438539499999997,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Wilson Lobato → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 1,287<br/>
+            <b>TKU:</b> 1,118,992<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.07228,-19.59054,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Wilson Lobato<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 1,287<br/>
+            <b>TKU:</b> 1,118,992<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>208.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.30016,-21.6213155,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Terminal Cimento Barroso → Deodoro</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 1,080<br/>
+            <b>TKU:</b> 385,381<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769778,-21.212603,0 -43.370328,-22.81494,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 1,080<br/>
+            <b>TKU:</b> 385,381<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>167.06</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.570053,-22.0137715,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>11/2025</name>
+<Placemark>
+<name>Pedra do Sino → São Bento</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 48,420<br/>
+            <b>TKU:</b> 31,551,682<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -46.255792,-23.434794,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 48,420<br/>
+            <b>TKU:</b> 31,551,682<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>221.21</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.035713,-22.1650445,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Barbacena → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 45,259<br/>
+            <b>TKU:</b> 29,966,708<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769312,-21.224988,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 45,259<br/>
+            <b>TKU:</b> 29,966,708<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>225.89</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.148675999999995,-22.438539499999997,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Terminal Cimento Barroso → Deodoro</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 4,946<br/>
+            <b>TKU:</b> 1,764,905<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769778,-21.212603,0 -43.370328,-22.81494,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 4,946<br/>
+            <b>TKU:</b> 1,764,905<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>167.06</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.570053,-22.0137715,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>12/2025</name>
+<Placemark>
+<name>Pedra do Sino → São Bento</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 54,606<br/>
+            <b>TKU:</b> 35,582,634<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.815634,-20.895295,0 -46.255792,-23.434794,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Pedra do Sino<br/>
+            <b>Destino:</b> São Bento<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 54,606<br/>
+            <b>TKU:</b> 35,582,634<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>221.21</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.035713,-22.1650445,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Barbacena → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 47,641<br/>
+            <b>TKU:</b> 31,543,868<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769312,-21.224988,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Barbacena<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 47,641<br/>
+            <b>TKU:</b> 31,543,868<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>225.89</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.148675999999995,-22.438539499999997,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Terminal Cimento Barroso → Deodoro</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 2,960<br/>
+            <b>TKU:</b> 1,056,231<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.769778,-21.212603,0 -43.370328,-22.81494,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Cimento a Granel</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Cimento a Granel<br/>
+            <b>Origem:</b> Terminal Cimento Barroso<br/>
+            <b>Destino:</b> Deodoro<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 2,960<br/>
+            <b>TKU:</b> 1,056,231<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>167.06</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.570053,-22.0137715,0</coordinates></Point>
+</Placemark>
+</Folder>
+</Document></kml>

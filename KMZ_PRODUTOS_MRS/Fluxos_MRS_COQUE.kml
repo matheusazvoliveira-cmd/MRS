@@ -1,0 +1,1725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Coque - MRS</name>
+<Style id="flowLine"><LineStyle><color>CC00FFFF</color><width>3</width></LineStyle></Style>
+<Folder>
+<name>01/2025</name>
+<Placemark>
+<name>Baia Sepetiba → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 77,167<br/>
+            <b>TKU:</b> 9,182,564<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 77,167<br/>
+            <b>TKU:</b> 9,182,564<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>326.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9610245,-22.7063855,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 17,803<br/>
+            <b>TKU:</b> 10,714,254<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 17,803<br/>
+            <b>TKU:</b> 10,714,254<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>32.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.5909855,-21.717683,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Vespasiano → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 8,875<br/>
+            <b>TKU:</b> 1,966,274<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.922404,-19.692161,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 8,875<br/>
+            <b>TKU:</b> 1,966,274<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>170.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.852185,-20.102819,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Vespasiano</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Vespasiano<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 4,245<br/>
+            <b>TKU:</b> 3,413,935<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.922404,-19.692161,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Vespasiano<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 4,245<br/>
+            <b>TKU:</b> 3,413,935<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>23.36</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.6612045,-21.307025,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>02/2025</name>
+<Placemark>
+<name>Baia Sepetiba → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 40,667<br/>
+            <b>TKU:</b> 4,839,210<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 40,667<br/>
+            <b>TKU:</b> 4,839,210<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>326.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9610245,-22.7063855,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 13,579<br/>
+            <b>TKU:</b> 8,172,154<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 13,579<br/>
+            <b>TKU:</b> 8,172,154<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>32.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.5909855,-21.717683,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Vespasiano → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 10,237<br/>
+            <b>TKU:</b> 2,268,027<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.922404,-19.692161,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 10,237<br/>
+            <b>TKU:</b> 2,268,027<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>170.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.852185,-20.102819,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Vespasiano</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Vespasiano<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 5,690<br/>
+            <b>TKU:</b> 4,576,040<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.922404,-19.692161,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Vespasiano<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 5,690<br/>
+            <b>TKU:</b> 4,576,040<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>23.36</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.6612045,-21.307025,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>03/2025</name>
+<Placemark>
+<name>Baia Sepetiba → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 84,956<br/>
+            <b>TKU:</b> 10,109,424<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 84,956<br/>
+            <b>TKU:</b> 10,109,424<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>326.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9610245,-22.7063855,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 16,960<br/>
+            <b>TKU:</b> 10,206,918<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 16,960<br/>
+            <b>TKU:</b> 10,206,918<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>32.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.5909855,-21.717683,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Vespasiano → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 10,427<br/>
+            <b>TKU:</b> 2,310,122<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.922404,-19.692161,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 10,427<br/>
+            <b>TKU:</b> 2,310,122<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>170.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.852185,-20.102819,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Vespasiano</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Vespasiano<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 7,472<br/>
+            <b>TKU:</b> 6,009,169<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.922404,-19.692161,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Vespasiano<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 7,472<br/>
+            <b>TKU:</b> 6,009,169<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>23.36</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.6612045,-21.307025,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Baia Sepetiba → Sarzedo Novo</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Sarzedo Novo<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 5,776<br/>
+            <b>TKU:</b> 3,377,931<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.175835,-20.032223,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Sarzedo Novo<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 5,776<br/>
+            <b>TKU:</b> 3,377,931<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>353.39</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.998985000000005,-21.4658545,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Baia Sepetiba → Wilson Lobato</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Wilson Lobato<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 4,056<br/>
+            <b>TKU:</b> 2,851,862<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.07228,-19.59054,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Wilson Lobato<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 4,056<br/>
+            <b>TKU:</b> 2,851,862<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>355.92</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.947207500000005,-21.245013,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>04/2025</name>
+<Placemark>
+<name>Baia Sepetiba → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 75,013<br/>
+            <b>TKU:</b> 8,926,246<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 75,013<br/>
+            <b>TKU:</b> 8,926,246<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>326.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9610245,-22.7063855,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 15,059<br/>
+            <b>TKU:</b> 9,062,852<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 15,059<br/>
+            <b>TKU:</b> 9,062,852<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>32.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.5909855,-21.717683,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Baia Sepetiba → Sarzedo Novo</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Sarzedo Novo<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 9,424<br/>
+            <b>TKU:</b> 5,511,362<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.175835,-20.032223,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Sarzedo Novo<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 9,424<br/>
+            <b>TKU:</b> 5,511,362<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>353.39</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.998985000000005,-21.4658545,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Vespasiano → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 9,133<br/>
+            <b>TKU:</b> 2,023,434<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.922404,-19.692161,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 9,133<br/>
+            <b>TKU:</b> 2,023,434<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>170.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.852185,-20.102819,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Vespasiano</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Vespasiano<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 4,379<br/>
+            <b>TKU:</b> 3,521,701<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.922404,-19.692161,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Vespasiano<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 4,379<br/>
+            <b>TKU:</b> 3,521,701<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>23.36</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.6612045,-21.307025,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>05/2025</name>
+<Placemark>
+<name>Baia Sepetiba → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 85,888<br/>
+            <b>TKU:</b> 10,220,328<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 85,888<br/>
+            <b>TKU:</b> 10,220,328<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>326.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9610245,-22.7063855,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 18,274<br/>
+            <b>TKU:</b> 10,997,713<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 18,274<br/>
+            <b>TKU:</b> 10,997,713<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>32.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.5909855,-21.717683,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Baia Sepetiba → Sarzedo Novo</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Sarzedo Novo<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 15,886<br/>
+            <b>TKU:</b> 9,290,482<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.175835,-20.032223,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Sarzedo Novo<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 15,886<br/>
+            <b>TKU:</b> 9,290,482<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>353.39</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.998985000000005,-21.4658545,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Vespasiano → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 10,043<br/>
+            <b>TKU:</b> 2,225,046<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.922404,-19.692161,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 10,043<br/>
+            <b>TKU:</b> 2,225,046<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>170.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.852185,-20.102819,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Vespasiano</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Vespasiano<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 6,000<br/>
+            <b>TKU:</b> 4,825,350<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.922404,-19.692161,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Vespasiano<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 6,000<br/>
+            <b>TKU:</b> 4,825,350<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>23.36</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.6612045,-21.307025,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Baia Sepetiba → Wilson Lobato</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Wilson Lobato<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 1,326<br/>
+            <b>TKU:</b> 932,339<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.07228,-19.59054,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Wilson Lobato<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 1,326<br/>
+            <b>TKU:</b> 932,339<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>355.92</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.947207500000005,-21.245013,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>06/2025</name>
+<Placemark>
+<name>Baia Sepetiba → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 64,435<br/>
+            <b>TKU:</b> 7,667,507<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 64,435<br/>
+            <b>TKU:</b> 7,667,507<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>326.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9610245,-22.7063855,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 18,664<br/>
+            <b>TKU:</b> 11,232,424<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 18,664<br/>
+            <b>TKU:</b> 11,232,424<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>32.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.5909855,-21.717683,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Vespasiano → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 9,755<br/>
+            <b>TKU:</b> 2,161,239<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.922404,-19.692161,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 9,755<br/>
+            <b>TKU:</b> 2,161,239<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>170.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.852185,-20.102819,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Vespasiano</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Vespasiano<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 1,534<br/>
+            <b>TKU:</b> 1,233,681<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.922404,-19.692161,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Vespasiano<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 1,534<br/>
+            <b>TKU:</b> 1,233,681<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>23.36</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.6612045,-21.307025,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>07/2025</name>
+<Placemark>
+<name>Baia Sepetiba → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 85,486<br/>
+            <b>TKU:</b> 10,172,492<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 85,486<br/>
+            <b>TKU:</b> 10,172,492<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>326.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9610245,-22.7063855,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 25,904<br/>
+            <b>TKU:</b> 15,589,622<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 25,904<br/>
+            <b>TKU:</b> 15,589,622<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>32.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.5909855,-21.717683,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Vespasiano → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 5,626<br/>
+            <b>TKU:</b> 1,246,451<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.922404,-19.692161,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 5,626<br/>
+            <b>TKU:</b> 1,246,451<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>170.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.852185,-20.102819,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Vespasiano</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Vespasiano<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,065<br/>
+            <b>TKU:</b> 1,660,724<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.922404,-19.692161,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Vespasiano<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,065<br/>
+            <b>TKU:</b> 1,660,724<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>23.36</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.6612045,-21.307025,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>08/2025</name>
+<Placemark>
+<name>Baia Sepetiba → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 86,123<br/>
+            <b>TKU:</b> 10,248,292<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 86,123<br/>
+            <b>TKU:</b> 10,248,292<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>326.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9610245,-22.7063855,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 22,340<br/>
+            <b>TKU:</b> 13,444,725<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 22,340<br/>
+            <b>TKU:</b> 13,444,725<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>32.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.5909855,-21.717683,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Vespasiano → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 5,753<br/>
+            <b>TKU:</b> 1,274,588<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.922404,-19.692161,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 5,753<br/>
+            <b>TKU:</b> 1,274,588<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>170.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.852185,-20.102819,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Baia Sepetiba → Sarzedo Novo</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Sarzedo Novo<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 1,412<br/>
+            <b>TKU:</b> 825,768<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.175835,-20.032223,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Sarzedo Novo<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 1,412<br/>
+            <b>TKU:</b> 825,768<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>353.39</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.998985000000005,-21.4658545,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>09/2025</name>
+<Placemark>
+<name>Baia Sepetiba → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 60,462<br/>
+            <b>TKU:</b> 7,194,736<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 60,462<br/>
+            <b>TKU:</b> 7,194,736<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>326.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9610245,-22.7063855,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 21,820<br/>
+            <b>TKU:</b> 13,131,777<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 21,820<br/>
+            <b>TKU:</b> 13,131,777<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>32.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.5909855,-21.717683,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Vespasiano → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 5,820<br/>
+            <b>TKU:</b> 1,289,432<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.922404,-19.692161,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 5,820<br/>
+            <b>TKU:</b> 1,289,432<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>170.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.852185,-20.102819,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>10/2025</name>
+<Placemark>
+<name>Baia Sepetiba → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 82,262<br/>
+            <b>TKU:</b> 9,788,848<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 82,262<br/>
+            <b>TKU:</b> 9,788,848<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>326.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9610245,-22.7063855,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 21,159<br/>
+            <b>TKU:</b> 12,733,972<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 21,159<br/>
+            <b>TKU:</b> 12,733,972<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>32.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.5909855,-21.717683,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Baia Sepetiba → Sarzedo Novo</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Sarzedo Novo<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 18,769<br/>
+            <b>TKU:</b> 10,976,317<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.175835,-20.032223,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Sarzedo Novo<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 18,769<br/>
+            <b>TKU:</b> 10,976,317<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>353.39</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.998985000000005,-21.4658545,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Vespasiano → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 5,655<br/>
+            <b>TKU:</b> 1,252,876<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.922404,-19.692161,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 5,655<br/>
+            <b>TKU:</b> 1,252,876<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>170.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.852185,-20.102819,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Baia Sepetiba → Wilson Lobato</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Wilson Lobato<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 2,448<br/>
+            <b>TKU:</b> 1,721,242<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.07228,-19.59054,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Wilson Lobato<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 2,448<br/>
+            <b>TKU:</b> 1,721,242<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>355.92</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.947207500000005,-21.245013,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>11/2025</name>
+<Placemark>
+<name>Baia Sepetiba → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 84,944<br/>
+            <b>TKU:</b> 10,107,996<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 84,944<br/>
+            <b>TKU:</b> 10,107,996<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>326.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9610245,-22.7063855,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 21,163<br/>
+            <b>TKU:</b> 12,736,380<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 21,163<br/>
+            <b>TKU:</b> 12,736,380<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>32.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.5909855,-21.717683,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Vespasiano → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 5,471<br/>
+            <b>TKU:</b> 1,212,110<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.922404,-19.692161,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 5,471<br/>
+            <b>TKU:</b> 1,212,110<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>170.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.852185,-20.102819,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>12/2025</name>
+<Placemark>
+<name>Baia Sepetiba → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 95,166<br/>
+            <b>TKU:</b> 11,324,373<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.822135,-22.899486,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Baia Sepetiba<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 95,166<br/>
+            <b>TKU:</b> 11,324,373<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>326.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9610245,-22.7063855,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Curuputuba → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 21,795<br/>
+            <b>TKU:</b> 13,116,732<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.400005,-22.921889,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Curuputuba<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 21,795<br/>
+            <b>TKU:</b> 13,116,732<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>32.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.5909855,-21.717683,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Vespasiano → Ouro Branco</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 2,372<br/>
+            <b>TKU:</b> 525,521<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.922404,-19.692161,0 -43.781966,-20.513477,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Coque</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Coque<br/>
+            <b>Origem:</b> Vespasiano<br/>
+            <b>Destino:</b> Ouro Branco<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 2,372<br/>
+            <b>TKU:</b> 525,521<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>170.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.852185,-20.102819,0</coordinates></Point>
+</Placemark>
+</Folder>
+</Document></kml>

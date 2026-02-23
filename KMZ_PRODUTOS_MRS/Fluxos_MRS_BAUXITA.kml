@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Bauxita - MRS</name>
+<Style id="flowLine"><LineStyle><color>CC00FFFF</color><width>3</width></LineStyle></Style>
+<Folder>
+<name>01/2025</name>
+<Placemark>
+<name>Barão de Angra → Alumínio</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 52,472<br/>
+            <b>TKU:</b> 35,621,824<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.249561,-22.135968,0 -47.258995,-23.536671,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Bauxita</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 52,472<br/>
+            <b>TKU:</b> 35,621,824<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>248.47</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.254278,-22.8363195,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>02/2025</name>
+<Placemark>
+<name>Barão de Angra → Alumínio</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 47,421<br/>
+            <b>TKU:</b> 32,192,836<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.249561,-22.135968,0 -47.258995,-23.536671,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Bauxita</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 47,421<br/>
+            <b>TKU:</b> 32,192,836<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>248.47</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.254278,-22.8363195,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>03/2025</name>
+<Placemark>
+<name>Barão de Angra → Alumínio</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 31,536<br/>
+            <b>TKU:</b> 21,408,938<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.249561,-22.135968,0 -47.258995,-23.536671,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Bauxita</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 31,536<br/>
+            <b>TKU:</b> 21,408,938<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>248.47</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.254278,-22.8363195,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>04/2025</name>
+<Placemark>
+<name>Barão de Angra → Alumínio</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 36,821<br/>
+            <b>TKU:</b> 24,996,782<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.249561,-22.135968,0 -47.258995,-23.536671,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Bauxita</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 36,821<br/>
+            <b>TKU:</b> 24,996,782<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>248.47</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.254278,-22.8363195,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>05/2025</name>
+<Placemark>
+<name>Barão de Angra → Alumínio</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 37,012<br/>
+            <b>TKU:</b> 25,126,447<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.249561,-22.135968,0 -47.258995,-23.536671,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Bauxita</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 37,012<br/>
+            <b>TKU:</b> 25,126,447<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>248.47</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.254278,-22.8363195,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>06/2025</name>
+<Placemark>
+<name>Barão de Angra → Alumínio</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 42,348<br/>
+            <b>TKU:</b> 28,748,913<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.249561,-22.135968,0 -47.258995,-23.536671,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Bauxita</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 42,348<br/>
+            <b>TKU:</b> 28,748,913<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>248.47</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.254278,-22.8363195,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>07/2025</name>
+<Placemark>
+<name>Barão de Angra → Alumínio</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 42,217<br/>
+            <b>TKU:</b> 28,659,981<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.249561,-22.135968,0 -47.258995,-23.536671,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Bauxita</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 42,217<br/>
+            <b>TKU:</b> 28,659,981<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>248.47</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.254278,-22.8363195,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>08/2025</name>
+<Placemark>
+<name>Barão de Angra → Alumínio</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 42,294<br/>
+            <b>TKU:</b> 28,712,254<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.249561,-22.135968,0 -47.258995,-23.536671,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Bauxita</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 42,294<br/>
+            <b>TKU:</b> 28,712,254<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>248.47</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.254278,-22.8363195,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>09/2025</name>
+<Placemark>
+<name>Barão de Angra → Alumínio</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 37,006<br/>
+            <b>TKU:</b> 25,122,374<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.249561,-22.135968,0 -47.258995,-23.536671,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Bauxita</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 37,006<br/>
+            <b>TKU:</b> 25,122,374<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>248.47</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.254278,-22.8363195,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>10/2025</name>
+<Placemark>
+<name>Barão de Angra → Alumínio</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 37,039<br/>
+            <b>TKU:</b> 25,144,777<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.249561,-22.135968,0 -47.258995,-23.536671,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Bauxita</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 37,039<br/>
+            <b>TKU:</b> 25,144,777<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>248.47</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.254278,-22.8363195,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>11/2025</name>
+<Placemark>
+<name>Barão de Angra → Alumínio</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 34,016<br/>
+            <b>TKU:</b> 23,092,543<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.249561,-22.135968,0 -47.258995,-23.536671,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Bauxita</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 34,016<br/>
+            <b>TKU:</b> 23,092,543<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>248.47</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.254278,-22.8363195,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>12/2025</name>
+<Placemark>
+<name>Barão de Angra → Alumínio</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 44,471<br/>
+            <b>TKU:</b> 30,190,161<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.249561,-22.135968,0 -47.258995,-23.536671,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Bauxita</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Bauxita<br/>
+            <b>Origem:</b> Barão de Angra<br/>
+            <b>Destino:</b> Alumínio<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 44,471<br/>
+            <b>TKU:</b> 30,190,161<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>248.47</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.254278,-22.8363195,0</coordinates></Point>
+</Placemark>
+</Folder>
+</Document></kml>

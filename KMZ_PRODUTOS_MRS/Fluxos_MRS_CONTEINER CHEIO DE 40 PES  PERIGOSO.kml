@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Contêiner Cheio de 40 Pés - Perigoso - MRS</name>
+<Style id="flowLine"><LineStyle><color>CC00FFFF</color><width>3</width></LineStyle></Style>
+<Folder>
+<name>01/2025</name>
+<Placemark>
+<name>Conceiçãozinha → Eng. Neiva</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 737<br/>
+            <b>TKU:</b> 178,798<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -45.16385,-22.78186,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 737<br/>
+            <b>TKU:</b> 178,798<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>40.84</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.722725,-23.380108,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>02/2025</name>
+<Placemark>
+<name>Final Ramal das Fábricas → Jundiaí</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Final Ramal das Fábricas<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 746<br/>
+            <b>TKU:</b> 106,704<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.37497,-23.838579,0 -46.870547,-23.196756,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Final Ramal das Fábricas<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 746<br/>
+            <b>TKU:</b> 106,704<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>324.60</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.6227585,-23.5176675,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Conceiçãozinha → Eng. Neiva</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 645<br/>
+            <b>TKU:</b> 156,478<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -45.16385,-22.78186,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 645<br/>
+            <b>TKU:</b> 156,478<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>40.84</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.722725,-23.380108,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>03/2025</name>
+<Placemark>
+<name>Conceiçãozinha → Eng. Neiva</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 1,499<br/>
+            <b>TKU:</b> 363,661<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -45.16385,-22.78186,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 1,499<br/>
+            <b>TKU:</b> 363,661<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>40.84</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.722725,-23.380108,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Final Ramal das Fábricas → Jundiaí</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Final Ramal das Fábricas<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 536<br/>
+            <b>TKU:</b> 76,666<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.37497,-23.838579,0 -46.870547,-23.196756,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Final Ramal das Fábricas<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 536<br/>
+            <b>TKU:</b> 76,666<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>324.60</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.6227585,-23.5176675,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>04/2025</name>
+<Placemark>
+<name>Conceiçãozinha → Eng. Neiva</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 743<br/>
+            <b>TKU:</b> 180,254<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -45.16385,-22.78186,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 743<br/>
+            <b>TKU:</b> 180,254<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>40.84</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.722725,-23.380108,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>05/2025</name>
+<Placemark>
+<name>Conceiçãozinha → Eng. Neiva</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 1,370<br/>
+            <b>TKU:</b> 332,366<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -45.16385,-22.78186,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 1,370<br/>
+            <b>TKU:</b> 332,366<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>40.84</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.722725,-23.380108,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>06/2025</name>
+<Placemark>
+<name>Conceiçãozinha → Eng. Neiva</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 1,521<br/>
+            <b>TKU:</b> 368,999<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -45.16385,-22.78186,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 1,521<br/>
+            <b>TKU:</b> 368,999<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>40.84</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.722725,-23.380108,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Conceiçãozinha → Jundiaí</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 259<br/>
+            <b>TKU:</b> 35,334<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -46.870547,-23.196756,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 259<br/>
+            <b>TKU:</b> 35,334<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>325.25</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.5760735,-23.587556,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>07/2025</name>
+<Placemark>
+<name>Conceiçãozinha → Eng. Neiva</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,062<br/>
+            <b>TKU:</b> 500,247<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -45.16385,-22.78186,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,062<br/>
+            <b>TKU:</b> 500,247<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>40.84</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.722725,-23.380108,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Final Ramal das Fábricas → Jundiaí</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Final Ramal das Fábricas<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 539<br/>
+            <b>TKU:</b> 77,095<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.37497,-23.838579,0 -46.870547,-23.196756,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Final Ramal das Fábricas<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 539<br/>
+            <b>TKU:</b> 77,095<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>324.60</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.6227585,-23.5176675,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Conceiçãozinha → Jundiaí</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 178<br/>
+            <b>TKU:</b> 24,284<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -46.870547,-23.196756,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 178<br/>
+            <b>TKU:</b> 24,284<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>325.25</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.5760735,-23.587556,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Barnabé → Jundiaí</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Barnabé<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 77<br/>
+            <b>TKU:</b> 9,891<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.312377,-23.922201,0 -46.870547,-23.196756,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Barnabé<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 77<br/>
+            <b>TKU:</b> 9,891<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>324.69</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.591462,-23.5594785,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Arará → MultiTerminais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> MultiTerminais<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 33<br/>
+            <b>TKU:</b> 6,588<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -44.532343,-22.480968,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> MultiTerminais<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 33<br/>
+            <b>TKU:</b> 6,588<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>288.22</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.875224,-22.6835075,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>08/2025</name>
+<Placemark>
+<name>Conceiçãozinha → Eng. Neiva</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 2,690<br/>
+            <b>TKU:</b> 652,602<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -45.16385,-22.78186,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 2,690<br/>
+            <b>TKU:</b> 652,602<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>40.84</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.722725,-23.380108,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Final Ramal das Fábricas → Jundiaí</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Final Ramal das Fábricas<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 412<br/>
+            <b>TKU:</b> 58,930<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.37497,-23.838579,0 -46.870547,-23.196756,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Final Ramal das Fábricas<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 412<br/>
+            <b>TKU:</b> 58,930<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>324.60</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.6227585,-23.5176675,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Conceiçãozinha → Jundiaí</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 254<br/>
+            <b>TKU:</b> 34,652<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -46.870547,-23.196756,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 254<br/>
+            <b>TKU:</b> 34,652<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>325.25</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.5760735,-23.587556,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Arará → MultiTerminais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> MultiTerminais<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 40<br/>
+            <b>TKU:</b> 7,986<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -44.532343,-22.480968,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> MultiTerminais<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 40<br/>
+            <b>TKU:</b> 7,986<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>288.22</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.875224,-22.6835075,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Barnabé → Brisamar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Barnabé<br/>
+            <b>Destino:</b> Brisamar<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 22<br/>
+            <b>TKU:</b> 10,829<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.312377,-23.922201,0 -43.813767,-22.882206,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Barnabé<br/>
+            <b>Destino:</b> Brisamar<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 22<br/>
+            <b>TKU:</b> 10,829<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>66.10</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.063072,-23.4022035,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Eng. Neiva → Conceiçãozinha</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Eng. Neiva<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 11<br/>
+            <b>TKU:</b> 2,668<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.16385,-22.78186,0 -46.2816,-23.978356,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Eng. Neiva<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 11<br/>
+            <b>TKU:</b> 2,668<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>220.39</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.722725,-23.380108,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>09/2025</name>
+<Placemark>
+<name>Conceiçãozinha → Eng. Neiva</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 2,387<br/>
+            <b>TKU:</b> 579,093<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -45.16385,-22.78186,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 2,387<br/>
+            <b>TKU:</b> 579,093<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>40.84</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.722725,-23.380108,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Eng. Neiva → Conceiçãozinha</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Eng. Neiva<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 84<br/>
+            <b>TKU:</b> 20,378<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.16385,-22.78186,0 -46.2816,-23.978356,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Eng. Neiva<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 84<br/>
+            <b>TKU:</b> 20,378<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>220.39</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.722725,-23.380108,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Conceiçãozinha → Jundiaí</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 22<br/>
+            <b>TKU:</b> 3,001<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -46.870547,-23.196756,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 22<br/>
+            <b>TKU:</b> 3,001<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>325.25</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.5760735,-23.587556,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>10/2025</name>
+<Placemark>
+<name>Conceiçãozinha → Eng. Neiva</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 1,618<br/>
+            <b>TKU:</b> 392,531<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -45.16385,-22.78186,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 1,618<br/>
+            <b>TKU:</b> 392,531<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>40.84</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.722725,-23.380108,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Eng. Neiva → Conceiçãozinha</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Eng. Neiva<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 130<br/>
+            <b>TKU:</b> 31,538<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.16385,-22.78186,0 -46.2816,-23.978356,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Eng. Neiva<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 130<br/>
+            <b>TKU:</b> 31,538<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>220.39</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.722725,-23.380108,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Conceiçãozinha → Jundiaí</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 76<br/>
+            <b>TKU:</b> 10,368<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -46.870547,-23.196756,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 76<br/>
+            <b>TKU:</b> 10,368<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>325.25</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.5760735,-23.587556,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>11/2025</name>
+<Placemark>
+<name>Conceiçãozinha → Eng. Neiva</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 680<br/>
+            <b>TKU:</b> 164,970<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -45.16385,-22.78186,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 680<br/>
+            <b>TKU:</b> 164,970<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>40.84</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.722725,-23.380108,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>12/2025</name>
+<Placemark>
+<name>Conceiçãozinha → Eng. Neiva</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 1,001<br/>
+            <b>TKU:</b> 242,845<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -45.16385,-22.78186,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Eng. Neiva<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 1,001<br/>
+            <b>TKU:</b> 242,845<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>40.84</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.722725,-23.380108,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Final Ramal das Fábricas → Jundiaí</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Final Ramal das Fábricas<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 335<br/>
+            <b>TKU:</b> 47,916<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.37497,-23.838579,0 -46.870547,-23.196756,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Final Ramal das Fábricas<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 335<br/>
+            <b>TKU:</b> 47,916<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>324.60</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.6227585,-23.5176675,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Conceiçãozinha → Jundiaí</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 103<br/>
+            <b>TKU:</b> 14,051<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.2816,-23.978356,0 -46.870547,-23.196756,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Contêiner Cheio de 40 Pés - Perigoso</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Contêiner Cheio de 40 Pés - Perigoso<br/>
+            <b>Origem:</b> Conceiçãozinha<br/>
+            <b>Destino:</b> Jundiaí<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 103<br/>
+            <b>TKU:</b> 14,051<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>325.25</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.5760735,-23.587556,0</coordinates></Point>
+</Placemark>
+</Folder>
+</Document></kml>

@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Estacao_89" id="Estacao_89">
+	<SimpleField name="station" type="string"></SimpleField>
+	<SimpleField name="station_key" type="string"></SimpleField>
+	<SimpleField name="key_clean" type="string"></SimpleField>
+</Schema>
+<Folder><name>Estacao_89</name>
+  <Placemark id="Estacao_89.1">
+	<name>Pederneiras</name>
+	<name>PEDERNEIRAS</name>
+	<description>Pederneiras</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">PEDERNEIRAS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-52.541934,-29.994448</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.2">
+	<name>São Bento</name>
+	<name>SAO BENTO</name>
+	<description>São Bento</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">SAO BENTO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-52.891878,-28.291966</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.3">
+	<name>Água Branca</name>
+	<name>AGUA BRANCA</name>
+	<description>Água Branca</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">AGUA BRANCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-41.283844,-5.174598</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.4">
+	<name>Boa Vista Velha</name>
+	<name>BOA VISTA VELHA</name>
+	<description>Boa Vista Velha</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">BOA VISTA VELHA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.142709,-22.886679</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.5">
+	<name>Itirapina</name>
+	<name>ITIRAPINA</name>
+	<description>Itirapina</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">ITIRAPINA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.8174,-22.257408</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.6">
+	<name>Jundiaí</name>
+	<name>JUNDIAI</name>
+	<description>Jundiaí</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">JUNDIAI</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.870547,-23.196756</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.7">
+	<name>Pederneiras</name>
+	<name>PEDERNEIRAS</name>
+	<description>Pederneiras</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">PEDERNEIRAS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.774259,-22.358548</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.8">
+	<name>Rio Preto Paulista</name>
+	<name>RIO PRETO PAULISTA</name>
+	<description>Rio Preto Paulista</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">RIO PRETO PAULISTA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.4099540003625,-20.8060649998524</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.9">
+	<name>Votuporanga</name>
+	<name>VOTUPORANGA</name>
+	<description>Votuporanga</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">VOTUPORANGA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.9832790003087,-20.4404729997065</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.10">
+	<name>Pradopolis</name>
+	<name>PRADOPOLIS</name>
+	<description>Pradopolis</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">PRADOPOLIS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.127834,-21.347136</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.11">
+	<name>Replan</name>
+	<name>REPLAN</name>
+	<description>Replan</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">REPLAN</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.14402,-22.712491</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.12">
+	<name>Eldorado</name>
+	<name>ELDORADO</name>
+	<description>Eldorado</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">ELDORADO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.028724,-19.939435</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.13">
+	<name>Dr. Lund</name>
+	<name>DR. LUND</name>
+	<description>Dr. Lund</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">DR LUND</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.008249,-19.647777</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.14">
+	<name>Nova Granja</name>
+	<name>NOVA GRANJA</name>
+	<description>Nova Granja</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">NOVA GRANJA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.961406,-19.677071</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.15">
+	<name>Parque Industrial</name>
+	<name>PARQUE INDUSTRIAL</name>
+	<description>Parque Industrial</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">PARQUE INDUSTRIAL</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.019915,-19.946691</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.16">
+	<name>Vespasiano</name>
+	<name>VESPASIANO</name>
+	<description>Vespasiano</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">VESPASIANO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.922404,-19.692161</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.17">
+	<name>Couto e Silva</name>
+	<name>COUTO E SILVA</name>
+	<description>Couto e Silva</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">COUTO E SILVA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.144054,-19.953728</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.18">
+	<name>Embiruçu</name>
+	<name>EMBIRUCU</name>
+	<description>Embiruçu</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">EMBIRUCU</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.11324,-19.94662</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.19">
+	<name>Barbacena</name>
+	<name>BARBACENA</name>
+	<description>Barbacena</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">BARBACENA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.787744,-28.432024</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.20">
+	<name>Arará</name>
+	<name>ARARA</name>
+	<description>Arará</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">ARARA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.218105,-22.886047</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.21">
+	<name>Brisamar</name>
+	<name>BRISAMAR</name>
+	<description>Brisamar</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">BRISAMAR</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.813767,-22.882206</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.22">
+	<name>Barbará</name>
+	<name>BARBARA</name>
+	<description>Barbará</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">BARBARA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.140818,-22.535289</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.23">
+	<name>Barbacena</name>
+	<name>BARBACENA</name>
+	<description>Barbacena</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">BARBACENA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.769312,-21.224988</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.24">
+	<name>Benfica</name>
+	<name>BENFICA</name>
+	<description>Benfica</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">BENFICA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.435576,-21.676104</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.25">
+	<name>Barão de Angra</name>
+	<name>BARAO DE ANGRA</name>
+	<description>Barão de Angra</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">BARAO DE ANGRA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.249561,-22.135968</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.26">
+	<name>Barreiro</name>
+	<name>BARREIRO</name>
+	<description>Barreiro</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">BARREIRO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.022064,-19.973457</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.27">
+	<name>Caçapava</name>
+	<name>CACAPAVA</name>
+	<description>Caçapava</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">CACAPAVA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.705224,-23.099206</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.28">
+	<name>Eng. Cesar de Souza</name>
+	<name>ENG. CESAR DE SOUZA</name>
+	<description>Eng. Cesar de Souza</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">ENG CESAR DE SOUZA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.149159,-23.504013</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.29">
+	<name>Casa de Pedra</name>
+	<name>CASA DE PEDRA</name>
+	<description>Casa de Pedra</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">CASA DE PEDRA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.910587,-20.51383</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.30">
+	<name>Curuputuba</name>
+	<name>CURUPUTUBA</name>
+	<description>Curuputuba</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">CURUPUTUBA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.400005,-22.921889</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.31">
+	<name>Cruzeiro</name>
+	<name>CRUZEIRO</name>
+	<description>Cruzeiro</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">CRUZEIRO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.960131,-22.586171</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.32">
+	<name>Dr. Joaquim Murtinho</name>
+	<name>DR. JOAQUIM MURTINHO</name>
+	<description>Dr. Joaquim Murtinho</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">DR JOAQUIM MURTINHO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.812393,-20.555903</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.33">
+	<name>Dias Tavares</name>
+	<name>DIAS TAVARES</name>
+	<description>Dias Tavares</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">DIAS TAVARES</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.456795,-21.640806</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.34">
+	<name>Eng. Neiva</name>
+	<name>ENG. NEIVA</name>
+	<description>Eng. Neiva</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">ENG NEIVA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.16385,-22.78186</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.35">
+	<name>Floriano</name>
+	<name>FLORIANO</name>
+	<description>Floriano</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">FLORIANO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.298474,-22.452366</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.36">
+	<name>Guaiba</name>
+	<name>GUAIBA</name>
+	<description>Guaiba</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">GUAIBA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.029528,-22.997864</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.37">
+	<name>Itutinga</name>
+	<name>ITUTINGA</name>
+	<description>Itutinga</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">ITUTINGA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.473062,-21.241619</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.38">
+	<name>Itatiaia</name>
+	<name>ITATIAIA</name>
+	<description>Itatiaia</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">ITATIAIA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.567824,-22.483712</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.39">
+	<name>Cel. João Carlos Guedes</name>
+	<name>CEL. JOAO CARLOS GUEDES</name>
+	<description>Cel. João Carlos Guedes</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">CEL JOAO CARLOS GUEDES</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.975796,-20.592844</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.40">
+	<name>Olhos D Água</name>
+	<name>OLHOS D AGUA</name>
+	<description>Olhos D Água</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">OLHOS D AGUA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.971103,-19.99893</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.41">
+	<name>Otavio Dapieve</name>
+	<name>OTAVIO DAPIEVE</name>
+	<description>Otavio Dapieve</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">OTAVIO DAPIEVE</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.828835,-20.192965</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.42">
+	<name>Pedra do Sino</name>
+	<name>PEDRA DO SINO</name>
+	<description>Pedra do Sino</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">PEDRA DO SINO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.815634,-20.895295</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.43">
+	<name>Pinheirinho</name>
+	<name>PINHEIRINHO</name>
+	<description>Pinheirinho</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">PINHEIRINHO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.311054,-23.444804</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.44">
+	<name>Pulverizacao</name>
+	<name>PULVERIZACAO</name>
+	<description>Pulverizacao</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">PULVERIZACAO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.843391,-22.483589</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.45">
+	<name>Pires</name>
+	<name>PIRES</name>
+	<description>Pires</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">PIRES</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.829911,-20.406658</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.46">
+	<name>Roseira</name>
+	<name>ROSEIRA</name>
+	<description>Roseira</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">ROSEIRA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.306334,-22.897835</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.47">
+	<name>Saudade</name>
+	<name>SAUDADE</name>
+	<description>Saudade</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">SAUDADE</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.189525,-22.530332</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.48">
+	<name>São José dos Campos</name>
+	<name>SAO JOSE DOS CAMPOS</name>
+	<description>São José dos Campos</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">SAO JOSE DOS CAMPOS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.885552,-23.173783</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.49">
+	<name>Carlos Newlands</name>
+	<name>CARLOS NEWLANDS</name>
+	<description>Carlos Newlands</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">CARLOS NEWLANDS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.209691,-20.111267</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.50">
+	<name>Sarzedo</name>
+	<name>SARZEDO</name>
+	<description>Sarzedo</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">SARZEDO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.142481,-20.034221</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.51">
+	<name>São Bento</name>
+	<name>SAO BENTO</name>
+	<description>São Bento</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">SAO BENTO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.255792,-23.434794</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.52">
+	<name>São Silvestre</name>
+	<name>SAO SILVESTRE</name>
+	<description>São Silvestre</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">SAO SILVESTRE</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.022156,-23.370907</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.53">
+	<name>Taubaté</name>
+	<name>TAUBATE</name>
+	<description>Taubaté</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">TAUBATE</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.55559,-23.019872</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.54">
+	<name>Volta Redonda</name>
+	<name>VOLTA REDONDA</name>
+	<description>Volta Redonda</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">VOLTA REDONDA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.099914,-22.513285</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.55">
+	<name>Deodoro</name>
+	<name>DEODORO</name>
+	<description>Deodoro</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">DEODORO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.370328,-22.81494</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.56">
+	<name>Itaguai</name>
+	<name>ITAGUAI</name>
+	<description>Itaguai</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">ITAGUAI</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.748184,-22.892465</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.57">
+	<name>Água Branca</name>
+	<name>AGUA BRANCA</name>
+	<description>Água Branca</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">AGUA BRANCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.7019,-23.518482</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.58">
+	<name>Barnabé</name>
+	<name>BARNABE</name>
+	<description>Barnabé</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">BARNABE</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.312377,-23.922201</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.59">
+	<name>Capuava</name>
+	<name>CAPUAVA</name>
+	<description>Capuava</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">CAPUAVA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.4899489996419,-23.6582640000923</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.60">
+	<name>Conceiçãozinha</name>
+	<name>CONCEICAOZINHA</name>
+	<description>Conceiçãozinha</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">CONCEICAOZINHA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.2816,-23.978356</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.61">
+	<name>Manoel Feio</name>
+	<name>MANOEL FEIO</name>
+	<description>Manoel Feio</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">MANOEL FEIO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.365719,-23.478577</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.62">
+	<name>Eng. São Paulo</name>
+	<name>ENG. SAO PAULO</name>
+	<description>Eng. São Paulo</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">ENG SAO PAULO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.599054,-23.544565</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.63">
+	<name>Ipiranga</name>
+	<name>IPIRANGA</name>
+	<description>Ipiranga</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">IPIRANGA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.596551,-23.582459</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.64">
+	<name>Mooca</name>
+	<name>MOOCA</name>
+	<description>Mooca</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">MOOCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.600031,-23.574978</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.65">
+	<name>Piaçaguera</name>
+	<name>PIACAGUERA</name>
+	<description>Piaçaguera</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">PIACAGUERA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.373753,-23.851475</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.66">
+	<name>Santo André</name>
+	<name>SANTO ANDRE</name>
+	<description>Santo André</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">SANTO ANDRE</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.52804,-23.652091</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.67">
+	<name>São Caetano do Sul</name>
+	<name>SAO CAETANO DO SUL</name>
+	<description>São Caetano do Sul</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">SAO CAETANO DO SUL</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.570329,-23.609931</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.68">
+	<name>Santos</name>
+	<name>SANTOS</name>
+	<description>Santos</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">SANTOS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.336146,-23.929286</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.69">
+	<name>Suzano Novo</name>
+	<name>SUZANO NOVO</name>
+	<description>Suzano Novo</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">SUZANO NOVO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.288892,-23.555444</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.70">
+	<name>Utinga</name>
+	<name>UTINGA</name>
+	<description>Utinga</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">UTINGA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.544077,-23.626157</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.71">
+	<name>Mogi das Cruzes</name>
+	<name>MOGI DAS CRUZES</name>
+	<description>Mogi das Cruzes</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">MOGI DAS CRUZES</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.198307,-23.52174</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.72">
+	<name>Alumínio</name>
+	<name>ALUMINIO</name>
+	<description>Alumínio</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">ALUMINIO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.258995,-23.536671</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.73">
+	<name>Paulínia</name>
+	<name>PAULINIA</name>
+	<description>Paulínia</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">PAULINIA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.12862,-22.790313</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.74">
+	<name>Lafaiete Bandeira</name>
+	<name>LAFAIETE BANDEIRA</name>
+	<description>Lafaiete Bandeira</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">LAFAIETE BANDEIRA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.747216,-20.436445</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.75">
+	<name>Ouro Branco</name>
+	<name>OURO BRANCO</name>
+	<description>Ouro Branco</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">OURO BRANCO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.781966,-20.513477</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.76">
+	<name>Horto Florestal</name>
+	<name>HORTO FLORESTAL</name>
+	<description>Horto Florestal</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">HORTO FLORESTAL</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.91236,-19.90549</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.77">
+	<name>Prudente de Morais</name>
+	<name>PRUDENTE DE MORAIS</name>
+	<description>Prudente de Morais</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">PRUDENTE DE MORAIS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.154264,-19.481402</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.78">
+	<name>Wilson Lobato</name>
+	<name>WILSON LOBATO</name>
+	<description>Wilson Lobato</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">WILSON LOBATO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.07228,-19.59054</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.79">
+	<name>Baia Sepetiba</name>
+	<name>BAIA SEPETIBA</name>
+	<description>Baia Sepetiba</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">BAIA SEPETIBA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.822135,-22.899486</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.80">
+	<name>Edmar Alves</name>
+	<name>EDMAR ALVES</name>
+	<description>Edmar Alves</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">EDMAR ALVES</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.771667,-23.131944</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.81">
+	<name>Barreiro</name>
+	<name>BARREIRO</name>
+	<description>Barreiro</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">BARREIRO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-50.8690310003286,-24.7529310004392</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.82">
+	<name>Congonhas do Campo</name>
+	<name>CONGONHAS DO CAMPO</name>
+	<description>Congonhas do Campo</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">CONGONHAS DO CAMPO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.860979,-20.50279</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.83">
+	<name>Siderúrgica do Atlântico</name>
+	<name>SIDERURGICA DO ATLANTICO</name>
+	<description>Siderúrgica do Atlântico</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">SIDERURGICA DO ATLANTICO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.751093,-22.924175</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.84">
+	<name>Sarzedo Novo</name>
+	<name>SARZEDO NOVO</name>
+	<description>Sarzedo Novo</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">SARZEDO NOVO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.175835,-20.032223</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.85">
+	<name>Viga</name>
+	<name>VIGA</name>
+	<description>Viga</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">VIGA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.934879,-20.522196</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.86">
+	<name>Final Ramal das Fábricas</name>
+	<name>FINAL RAMAL DAS FABRICAS</name>
+	<description>Final Ramal das Fábricas</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">FINAL RAMAL DAS FABRICAS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.37497,-23.838579</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.87">
+	<name>Terminal Cimento Barroso</name>
+	<name>TERMINAL CIMENTO BARROSO</name>
+	<description>Terminal Cimento Barroso</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">TERMINAL CIMENTO BARROSO</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.769778,-21.212603</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.88">
+	<name>Terminal Paraibuna de Metais</name>
+	<name>TERMINAL PARAIBUNA DE METAIS</name>
+	<description>Terminal Paraibuna de Metais</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">TERMINAL PARAIBUNA DE METAIS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.475678,-21.70546</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.89">
+	<name>Estação TUF</name>
+	<name>ESTACAO TUF</name>
+	<description>Estação TUF</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">ESTACAO TUF</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.361658,-23.859099</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.90">
+	<name>Porto Sudeste</name>
+	<name>PORTO SUDESTE</name>
+	<description>Porto Sudeste</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">PORTO SUDESTE</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.834468,-22.912047</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.91">
+	<name>Cragea</name>
+	<name>CRAGEA</name>
+	<description>Cragea</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">CRAGEA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.324093,-23.640484</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.92">
+	<name>MultiTerminais</name>
+	<name>MULTITERMINAIS</name>
+	<description>MultiTerminais</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">MULTITERMINAIS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.532343,-22.480968</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.93">
+	<name>Pedrasil</name>
+	<name>PEDRASIL</name>
+	<description>Pedrasil</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">PEDRASIL</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.342832,-22.911389</coordinates></Point>
+  </Placemark>
+  <Placemark id="Estacao_89.94">
+	<name>Usiminas</name>
+	<name>USIMINAS</name>
+	<description>Usiminas</description>
+	<ExtendedData><SchemaData schemaUrl="#Estacao_89">
+		<SimpleData name="station">USIMINAS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.616749,-23.05345</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

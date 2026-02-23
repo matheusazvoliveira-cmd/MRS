@@ -1,0 +1,1989 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Açúcar - MRS</name>
+<Style id="flowLine"><LineStyle><color>CC00FFFF</color><width>3</width></LineStyle></Style>
+<Folder>
+<name>01/2025</name>
+<Placemark>
+<name>Pradopolis → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 103,717<br/>
+            <b>TKU:</b> 55,967,438<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 103,717<br/>
+            <b>TKU:</b> 55,967,438<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.231989999999996,-22.638211,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Itirapina → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 97,291<br/>
+            <b>TKU:</b> 38,218,628<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-47.8174,-22.257408,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 97,291<br/>
+            <b>TKU:</b> 38,218,628<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>141.11</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.076773,-23.093347,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Rio Preto Paulista → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 7,832<br/>
+            <b>TKU:</b> 5,251,998<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.40995400036252,-20.806064999852424,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 7,832<br/>
+            <b>TKU:</b> 5,251,998<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>138.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.87305000018126,-22.367675499926214,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>02/2025</name>
+<Placemark>
+<name>Pradopolis → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 76,186<br/>
+            <b>TKU:</b> 41,105,609<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 76,186<br/>
+            <b>TKU:</b> 41,105,609<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.231989999999996,-22.638211,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Itirapina → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 72,595<br/>
+            <b>TKU:</b> 28,517,347<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-47.8174,-22.257408,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 72,595<br/>
+            <b>TKU:</b> 28,517,347<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>141.11</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.076773,-23.093347,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Rio Preto Paulista → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 30,028<br/>
+            <b>TKU:</b> 20,136,236<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.40995400036252,-20.806064999852424,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 30,028<br/>
+            <b>TKU:</b> 20,136,236<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>138.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.87305000018126,-22.367675499926214,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Votuporanga → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 16,019<br/>
+            <b>TKU:</b> 12,353,900<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.9832790003087,-20.440472999706458,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 16,019<br/>
+            <b>TKU:</b> 12,353,900<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>136.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-48.15971250015435,-22.18487949985323,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>03/2025</name>
+<Placemark>
+<name>Pradopolis → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 67,660<br/>
+            <b>TKU:</b> 36,505,185<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 67,660<br/>
+            <b>TKU:</b> 36,505,185<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.231989999999996,-22.638211,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Itirapina → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 57,044<br/>
+            <b>TKU:</b> 22,408,480<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-47.8174,-22.257408,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 57,044<br/>
+            <b>TKU:</b> 22,408,480<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>141.11</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.076773,-23.093347,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Rio Preto Paulista → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 38,805<br/>
+            <b>TKU:</b> 26,021,934<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.40995400036252,-20.806064999852424,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 38,805<br/>
+            <b>TKU:</b> 26,021,934<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>138.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.87305000018126,-22.367675499926214,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Votuporanga → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 7,979<br/>
+            <b>TKU:</b> 6,153,428<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.9832790003087,-20.440472999706458,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 7,979<br/>
+            <b>TKU:</b> 6,153,428<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>136.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-48.15971250015435,-22.18487949985323,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>04/2025</name>
+<Placemark>
+<name>Pradopolis → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 60,842<br/>
+            <b>TKU:</b> 32,839,066<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 60,842<br/>
+            <b>TKU:</b> 32,839,066<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.231989999999996,-22.638211,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Itirapina → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 48,774<br/>
+            <b>TKU:</b> 19,159,792<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-47.8174,-22.257408,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 48,774<br/>
+            <b>TKU:</b> 19,159,792<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>141.11</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.076773,-23.093347,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Votuporanga → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 23,966<br/>
+            <b>TKU:</b> 18,482,651<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.9832790003087,-20.440472999706458,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 23,966<br/>
+            <b>TKU:</b> 18,482,651<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>136.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-48.15971250015435,-22.18487949985323,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Rio Preto Paulista → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 16,875<br/>
+            <b>TKU:</b> 11,316,071<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.40995400036252,-20.806064999852424,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 16,875<br/>
+            <b>TKU:</b> 11,316,071<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>138.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.87305000018126,-22.367675499926214,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>05/2025</name>
+<Placemark>
+<name>Itirapina → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 104,425<br/>
+            <b>TKU:</b> 41,021,063<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-47.8174,-22.257408,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 104,425<br/>
+            <b>TKU:</b> 41,021,063<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>141.11</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.076773,-23.093347,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pradopolis → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 94,701<br/>
+            <b>TKU:</b> 51,097,639<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 94,701<br/>
+            <b>TKU:</b> 51,097,639<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.231989999999996,-22.638211,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Votuporanga → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 15,296<br/>
+            <b>TKU:</b> 11,796,321<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.9832790003087,-20.440472999706458,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 15,296<br/>
+            <b>TKU:</b> 11,796,321<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>136.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-48.15971250015435,-22.18487949985323,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Rio Preto Paulista → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 12,434<br/>
+            <b>TKU:</b> 8,338,016<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.40995400036252,-20.806064999852424,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 12,434<br/>
+            <b>TKU:</b> 8,338,016<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>138.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.87305000018126,-22.367675499926214,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>06/2025</name>
+<Placemark>
+<name>Pradopolis → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 71,320<br/>
+            <b>TKU:</b> 38,485,356<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 71,320<br/>
+            <b>TKU:</b> 38,485,356<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.231989999999996,-22.638211,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Itirapina → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 64,391<br/>
+            <b>TKU:</b> 25,294,587<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-47.8174,-22.257408,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 64,391<br/>
+            <b>TKU:</b> 25,294,587<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>141.11</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.076773,-23.093347,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Rio Preto Paulista → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 37,722<br/>
+            <b>TKU:</b> 25,295,693<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.40995400036252,-20.806064999852424,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 37,722<br/>
+            <b>TKU:</b> 25,295,693<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>138.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.87305000018126,-22.367675499926214,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Votuporanga → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 21,212<br/>
+            <b>TKU:</b> 16,243,216<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.9832790003087,-20.440472999706458,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 21,212<br/>
+            <b>TKU:</b> 16,243,216<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>136.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-48.15971250015435,-22.18487949985323,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pradopolis → Conceiçãozinha</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 15,218<br/>
+            <b>TKU:</b> 8,311,006<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.2816,-23.978356,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 15,218<br/>
+            <b>TKU:</b> 8,311,006<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.204717,-22.662746,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>07/2025</name>
+<Placemark>
+<name>Itirapina → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 98,281<br/>
+            <b>TKU:</b> 38,607,528<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-47.8174,-22.257408,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 98,281<br/>
+            <b>TKU:</b> 38,607,528<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>141.11</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.076773,-23.093347,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pradopolis → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 57,178<br/>
+            <b>TKU:</b> 30,854,276<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 57,178<br/>
+            <b>TKU:</b> 30,854,276<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.231989999999996,-22.638211,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Votuporanga → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 39,547<br/>
+            <b>TKU:</b> 30,283,352<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.9832790003087,-20.440472999706458,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 39,547<br/>
+            <b>TKU:</b> 30,283,352<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>136.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-48.15971250015435,-22.18487949985323,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pradopolis → Conceiçãozinha</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 37,571<br/>
+            <b>TKU:</b> 20,518,649<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.2816,-23.978356,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 37,571<br/>
+            <b>TKU:</b> 20,518,649<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.204717,-22.662746,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Rio Preto Paulista → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 20,998<br/>
+            <b>TKU:</b> 14,080,880<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.40995400036252,-20.806064999852424,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 20,998<br/>
+            <b>TKU:</b> 14,080,880<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>138.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.87305000018126,-22.367675499926214,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>08/2025</name>
+<Placemark>
+<name>Itirapina → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 97,899<br/>
+            <b>TKU:</b> 38,457,467<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-47.8174,-22.257408,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 97,899<br/>
+            <b>TKU:</b> 38,457,467<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>141.11</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.076773,-23.093347,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pradopolis → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 58,880<br/>
+            <b>TKU:</b> 31,773,473<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 58,880<br/>
+            <b>TKU:</b> 31,773,473<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.231989999999996,-22.638211,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pradopolis → Conceiçãozinha</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 50,318<br/>
+            <b>TKU:</b> 27,480,169<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.2816,-23.978356,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 50,318<br/>
+            <b>TKU:</b> 27,480,169<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.204717,-22.662746,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Votuporanga → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 38,282<br/>
+            <b>TKU:</b> 29,354,722<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.9832790003087,-20.440472999706458,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 38,282<br/>
+            <b>TKU:</b> 29,354,722<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>136.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-48.15971250015435,-22.18487949985323,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Rio Preto Paulista → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 23,157<br/>
+            <b>TKU:</b> 15,528,666<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.40995400036252,-20.806064999852424,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 23,157<br/>
+            <b>TKU:</b> 15,528,666<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>138.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.87305000018126,-22.367675499926214,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Itirapina → Conceiçãozinha</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 8,521<br/>
+            <b>TKU:</b> 3,404,062<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-47.8174,-22.257408,0 -46.2816,-23.978356,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 8,521<br/>
+            <b>TKU:</b> 3,404,062<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>140.92</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.049499999999995,-23.117882,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Votuporanga → Conceiçãozinha</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 7,767<br/>
+            <b>TKU:</b> 5,994,407<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.9832790003087,-20.440472999706458,0 -46.2816,-23.978356,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 7,767<br/>
+            <b>TKU:</b> 5,994,407<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>136.60</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-48.13243950015435,-22.20941449985323,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>09/2025</name>
+<Placemark>
+<name>Itirapina → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 75,143<br/>
+            <b>TKU:</b> 29,518,273<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-47.8174,-22.257408,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 75,143<br/>
+            <b>TKU:</b> 29,518,273<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>141.11</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.076773,-23.093347,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pradopolis → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 64,921<br/>
+            <b>TKU:</b> 35,027,060<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 64,921<br/>
+            <b>TKU:</b> 35,027,060<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.231989999999996,-22.638211,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pederneiras → Conceiçãozinha</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pederneiras<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 60,445<br/>
+            <b>TKU:</b> 31,639,209<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.774259,-22.358548,0 -46.2816,-23.978356,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pederneiras<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 60,445<br/>
+            <b>TKU:</b> 31,639,209<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>125.74</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.5279295,-23.168452000000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pradopolis → Conceiçãozinha</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 39,279<br/>
+            <b>TKU:</b> 21,451,439<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.2816,-23.978356,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 39,279<br/>
+            <b>TKU:</b> 21,451,439<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.204717,-22.662746,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Votuporanga → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 30,693<br/>
+            <b>TKU:</b> 23,503,348<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.9832790003087,-20.440472999706458,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 30,693<br/>
+            <b>TKU:</b> 23,503,348<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>136.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-48.15971250015435,-22.18487949985323,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Itirapina → Conceiçãozinha</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 8,099<br/>
+            <b>TKU:</b> 3,235,477<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-47.8174,-22.257408,0 -46.2816,-23.978356,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 8,099<br/>
+            <b>TKU:</b> 3,235,477<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>140.92</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.049499999999995,-23.117882,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Rio Preto Paulista → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 6,875<br/>
+            <b>TKU:</b> 4,610,251<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.40995400036252,-20.806064999852424,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 6,875<br/>
+            <b>TKU:</b> 4,610,251<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>138.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.87305000018126,-22.367675499926214,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>10/2025</name>
+<Placemark>
+<name>Pradopolis → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 81,114<br/>
+            <b>TKU:</b> 43,724,955<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 81,114<br/>
+            <b>TKU:</b> 43,724,955<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.231989999999996,-22.638211,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pederneiras → Conceiçãozinha</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pederneiras<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 77,440<br/>
+            <b>TKU:</b> 40,535,038<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.774259,-22.358548,0 -46.2816,-23.978356,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pederneiras<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 77,440<br/>
+            <b>TKU:</b> 40,535,038<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>125.74</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.5279295,-23.168452000000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Rio Preto Paulista → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 56,795<br/>
+            <b>TKU:</b> 38,085,703<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.40995400036252,-20.806064999852424,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 56,795<br/>
+            <b>TKU:</b> 38,085,703<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>138.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.87305000018126,-22.367675499926214,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Votuporanga → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 45,960<br/>
+            <b>TKU:</b> 35,276,171<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.9832790003087,-20.440472999706458,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 45,960<br/>
+            <b>TKU:</b> 35,276,171<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>136.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-48.15971250015435,-22.18487949985323,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pradopolis → Conceiçãozinha</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 31,115<br/>
+            <b>TKU:</b> 16,992,834<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.2816,-23.978356,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 31,115<br/>
+            <b>TKU:</b> 16,992,834<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.204717,-22.662746,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Itirapina → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 25,190<br/>
+            <b>TKU:</b> 9,895,336<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-47.8174,-22.257408,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Itirapina<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 25,190<br/>
+            <b>TKU:</b> 9,895,336<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>141.11</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.076773,-23.093347,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>11/2025</name>
+<Placemark>
+<name>Pederneiras → Conceiçãozinha</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pederneiras<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 76,793<br/>
+            <b>TKU:</b> 40,196,373<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.774259,-22.358548,0 -46.2816,-23.978356,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pederneiras<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 76,793<br/>
+            <b>TKU:</b> 40,196,373<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>125.74</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.5279295,-23.168452000000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pradopolis → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 58,120<br/>
+            <b>TKU:</b> 31,347,600<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 58,120<br/>
+            <b>TKU:</b> 31,347,600<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.231989999999996,-22.638211,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pradopolis → Conceiçãozinha</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 50,708<br/>
+            <b>TKU:</b> 27,693,159<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.2816,-23.978356,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Conceiçãozinha<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 50,708<br/>
+            <b>TKU:</b> 27,693,159<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.43</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.204717,-22.662746,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Rio Preto Paulista → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 40,895<br/>
+            <b>TKU:</b> 27,423,450<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.40995400036252,-20.806064999852424,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 40,895<br/>
+            <b>TKU:</b> 27,423,450<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>138.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.87305000018126,-22.367675499926214,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Votuporanga → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 38,167<br/>
+            <b>TKU:</b> 29,226,609<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.9832790003087,-20.440472999706458,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 38,167<br/>
+            <b>TKU:</b> 29,226,609<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>136.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-48.15971250015435,-22.18487949985323,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pederneiras → Estação TUF</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pederneiras<br/>
+            <b>Destino:</b> Estação TUF<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 6,205<br/>
+            <b>TKU:</b> 3,157,960<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.774259,-22.358548,0 -46.361658,-23.859099,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pederneiras<br/>
+            <b>Destino:</b> Estação TUF<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 6,205<br/>
+            <b>TKU:</b> 3,157,960<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>124.54</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.5679585,-23.1088235,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>12/2025</name>
+<Placemark>
+<name>Pradopolis → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 90,825<br/>
+            <b>TKU:</b> 48,914,128<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.127834,-21.347136,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pradopolis<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 90,825<br/>
+            <b>TKU:</b> 48,914,128<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>147.70</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.231989999999996,-22.638211,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Pederneiras → Estação TUF</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pederneiras<br/>
+            <b>Destino:</b> Estação TUF<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 87,488<br/>
+            <b>TKU:</b> 44,525,966<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-48.774259,-22.358548,0 -46.361658,-23.859099,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Pederneiras<br/>
+            <b>Destino:</b> Estação TUF<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 87,488<br/>
+            <b>TKU:</b> 44,525,966<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>124.54</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.5679585,-23.1088235,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Rio Preto Paulista → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 51,086<br/>
+            <b>TKU:</b> 34,257,351<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.40995400036252,-20.806064999852424,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Rio Preto Paulista<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 51,086<br/>
+            <b>TKU:</b> 34,257,351<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>138.27</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-47.87305000018126,-22.367675499926214,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Votuporanga → Santos</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 45,633<br/>
+            <b>TKU:</b> 34,943,743<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-49.9832790003087,-20.440472999706458,0 -46.336146,-23.929286,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Açúcar</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Açúcar<br/>
+            <b>Origem:</b> Votuporanga<br/>
+            <b>Destino:</b> Santos<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 45,633<br/>
+            <b>TKU:</b> 34,943,743<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>136.61</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-48.15971250015435,-22.18487949985323,0</coordinates></Point>
+</Placemark>
+</Folder>
+</Document></kml>

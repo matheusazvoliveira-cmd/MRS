@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Outros Graneis Minerais - MRS</name>
+<Style id="flowLine"><LineStyle><color>CC00FFFF</color><width>3</width></LineStyle></Style>
+<Folder>
+<name>01/2025</name>
+<Placemark>
+<name>Arará → Prudente de Morais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 1,914<br/>
+            <b>TKU:</b> 1,430,058<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -44.154264,-19.481402,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 1,914<br/>
+            <b>TKU:</b> 1,430,058<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>345.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>03/2025</name>
+<Placemark>
+<name>Arará → Terminal Paraibuna de Metais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 8,585<br/>
+            <b>TKU:</b> 2,526,445<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -43.475678,-21.70546,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 8,585<br/>
+            <b>TKU:</b> 2,526,445<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>348.54</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.3468915,-22.2957535,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Dias Tavares → Prudente de Morais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Dias Tavares<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 947,288<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.456795,-21.640806,0 -44.154264,-19.481402,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Dias Tavares<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 947,288<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>343.05</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.8055295,-20.561104,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>04/2025</name>
+<Placemark>
+<name>Arará → Terminal Paraibuna de Metais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 6,981<br/>
+            <b>TKU:</b> 2,054,410<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -43.475678,-21.70546,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 6,981<br/>
+            <b>TKU:</b> 2,054,410<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>348.54</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.3468915,-22.2957535,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Arará → Prudente de Morais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 1,560,063<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -44.154264,-19.481402,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 1,560,063<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>345.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Arará → Dias Tavares</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 2,000<br/>
+            <b>TKU:</b> 586,950<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -43.456795,-21.640806,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 2,000<br/>
+            <b>TKU:</b> 586,950<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>349.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.337450000000004,-22.2634265,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Dias Tavares → Prudente de Morais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Dias Tavares<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 1,392<br/>
+            <b>TKU:</b> 631,525<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.456795,-21.640806,0 -44.154264,-19.481402,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Dias Tavares<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 1,392<br/>
+            <b>TKU:</b> 631,525<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>343.05</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.8055295,-20.561104,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>05/2025</name>
+<Placemark>
+<name>Arará → Terminal Paraibuna de Metais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 12,285<br/>
+            <b>TKU:</b> 3,615,303<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -43.475678,-21.70546,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 12,285<br/>
+            <b>TKU:</b> 3,615,303<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>348.54</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.3468915,-22.2957535,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Arará → Prudente de Morais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 9,396<br/>
+            <b>TKU:</b> 7,020,287<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -44.154264,-19.481402,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 9,396<br/>
+            <b>TKU:</b> 7,020,287<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>345.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>06/2025</name>
+<Placemark>
+<name>Arará → Terminal Paraibuna de Metais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 13,520<br/>
+            <b>TKU:</b> 3,978,746<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -43.475678,-21.70546,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 13,520<br/>
+            <b>TKU:</b> 3,978,746<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>348.54</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.3468915,-22.2957535,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Arará → Prudente de Morais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 6,264<br/>
+            <b>TKU:</b> 4,680,191<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -44.154264,-19.481402,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 6,264<br/>
+            <b>TKU:</b> 4,680,191<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>345.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Arará → Dias Tavares</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 612,775<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -43.456795,-21.640806,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 612,775<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>349.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.337450000000004,-22.2634265,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Dias Tavares → Prudente de Morais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Dias Tavares<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 947,288<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.456795,-21.640806,0 -44.154264,-19.481402,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Dias Tavares<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 947,288<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>343.05</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.8055295,-20.561104,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>07/2025</name>
+<Placemark>
+<name>Arará → Terminal Paraibuna de Metais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 8,222<br/>
+            <b>TKU:</b> 2,419,619<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -43.475678,-21.70546,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 8,222<br/>
+            <b>TKU:</b> 2,419,619<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>348.54</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.3468915,-22.2957535,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Dias Tavares → Prudente de Morais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Dias Tavares<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 947,288<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.456795,-21.640806,0 -44.154264,-19.481402,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Dias Tavares<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 947,288<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>343.05</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.8055295,-20.561104,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Arará → Prudente de Morais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 1,560,063<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -44.154264,-19.481402,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 1,560,063<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>345.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Arará → Dias Tavares</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 612,775<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -43.456795,-21.640806,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 612,775<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>349.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.337450000000004,-22.2634265,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>08/2025</name>
+<Placemark>
+<name>Arará → Terminal Paraibuna de Metais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 13,234<br/>
+            <b>TKU:</b> 3,894,580<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -43.475678,-21.70546,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 13,234<br/>
+            <b>TKU:</b> 3,894,580<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>348.54</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.3468915,-22.2957535,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Arará → Dias Tavares</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 4,176<br/>
+            <b>TKU:</b> 1,225,551<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -43.456795,-21.640806,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 4,176<br/>
+            <b>TKU:</b> 1,225,551<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>349.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.337450000000004,-22.2634265,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Dias Tavares → Prudente de Morais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Dias Tavares<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 4,176<br/>
+            <b>TKU:</b> 1,894,576<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.456795,-21.640806,0 -44.154264,-19.481402,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Dias Tavares<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 4,176<br/>
+            <b>TKU:</b> 1,894,576<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>343.05</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.8055295,-20.561104,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Arará → Prudente de Morais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 1,560,063<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -44.154264,-19.481402,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 2,088<br/>
+            <b>TKU:</b> 1,560,063<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>345.45</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>10/2025</name>
+<Placemark>
+<name>Arará → Terminal Paraibuna de Metais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 11,759<br/>
+            <b>TKU:</b> 3,466,701<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -43.475678,-21.70546,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 11,759<br/>
+            <b>TKU:</b> 3,466,701<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>348.54</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.3468915,-22.2957535,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Arará → Dias Tavares</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 6,708<br/>
+            <b>TKU:</b> 1,973,822<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -43.456795,-21.640806,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 6,708<br/>
+            <b>TKU:</b> 1,973,822<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>349.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.337450000000004,-22.2634265,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Dias Tavares → Prudente de Morais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Dias Tavares<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 6,708<br/>
+            <b>TKU:</b> 3,043,298<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.456795,-21.640806,0 -44.154264,-19.481402,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Dias Tavares<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 6,708<br/>
+            <b>TKU:</b> 3,043,298<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>343.05</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.8055295,-20.561104,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>12/2025</name>
+<Placemark>
+<name>Arará → Terminal Paraibuna de Metais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 12,556<br/>
+            <b>TKU:</b> 3,695,055<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -43.475678,-21.70546,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Terminal Paraibuna de Metais<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 12,556<br/>
+            <b>TKU:</b> 3,695,055<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>348.54</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.3468915,-22.2957535,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Arará → Dias Tavares</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 5,160<br/>
+            <b>TKU:</b> 1,514,331<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.218105,-22.886047,0 -43.456795,-21.640806,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Arará<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 5,160<br/>
+            <b>TKU:</b> 1,514,331<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>349.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.337450000000004,-22.2634265,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Dias Tavares → Prudente de Morais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Dias Tavares<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 5,160<br/>
+            <b>TKU:</b> 2,340,999<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.456795,-21.640806,0 -44.154264,-19.481402,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Outros Graneis Minerais</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Outros Graneis Minerais<br/>
+            <b>Origem:</b> Dias Tavares<br/>
+            <b>Destino:</b> Prudente de Morais<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 5,160<br/>
+            <b>TKU:</b> 2,340,999<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>343.05</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.8055295,-20.561104,0</coordinates></Point>
+</Placemark>
+</Folder>
+</Document></kml>

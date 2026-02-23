@@ -1,0 +1,2154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Ferro Gusa - MRS</name>
+<Style id="flowLine"><LineStyle><color>CC00FFFF</color><width>3</width></LineStyle></Style>
+<Folder>
+<name>01/2025</name>
+<Placemark>
+<name>Sarzedo Novo → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 80,025<br/>
+            <b>TKU:</b> 44,068,078<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 80,025<br/>
+            <b>TKU:</b> 44,068,078<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>162.83</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.69697,-21.459135,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 26,889<br/>
+            <b>TKU:</b> 18,482,068<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 26,889<br/>
+            <b>TKU:</b> 18,482,068<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>165.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Itaguai</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 13,244<br/>
+            <b>TKU:</b> 6,992,990<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.748184,-22.892465,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 13,244<br/>
+            <b>TKU:</b> 6,992,990<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>172.16</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9620095,-21.462344,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>São Bento → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 1,464<br/>
+            <b>TKU:</b> 634,809<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.255792,-23.434794,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 1,464<br/>
+            <b>TKU:</b> 634,809<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>79.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.7369485,-23.1604205,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Dias Tavares</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 850<br/>
+            <b>TKU:</b> 649,736<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.456795,-21.640806,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 850<br/>
+            <b>TKU:</b> 649,736<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>163.30</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.8055295,-20.561104,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>02/2025</name>
+<Placemark>
+<name>Sarzedo Novo → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 83,895<br/>
+            <b>TKU:</b> 46,199,199<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 83,895<br/>
+            <b>TKU:</b> 46,199,199<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>162.83</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.69697,-21.459135,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 27,967<br/>
+            <b>TKU:</b> 19,223,029<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 27,967<br/>
+            <b>TKU:</b> 19,223,029<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>165.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>São Bento → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 19,053<br/>
+            <b>TKU:</b> 8,261,626<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.255792,-23.434794,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 19,053<br/>
+            <b>TKU:</b> 8,261,626<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>79.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.7369485,-23.1604205,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>03/2025</name>
+<Placemark>
+<name>Sarzedo Novo → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 94,554<br/>
+            <b>TKU:</b> 52,068,886<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 94,554<br/>
+            <b>TKU:</b> 52,068,886<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>162.83</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.69697,-21.459135,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 41,316<br/>
+            <b>TKU:</b> 28,398,422<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 41,316<br/>
+            <b>TKU:</b> 28,398,422<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>165.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>São Bento → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 31,903<br/>
+            <b>TKU:</b> 13,833,555<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.255792,-23.434794,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 31,903<br/>
+            <b>TKU:</b> 13,833,555<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>79.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.7369485,-23.1604205,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Itaguai</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 11,360<br/>
+            <b>TKU:</b> 5,998,216<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.748184,-22.892465,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 11,360<br/>
+            <b>TKU:</b> 5,998,216<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>172.16</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9620095,-21.462344,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cel. João Carlos Guedes → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Cel. João Carlos Guedes<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 4,050<br/>
+            <b>TKU:</b> 1,819,470<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.975796,-20.592844,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Cel. João Carlos Guedes<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 4,050<br/>
+            <b>TKU:</b> 1,819,470<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>163.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.596950500000005,-21.739445500000002,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>04/2025</name>
+<Placemark>
+<name>Sarzedo Novo → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 103,467<br/>
+            <b>TKU:</b> 56,995,479<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 103,467<br/>
+            <b>TKU:</b> 56,995,479<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>162.83</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.69697,-21.459135,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 38,999<br/>
+            <b>TKU:</b> 26,823,110<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 38,999<br/>
+            <b>TKU:</b> 26,823,110<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>165.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>São Bento → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 26,147<br/>
+            <b>TKU:</b> 11,337,679<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.255792,-23.434794,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 26,147<br/>
+            <b>TKU:</b> 11,337,679<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>79.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.7369485,-23.1604205,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Itaguai</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 16,850<br/>
+            <b>TKU:</b> 8,897,002<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.748184,-22.892465,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 16,850<br/>
+            <b>TKU:</b> 8,897,002<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>172.16</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9620095,-21.462344,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>05/2025</name>
+<Placemark>
+<name>Sarzedo Novo → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 135,710<br/>
+            <b>TKU:</b> 74,797,280<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 135,710<br/>
+            <b>TKU:</b> 74,797,280<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>162.83</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.69697,-21.459135,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 42,978<br/>
+            <b>TKU:</b> 29,568,180<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 42,978<br/>
+            <b>TKU:</b> 29,568,180<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>165.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>São Bento → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 22,621<br/>
+            <b>TKU:</b> 9,808,758<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.255792,-23.434794,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 22,621<br/>
+            <b>TKU:</b> 9,808,758<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>79.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.7369485,-23.1604205,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Itaguai</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 18,967<br/>
+            <b>TKU:</b> 10,014,803<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.748184,-22.892465,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 18,967<br/>
+            <b>TKU:</b> 10,014,803<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>172.16</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9620095,-21.462344,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>06/2025</name>
+<Placemark>
+<name>Sarzedo Novo → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 118,357<br/>
+            <b>TKU:</b> 65,249,965<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 118,357<br/>
+            <b>TKU:</b> 65,249,965<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>162.83</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.69697,-21.459135,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 26,788<br/>
+            <b>TKU:</b> 18,417,113<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 26,788<br/>
+            <b>TKU:</b> 18,417,113<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>165.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Itaguai</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 17,260<br/>
+            <b>TKU:</b> 9,113,487<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.748184,-22.892465,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 17,260<br/>
+            <b>TKU:</b> 9,113,487<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>172.16</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9620095,-21.462344,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>São Bento → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 7,510<br/>
+            <b>TKU:</b> 3,256,433<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.255792,-23.434794,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 7,510<br/>
+            <b>TKU:</b> 3,256,433<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>79.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.7369485,-23.1604205,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Itaguai</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 72<br/>
+            <b>TKU:</b> 47,856<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.748184,-22.892465,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 72<br/>
+            <b>TKU:</b> 47,856<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>173.74</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.951223999999996,-21.186933500000002,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>07/2025</name>
+<Placemark>
+<name>Sarzedo Novo → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 111,000<br/>
+            <b>TKU:</b> 61,172,880<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 111,000<br/>
+            <b>TKU:</b> 61,172,880<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>162.83</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.69697,-21.459135,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 33,554<br/>
+            <b>TKU:</b> 23,066,687<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 33,554<br/>
+            <b>TKU:</b> 23,066,687<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>165.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Itaguai</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 25,689<br/>
+            <b>TKU:</b> 13,564,100<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.748184,-22.892465,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 25,689<br/>
+            <b>TKU:</b> 13,564,100<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>172.16</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9620095,-21.462344,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,700<br/>
+            <b>TKU:</b> 1,096,243<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,700<br/>
+            <b>TKU:</b> 1,096,243<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>178.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.137874499999995,-21.272754,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>São Bento → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,524<br/>
+            <b>TKU:</b> 1,094,438<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.255792,-23.434794,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 2,524<br/>
+            <b>TKU:</b> 1,094,438<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>79.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.7369485,-23.1604205,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>08/2025</name>
+<Placemark>
+<name>Sarzedo Novo → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 51,553<br/>
+            <b>TKU:</b> 28,418,883<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 51,553<br/>
+            <b>TKU:</b> 28,418,883<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>162.83</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.69697,-21.459135,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Itaguai</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 23,435<br/>
+            <b>TKU:</b> 12,373,961<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.748184,-22.892465,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 23,435<br/>
+            <b>TKU:</b> 12,373,961<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>172.16</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9620095,-21.462344,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 17,668<br/>
+            <b>TKU:</b> 12,144,041<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 17,668<br/>
+            <b>TKU:</b> 12,144,041<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>165.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cel. João Carlos Guedes → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Cel. João Carlos Guedes<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 10,380<br/>
+            <b>TKU:</b> 4,663,235<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.975796,-20.592844,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Cel. João Carlos Guedes<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 10,380<br/>
+            <b>TKU:</b> 4,663,235<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>163.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.596950500000005,-21.739445500000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>São Bento → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 9,502<br/>
+            <b>TKU:</b> 4,120,190<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.255792,-23.434794,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 9,502<br/>
+            <b>TKU:</b> 4,120,190<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>79.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.7369485,-23.1604205,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 3,550<br/>
+            <b>TKU:</b> 1,441,356<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 3,550<br/>
+            <b>TKU:</b> 1,441,356<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>178.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.137874499999995,-21.272754,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Dias Tavares</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 1,461<br/>
+            <b>TKU:</b> 1,116,782<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.456795,-21.640806,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 1,461<br/>
+            <b>TKU:</b> 1,116,782<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>163.30</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.8055295,-20.561104,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>09/2025</name>
+<Placemark>
+<name>Sarzedo Novo → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 79,670<br/>
+            <b>TKU:</b> 43,926,258<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 79,670<br/>
+            <b>TKU:</b> 43,926,258<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>162.83</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.69697,-21.459135,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 20,343<br/>
+            <b>TKU:</b> 13,987,634<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 20,343<br/>
+            <b>TKU:</b> 13,987,634<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>165.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Itaguai</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 17,384<br/>
+            <b>TKU:</b> 9,178,960<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.748184,-22.892465,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 17,384<br/>
+            <b>TKU:</b> 9,178,960<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>172.16</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9620095,-21.462344,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>São Bento → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 5,363<br/>
+            <b>TKU:</b> 2,325,465<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.255792,-23.434794,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 5,363<br/>
+            <b>TKU:</b> 2,325,465<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>79.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.7369485,-23.1604205,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Dias Tavares</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 4,269<br/>
+            <b>TKU:</b> 3,263,206<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.456795,-21.640806,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 4,269<br/>
+            <b>TKU:</b> 3,263,206<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>163.30</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.8055295,-20.561104,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cel. João Carlos Guedes → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Cel. João Carlos Guedes<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 3,617<br/>
+            <b>TKU:</b> 1,624,944<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.975796,-20.592844,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Cel. João Carlos Guedes<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 3,617<br/>
+            <b>TKU:</b> 1,624,944<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>163.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.596950500000005,-21.739445500000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 2,578<br/>
+            <b>TKU:</b> 1,046,709<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 2,578<br/>
+            <b>TKU:</b> 1,046,709<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>178.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.137874499999995,-21.272754,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>10/2025</name>
+<Placemark>
+<name>Sarzedo Novo → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 102,034<br/>
+            <b>TKU:</b> 56,253,703<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 102,034<br/>
+            <b>TKU:</b> 56,253,703<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>162.83</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.69697,-21.459135,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 33,368<br/>
+            <b>TKU:</b> 22,997,535<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 33,368<br/>
+            <b>TKU:</b> 22,997,535<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>165.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Itaguai</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 12,642<br/>
+            <b>TKU:</b> 6,675,127<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.748184,-22.892465,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 12,642<br/>
+            <b>TKU:</b> 6,675,127<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>172.16</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9620095,-21.462344,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>São Bento → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 7,663<br/>
+            <b>TKU:</b> 3,322,776<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.255792,-23.434794,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 7,663<br/>
+            <b>TKU:</b> 3,322,776<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>79.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.7369485,-23.1604205,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 2,498<br/>
+            <b>TKU:</b> 1,014,227<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 2,498<br/>
+            <b>TKU:</b> 1,014,227<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>178.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.137874499999995,-21.272754,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cel. João Carlos Guedes → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Cel. João Carlos Guedes<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 2,479<br/>
+            <b>TKU:</b> 1,113,695<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.975796,-20.592844,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Cel. João Carlos Guedes<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 2,479<br/>
+            <b>TKU:</b> 1,113,695<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>163.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.596950500000005,-21.739445500000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Dias Tavares</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 2,016<br/>
+            <b>TKU:</b> 1,541,022<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.456795,-21.640806,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 2,016<br/>
+            <b>TKU:</b> 1,541,022<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>163.30</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.8055295,-20.561104,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>11/2025</name>
+<Placemark>
+<name>Sarzedo Novo → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 115,107<br/>
+            <b>TKU:</b> 63,484,904<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 115,107<br/>
+            <b>TKU:</b> 63,484,904<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>162.83</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.69697,-21.459135,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 51,823<br/>
+            <b>TKU:</b> 35,686,057<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 51,823<br/>
+            <b>TKU:</b> 35,686,057<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>165.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Itaguai</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 13,071<br/>
+            <b>TKU:</b> 6,901,644<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.748184,-22.892465,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 13,071<br/>
+            <b>TKU:</b> 6,901,644<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>172.16</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9620095,-21.462344,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>São Bento → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 12,977<br/>
+            <b>TKU:</b> 5,626,994<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.255792,-23.434794,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 12,977<br/>
+            <b>TKU:</b> 5,626,994<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>79.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.7369485,-23.1604205,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cel. João Carlos Guedes → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Cel. João Carlos Guedes<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 12,302<br/>
+            <b>TKU:</b> 5,526,698<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-43.975796,-20.592844,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Cel. João Carlos Guedes<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 12,302<br/>
+            <b>TKU:</b> 5,526,698<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>163.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.596950500000005,-21.739445500000002,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 3,500<br/>
+            <b>TKU:</b> 1,421,056<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 3,500<br/>
+            <b>TKU:</b> 1,421,056<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>178.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.137874499999995,-21.272754,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>12/2025</name>
+<Placemark>
+<name>Sarzedo Novo → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 113,052<br/>
+            <b>TKU:</b> 62,310,957<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 113,052<br/>
+            <b>TKU:</b> 62,310,957<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>162.83</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.69697,-21.459135,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 37,096<br/>
+            <b>TKU:</b> 25,512,242<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 37,096<br/>
+            <b>TKU:</b> 25,512,242<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>165.79</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.686184499999996,-21.1837245,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>São Bento → Arará</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 22,635<br/>
+            <b>TKU:</b> 9,814,829<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-46.255792,-23.434794,0 -43.218105,-22.886047,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> São Bento<br/>
+            <b>Destino:</b> Arará<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 22,635<br/>
+            <b>TKU:</b> 9,814,829<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>79.48</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.7369485,-23.1604205,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Itaguai</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 8,999<br/>
+            <b>TKU:</b> 4,751,579<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -43.748184,-22.892465,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Itaguai<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 8,999<br/>
+            <b>TKU:</b> 4,751,579<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>172.16</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.9620095,-21.462344,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Prudente de Morais → Dias Tavares</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 4,826<br/>
+            <b>TKU:</b> 3,688,975<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.154264,-19.481402,0 -43.456795,-21.640806,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Prudente de Morais<br/>
+            <b>Destino:</b> Dias Tavares<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 4,826<br/>
+            <b>TKU:</b> 3,688,975<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>163.30</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-43.8055295,-20.561104,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Sarzedo Novo → Volta Redonda</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 3,800<br/>
+            <b>TKU:</b> 1,542,860<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.175835,-20.032223,0 -44.099914,-22.513285,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Ferro Gusa</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Ferro Gusa<br/>
+            <b>Origem:</b> Sarzedo Novo<br/>
+            <b>Destino:</b> Volta Redonda<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 3,800<br/>
+            <b>TKU:</b> 1,542,860<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>178.38</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-44.137874499999995,-21.272754,0</coordinates></Point>
+</Placemark>
+</Folder>
+</Document></kml>

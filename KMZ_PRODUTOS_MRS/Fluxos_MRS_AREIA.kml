@@ -1,0 +1,1989 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Areia - MRS</name>
+<Style id="flowLine"><LineStyle><color>CC00FFFF</color><width>3</width></LineStyle></Style>
+<Folder>
+<name>01/2025</name>
+<Placemark>
+<name>Cruzeiro → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 20,672<br/>
+            <b>TKU:</b> 4,842,126<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 20,672<br/>
+            <b>TKU:</b> 4,842,126<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>236.44</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.780080999999996,-23.0805745,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Parque Industrial → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 12,670<br/>
+            <b>TKU:</b> 9,655,097<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.019915,-19.946691,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 12,670<br/>
+            <b>TKU:</b> 9,655,097<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>214.41</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.360907499999996,-21.7325865,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 10,216<br/>
+            <b>TKU:</b> 1,820,389<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 10,216<br/>
+            <b>TKU:</b> 1,820,389<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>240.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.9531825,-23.2364065,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 7,677<br/>
+            <b>TKU:</b> 1,416,805<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 7,677<br/>
+            <b>TKU:</b> 1,416,805<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>243.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.004117,-23.2081585,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cruzeiro → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 4,043<br/>
+            <b>TKU:</b> 1,004,600<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 01/2025<br/>
+            <b>TU:</b> 4,043<br/>
+            <b>TKU:</b> 1,004,600<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>233.22</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.7440855,-23.119131,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>02/2025</name>
+<Placemark>
+<name>Cruzeiro → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 16,848<br/>
+            <b>TKU:</b> 3,946,408<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 16,848<br/>
+            <b>TKU:</b> 3,946,408<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>236.44</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.780080999999996,-23.0805745,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 9,124<br/>
+            <b>TKU:</b> 1,683,852<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 9,124<br/>
+            <b>TKU:</b> 1,683,852<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>243.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.004117,-23.2081585,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 7,679<br/>
+            <b>TKU:</b> 1,368,321<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 7,679<br/>
+            <b>TKU:</b> 1,368,321<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>240.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.9531825,-23.2364065,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Parque Industrial → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 5,740<br/>
+            <b>TKU:</b> 4,374,132<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.019915,-19.946691,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 5,740<br/>
+            <b>TKU:</b> 4,374,132<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>214.41</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.360907499999996,-21.7325865,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cruzeiro → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 3,322<br/>
+            <b>TKU:</b> 825,447<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 3,322<br/>
+            <b>TKU:</b> 825,447<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>233.22</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.7440855,-23.119131,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Dr. Lund → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Dr. Lund<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 1,260<br/>
+            <b>TKU:</b> 1,055,998<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.008249,-19.647777,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Dr. Lund<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 02/2025<br/>
+            <b>TU:</b> 1,260<br/>
+            <b>TKU:</b> 1,055,998<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>212.42</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.3550745,-21.5831295,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>03/2025</name>
+<Placemark>
+<name>Cruzeiro → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 19,194<br/>
+            <b>TKU:</b> 4,495,925<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 19,194<br/>
+            <b>TKU:</b> 4,495,925<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>236.44</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.780080999999996,-23.0805745,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 9,730<br/>
+            <b>TKU:</b> 1,733,788<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 9,730<br/>
+            <b>TKU:</b> 1,733,788<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>240.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.9531825,-23.2364065,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 9,381<br/>
+            <b>TKU:</b> 1,731,282<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 9,381<br/>
+            <b>TKU:</b> 1,731,282<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>243.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.004117,-23.2081585,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Parque Industrial → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 7,070<br/>
+            <b>TKU:</b> 5,387,651<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.019915,-19.946691,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 7,070<br/>
+            <b>TKU:</b> 5,387,651<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>214.41</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.360907499999996,-21.7325865,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cruzeiro → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 2,924<br/>
+            <b>TKU:</b> 726,552<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 03/2025<br/>
+            <b>TU:</b> 2,924<br/>
+            <b>TKU:</b> 726,552<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>233.22</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.7440855,-23.119131,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>04/2025</name>
+<Placemark>
+<name>Cruzeiro → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 19,838<br/>
+            <b>TKU:</b> 4,646,773<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 19,838<br/>
+            <b>TKU:</b> 4,646,773<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>236.44</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.780080999999996,-23.0805745,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 12,280<br/>
+            <b>TKU:</b> 2,266,298<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 12,280<br/>
+            <b>TKU:</b> 2,266,298<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>243.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.004117,-23.2081585,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 9,475<br/>
+            <b>TKU:</b> 1,688,350<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 9,475<br/>
+            <b>TKU:</b> 1,688,350<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>240.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.9531825,-23.2364065,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cruzeiro → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 3,145<br/>
+            <b>TKU:</b> 781,466<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 3,145<br/>
+            <b>TKU:</b> 781,466<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>233.22</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.7440855,-23.119131,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Parque Industrial → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 1,330<br/>
+            <b>TKU:</b> 1,013,518<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.019915,-19.946691,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 04/2025<br/>
+            <b>TU:</b> 1,330<br/>
+            <b>TKU:</b> 1,013,518<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>214.41</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.360907499999996,-21.7325865,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>05/2025</name>
+<Placemark>
+<name>Cruzeiro → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 19,491<br/>
+            <b>TKU:</b> 4,565,493<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 19,491<br/>
+            <b>TKU:</b> 4,565,493<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>236.44</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.780080999999996,-23.0805745,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 15,982<br/>
+            <b>TKU:</b> 2,949,510<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 15,982<br/>
+            <b>TKU:</b> 2,949,510<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>243.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.004117,-23.2081585,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 13,597<br/>
+            <b>TKU:</b> 2,422,849<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 13,597<br/>
+            <b>TKU:</b> 2,422,849<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>240.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.9531825,-23.2364065,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Parque Industrial → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 8,400<br/>
+            <b>TKU:</b> 6,401,169<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.019915,-19.946691,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 8,400<br/>
+            <b>TKU:</b> 6,401,169<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>214.41</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.360907499999996,-21.7325865,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cruzeiro → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 1,687<br/>
+            <b>TKU:</b> 419,184<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 05/2025<br/>
+            <b>TU:</b> 1,687<br/>
+            <b>TKU:</b> 419,184<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>233.22</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.7440855,-23.119131,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>06/2025</name>
+<Placemark>
+<name>Roseira → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 18,118<br/>
+            <b>TKU:</b> 3,343,713<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 18,118<br/>
+            <b>TKU:</b> 3,343,713<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>243.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.004117,-23.2081585,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cruzeiro → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 16,973<br/>
+            <b>TKU:</b> 3,975,687<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 16,973<br/>
+            <b>TKU:</b> 3,975,687<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>236.44</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.780080999999996,-23.0805745,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Parque Industrial → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 9,310<br/>
+            <b>TKU:</b> 7,094,629<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.019915,-19.946691,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 9,310<br/>
+            <b>TKU:</b> 7,094,629<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>214.41</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.360907499999996,-21.7325865,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cruzeiro → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 4,559<br/>
+            <b>TKU:</b> 1,132,815<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 4,559<br/>
+            <b>TKU:</b> 1,132,815<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>233.22</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.7440855,-23.119131,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 2,300<br/>
+            <b>TKU:</b> 409,837<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 06/2025<br/>
+            <b>TU:</b> 2,300<br/>
+            <b>TKU:</b> 409,837<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>240.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.9531825,-23.2364065,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>07/2025</name>
+<Placemark>
+<name>Cruzeiro → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 19,722<br/>
+            <b>TKU:</b> 4,619,602<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 19,722<br/>
+            <b>TKU:</b> 4,619,602<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>236.44</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.780080999999996,-23.0805745,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Parque Industrial → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 14,700<br/>
+            <b>TKU:</b> 11,303,373<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.019915,-19.946691,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 14,700<br/>
+            <b>TKU:</b> 11,303,373<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>214.41</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.360907499999996,-21.7325865,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 13,315<br/>
+            <b>TKU:</b> 2,372,599<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 13,315<br/>
+            <b>TKU:</b> 2,372,599<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>240.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.9531825,-23.2364065,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 6,982<br/>
+            <b>TKU:</b> 1,288,542<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 6,982<br/>
+            <b>TKU:</b> 1,288,542<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>243.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.004117,-23.2081585,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cruzeiro → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 5,380<br/>
+            <b>TKU:</b> 1,336,817<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 07/2025<br/>
+            <b>TU:</b> 5,380<br/>
+            <b>TKU:</b> 1,336,817<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>233.22</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.7440855,-23.119131,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>08/2025</name>
+<Placemark>
+<name>Cruzeiro → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 17,027<br/>
+            <b>TKU:</b> 3,988,336<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 17,027<br/>
+            <b>TKU:</b> 3,988,336<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>236.44</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.780080999999996,-23.0805745,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Parque Industrial → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 14,560<br/>
+            <b>TKU:</b> 11,195,722<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.019915,-19.946691,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 14,560<br/>
+            <b>TKU:</b> 11,195,722<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>214.41</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.360907499999996,-21.7325865,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 14,270<br/>
+            <b>TKU:</b> 2,542,771<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 14,270<br/>
+            <b>TKU:</b> 2,542,771<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>240.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.9531825,-23.2364065,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cruzeiro → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 5,550<br/>
+            <b>TKU:</b> 1,379,058<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 5,550<br/>
+            <b>TKU:</b> 1,379,058<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>233.22</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.7440855,-23.119131,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 4,446<br/>
+            <b>TKU:</b> 820,518<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 08/2025<br/>
+            <b>TU:</b> 4,446<br/>
+            <b>TKU:</b> 820,518<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>243.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.004117,-23.2081585,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>09/2025</name>
+<Placemark>
+<name>Cruzeiro → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 19,027<br/>
+            <b>TKU:</b> 4,456,808<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 19,027<br/>
+            <b>TKU:</b> 4,456,808<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>236.44</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.780080999999996,-23.0805745,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 13,093<br/>
+            <b>TKU:</b> 2,333,041<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 13,093<br/>
+            <b>TKU:</b> 2,333,041<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>240.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.9531825,-23.2364065,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Parque Industrial → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 12,740<br/>
+            <b>TKU:</b> 9,796,257<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.019915,-19.946691,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 12,740<br/>
+            <b>TKU:</b> 9,796,257<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>214.41</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.360907499999996,-21.7325865,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 10,102<br/>
+            <b>TKU:</b> 1,864,344<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 10,102<br/>
+            <b>TKU:</b> 1,864,344<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>243.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.004117,-23.2081585,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cruzeiro → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 5,466<br/>
+            <b>TKU:</b> 1,358,186<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 09/2025<br/>
+            <b>TU:</b> 5,466<br/>
+            <b>TKU:</b> 1,358,186<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>233.22</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.7440855,-23.119131,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>10/2025</name>
+<Placemark>
+<name>Cruzeiro → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 19,963<br/>
+            <b>TKU:</b> 4,676,053<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 19,963<br/>
+            <b>TKU:</b> 4,676,053<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>236.44</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.780080999999996,-23.0805745,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 13,233<br/>
+            <b>TKU:</b> 2,357,988<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 13,233<br/>
+            <b>TKU:</b> 2,357,988<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>240.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.9531825,-23.2364065,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Parque Industrial → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 11,620<br/>
+            <b>TKU:</b> 8,935,047<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.019915,-19.946691,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 11,620<br/>
+            <b>TKU:</b> 8,935,047<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>214.41</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.360907499999996,-21.7325865,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 11,340<br/>
+            <b>TKU:</b> 2,092,819<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 11,340<br/>
+            <b>TKU:</b> 2,092,819<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>243.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.004117,-23.2081585,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cruzeiro → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 7,040<br/>
+            <b>TKU:</b> 1,749,292<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 10/2025<br/>
+            <b>TU:</b> 7,040<br/>
+            <b>TKU:</b> 1,749,292<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>233.22</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.7440855,-23.119131,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>11/2025</name>
+<Placemark>
+<name>Cruzeiro → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 20,579<br/>
+            <b>TKU:</b> 4,833,091<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 20,579<br/>
+            <b>TKU:</b> 4,833,091<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>236.44</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.780080999999996,-23.0805745,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 14,742<br/>
+            <b>TKU:</b> 2,720,665<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 14,742<br/>
+            <b>TKU:</b> 2,720,665<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>243.90</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-46.004117,-23.2081585,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Roseira → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 8,062<br/>
+            <b>TKU:</b> 1,436,567<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-45.306334,-22.897835,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Roseira<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 8,062<br/>
+            <b>TKU:</b> 1,436,567<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>240.08</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.9531825,-23.2364065,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cruzeiro → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 6,084<br/>
+            <b>TKU:</b> 1,511,746<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 6,084<br/>
+            <b>TKU:</b> 1,511,746<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>233.22</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.7440855,-23.119131,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Parque Industrial → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 5,040<br/>
+            <b>TKU:</b> 3,868,053<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.019915,-19.946691,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 11/2025<br/>
+            <b>TU:</b> 5,040<br/>
+            <b>TKU:</b> 3,868,053<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>214.41</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.360907499999996,-21.7325865,0</coordinates></Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>12/2025</name>
+<Placemark>
+<name>Cruzeiro → Mooca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 23,923<br/>
+            <b>TKU:</b> 5,668,937<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.600031,-23.574978,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Mooca<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 23,923<br/>
+            <b>TKU:</b> 5,668,937<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>236.44</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.780080999999996,-23.0805745,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Cruzeiro → Santo André</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 6,239<br/>
+            <b>TKU:</b> 1,567,299<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.960131,-22.586171,0 -46.52804,-23.652091,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Cruzeiro<br/>
+            <b>Destino:</b> Santo André<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 6,239<br/>
+            <b>TKU:</b> 1,567,299<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>233.22</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.7440855,-23.119131,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Parque Industrial → Água Branca</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 6,090<br/>
+            <b>TKU:</b> 4,682,826<br/>
+            ]]></description>
+<styleUrl>#flowLine</styleUrl>
+<LineString><tessellate>1</tessellate>
+<coordinates>-44.019915,-19.946691,0 -46.7019,-23.518482,0</coordinates>
+</LineString>
+</Placemark>
+<Placemark>
+<name>→ Areia</name>
+<description><![CDATA[
+            <b>Ferrovia:</b> MRS<br/>
+            <b>Produto:</b> Areia<br/>
+            <b>Origem:</b> Parque Industrial<br/>
+            <b>Destino:</b> Água Branca<br/>
+            <b>Mês:</b> 12/2025<br/>
+            <b>TU:</b> 6,090<br/>
+            <b>TKU:</b> 4,682,826<br/>
+            ]]></description>
+<Style><IconStyle>
+<heading>214.41</heading><scale>0.9</scale>
+<Icon><href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href></Icon>
+</IconStyle></Style>
+<Point><coordinates>-45.360907499999996,-21.7325865,0</coordinates></Point>
+</Placemark>
+</Folder>
+</Document></kml>
