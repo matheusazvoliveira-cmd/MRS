@@ -691,22 +691,24 @@ def main():
 
     # Add station markers (off by default) with persistent labels (from cache)
     for s in st.session_state.stations_data_cache:
-        cm = folium.CircleMarker(
+        folium.CircleMarker(
             location=[s['lat'], s['lon']],
             radius=4,
             color="#0077cc",
             fill=True,
             fill_opacity=0.75,
             popup=s['popup']
-        )
-        folium.Tooltip(
-            s['label'],
-            permanent=True,
-            sticky=False,
-            style="font-size:10px; background:white; padding:2px 4px; "
-                  "border-radius:2px; border:1px solid #999; white-space:nowrap;"
-        ).add_to(cm)
-        cm.add_to(stations_layer)
+        ).add_to(stations_layer)
+
+        folium.Marker(
+            location=[s['lat'], s['lon']],
+            popup=s['popup'],
+            icon=folium.DivIcon(
+                html=f"<div style='font-size: 10px; background-color: white; "
+                     f"padding: 2px 4px; border-radius: 2px; border: 1px solid #999; "
+                     f"white-space: nowrap;'>{s['label']}</div>"
+            )
+        ).add_to(stations_layer)
 
     # Run routing on button click
     if run_btn:
