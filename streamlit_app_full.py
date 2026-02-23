@@ -413,26 +413,31 @@ def main():
         return
 
     # Compute and cache all derived data once per session
-    if 'derived_data' not in st.session_state:
+    if 'derived_data' not in st.session_state or 'rails_all_ll' not in st.session_state.derived_data:
         with st.spinner("Preparing data..."):
             rails_all_m = rails_all.to_crs(epsg=3857)
             rails_mrs = rails_all[rails_all[FILTER_COLUMN] == MRS_CODE].copy()
             rails_mrs_ll = rails_mrs.to_crs(epsg=4326)
+            rails_all_ll = rails_all.to_crs(epsg=4326)
             _, stations_near_ll, stations_lookup, labels = prepare_stations(stations_all)
             centroid = stations_near_ll.geometry.union_all().centroid
             st.session_state.derived_data = {
                 'rails_all_m': rails_all_m,
                 'rails_mrs_ll': rails_mrs_ll,
+                'rails_all_ll': rails_all_ll,
                 'stations_near_ll': stations_near_ll,
                 'stations_lookup': stations_lookup,
                 'labels': labels,
                 'map_center': [centroid.y, centroid.x],
             }
+            # Invalidate coord caches so they get rebuilt from new derived data
+            st.session_state.pop('rails_all_coords_cache', None)
         st.success(f"Loaded {len(labels)} stations, {len(rails_all)} rail features")
 
     d = st.session_state.derived_data
-    rails_all_m    = d['rails_all_m']
-    rails_mrs_ll   = d['rails_mrs_ll']
+    rails_all_m      = d['rails_all_m']
+    rails_mrs_ll     = d['rails_mrs_ll']
+    rails_all_ll     = d['rails_all_ll']
     stations_near_ll = d['stations_near_ll']
     stations_lookup  = d['stations_lookup']
     labels           = d['labels']
@@ -625,6 +630,13 @@ def main():
                 _cache.append([(lat, lon) for lon, lat in line.coords])
         st.session_state.rails_coords_cache = _cache
 
+    if 'rails_all_coords_cache' not in st.session_state:
+        _cache = []
+        for _, row in rails_all_ll.iterrows():
+            for line in iter_lines(row.geometry):
+                _cache.append([(lat, lon) for lon, lat in line.coords])
+        st.session_state.rails_all_coords_cache = _cache
+
     if 'stations_data_cache' not in st.session_state:
         _cache = []
         for _, row in stations_near_ll.iterrows():
@@ -675,10 +687,20 @@ def main():
         bounds=_BR_BOUNDS,
     ).add_to(m)
 
-    rails_layer = folium.FeatureGroup(name="MRS Rails (Code 11)", show=True)
-    stations_layer = folium.FeatureGroup(name="All Stations", show=False)
-    route_layer = folium.FeatureGroup(name="Preview Route Track", show=True)
+    all_rails_layer  = folium.FeatureGroup(name="All Brazil Rails", show=False)
+    rails_layer      = folium.FeatureGroup(name="MRS Rails (Code 11)", show=True)
+    stations_layer   = folium.FeatureGroup(name="All Stations", show=False)
+    route_layer      = folium.FeatureGroup(name="Preview Route Track", show=True)
     route_stations_layer = folium.FeatureGroup(name="Preview Stations", show=True)
+
+    # All Brazil rails layer (off by default)
+    for coords in st.session_state.rails_all_coords_cache:
+        folium.PolyLine(
+            coords,
+            color="#ff7f0e",
+            weight=BASE_RAIL_WEIGHT,
+            opacity=0.85
+        ).add_to(all_rails_layer)
 
     # Add MRS rails base layer (from session-state coord cache)
     for coords in st.session_state.rails_coords_cache:
@@ -702,11 +724,14 @@ def main():
 
         folium.Marker(
             location=[s['lat'], s['lon']],
-            popup=s['popup'],
             icon=folium.DivIcon(
-                html=f"<div style='font-size: 10px; background-color: white; "
-                     f"padding: 2px 4px; border-radius: 2px; border: 1px solid #999; "
-                     f"white-space: nowrap;'>{s['label']}</div>"
+                html=f"<div style='font-size: 10px; font-weight: bold; color: black; "
+                     f"background-color: white; padding: 2px 4px; "
+                     f"border-radius: 2px; border: 1px solid #999; "
+                     f"white-space: nowrap; transform: translateX(-50%); "
+                     f"margin-top: 8px;'>{s['label']}</div>",
+                icon_size=(0, 0),
+                icon_anchor=(0, 0)
             )
         ).add_to(stations_layer)
 
@@ -908,8 +933,21 @@ def main():
                         tooltip=f"{system_name}: {p['label']}",
                         popup=p['label']
                     ).add_to(system_layer)
+                    folium.Marker(
+                        location=[p['lat'], p['lon']],
+                        icon=folium.DivIcon(
+                            html=f"<div style='font-size: 10px; font-weight: bold; "
+                                 f"background-color: white; color: black; padding: 2px 4px; "
+                                 f"border-radius: 2px; border: 1px solid #999; "
+                                 f"white-space: nowrap; transform: translateX(-50%); "
+                                 f"margin-top: 12px;'>{p['label']}</div>",
+                            icon_size=(0, 0),
+                            icon_anchor=(0, 0)
+                        )
+                    ).add_to(system_layer)
         system_layer.add_to(m)
 
+    all_rails_layer.add_to(m)
     rails_layer.add_to(m)
     stations_layer.add_to(m)
     route_layer.add_to(m)
