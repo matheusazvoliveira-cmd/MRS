@@ -1,0 +1,38 @@
+Timestamp: 2026-02-24T16:45:46.7017718-03:00
+ExePath: C:\Users\matheus.deoliveira\OneDrive - Wabtec Corporation\Matheus\wabtec\Advanced Technology\MRS\MRS\dist\MRS_Map.exe
+WorkingDir: C:\Users\matheus.deoliveira\OneDrive - Wabtec Corporation\Matheus\wabtec\Advanced Technology\MRS\MRS\dist
+Host: CTGLAP2285
+User: matheus.deoliveira
+OS: Microsoft Windows NT 10.0.22631.0
+PSVersion: 5.1.22621.6345
+StreamlitLogLevel: debug
+TimeoutMinutes: 1
+
+Executable file info:
+
+
+Name          : MRS_Map.exe
+Length        : 214863843
+CreationTime  : 24/02/2026 16:11:32
+LastWriteTime : 24/02/2026 16:12:09
+
+
+
+
+File hash (SHA256):
+
+
+Algorithm : SHA256
+Hash      : 36FE37C58659491C21CDA54B41EE9A1EA5DD56FB62AF2ECD6F8
+            7E5AE864C1DBA
+Path      : C:\Users\matheus.deoliveira\OneDrive - Wabtec 
+            Corporation\Matheus\wabtec\Advanced 
+            Technology\MRS\MRS\dist\MRS_Map.exe
+
+
+
+
+
+Port checks after startup:
+Port 8501: CLOSED
+Port 3000: CLOSED

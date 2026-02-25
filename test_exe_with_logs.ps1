@@ -89,10 +89,21 @@ if ($TimeoutMinutes -gt 0) {
     if (-not $finished) {
         Write-Warning "Timeout reached ($TimeoutMinutes min). Stopping process..."
         Stop-Process -Id $proc.Id -Force
+        Wait-Process -Id $proc.Id -ErrorAction SilentlyContinue
     }
 } else {
     Write-Host "App is running. Reproduce the issue, then close the app window/terminal to finish logging."
     Wait-Process -Id $proc.Id
+}
+
+try {
+    $proc.Refresh()
+    Add-Content -Path $metaLog -Value ""
+    Add-Content -Path $metaLog -Value ("Process exited: " + $proc.HasExited)
+    Add-Content -Path $metaLog -Value ("Exit code: " + $proc.ExitCode)
+} catch {
+    Add-Content -Path $metaLog -Value ""
+    Add-Content -Path $metaLog -Value "Process exit information unavailable"
 }
 
 $stdoutText = if (Test-Path $stdoutLog) { Get-Content $stdoutLog -Raw } else { '' }
@@ -122,7 +133,20 @@ foreach ($f in $possibleAppFiles) {
 if (Test-Path $zipPath) {
     Remove-Item $zipPath -Force
 }
-Compress-Archive -Path (Join-Path $runDir '*') -DestinationPath $zipPath
+
+$zipped = $false
+for ($i = 0; $i -lt 3 -and -not $zipped; $i++) {
+    try {
+        Compress-Archive -Path (Join-Path $runDir '*') -DestinationPath $zipPath -Force
+        $zipped = $true
+    } catch {
+        Start-Sleep -Seconds 2
+    }
+}
+
+if (-not $zipped) {
+    Write-Warning "Could not create zip bundle due to file locks. Logs are still in: $runDir"
+}
 
 Write-Host ""
 Write-Host "Debug bundle ready:"

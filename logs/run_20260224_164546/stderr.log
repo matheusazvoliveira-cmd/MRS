@@ -1,0 +1,12 @@
+2026-02-24 16:47:18.196 WARNING streamlit.web.cli: Setting the log level using the --log_level flag is unsupported.
+Use the --logger.level flag (after your streamlit command) instead.
+2026-02-24 16:50:57.913 Uncaught app execution
+Traceback (most recent call last):
+  File "streamlit\runtime\scriptrunner\exec_code.py", line 129, in exec_func_with_error_handling
+    result = func()
+  File "streamlit\runtime\scriptrunner\script_runner.py", line 689, in code_to_exec
+    exec(code, module.__dict__)  # noqa: S102
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\matheus.deoliveira\AppData\Local\Temp\_MEI234722\streamlit_app_full.py", line 30, in <module>
+    import networkx as nx
+ModuleNotFoundError: No module named 'networkx'
