@@ -1,0 +1,33 @@
+Timestamp: 2026-02-24T16:02:13.7172953-03:00
+ExePath: C:\Users\matheus.deoliveira\OneDrive - Wabtec Corporation\Matheus\wabtec\Advanced Technology\MRS\MRS\dist\MRS_Map.exe
+WorkingDir: C:\Users\matheus.deoliveira\OneDrive - Wabtec Corporation\Matheus\wabtec\Advanced Technology\MRS\MRS\dist
+Host: CTGLAP2285
+User: matheus.deoliveira
+OS: Microsoft Windows NT 10.0.22631.0
+PSVersion: 5.1.22621.6345
+StreamlitLogLevel: debug
+TimeoutMinutes: 1
+
+Executable file info:
+
+
+Name          : MRS_Map.exe
+Length        : 214862697
+CreationTime  : 24/02/2026 15:42:12
+LastWriteTime : 24/02/2026 15:42:47
+
+
+
+
+File hash (SHA256):
+
+
+Algorithm : SHA256
+Hash      : 740223F21BDD04F60403E797AD8DFFC9B6AD50FD1B504E9A4FCFE54EA80C0D58
+Path      : C:\Users\matheus.deoliveira\OneDrive - Wabtec 
+            Corporation\Matheus\wabtec\Advanced 
+            Technology\MRS\MRS\dist\MRS_Map.exe
+
+
+
+

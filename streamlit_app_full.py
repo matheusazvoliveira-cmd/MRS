@@ -21,6 +21,7 @@ logging.getLogger('streamlit').addFilter(_NoScriptRunCtxFilter())
 from pathlib import Path
 import json
 import time
+import sys
 
 import streamlit as st
 import geopandas as gpd
@@ -41,8 +42,31 @@ from streamlit_folium import st_folium
 # CONFIGURATION (match notebook settings)
 # ============================================================================
 
-RAILS_SHP_PATH = Path(r"/home/matheusazv/Documentos/Advance technology/Estacoes Code/LInhas/Linhas_BR.shp")
-STATIONS_SHP_PATH = Path(r"/home/matheusazv/Documentos/Advance technology/Estacoes Code/Estacoes/Estacoes.shp")
+def _app_base_dir():
+    if getattr(sys, 'frozen', False):
+        return Path(sys.executable).resolve().parent
+    return Path(__file__).parent.resolve()
+
+
+def _resource_base_dir():
+    return Path(getattr(sys, '_MEIPASS', _app_base_dir())).resolve()
+
+
+def _resolve_resource(relative_path):
+    rel = Path(relative_path)
+    candidates = [
+        _resource_base_dir() / rel,
+        _app_base_dir() / rel,
+        Path.cwd() / rel,
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return candidates[0]
+
+
+RAILS_SHP_PATH = _resolve_resource(Path("LInhas") / "Linhas_BR.shp")
+STATIONS_SHP_PATH = _resolve_resource(Path("Estacoes") / "Estacoes.shp")
 
 FILTER_COLUMN = "CodigoFerr"
 MRS_CODE = 11
@@ -91,10 +115,10 @@ HIGHLIGHT_OPACITY = 1.0
 
 to_4326 = Transformer.from_crs('EPSG:3857', 'EPSG:4326', always_xy=True)
 
-# Default save file paths — always absolute, anchored to this script's directory
-_SCRIPT_DIR = Path(__file__).parent.resolve()
-HIGHLIGHTS_SAVE_PATH = _SCRIPT_DIR / "committed_highlights.json"   # live auto-save (every commit/delete)
-EXPORT_SAVE_PATH     = _SCRIPT_DIR / "exported_highlights.json"    # manual export snapshot only
+# Default save file paths — absolute, anchored to app launch directory
+_APP_DIR = _app_base_dir()
+HIGHLIGHTS_SAVE_PATH = _APP_DIR / "committed_highlights.json"   # live auto-save (every commit/delete)
+EXPORT_SAVE_PATH     = _APP_DIR / "exported_highlights.json"    # manual export snapshot only
 
 def save_highlights(highlights_dict):
     """Save committed highlights to disk as JSON."""
@@ -123,6 +147,11 @@ def load_highlights():
 @st.cache_data
 def load_data():
     """Load shapefiles — raises on failure so the caller can show the error in context."""
+    if not RAILS_SHP_PATH.exists():
+        raise FileNotFoundError(f"Rails shapefile not found: {RAILS_SHP_PATH}")
+    if not STATIONS_SHP_PATH.exists():
+        raise FileNotFoundError(f"Stations shapefile not found: {STATIONS_SHP_PATH}")
+
     rails_all = gpd.read_file(RAILS_SHP_PATH)
     stations_all = gpd.read_file(STATIONS_SHP_PATH)
 
@@ -183,7 +212,7 @@ def prepare_stations(stations_all):
 
 def edge_cost(length, codigo, routing_mode, penalty_mult):
     """Compute edge traversal cost, applying penalty for non-MRS segments."""
-    if routing_mode == PREFER_MRS and codigo != MRS_CODE:
+    if routing_mode == PREFER_MRS and pd.notna(codigo) and codigo != MRS_CODE:
         return length * float(penalty_mult)
     return length
 
@@ -461,11 +490,15 @@ def main():
         else:
             penalty = 1.0
 
-        do_node = st.checkbox("Node intersections", value=NODE_INTERSECTIONS_DEFAULT, key="node")
-        do_edge = st.checkbox("Snap waypoints to edges", value=SNAP_WAYPOINTS_TO_EDGES_DEFAULT, key="edge")
-        do_corr = st.checkbox("Constrain to corridor", value=CONSTRAIN_CORRIDOR_DEFAULT, key="corr")
+        do_node = st.checkbox("Node intersections", value=NODE_INTERSECTIONS_DEFAULT, key="node", 
+                             help="⚠️ SLOW - Expensive geometry operation")
+        do_edge = st.checkbox("Snap waypoints to edges", value=SNAP_WAYPOINTS_TO_EDGES_DEFAULT, key="edge",
+                             help="Spatial search - can add 30-60 seconds")
+        do_corr = st.checkbox("Constrain to corridor", value=CONSTRAIN_CORRIDOR_DEFAULT, key="corr",
+                             help="⚠️ SLOW for complex networks")
         if do_corr:
-            buf_km = st.slider("Corridor buffer (km)", 5.0, 80.0, CORRIDOR_BUFFER_KM_DEFAULT, key="buf")
+            buf_km = st.slider("Corridor buffer (km)", 5.0, 80.0, CORRIDOR_BUFFER_KM_DEFAULT, key="buf",
+                             help="Smaller = faster")
         else:
             buf_km = CORRIDOR_BUFFER_KM_DEFAULT
 
@@ -474,6 +507,35 @@ def main():
         path_name = st.text_input("Path name (optional)", "", key="path_name",
                                    placeholder="e.g. Direct, Via Campinas…")
 
+        st.divider()
+        st.subheader("🎨 Rendering Options")
+        render_committed = st.checkbox("Show committed highlights on map", value=True, key="render_committed",
+                                       help="Toggle off to speed up map rendering with many paths")
+        if render_committed:
+            simplify_coords = st.checkbox("Simplify path coordinates", value=False, key="simplify",
+                                         help="Reduce coordinate density for faster rendering (slight visual quality loss)")
+        else:
+            simplify_coords = False
+
+        st.divider()
+        st.subheader("📍 Station Finder")
+        find_station = st.selectbox(
+            "Find station on map:",
+            options=["(Select a station...)"] + labels,
+            key="find_station",
+            help="Highlight a station on the map to find its location"
+        )
+        if find_station != "(Select a station...)":
+            if 'highlighted_station' not in st.session_state:
+                st.session_state.highlighted_station = None
+            if st.button("📌 Mark on Map", key="mark_station"):
+                st.session_state.highlighted_station = find_station
+                st.success(f"Marked: {find_station}")
+            if st.button("🔄 Clear Marker", key="clear_marker"):
+                st.session_state.highlighted_station = None
+                st.info("Marker cleared")
+        
+        st.divider()
         run_btn = st.button("Compute Preview", key="run")
         commit_btn = st.button("Commit Highlight", key="commit")
         progress_bar = st.progress(0)
@@ -537,7 +599,18 @@ def main():
         st.divider()
         n_committed = sum(len(v) for v in st.session_state.committed_highlights.values())
         n_systems_committed = len(st.session_state.committed_highlights)
+        
+        # Calculate total coordinates for performance diagnostic
+        total_coords = sum(
+            len(path.get('coords_ll', []))
+            for paths in st.session_state.committed_highlights.values()
+            for path in paths
+        )
+        
         st.subheader(f"Committed Systems ({n_systems_committed} | {n_committed} paths)")
+        if total_coords > 0:
+            perf_color = "🟢" if total_coords < 5000 else "🟡" if total_coords < 20000 else "🔴"
+            st.caption(f"{perf_color} Total coordinates: {total_coords:,} | Avg: {total_coords//max(1,n_committed):,}/path")
 
         # Display committed highlights grouped by name
         if st.session_state.committed_highlights:
@@ -571,7 +644,7 @@ def main():
                     col_sj, col_sc = st.columns(2)
                     with col_sj:
                         if st.button("📄 Export JSON", key=f"export_json_{system_name}"):
-                            sys_export_path = _SCRIPT_DIR / f"{system_name}.json"
+                            sys_export_path = _APP_DIR / f"{system_name}.json"
                             try:
                                 with open(str(sys_export_path), 'w') as f:
                                     json.dump({system_name: paths_list}, f, indent=2)
@@ -586,6 +659,19 @@ def main():
                     for i, path_info in enumerate(paths_list):
                         route_text = " → ".join(path_info.get('order', []))
                         dist_text = f"{path_info.get('total_km', 0.0):.1f} km"
+                        n_coords = len(path_info.get('coords_ll', []))
+                        
+                        # Performance indicator
+                        if n_coords > 1000:
+                            perf_icon = "🔴"
+                            perf_hint = f" (⚠️ {n_coords:,} coords - may cause lag)"
+                        elif n_coords > 500:
+                            perf_icon = "🟡"
+                            perf_hint = f" ({n_coords:,} coords)"
+                        else:
+                            perf_icon = "🟢"
+                            perf_hint = f" ({n_coords:,} coords)"
+                        
                         auto_label = f"{route_text} ({dist_text})"
                         current_path_name = path_info.get('path_name') or auto_label
 
@@ -610,7 +696,49 @@ def main():
                                     del highlight_groups[system_name]
                                 save_highlights(st.session_state.committed_highlights)
                                 st.rerun()
-                        st.caption(f"↳ {route_text} · {dist_text}")
+                        st.caption(f"{perf_icon} {route_text} · {dist_text}{perf_hint}")
+                        
+                        # Offer simplification for high-coordinate paths
+                        if n_coords > 500:
+                            st.warning(f"⚠️ This path has {n_coords:,} coordinates. Consider simplification for better performance.")
+                            col_s1, col_s2, col_s3 = st.columns([2, 1, 1])
+                            with col_s1:
+                                simplify_factor = st.slider(
+                                    "Reduce to points:",
+                                    min_value=50,
+                                    max_value=min(500, n_coords),
+                                    value=min(200, n_coords // 2),
+                                    step=50,
+                                    key=f"simplify_slider_{system_name}_{i}",
+                                    help="Reduce coordinate density to improve performance"
+                                )
+                            with col_s2:
+                                if st.button("💾 Backup", key=f"backup_btn_{system_name}_{i}", help="Export backup before simplifying"):
+                                    backup_path = _APP_DIR / f"{system_name}_path{i}_backup.json"
+                                    try:
+                                        with open(str(backup_path), 'w') as f:
+                                            json.dump({f"{system_name}_backup": [path_info]}, f, indent=2)
+                                        st.success(f"Backed up → {backup_path.name}")
+                                    except Exception as e:
+                                        st.error(f"Backup failed: {e}")
+                            with col_s3:
+                                if st.button("⚡ Simplify", key=f"simplify_btn_{system_name}_{i}", help="⚠️ PERMANENT - Cannot undo!"):
+                                    coords = path_info['coords_ll']
+                                    if len(coords) > simplify_factor:
+                                        # Auto-backup before simplification
+                                        backup_path = _APP_DIR / f"{system_name}_path{i}_backup_{int(time.time())}.json"
+                                        try:
+                                            with open(str(backup_path), 'w') as f:
+                                                json.dump({f"{system_name}_original": [path_info.copy()]}, f, indent=2)
+                                        except:
+                                            pass  # Continue even if backup fails
+                                        
+                                        step = len(coords) // simplify_factor
+                                        path_info['coords_ll'] = coords[::step] + [coords[-1]]
+                                        save_highlights(st.session_state.committed_highlights)
+                                        st.success(f"✅ Reduced from {n_coords:,} to {len(path_info['coords_ll']):,} coords | Backup: {backup_path.name}")
+                                        st.rerun()
+                            st.caption("⚠️ Simplification is PERMANENT. Original coordinates cannot be restored. Backup first!")
         else:
             st.info("No committed highlights yet. Compute and commit a route above.")
 
@@ -737,6 +865,7 @@ def main():
 
     # Run routing on button click
     if run_btn:
+        t_start = time.time()
         with st.spinner("Building graph..."):
             order = [origin] + list(vias) + [destination]
 
@@ -750,6 +879,7 @@ def main():
                 row = stations_lookup.loc[lab]
                 pts.append((float(row.geometry.x), float(row.geometry.y)))
 
+            t_graph_start = time.time()
             G, node_coords, tree, edges_pack = build_graph(
                 pts, routing_mode, penalty, rails_all_m,
                 node_intersections=do_node,
@@ -757,6 +887,7 @@ def main():
                 corridor_buffer_m=buf_km * 1000.0,
                 progress_cb=prog_cb
             )
+            t_graph = time.time() - t_graph_start
 
             if G is None or len(G) == 0:
                 st.error("No graph built. Try relaxing corridor constraint or increasing buffer.")
@@ -785,6 +916,7 @@ def main():
             w_metric = 'length_m' if routing_mode == ALLOW_ALL else 'weight'
             seg_paths = []
             total_km = 0.0
+            t_route_start = time.time()
 
             for i in range(len(wp_nodes) - 1):
                 s, t = wp_nodes[i], wp_nodes[i + 1]
@@ -796,6 +928,8 @@ def main():
                 except nx.NetworkXNoPath:
                     st.error(f"No path found for segment {order[i]} → {order[i+1]}")
                     return
+
+            t_route = time.time() - t_route_start
 
             full_path = stitch_paths(seg_paths)
             coords_ll = nodes_to_latlon(node_coords, full_path)
@@ -822,6 +956,26 @@ def main():
             }
 
             progress_bar.progress(100)
+            t_total = time.time() - t_start
+            
+            # Show performance breakdown
+            perf_col1, perf_col2, perf_col3 = st.columns(3)
+            with perf_col1:
+                st.metric("Graph Build", f"{t_graph:.1f}s")
+            with perf_col2:
+                st.metric("Routing", f"{t_route:.1f}s")
+            with perf_col3:
+                st.metric("Total Time", f"{t_total:.1f}s")
+            
+            if t_total > 60:
+                st.warning(
+                    f"⚠️ **Computation took {t_total:.0f}s**. To speed up:\n"
+                    f"- Uncheck '**Node intersections**' (most time-consuming)\n"
+                    f"- Uncheck '**Snap waypoints to edges**'\n"
+                    f"- Uncheck '**Constrain to corridor**' or reduce buffer\n"
+                    f"- Use fewer VIA stations"
+                )
+            
             status_txt.text(f"✅ Route complete: {total_km:.1f} km")
 
             # Show route info
@@ -906,46 +1060,84 @@ def main():
     # reference to the parent map and cannot be safely reused across reruns.
     # The data (coords_ll, colors, etc.) is already plain Python so this loop
     # is fast even with many committed paths.
-    for system_name in sorted(st.session_state.get('committed_highlights', {}).keys()):
-        system_layer = folium.FeatureGroup(name=f"System: {system_name}", show=True)
-        for h in st.session_state.committed_highlights[system_name]:
-            if h.get('coords_ll'):
-                folium.PolyLine(
-                    h['coords_ll'],
-                    color=h.get('route_color', PREVIEW_COLOR),
-                    weight=HIGHLIGHT_WEIGHT,
-                    opacity=0.9,
-                    popup=f"{h.get('path_name') or h.get('highlight_name', 'Route')} ({h.get('total_km', 0.0):.1f} km)"
-                ).add_to(system_layer)
-            pts = h.get('preview_station_points', [])
-            if pts:
-                endpoint_idxs = [0] if len(pts) == 1 else [0, len(pts) - 1]
-                for idx in endpoint_idxs:
-                    p = pts[idx]
-                    folium.CircleMarker(
-                        location=[p['lat'], p['lon']],
-                        radius=8,
+    # PERFORMANCE: Only render if toggle is enabled
+    if render_committed:
+        for system_name in sorted(st.session_state.get('committed_highlights', {}).keys()):
+            system_layer = folium.FeatureGroup(name=f"System: {system_name}", show=False)  # Hidden by default for performance
+            for h in st.session_state.committed_highlights[system_name]:
+                # Optionally simplify coordinates for better performance
+                coords = h.get('coords_ll', [])
+                if simplify_coords and len(coords) > 100:
+                    # Keep every Nth point (adaptive based on path length)
+                    step = max(2, len(coords) // 100)
+                    coords = coords[::step] + [coords[-1]]  # Always include last point
+                if coords:
+                    folium.PolyLine(
+                        coords,
                         color=h.get('route_color', PREVIEW_COLOR),
-                        weight=2,
-                        fill=True,
-                        fill_color="#ffffff",
-                        fill_opacity=1.0,
-                        tooltip=f"{system_name}: {p['label']}",
-                        popup=p['label']
+                        weight=HIGHLIGHT_WEIGHT,
+                        opacity=0.9,
+                        popup=f"{h.get('path_name') or h.get('highlight_name', 'Route')} ({h.get('total_km', 0.0):.1f} km)"
                     ).add_to(system_layer)
-                    folium.Marker(
-                        location=[p['lat'], p['lon']],
-                        icon=folium.DivIcon(
-                            html=f"<div style='font-size: 10px; font-weight: bold; "
-                                 f"background-color: white; color: black; padding: 2px 4px; "
-                                 f"border-radius: 2px; border: 1px solid #999; "
-                                 f"white-space: nowrap; transform: translateX(-50%); "
-                                 f"margin-top: 12px;'>{p['label']}</div>",
-                            icon_size=(0, 0),
-                            icon_anchor=(0, 0)
-                        )
-                    ).add_to(system_layer)
-        system_layer.add_to(m)
+                pts = h.get('preview_station_points', [])
+                if pts:
+                    endpoint_idxs = [0] if len(pts) == 1 else [0, len(pts) - 1]
+                    for idx in endpoint_idxs:
+                        p = pts[idx]
+                        folium.CircleMarker(
+                            location=[p['lat'], p['lon']],
+                            radius=8,
+                            color=h.get('route_color', PREVIEW_COLOR),
+                            weight=2,
+                            fill=True,
+                            fill_color="#ffffff",
+                            fill_opacity=1.0,
+                            tooltip=f"{system_name}: {p['label']}",
+                            popup=p['label']
+                        ).add_to(system_layer)
+                        folium.Marker(
+                            location=[p['lat'], p['lon']],
+                            icon=folium.DivIcon(
+                                html=f"<div style='font-size: 10px; font-weight: bold; "
+                                     f"background-color: white; color: black; padding: 2px 4px; "
+                                     f"border-radius: 2px; border: 1px solid #999; "
+                                     f"white-space: nowrap; transform: translateX(-50%); "
+                                     f"margin-top: 12px;'>{p['label']}</div>",
+                                icon_size=(0, 0),
+                                icon_anchor=(0, 0)
+                            )
+                        ).add_to(system_layer)
+            system_layer.add_to(m)
+
+    # Draw station finder marker if selected
+    highlighted_station = st.session_state.get('highlighted_station')
+    if highlighted_station:
+        try:
+            station_row = stations_lookup.loc[highlighted_station]
+            # Convert from EPSG:3857 (meters) to EPSG:4326 (lat/lon) for Folium
+            lon4326, lat4326 = to_4326.transform(station_row.geometry.x, station_row.geometry.y)
+            
+            marker_layer = folium.FeatureGroup(name="🎯 Selected Station", show=True)
+            folium.CircleMarker(
+                location=[lat4326, lon4326],
+                radius=20,
+                color="#FF0000",
+                weight=3,
+                fill=True,
+                fill_color="#FF0000",
+                fill_opacity=0.5,
+                popup=highlighted_station,
+                tooltip=f"📍 {highlighted_station}"
+            ).add_to(marker_layer)
+            folium.Marker(
+                location=[lat4326, lon4326],
+                icon=folium.Icon(color='red', icon='star', prefix='fa'),
+                popup=highlighted_station,
+                tooltip=highlighted_station
+            ).add_to(marker_layer)
+            marker_layer.add_to(m)
+        except Exception as e:
+            st.warning(f"Station marker error: {e}")
 
     all_rails_layer.add_to(m)
     rails_layer.add_to(m)
