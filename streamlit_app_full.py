@@ -331,14 +331,14 @@ def compute_label_offset(lat, lon, layout_state=None, collision_radius_m=5000.0)
     if layout_state is None:
         return 8, -50
 
-    # Simple alternating pattern: odd stations on left, even on right
+    # Simple alternating pattern: even stations text ends at marker, odd starts at marker
     count = len(layout_state)
     
     if count % 2 == 0:
-        # Even: label on left (text extends right, ends at marker)
+        # Even: text ends at marker (right edge of label at station dot)
         translate_x_pct = -100
     else:
-        # Odd: label on right (text extends left, starts at marker)
+        # Odd: text starts at marker (left edge of label at station dot)
         translate_x_pct = 0
     
     margin_top = 8
@@ -435,7 +435,7 @@ def _add_label_marker(layer, lat, lon, text, margin_top=LABEL_MARGIN_TOP_DEFAULT
         location=[lat, lon],
         icon=folium.DivIcon(
             html=(
-                f"<div style='font-size:{font_size}px;font-weight:bold;"
+                f"<div style='display:inline-block;font-size:{font_size}px;font-weight:bold;"
                 f"background-color:white;color:black;padding:2px 4px;"
                 f"border-radius:2px;border:1px solid #999;"
                 f"white-space:nowrap;transform:translateX({translate_x_pct}%);"
@@ -1955,12 +1955,12 @@ def main():
     # is fast even with many committed paths.
     # PERFORMANCE: Only render if toggle is enabled
     if render_committed:
+        # Global dedup + alternation across ALL systems so a station that
+        # appears in multiple systems is only labelled once on the map.
+        route_labels_layout = []
+        rendered_station_keys = set()
         for system_name in sorted(st.session_state.get('committed_highlights', {}).keys()):
             system_layer = folium.FeatureGroup(name=f"System: {system_name}", show=False)  # Hidden by default for performance
-            # Keep one running left/right alternation sequence for the entire system
-            route_labels_layout = []
-            # Prevent duplicate station markers/labels within the same system layer
-            rendered_station_keys = set()
             for h in st.session_state.committed_highlights[system_name]:
                 # Optionally simplify coordinates for better performance
                 coords = h.get('coords_ll', [])
