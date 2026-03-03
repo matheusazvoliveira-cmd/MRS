@@ -1902,15 +1902,11 @@ def main():
 
             auto_label = " → ".join(preview_data.get('order', []))
             committed_path_name = preview_data.get('path_name', '').strip() or auto_label
-            payload = _make_path_payload(
-                coords_ll=list(preview_data.get('coords_ll', [])),
-                order=list(preview_data.get('order', [])),
-                total_km=float(preview_data.get('total_km', 0.0)),
-                route_color=preview_data.get('route_color', PREVIEW_COLOR),
-                highlight_name=system_name,
-                path_name=committed_path_name,
-                preview_station_points=list(preview_data.get('preview_station_points', [])),
-            )
+            # Build payload with updated highlight_name and path_name
+            temp_data = dict(preview_data)
+            temp_data['highlight_name'] = system_name
+            temp_data['path_name'] = committed_path_name
+            payload = _make_path_payload(temp_data)
             st.session_state.committed_highlights[system_name].append(payload)
             save_highlights(st.session_state.committed_highlights)
             st.success(f"Committed: **{system_name}** → {HIGHLIGHTS_SAVE_PATH.name} (auto-saved)")
