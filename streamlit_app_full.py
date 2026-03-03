@@ -326,8 +326,17 @@ def stations_along_path(coords_ll, stations_lookup, tolerance_m=150.0):
     return out
 
 
-def compute_label_offset(lat, lon, layout_state=None, collision_radius_m=5000.0):
-    """Compute vertical/horizontal offsets to reduce collisions among nearby labels."""
+def compute_label_offset(lat, lon, layout_state=None, collision_radius_m=5000.0, label_text=None):
+    """Compute vertical/horizontal offsets to reduce collisions among nearby labels.
+    
+    Checks session state for custom label offsets first, then falls back to automatic collision avoidance.
+    """
+    # Check for manual override
+    if label_text and 'custom_label_offsets' in st.session_state:
+        custom = st.session_state.custom_label_offsets.get(label_text)
+        if custom is not None:
+            return custom  # (margin_top, translate_x_pct) tuple
+    
     if layout_state is None:
         return 8, -50
 
@@ -440,6 +449,7 @@ def add_station_shape_marker(
         lat,
         lon,
         layout_state=label_layout_state,
+        label_text=label,
     )
 
     # Add label text near marker with collision-avoidance offset
@@ -905,6 +915,8 @@ def main():
         st.session_state.station_group_systems = load_station_group_systems()
     if 'active_station_group_systems' not in st.session_state:
         st.session_state.active_station_group_systems = []
+    if 'custom_label_offsets' not in st.session_state:
+        st.session_state.custom_label_offsets = {}
 
     # Load raw data (instant after first call — @st.cache_data)
     try:
@@ -1015,6 +1027,98 @@ def main():
             if st.button("🔄 Clear Marker", key="clear_marker"):
                 st.session_state.highlighted_station = None
                 st.info("Marker cleared")
+        
+        st.divider()
+        st.subheader("🎯 Manual Label Positioning")
+        st.caption("Override automatic label placement for specific stations")
+        
+        adjust_station = st.selectbox(
+            "Station to adjust:",
+            options=["(Select...)" ] + sorted(labels),
+            key="adjust_label_station"
+        )
+        
+        if adjust_station != "(Select...)":
+            # Preset position options
+            position_presets = {
+                "Auto (collision-avoid)": None,
+                "Center below": (8, -50),
+                "Far left": (8, -100),
+                "Far right": (8, 0),
+                "Further down center": (25, -50),
+                "Further down left": (25, -100),
+                "Further down right": (25, 0),
+                "Above center": (-10, -50),
+                "Above left": (-10, -100),
+                "Above right": (-10, 0),
+                "Very far down": (55, -50),
+                "Mid-left": (8, -75),
+                "Mid-right": (8, -25),
+            }
+            
+            current = st.session_state.custom_label_offsets.get(adjust_station)
+            current_key = "Auto (collision-avoid)"
+            for k, v in position_presets.items():
+                if v == current:
+                    current_key = k
+                    break
+            
+            selected_preset = st.selectbox(
+                "Label position",
+                options=list(position_presets.keys()),
+                index=list(position_presets.keys()).index(current_key),
+                key="label_preset_pick"
+            )
+            
+            if st.button("✅ Apply Position", key="apply_label_pos"):
+                preset_value = position_presets[selected_preset]
+                if preset_value is None:
+                    st.session_state.custom_label_offsets.pop(adjust_station, None)
+                    st.success(f"Reset {adjust_station} to auto")
+                else:
+                    st.session_state.custom_label_offsets[adjust_station] = preset_value
+                    st.success(f"Set {adjust_station} → {selected_preset}")
+                st.rerun()
+            
+            # Fine-tune with sliders
+            with st.expander("🎨 Custom offset (advanced)"):
+                st.caption("Fine-tune position with sliders")
+                if current:
+                    default_top, default_x = current
+                else:
+                    default_top, default_x = 8, -50
+                
+                custom_top = st.slider(
+                    "Vertical (px)",
+                    min_value=-40,
+                    max_value=80,
+                    value=int(default_top),
+                    step=5,
+                    key="custom_margin_top",
+                    help="Negative = above marker, Positive = below"
+                )
+                custom_x = st.slider(
+                    "Horizontal (%)",
+                    min_value=-120,
+                    max_value=40,
+                    value=int(default_x),
+                    step=5,
+                    key="custom_translate_x",
+                    help="-100 = far left, -50 = center, 0 = far right"
+                )
+                
+                if st.button("💾 Save Custom", key="save_custom_offset"):
+                    st.session_state.custom_label_offsets[adjust_station] = (custom_top, custom_x)
+                    st.success(f"Custom offset saved for {adjust_station}")
+                    st.rerun()
+        
+        # Show currently customized stations
+        if st.session_state.custom_label_offsets:
+            st.caption(f"**{len(st.session_state.custom_label_offsets)} custom position(s)**")
+            if st.button("🔄 Reset All Custom Positions", key="reset_all_custom"):
+                st.session_state.custom_label_offsets = {}
+                st.success("All custom positions cleared")
+                st.rerun()
 
         st.divider()
         st.subheader("🗂️ Station Group Systems")
