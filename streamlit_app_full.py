@@ -28,14 +28,17 @@ import geopandas as gpd
 import pandas as pd
 import numpy as np
 import networkx as nx
-
+import scipy.spatial as scipy_spatial
 from shapely.geometry import LineString, Point
 from shapely.ops import unary_union, snap, nearest_points
-from scipy.spatial import cKDTree
 from pyproj import Transformer
+import math
 
 import folium
+from folium.plugins import Fullscreen
+from folium.elements import JSCSSMixin
 from streamlit_folium import st_folium
+from jinja2 import Template
 
 
 # ============================================================================
@@ -108,17 +111,25 @@ PREVIEW_COLOR = "#1f77b4"
 HIGHLIGHT_WEIGHT = 5
 HIGHLIGHT_OPACITY = 1.0
 
+LABEL_FONT_SIZE = 20  # px — single source of truth for all station label text
+
+# Station label marker offset (px below the marker dot)
+LABEL_MARGIN_TOP_DEFAULT = 12
+
 
 # ============================================================================
 # UTILITIES
 # ============================================================================
 
 to_4326 = Transformer.from_crs('EPSG:3857', 'EPSG:4326', always_xy=True)
+to_3857 = Transformer.from_crs('EPSG:4326', 'EPSG:3857', always_xy=True)
 
 # Default save file paths — absolute, anchored to app launch directory
 _APP_DIR = _app_base_dir()
 HIGHLIGHTS_SAVE_PATH = _APP_DIR / "committed_highlights.json"   # live auto-save (every commit/delete)
 EXPORT_SAVE_PATH     = _APP_DIR / "exported_highlights.json"    # manual export snapshot only
+STATION_GROUPS_SAVE_PATH = _APP_DIR / "station_groups.json"     # station group systems
+STATION_GROUPS_EXPORT_PATH = _APP_DIR / "exported_station_groups.json"  # manual export snapshot
 
 def save_highlights(highlights_dict):
     """Save committed highlights to disk as JSON."""
@@ -141,6 +152,78 @@ def load_highlights():
                 return {k: v for k, v in data.items() if isinstance(v, list)}
         except Exception as e:
             st.warning(f"Failed to load highlights from {HIGHLIGHTS_SAVE_PATH}: {e}")
+    return {}
+
+
+def save_station_group_systems(group_systems):
+    """Save station group systems to disk as JSON."""
+    if group_systems is None:
+        return
+    try:
+        with open(str(STATION_GROUPS_SAVE_PATH), 'w') as f:
+            json.dump(group_systems, f, indent=2)
+    except Exception as e:
+        st.error(f"Save failed ({STATION_GROUPS_SAVE_PATH}): {e}")
+
+
+def _normalize_station_group_systems(raw):
+    """Normalize station group payload, including migration from flat group format."""
+    if not isinstance(raw, dict):
+        return {}
+
+    normalized = {}
+
+    is_old_flat = all(
+        isinstance(v, dict) and ('stations' in v or 'shape' in v or 'color' in v)
+        for v in raw.values()
+    ) if raw else False
+
+    if is_old_flat:
+        groups = {}
+        for group_name, group_data in raw.items():
+            if not isinstance(group_data, dict):
+                continue
+            groups[str(group_name)] = {
+                'stations': list(group_data.get('stations', [])),
+                'shape': str(group_data.get('shape', 'circle')).lower(),
+                'color': str(group_data.get('color', '#d62728')),
+            }
+        if groups:
+            normalized['Default'] = {'groups': groups}
+        return normalized
+
+    for system_name, system_data in raw.items():
+        if not isinstance(system_data, dict):
+            continue
+        groups_in = system_data.get('groups', {})
+        if not isinstance(groups_in, dict):
+            continue
+
+        groups_out = {}
+        for group_name, group_data in groups_in.items():
+            if not isinstance(group_data, dict):
+                continue
+            groups_out[str(group_name)] = {
+                'stations': list(group_data.get('stations', [])),
+                'shape': str(group_data.get('shape', 'circle')).lower(),
+                'color': str(group_data.get('color', '#d62728')),
+            }
+
+        if groups_out:
+            normalized[str(system_name)] = {'groups': groups_out}
+
+    return normalized
+
+
+def load_station_group_systems():
+    """Load station group systems from disk."""
+    if STATION_GROUPS_SAVE_PATH.exists():
+        try:
+            with open(str(STATION_GROUPS_SAVE_PATH), 'r') as f:
+                data = json.load(f)
+            return _normalize_station_group_systems(data)
+        except Exception as e:
+            st.warning(f"Failed to load station groups from {STATION_GROUPS_SAVE_PATH}: {e}")
     return {}
 
 
@@ -197,10 +280,10 @@ def prepare_stations(stations_all):
         stations_near['station_label'] = names
         stations_near.loc[dup, 'station_label'] = names[dup] + ' (idx=' + stations_near.loc[dup].index.astype(str) + ')'
 
-    # Append code to label
-    stations_near['station_label'] = stations_near.apply(
-        lambda r: f"{r['station_label']} [{r['station_code']}]" if r['station_code'] else r['station_label'],
-        axis=1
+    # Append code to label (vectorized — avoids row-by-row apply)
+    _has_code = stations_near['station_code'].astype(bool)
+    stations_near.loc[_has_code, 'station_label'] = (
+        stations_near.loc[_has_code, 'station_label'] + ' [' + stations_near.loc[_has_code, 'station_code'] + ']'
     )
 
     stations_near_ll = stations_near.to_crs(epsg=4326)
@@ -210,9 +293,284 @@ def prepare_stations(stations_all):
     return stations_near, stations_near_ll, stations_lookup, labels
 
 
+def stations_along_path(coords_ll, stations_lookup, tolerance_m=150.0):
+    """Find stations that lie near a route polyline (meters in EPSG:3857)."""
+    if not coords_ll or len(coords_ll) < 2:
+        return []
+
+    try:
+        route_xy = [to_3857.transform(float(lon), float(lat)) for lat, lon in coords_ll]
+        route_line = LineString(route_xy)
+    except Exception:
+        return []
+
+    if route_line.length == 0:
+        return []
+
+    stations_m = stations_lookup[['geometry']].copy()
+    candidates = stations_m[stations_m.geometry.distance(route_line) <= float(tolerance_m)].copy()
+    if candidates.empty:
+        return []
+
+    candidates['route_proj'] = candidates.geometry.apply(route_line.project)
+    candidates = candidates.sort_values('route_proj')
+
+    # Vectorized coordinate extraction — avoids iterrows() overhead
+    _xs = candidates.geometry.x.values
+    _ys = candidates.geometry.y.values
+    _labels = candidates.index.values
+    out = []
+    for i in range(len(candidates)):
+        lon, lat = to_4326.transform(float(_xs[i]), float(_ys[i]))
+        out.append({'label': str(_labels[i]), 'lat': float(lat), 'lon': float(lon)})
+    return out
+
+
+def compute_label_offset(lat, lon, layout_state=None, collision_radius_m=2500.0):
+    """Compute vertical/horizontal offsets to reduce collisions among nearby labels."""
+    if layout_state is None:
+        return 8, -50
+
+    x, y = to_3857.transform(float(lon), float(lat))
+    radius_sq = float(collision_radius_m) ** 2
+    overlaps = 0
+    for entry in layout_state:
+        dx = x - entry['x']
+        dy = y - entry['y']
+        if (dx * dx + dy * dy) <= radius_sq:
+            overlaps += 1
+
+    offset_pattern = [
+        (8, -50),
+        (-18, -50),
+        (30, -50),
+        (-40, -50),
+        (52, -50),
+        (8, -30),
+        (8, -70),
+        (-18, -30),
+        (-18, -70),
+        (30, -30),
+        (30, -70),
+    ]
+    margin_top, translate_x_pct = offset_pattern[overlaps % len(offset_pattern)]
+    layout_state.append({'x': x, 'y': y})
+    return margin_top, translate_x_pct
+
+
+def add_station_shape_marker(
+    layer,
+    lat,
+    lon,
+    label,
+    shape="circle",
+    color="#d62728",
+    size=8,
+    font_size=LABEL_FONT_SIZE,
+    label_layout_state=None,
+):
+    """Render a station marker using circle/square/triangle shape with label beneath."""
+    marker_shape = (shape or "circle").lower()
+    marker_size = max(6, int(size))
+
+    if marker_shape == "circle":
+        folium.CircleMarker(
+            location=[lat, lon],
+            radius=marker_size,
+            color="#333333",
+            weight=1.5,
+            fill=True,
+            fill_color=color,
+            fill_opacity=0.95,
+            tooltip=label,
+            popup=label,
+        ).add_to(layer)
+
+    elif marker_shape == "square":
+        side = marker_size * 2
+        folium.Marker(
+            location=[lat, lon],
+            icon=folium.DivIcon(
+                html=(
+                    f"<div style='width: {side}px; height: {side}px; "
+                    f"background: {color}; border: 1.5px solid #333333; "
+                    f"opacity: 0.95;'></div>"
+                ),
+                icon_size=(side, side),
+                icon_anchor=(side // 2, side // 2),
+            ),
+            tooltip=label,
+            popup=label,
+        ).add_to(layer)
+
+    else:  # triangle
+        triangle_height = marker_size * 2
+        triangle_half = marker_size
+        folium.Marker(
+            location=[lat, lon],
+            icon=folium.DivIcon(
+                html=(
+                    f"<div style='width: 0; height: 0; "
+                    f"border-left: {triangle_half}px solid transparent; "
+                    f"border-right: {triangle_half}px solid transparent; "
+                    f"border-bottom: {triangle_height}px solid {color}; "
+                    f"filter: drop-shadow(0 0 1px #333333);'></div>"
+                ),
+                icon_size=(triangle_half * 2, triangle_height),
+                icon_anchor=(triangle_half, triangle_height),
+            ),
+            tooltip=label,
+            popup=label,
+        ).add_to(layer)
+
+    label_margin_top, label_translate_x = compute_label_offset(
+        lat,
+        lon,
+        layout_state=label_layout_state,
+    )
+
+    # Add label text near marker with collision-avoidance offset
+    _add_label_marker(layer, lat, lon, label,
+                      margin_top=label_margin_top,
+                      translate_x_pct=label_translate_x,
+                      font_size=font_size)
+
+
+def _add_label_marker(layer, lat, lon, text, margin_top=LABEL_MARGIN_TOP_DEFAULT,
+                      translate_x_pct=-50, font_size=LABEL_FONT_SIZE):
+    """Add a text label DivIcon marker to *layer*.
+
+    Centralises the repeated label-rendering pattern used for station
+    endpoint labels, committed highlight labels, and station group labels.
+    """
+    folium.Marker(
+        location=[lat, lon],
+        icon=folium.DivIcon(
+            html=(
+                f"<div style='font-size:{font_size}px;font-weight:bold;"
+                f"background-color:white;color:black;padding:2px 4px;"
+                f"border-radius:2px;border:1px solid #999;"
+                f"white-space:nowrap;transform:translateX({translate_x_pct}%);"
+                f"margin-top:{margin_top}px;'>{text}</div>"
+            ),
+            icon_size=(0, 0),
+            icon_anchor=(0, 0),
+        ),
+    ).add_to(layer)
+
+
+def _make_path_payload(path_info):
+    """Create a shallow copy of a path payload dict with list fields copied."""
+    return {
+        'coords_ll': list(path_info.get('coords_ll', [])),
+        'order': list(path_info.get('order', [])),
+        'preview_station_points': list(path_info.get('preview_station_points', [])),
+        'selected_station_markers': list(path_info.get('selected_station_markers', [])),
+        'total_km': float(path_info.get('total_km', 0.0)),
+        'route_color': path_info.get('route_color', PREVIEW_COLOR),
+        'highlight_name': path_info.get('highlight_name'),
+        'path_name': path_info.get('path_name', ''),
+    }
+
+
+def _reverse_path_payload(path_info):
+    p = _make_path_payload(path_info)
+    p['coords_ll'].reverse()
+    p['order'].reverse()
+    p['preview_station_points'].reverse()
+    p['selected_station_markers'].reverse()
+    return p
+
+
+def _orient_path_to_shared(path_info, shared_station, must_end_at_shared):
+    order = path_info.get('order', [])
+    if not order:
+        return None
+
+    starts_shared = order[0] == shared_station
+    ends_shared = order[-1] == shared_station
+
+    if must_end_at_shared:
+        if ends_shared:
+            return _make_path_payload(path_info)
+        if starts_shared:
+            return _reverse_path_payload(path_info)
+    else:
+        if starts_shared:
+            return _make_path_payload(path_info)
+        if ends_shared:
+            return _reverse_path_payload(path_info)
+
+    return None
+
+
+def merge_paths_at_shared_station(path_a, path_b, system_name):
+    order_a = path_a.get('order', [])
+    order_b = path_b.get('order', [])
+    if len(order_a) < 2 or len(order_b) < 2:
+        return None, "Both paths must have at least 2 stations."
+
+    endpoints_a = {order_a[0], order_a[-1]}
+    endpoints_b = {order_b[0], order_b[-1]}
+    shared = list(endpoints_a.intersection(endpoints_b))
+
+    if len(shared) != 1:
+        return None, "Selected paths must share exactly one endpoint station."
+
+    shared_station = shared[0]
+    first = _orient_path_to_shared(path_a, shared_station, must_end_at_shared=True)
+    second = _orient_path_to_shared(path_b, shared_station, must_end_at_shared=False)
+
+    if first is None or second is None:
+        return None, "Could not orient paths to merge at the shared station."
+
+    coords_first = first.get('coords_ll', [])
+    coords_second = second.get('coords_ll', [])
+    if not coords_first or not coords_second:
+        return None, "Both paths must contain coordinates."
+
+    merged_coords = list(coords_first)
+    if coords_first[-1] == coords_second[0]:
+        merged_coords.extend(coords_second[1:])
+    else:
+        merged_coords.extend(coords_second)
+
+    merged_order = list(first.get('order', []))
+    if second.get('order', []):
+        merged_order.extend(second['order'][1:])
+
+    stations_first = list(first.get('preview_station_points', []))
+    stations_second = list(second.get('preview_station_points', []))
+    merged_stations = stations_first + stations_second[1:] if stations_second else stations_first
+
+    markers_first = list(first.get('selected_station_markers', []))
+    markers_second = list(second.get('selected_station_markers', []))
+    marker_seen = {m.get('label') for m in markers_first if isinstance(m, dict)}
+    merged_markers = list(markers_first)
+    for marker in markers_second:
+        label = marker.get('label') if isinstance(marker, dict) else None
+        if label and label in marker_seen:
+            continue
+        merged_markers.append(marker)
+        if label:
+            marker_seen.add(label)
+
+    merged_path = {
+        'coords_ll': merged_coords,
+        'order': merged_order,
+        'total_km': float(first.get('total_km', 0.0)) + float(second.get('total_km', 0.0)),
+        'route_color': first.get('route_color', PREVIEW_COLOR),
+        'highlight_name': system_name,
+        'path_name': f"Merged ({merged_order[0]} → {merged_order[-1]})",
+        'preview_station_points': merged_stations,
+        'selected_station_markers': merged_markers,
+    }
+    return merged_path, None
+
+
 def edge_cost(length, codigo, routing_mode, penalty_mult):
     """Compute edge traversal cost, applying penalty for non-MRS segments."""
-    if routing_mode == PREFER_MRS and pd.notna(codigo) and codigo != MRS_CODE:
+    if routing_mode == PREFER_MRS and codigo is not None and codigo is not pd.NA and codigo != MRS_CODE:
         return length * float(penalty_mult)
     return length
 
@@ -278,15 +636,29 @@ def build_graph(points_xy, routing_mode, penalty_mult, rails_all_m, node_interse
     G = nx.Graph()
     edge_rows = []
 
-    for _, row in rails.iterrows():
-        codigo = row.get(FILTER_COLUMN)
-        coords = list(row.geometry.coords)
-        for a, b in zip(coords[:-1], coords[1:]):
+    # Pre-resolve penalty flag outside the hot loop so the inner iterations
+    # do a simple boolean check instead of a string comparison + pd.notna()
+    _apply_penalty = (routing_mode == PREFER_MRS)
+    _penalty_f = float(penalty_mult)
+    _hypot = math.hypot  # local alias avoids module lookup per iteration
+
+    # Direct array access — avoids pandas iterrows() overhead
+    _rail_geoms = rails.geometry.values
+    _rail_codigos = rails[FILTER_COLUMN].values
+    for i in range(len(_rail_geoms)):
+        codigo = _rail_codigos[i]
+        coords = _rail_geoms[i].coords[:]
+        for j in range(len(coords) - 1):
+            a, b = coords[j], coords[j + 1]
             u_id = get_node_id(a)
             v_id = get_node_id(b)
-            seg = LineString([a, b])
-            length_m = seg.length
-            w = edge_cost(length_m, codigo, routing_mode, penalty_mult)
+            length_m = _hypot(b[0] - a[0], b[1] - a[1])
+
+            # Inlined edge_cost — avoids function-call overhead per segment
+            if _apply_penalty and codigo is not None and codigo is not pd.NA and codigo != MRS_CODE:
+                w = length_m * _penalty_f
+            else:
+                w = length_m
 
             if G.has_edge(u_id, v_id):
                 if w < G[u_id][v_id]['weight']:
@@ -294,13 +666,13 @@ def build_graph(points_xy, routing_mode, penalty_mult, rails_all_m, node_interse
             else:
                 G.add_edge(u_id, v_id, weight=w, length_m=length_m, codigo=codigo)
 
-            edge_rows.append({'u': u_id, 'v': v_id, 'geometry': seg, 'codigo': codigo, 'length_m': length_m})
+            edge_rows.append({'u': u_id, 'v': v_id, 'geometry': LineString([a, b]), 'codigo': codigo, 'length_m': length_m})
 
     edges_gdf = gpd.GeoDataFrame(edge_rows, geometry='geometry', crs='EPSG:3857')
     edges_sidx = edges_gdf.sindex
 
     node_xy = np.array(node_coords)
-    tree = cKDTree(node_xy)
+    tree = scipy_spatial.KDTree(node_xy)
 
     cb(f"Graph ready: {G.number_of_nodes()} nodes / {G.number_of_edges()} edges")
     return G, node_coords, tree, (edges_gdf, edges_sidx)
@@ -421,6 +793,89 @@ def iter_lines(geom):
             yield part
 
 
+def _gdf_to_minimal_geojson(gdf):
+    """Convert GeoDataFrame geometries to a minimal GeoJSON FeatureCollection.
+
+    Strips all attribute columns — much smaller than gdf.to_json().
+    Used to render rail layers as a single folium.GeoJson layer
+    instead of N individual PolyLine objects.
+    """
+    features = []
+    for geom in gdf.geometry.values:
+        if geom is None:
+            continue
+        gtype = geom.geom_type
+        if gtype == 'LineString':
+            features.append({
+                'type': 'Feature',
+                'geometry': geom.__geo_interface__,
+                'properties': {},
+            })
+        elif gtype == 'MultiLineString':
+            for part in geom.geoms:
+                features.append({
+                    'type': 'Feature',
+                    'geometry': part.__geo_interface__,
+                    'properties': {},
+                })
+    return {'type': 'FeatureCollection', 'features': features}
+
+
+# ============================================================================
+# MAP UI CONSTANTS (module-level — avoid re-creating every Streamlit rerun)
+# ============================================================================
+
+class _ZoomDisplay(JSCSSMixin, folium.MacroElement):
+    """Leaflet control that shows the current map zoom level."""
+    _template = Template("""
+    {% macro script(this, kwargs) %}
+        var zoomDisplay = L.Control.extend({
+            options: { position: 'topleft' },
+            onAdd: function (map) {
+                var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+                container.style.backgroundColor = 'white';
+                container.style.padding = '5px 10px';
+                container.style.fontSize = '14px';
+                container.style.fontWeight = 'bold';
+                container.style.cursor = 'default';
+                container.innerHTML = 'Zoom: ' + map.getZoom().toFixed(2);
+                map.on('zoomend', function() {
+                    container.innerHTML = 'Zoom: ' + map.getZoom().toFixed(2);
+                });
+                return container;
+            }
+        });
+        {{ this._parent.get_name() }}.addControl(new zoomDisplay());
+    {% endmacro %}
+    """)
+
+
+# Brazil bounding box — tiles outside this rectangle are never requested
+_BR_BOUNDS = [[-33.75, -73.99], [5.27, -34.79]]
+_ORM_ATTR = (
+    'Map tiles by <a href="https://www.openrailwaymap.org/">OpenRailwayMap</a> '
+    '(<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>) | '
+    'Data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+)
+
+_LAYER_SCROLL_FIX = """
+<style>
+    .leaflet-control-layers{width:auto;min-width:200px;max-width:300px;max-height:75vh;overflow:visible;bottom:10px!important}
+    .leaflet-control-layers-expanded{width:auto;min-width:200px;max-width:300px;max-height:75vh;overflow:visible}
+    .leaflet-control-layers-list{max-height:70vh!important;min-height:auto;overflow-y:scroll!important;overflow-x:hidden!important;margin-bottom:0;padding:4px 8px}
+    .leaflet-control-layers-item{margin:4px 0;word-break:break-word}
+    .leaflet-control-layers-list::-webkit-scrollbar{width:10px}
+    .leaflet-control-layers-list::-webkit-scrollbar-track{background:#f1f1f1}
+    .leaflet-control-layers-list::-webkit-scrollbar-thumb{background:#888;border-radius:5px}
+    .leaflet-control-layers-list::-webkit-scrollbar-thumb:hover{background:#555}
+</style>
+<script>
+window.addEventListener('load',function(){var l=document.querySelector('.leaflet-control-layers-list');if(l){l.style.maxHeight='70vh';l.style.overflowY='scroll';l.style.overflowX='hidden'}});
+var l=document.querySelector('.leaflet-control-layers-list');if(l){l.style.maxHeight='70vh';l.style.overflowY='scroll';l.style.overflowX='hidden'}
+</script>
+"""
+
+
 # ============================================================================
 # STREAMLIT APP
 # ============================================================================
@@ -433,6 +888,10 @@ def main():
         st.session_state.preview_data = None
     if 'committed_highlights' not in st.session_state:
         st.session_state.committed_highlights = load_highlights()
+    if 'station_group_systems' not in st.session_state:
+        st.session_state.station_group_systems = load_station_group_systems()
+    if 'active_station_group_systems' not in st.session_state:
+        st.session_state.active_station_group_systems = []
 
     # Load raw data (instant after first call — @st.cache_data)
     try:
@@ -450,6 +909,10 @@ def main():
             rails_all_ll = rails_all.to_crs(epsg=4326)
             _, stations_near_ll, stations_lookup, labels = prepare_stations(stations_all)
             centroid = stations_near_ll.geometry.union_all().centroid
+            # Pre-compute minimal GeoJSON for rail layers
+            # (single folium.GeoJson layer vs N individual PolyLines)
+            rails_mrs_geojson = _gdf_to_minimal_geojson(rails_mrs_ll)
+            rails_all_geojson = _gdf_to_minimal_geojson(rails_all_ll)
             st.session_state.derived_data = {
                 'rails_all_m': rails_all_m,
                 'rails_mrs_ll': rails_mrs_ll,
@@ -458,9 +921,9 @@ def main():
                 'stations_lookup': stations_lookup,
                 'labels': labels,
                 'map_center': [centroid.y, centroid.x],
+                'rails_mrs_geojson': rails_mrs_geojson,
+                'rails_all_geojson': rails_all_geojson,
             }
-            # Invalidate coord caches so they get rebuilt from new derived data
-            st.session_state.pop('rails_all_coords_cache', None)
         st.success(f"Loaded {len(labels)} stations, {len(rails_all)} rail features")
 
     d = st.session_state.derived_data
@@ -507,6 +970,11 @@ def main():
         path_name = st.text_input("Path name (optional)", "", key="path_name",
                                    placeholder="e.g. Direct, Via Campinas…")
 
+        run_btn = st.button("Compute Preview", key="run")
+        commit_btn = st.button("Commit Highlight", key="commit")
+        progress_bar = st.progress(0)
+        status_txt = st.empty()
+
         st.divider()
         st.subheader("🎨 Rendering Options")
         render_committed = st.checkbox("Show committed highlights on map", value=True, key="render_committed",
@@ -534,13 +1002,197 @@ def main():
             if st.button("🔄 Clear Marker", key="clear_marker"):
                 st.session_state.highlighted_station = None
                 st.info("Marker cleared")
+
+        st.divider()
+        st.subheader("🗂️ Station Group Systems")
+        st.caption("Create systems and add multiple station groups per system (each group with its own marker shape/color).")
+
+        group_system_name_input = st.text_input(
+            "System name",
+            key="group_system_name_input",
+            placeholder="e.g. MRS Crew Operations"
+        )
+        group_name_input = st.text_input(
+            "Group name",
+            key="group_name_input",
+            placeholder="e.g. Crew Change"
+        )
+        selected_group_stations = st.multiselect(
+            "Stations in group",
+            options=labels,
+            key="group_station_selection"
+        )
+        group_marker_shape = st.selectbox(
+            "Marker shape",
+            options=["circle", "square", "triangle"],
+            key="group_marker_shape"
+        )
+        group_marker_color = st.color_picker(
+            "Marker color",
+            "#d62728",
+            key="group_marker_color"
+        )
+
+        col_g1, col_g2 = st.columns(2)
+        with col_g1:
+            if st.button("💾 Save/Update Group", key="save_group_btn", use_container_width=True):
+                system_name_clean = (group_system_name_input or "").strip()
+                group_name_clean = (group_name_input or "").strip()
+                if not system_name_clean:
+                    st.warning("Enter a system name.")
+                elif not group_name_clean:
+                    st.warning("Enter a group name.")
+                elif not selected_group_stations:
+                    st.warning("Select at least one station.")
+                else:
+                    if system_name_clean not in st.session_state.station_group_systems:
+                        st.session_state.station_group_systems[system_name_clean] = {'groups': {}}
+
+                    st.session_state.station_group_systems[system_name_clean]['groups'][group_name_clean] = {
+                        'stations': list(selected_group_stations),
+                        'shape': group_marker_shape,
+                        'color': group_marker_color,
+                    }
+                    # Ensure system is in active list
+                    if system_name_clean not in st.session_state.get('active_station_group_systems', []):
+                        # Just save - don't modify the bound session state variable
+                        # The multiselect widget will handle it on next render
+                        pass
+                    
+                    save_station_group_systems(st.session_state.station_group_systems)
+                    st.success(f"Saved group '{group_name_clean}' in system '{system_name_clean}'.")
+                    st.rerun()
+
+        system_names = sorted(st.session_state.station_group_systems.keys())
+        # Clean up active systems - keep only those that still exist
+        filtered_active = [
+            s for s in st.session_state.get('active_station_group_systems', [])
+            if s in system_names
+        ]
+        if filtered_active != st.session_state.get('active_station_group_systems', []):
+            st.session_state.active_station_group_systems = filtered_active
+
+        col_sg_exp, col_sg_hint = st.columns([1, 1])
+        with col_sg_exp:
+            if st.button("📤 Export Station Groups", key="export_station_groups_btn", use_container_width=True):
+                try:
+                    with open(str(STATION_GROUPS_EXPORT_PATH), 'w') as f:
+                        json.dump(st.session_state.station_group_systems, f, indent=2)
+                    st.success(f"Exported → {STATION_GROUPS_EXPORT_PATH.name}")
+                except Exception as e:
+                    st.error(f"Export failed: {e}")
+        with col_sg_hint:
+            st.caption("Exports all station group systems")
+
+        st.markdown("**Import station group systems (JSON)**")
+        station_groups_files = st.file_uploader(
+            "Import station groups JSON (select one or more)",
+            type=["json"],
+            key="import_station_groups_file",
+            label_visibility="collapsed",
+            accept_multiple_files=True
+        )
+
+        all_imported_station_groups = {}
+        total_systems_preview = 0
+        total_groups_preview = 0
+        total_size_kb = 0.0
+
+        if station_groups_files:
+            for station_groups_file in station_groups_files:
+                try:
+                    file_bytes = station_groups_file.getvalue()
+                    total_size_kb += len(file_bytes) / 1024
+                    parsed_station_groups = json.loads(file_bytes)
+                    normalized_station_groups = _normalize_station_group_systems(parsed_station_groups)
+                    total_systems_preview += len(normalized_station_groups)
+                    total_groups_preview += sum(
+                        len(system_data.get('groups', {}))
+                        for system_data in normalized_station_groups.values()
+                        if isinstance(system_data, dict)
+                    )
+                    for system_name, system_data in normalized_station_groups.items():
+                        all_imported_station_groups[system_name] = system_data
+                except Exception:
+                    st.warning(f"Could not parse {station_groups_file.name}.")
+
+            if all_imported_station_groups:
+                st.info(
+                    f"📄 **{len(station_groups_files)} file(s)** — {total_size_kb:.1f} KB\n\n"
+                    f"{total_systems_preview} system(s), {total_groups_preview} group(s)"
+                )
+                if st.button("📥 Load Station Groups", key="load_station_groups_btn", use_container_width=True):
+                    merged_count = 0
+                    for imported_system_name, imported_system_data in all_imported_station_groups.items():
+                        if imported_system_name not in st.session_state.station_group_systems:
+                            st.session_state.station_group_systems[imported_system_name] = {'groups': {}}
+
+                        imported_groups = imported_system_data.get('groups', {}) if isinstance(imported_system_data, dict) else {}
+                        for imported_group_name, imported_group_data in imported_groups.items():
+                            st.session_state.station_group_systems[imported_system_name]['groups'][imported_group_name] = {
+                                'stations': list(imported_group_data.get('stations', [])),
+                                'shape': str(imported_group_data.get('shape', 'circle')).lower(),
+                                'color': str(imported_group_data.get('color', '#d62728')),
+                            }
+                            merged_count += 1
+
+                    save_station_group_systems(st.session_state.station_group_systems)
+                    st.success(f"Loaded {merged_count} station group(s) from {len(station_groups_files)} file(s) into session.")
+                    st.rerun()
+
+        if system_names:
+            st.multiselect(
+                "Show systems on map",
+                options=system_names,
+                default=st.session_state.active_station_group_systems,
+                key="active_station_group_systems"
+            )
+
+            with col_g2:
+                delete_system = st.selectbox(
+                    "System",
+                    options=system_names,
+                    key="delete_group_system_pick",
+                    label_visibility="collapsed"
+                )
+                group_names = sorted(
+                    st.session_state.station_group_systems.get(delete_system, {}).get('groups', {}).keys()
+                )
+                if group_names:
+                    delete_group = st.selectbox(
+                        "Group",
+                        options=group_names,
+                        key="delete_group_pick",
+                        label_visibility="collapsed"
+                    )
+                    if st.button("🗑️ Delete Group", key="delete_group_btn", use_container_width=True):
+                        st.session_state.station_group_systems[delete_system]['groups'].pop(delete_group, None)
+                        if not st.session_state.station_group_systems[delete_system]['groups']:
+                            st.session_state.station_group_systems.pop(delete_system, None)
+                        save_station_group_systems(st.session_state.station_group_systems)
+                        st.success(f"Deleted group '{delete_group}' from '{delete_system}'.")
+                        st.rerun()
+
+                if st.button("🧹 Delete System", key="delete_system_btn", use_container_width=True):
+                    st.session_state.station_group_systems.pop(delete_system, None)
+                    save_station_group_systems(st.session_state.station_group_systems)
+                    st.success(f"Deleted system '{delete_system}'.")
+                    st.rerun()
+
+            st.caption("Existing systems and groups")
+            for system_name in system_names:
+                groups_map = st.session_state.station_group_systems.get(system_name, {}).get('groups', {})
+                if not groups_map:
+                    continue
+                group_summaries = [
+                    f"{group_name} ({len(group_data.get('stations', []))} stations, {group_data.get('shape', 'circle')})"
+                    for group_name, group_data in sorted(groups_map.items())
+                ]
+                st.caption(f"• {system_name}: " + " | ".join(group_summaries))
+        else:
+            st.info("No station group systems yet.")
         
         st.divider()
-        run_btn = st.button("Compute Preview", key="run")
-        commit_btn = st.button("Commit Highlight", key="commit")
-        progress_bar = st.progress(0)
-        status_txt = st.empty()
-
         if st.button("📤 Export All", key="export_btn"):
             try:
                 with open(str(EXPORT_SAVE_PATH), 'w') as f:
@@ -550,47 +1202,55 @@ def main():
                 st.error(f"Export failed: {e}")
 
         st.markdown("**Import JSON highlights**")
-        import_file = st.file_uploader("Import JSON file", type=["json"], key="import_file", label_visibility="collapsed")
+        import_files = st.file_uploader("Import JSON file (select one or more)", type=["json"], key="import_file", label_visibility="collapsed", accept_multiple_files=True)
 
-        if import_file is not None:
-            # Show file info immediately (before import button click)
-            file_bytes = import_file.getvalue()
-            file_kb = len(file_bytes) / 1024
-            n_systems, n_paths = 0, 0
-            try:
-                preview = json.loads(file_bytes)
-                n_systems = len(preview)
-                n_paths = sum(len(v) for v in preview.values())
-                est_sec = max(0.1, file_kb / 800)  # ~800 KB/s effective merge rate
+        all_previews = {}
+        total_import_systems = 0
+        total_import_paths = 0
+        total_import_kb = 0.0
+
+        if import_files:
+            for import_file in import_files:
+                try:
+                    file_bytes = import_file.getvalue()
+                    total_import_kb += len(file_bytes) / 1024
+                    preview = json.loads(file_bytes)
+                    if isinstance(preview, dict):
+                        total_import_systems += len(preview)
+                        total_import_paths += sum(len(v) if isinstance(v, list) else 0 for v in preview.values())
+                        all_previews.update(preview)
+                except Exception:
+                    st.warning(f"Could not parse {import_file.name}.")
+
+            if all_previews:
+                est_sec = max(0.1, total_import_kb / 800)
                 st.info(
-                    f"📄 **{import_file.name}** — {file_kb:.1f} KB\n\n"
-                    f"{n_systems} system(s), {n_paths} path(s) · est. ~{est_sec:.1f}s"
+                    f"📄 **{len(import_files)} file(s)** — {total_import_kb:.1f} KB\n\n"
+                    f"{total_import_systems} system(s), {total_import_paths} path(s) · est. ~{est_sec:.1f}s"
                 )
-            except Exception:
-                st.warning("Could not preview file.")
-                preview = None
-
-            if preview is not None and st.button("📥 Load into session", key="import_btn"):
-                t0 = time.time()
-                for imported_system_name, imported_paths in preview.items():
-                    if imported_system_name not in st.session_state.committed_highlights:
-                        st.session_state.committed_highlights[imported_system_name] = []
-                    existing_orders = {
-                        tuple(p.get('order', []))
-                        for p in st.session_state.committed_highlights[imported_system_name]
-                    }
-                    for path in imported_paths:
-                        key = tuple(path.get('order', []))
-                        if key not in existing_orders:
-                            st.session_state.committed_highlights[imported_system_name].append(path)
-                            existing_orders.add(key)
-                save_highlights(st.session_state.committed_highlights)
-                elapsed = time.time() - t0
-                st.session_state.last_import_info = (
-                    f"✅ Imported {n_systems} system(s), {n_paths} path(s) "
-                    f"from **{import_file.name}** in {elapsed:.2f}s"
-                )
-                st.rerun()  # needed: forces sidebar to re-render with new committed data
+                if st.button("📥 Load into session", key="import_btn"):
+                    t0 = time.time()
+                    file_names = [f.name for f in import_files]
+                    for imported_system_name, imported_paths in all_previews.items():
+                        if imported_system_name not in st.session_state.committed_highlights:
+                            st.session_state.committed_highlights[imported_system_name] = []
+                        existing_orders = {
+                            tuple(p.get('order', []))
+                            for p in st.session_state.committed_highlights[imported_system_name]
+                        }
+                        for path in imported_paths:
+                            if isinstance(path, dict):
+                                key = tuple(path.get('order', []))
+                                if key not in existing_orders:
+                                    st.session_state.committed_highlights[imported_system_name].append(path)
+                                    existing_orders.add(key)
+                    save_highlights(st.session_state.committed_highlights)
+                    elapsed = time.time() - t0
+                    st.session_state.last_import_info = (
+                        f"✅ Imported {total_import_systems} system(s), {total_import_paths} path(s) "
+                        f"from {len(import_files)} file(s) in {elapsed:.2f}s"
+                    )
+                    st.rerun()  # needed: forces sidebar to re-render with new committed data
 
         if st.session_state.get("last_import_info"):
             st.success(st.session_state.last_import_info)
@@ -611,6 +1271,16 @@ def main():
         if total_coords > 0:
             perf_color = "🟢" if total_coords < 5000 else "🟡" if total_coords < 20000 else "🔴"
             st.caption(f"{perf_color} Total coordinates: {total_coords:,} | Avg: {total_coords//max(1,n_committed):,}/path")
+
+        col_clear_all, col_clear_hint = st.columns([1, 1])
+        with col_clear_all:
+            if st.button("🗑️ Clear All Systems", key="clear_all_systems", use_container_width=True):
+                st.session_state.committed_highlights = {}
+                save_highlights(st.session_state.committed_highlights)
+                st.success("All systems cleared.")
+                st.rerun()
+        with col_clear_hint:
+            st.caption("Removes all committed systems")
 
         # Display committed highlights grouped by name
         if st.session_state.committed_highlights:
@@ -641,7 +1311,7 @@ def main():
                                 save_highlights(st.session_state.committed_highlights)
                                 st.rerun()
 
-                    col_sj, col_sc = st.columns(2)
+                    col_sj, col_sc, col_sd = st.columns([1, 1, 1])
                     with col_sj:
                         if st.button("📄 Export JSON", key=f"export_json_{system_name}"):
                             sys_export_path = _APP_DIR / f"{system_name}.json"
@@ -653,6 +1323,58 @@ def main():
                                 st.error(f"Export failed: {e}")
                     with col_sc:
                         st.caption("JSON only")
+                    with col_sd:
+                        if st.button("🗑️ Clear System", key=f"clear_system_{system_name}"):
+                            if system_name in highlight_groups:
+                                del highlight_groups[system_name]
+                                save_highlights(st.session_state.committed_highlights)
+                                st.success(f"System '{system_name}' cleared.")
+                                st.rerun()
+
+                    if len(paths_list) >= 2:
+                        st.caption("Merge two paths that share a start/end station")
+                        path_options = [
+                            f"{idx + 1}. {(p.get('path_name') or 'Unnamed Path')}"
+                            for idx, p in enumerate(paths_list)
+                        ]
+                        col_m1, col_m2, col_m3 = st.columns([3, 3, 2])
+                        with col_m1:
+                            merge_sel_a = st.selectbox(
+                                "Path A",
+                                options=path_options,
+                                key=f"merge_a_{system_name}",
+                                label_visibility="collapsed"
+                            )
+                        with col_m2:
+                            merge_sel_b = st.selectbox(
+                                "Path B",
+                                options=path_options,
+                                index=1 if len(path_options) > 1 else 0,
+                                key=f"merge_b_{system_name}",
+                                label_visibility="collapsed"
+                            )
+                        with col_m3:
+                            if st.button("🔗 Merge", key=f"merge_btn_{system_name}"):
+                                idx_a = int(merge_sel_a.split('.', 1)[0]) - 1
+                                idx_b = int(merge_sel_b.split('.', 1)[0]) - 1
+
+                                if idx_a == idx_b:
+                                    st.warning("Select two different paths to merge.")
+                                else:
+                                    merged_path, merge_error = merge_paths_at_shared_station(
+                                        paths_list[idx_a],
+                                        paths_list[idx_b],
+                                        system_name
+                                    )
+                                    if merge_error:
+                                        st.warning(merge_error)
+                                    else:
+                                        for idx in sorted([idx_a, idx_b], reverse=True):
+                                            paths_list.pop(idx)
+                                        paths_list.append(merged_path)
+                                        save_highlights(st.session_state.committed_highlights)
+                                        st.success("Paths merged successfully.")
+                                        st.rerun()
                     
                     st.divider()
                     
@@ -660,6 +1382,7 @@ def main():
                         route_text = " → ".join(path_info.get('order', []))
                         dist_text = f"{path_info.get('total_km', 0.0):.1f} km"
                         n_coords = len(path_info.get('coords_ll', []))
+                        path_key = f"{system_name}_{i}"
                         
                         # Performance indicator
                         if n_coords > 1000:
@@ -697,6 +1420,136 @@ def main():
                                 save_highlights(st.session_state.committed_highlights)
                                 st.rerun()
                         st.caption(f"{perf_icon} {route_text} · {dist_text}{perf_hint}")
+
+                        col_pc1, col_pc2 = st.columns([3, 1])
+                        with col_pc1:
+                            edited_path_color = st.color_picker(
+                                "Path color",
+                                value=path_info.get('route_color', PREVIEW_COLOR),
+                                key=f"path_color_{path_key}",
+                            )
+                        with col_pc2:
+                            if st.button("🎨", key=f"path_color_btn_{path_key}", help="Apply path color"):
+                                path_info['route_color'] = edited_path_color
+                                save_highlights(st.session_state.committed_highlights)
+                                st.success("Path color updated.")
+                                st.rerun()
+
+                        # Manual station markers along this path
+                        pending_key = f"pending_path_stations_{path_key}"
+                        station_color_key = f"station_marker_color_{path_key}"
+
+                        if pending_key not in st.session_state:
+                            st.session_state[pending_key] = []
+
+                        confirmed_markers = list(path_info.get('selected_station_markers', []))
+                        confirmed_labels = {
+                            m.get('label')
+                            for m in confirmed_markers
+                            if isinstance(m, dict) and m.get('label')
+                        }
+
+                        pending_labels = [
+                            label for label in st.session_state[pending_key]
+                            if label not in confirmed_labels
+                        ]
+                        st.session_state[pending_key] = pending_labels
+
+                        stations_candidates = stations_along_path(path_info.get('coords_ll', []), stations_lookup, tolerance_m=150.0)
+                        station_lookup = {s['label']: s for s in stations_candidates}
+                        available_labels = [
+                            s['label'] for s in stations_candidates
+                            if s['label'] not in confirmed_labels and s['label'] not in pending_labels
+                        ]
+
+                        st.caption("Add specific stations along this path")
+                        col_sa, col_sb = st.columns([4, 1])
+                        with col_sa:
+                            if available_labels:
+                                station_to_add = st.selectbox(
+                                    "Stations along path",
+                                    options=available_labels,
+                                    key=f"station_pick_{path_key}",
+                                    label_visibility="collapsed"
+                                )
+                            else:
+                                station_to_add = None
+                                st.caption("No additional stations available for this path")
+                        with col_sb:
+                            if st.button("➕ Add", key=f"add_station_{path_key}", disabled=station_to_add is None):
+                                st.session_state[pending_key].append(station_to_add)
+                                st.rerun()
+
+                        if pending_labels:
+                            st.caption("Pending stations: " + " | ".join(pending_labels))
+                            default_marker_color = path_info.get('route_color', PREVIEW_COLOR)
+                            marker_color = st.color_picker(
+                                "Marker color",
+                                default_marker_color,
+                                key=station_color_key
+                            )
+
+                            col_sc1, col_sc2 = st.columns(2)
+                            with col_sc1:
+                                if st.button("✅ Confirm Stations", key=f"confirm_stations_{path_key}", use_container_width=True):
+                                    new_markers = []
+                                    for label in pending_labels:
+                                        p = station_lookup.get(label)
+                                        if p:
+                                            new_markers.append({
+                                                'label': label,
+                                                'lat': p['lat'],
+                                                'lon': p['lon'],
+                                                'color': marker_color,
+                                            })
+
+                                    if new_markers:
+                                        if 'selected_station_markers' not in path_info:
+                                            path_info['selected_station_markers'] = []
+                                        path_info['selected_station_markers'].extend(new_markers)
+                                        st.session_state[pending_key] = []
+                                        save_highlights(st.session_state.committed_highlights)
+                                        st.success(f"Added {len(new_markers)} station marker(s).")
+                                        st.rerun()
+                            with col_sc2:
+                                if st.button("Clear Pending", key=f"clear_pending_{path_key}", use_container_width=True):
+                                    st.session_state[pending_key] = []
+                                    st.rerun()
+
+                        confirmed_markers = list(path_info.get('selected_station_markers', []))
+                        if confirmed_markers:
+                            st.caption("Confirmed markers")
+                            marker_options = []
+                            for marker_idx, marker in enumerate(confirmed_markers):
+                                if not isinstance(marker, dict):
+                                    continue
+                                marker_label = marker.get('label', f"Marker {marker_idx + 1}")
+                                marker_options.append(f"{marker_idx + 1}. {marker_label}")
+
+                            if marker_options:
+                                col_rm1, col_rm2, col_rm3 = st.columns([3, 1, 1])
+                                with col_rm1:
+                                    marker_to_remove = st.selectbox(
+                                        "Remove marker",
+                                        options=marker_options,
+                                        key=f"remove_marker_pick_{path_key}",
+                                        label_visibility="collapsed"
+                                    )
+                                with col_rm2:
+                                    if st.button("🗑️ Remove", key=f"remove_marker_btn_{path_key}"):
+                                        if marker_to_remove:
+                                            marker_idx = int(marker_to_remove.split('.', 1)[0]) - 1
+                                            if 0 <= marker_idx < len(path_info.get('selected_station_markers', [])):
+                                                path_info['selected_station_markers'].pop(marker_idx)
+                                                save_highlights(st.session_state.committed_highlights)
+                                                st.success("Marker removed.")
+                                                st.rerun()
+                                with col_rm3:
+                                    if st.button("🧹 Clear All", key=f"clear_all_markers_btn_{path_key}"):
+                                        path_info['selected_station_markers'] = []
+                                        save_highlights(st.session_state.committed_highlights)
+                                        st.success("All markers cleared for this path.")
+                                        st.rerun()
                         
                         # Offer simplification for high-coordinate paths
                         if n_coords > 500:
@@ -745,52 +1598,52 @@ def main():
 
     # Main map area
     st.subheader("Interactive Map")
+    map_zoom = 6  # Initial zoom level
 
     # ------------------------------------------------------------------
-    # Pre-process geodataframe geometries ONCE per session into plain
-    # Python lists so the expensive iterrows / coord extraction runs
-    # only on first load and never again on subsequent reruns.
+    # Pre-process station data ONCE per session.  Rail geometries now use
+    # pre-computed GeoJSON (in derived_data) rendered as a single
+    # folium.GeoJson layer instead of N individual PolyLines.
     # ------------------------------------------------------------------
-    if 'rails_coords_cache' not in st.session_state:
-        _cache = []
-        for _, row in rails_mrs_ll.iterrows():
-            for line in iter_lines(row.geometry):
-                _cache.append([(lat, lon) for lon, lat in line.coords])
-        st.session_state.rails_coords_cache = _cache
-
-    if 'rails_all_coords_cache' not in st.session_state:
-        _cache = []
-        for _, row in rails_all_ll.iterrows():
-            for line in iter_lines(row.geometry):
-                _cache.append([(lat, lon) for lon, lat in line.coords])
-        st.session_state.rails_all_coords_cache = _cache
-
     if 'stations_data_cache' not in st.session_state:
+        # Vectorized extraction — avoids iterrows() overhead
+        _lats = stations_near_ll.geometry.y.values
+        _lons = stations_near_ll.geometry.x.values
+        _slabels = stations_near_ll['station_label'].values
+        _codes = (
+            stations_near_ll['station_code'].values
+            if 'station_code' in stations_near_ll.columns
+            else np.full(len(stations_near_ll), '', dtype=object)
+        )
         _cache = []
-        for _, row in stations_near_ll.iterrows():
-            popup_text = str(row['station_label'])
-            if row.get('station_code'):
-                popup_text += f" | Code: {row['station_code']}"
+        for i in range(len(stations_near_ll)):
+            label = str(_slabels[i])
+            code = str(_codes[i])
+            popup_text = f"{label} | Code: {code}" if code else label
             _cache.append({
-                'lat': row.geometry.y,
-                'lon': row.geometry.x,
-                'label': str(row['station_label']),
+                'lat': float(_lats[i]),
+                'lon': float(_lons[i]),
+                'label': label,
                 'popup': popup_text,
             })
         st.session_state.stations_data_cache = _cache
+        # Invalidate derived lookup so it gets rebuilt
+        st.session_state.pop('stations_by_label', None)
 
-    m = folium.Map(location=map_center, zoom_start=6, height=700)
-
-    # Brazil bounding box — tiles outside this rectangle are never requested
-    _BR_BOUNDS = [[-33.75, -73.99], [5.27, -34.79]]
-    _orm_attr = (
-        'Map tiles by <a href="https://www.openrailwaymap.org/">OpenRailwayMap</a> '
-        '(<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>) | '
-        'Data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    m = folium.Map(
+        location=map_center, 
+        zoom_start=int(map_zoom), 
+        height=700,
+        zoom_snap=0.25,
+        zoom_delta=0.25,
+        wheel_px_per_zoom_level=120
     )
+    Fullscreen(position='topleft', title='Fullscreen', title_cancel='Exit fullscreen', force_separate_button=True).add_to(m)
+    _ZoomDisplay().add_to(m)
+
     folium.TileLayer(
         tiles='https://{s}.tiles.openrailwaymap.org/gauge/{z}/{x}/{y}.png',
-        attr=_orm_attr,
+        attr=_ORM_ATTR,
         name='Rail Gauge (OpenRailwayMap)',
         overlay=True,
         control=True,
@@ -798,12 +1651,12 @@ def main():
         min_zoom=2,
         max_zoom=19,
         opacity=0.8,
-        subdomains=['a', 'b', 'c'],
+        subdomains='abc',
         bounds=_BR_BOUNDS,
     ).add_to(m)
     folium.TileLayer(
         tiles='https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png',
-        attr=_orm_attr,
+        attr=_ORM_ATTR,
         name='Rail Network (OpenRailwayMap)',
         overlay=True,
         control=True,
@@ -811,7 +1664,7 @@ def main():
         min_zoom=2,
         max_zoom=19,
         opacity=0.8,
-        subdomains=['a', 'b', 'c'],
+        subdomains='abc',
         bounds=_BR_BOUNDS,
     ).add_to(m)
 
@@ -821,23 +1674,33 @@ def main():
     route_layer      = folium.FeatureGroup(name="Preview Route Track", show=True)
     route_stations_layer = folium.FeatureGroup(name="Preview Stations", show=True)
 
-    # All Brazil rails layer (off by default)
-    for coords in st.session_state.rails_all_coords_cache:
-        folium.PolyLine(
-            coords,
-            color="#ff7f0e",
-            weight=BASE_RAIL_WEIGHT,
-            opacity=0.85
-        ).add_to(all_rails_layer)
+    station_group_layers = []
+    active_station_group_systems = st.session_state.get('active_station_group_systems', [])
+    station_group_systems = st.session_state.get('station_group_systems', {})
+    if not isinstance(active_station_group_systems, list):
+        active_station_group_systems = []
 
-    # Add MRS rails base layer (from session-state coord cache)
-    for coords in st.session_state.rails_coords_cache:
-        folium.PolyLine(
-            coords,
-            color=BASE_RAIL_COLOR,
-            weight=BASE_RAIL_WEIGHT,
-            opacity=0.85
-        ).add_to(rails_layer)
+    # All Brazil rails — single GeoJSON layer (much faster than N individual PolyLines)
+    folium.GeoJson(
+        d['rails_all_geojson'],
+        style_function=lambda x: {
+            'color': '#ff7f0e',
+            'weight': BASE_RAIL_WEIGHT,
+            'opacity': 0.85,
+        },
+    ).add_to(all_rails_layer)
+
+    # MRS rails (Code 11) — single GeoJSON layer
+    folium.GeoJson(
+        d['rails_mrs_geojson'],
+        style_function=lambda x: {
+            'color': BASE_RAIL_COLOR,
+            'weight': BASE_RAIL_WEIGHT,
+            'opacity': 0.85,
+        },
+    ).add_to(rails_layer)
+
+    all_stations_label_layout = []
 
     # Add station markers (off by default) with persistent labels (from cache)
     for s in st.session_state.stations_data_cache:
@@ -850,18 +1713,49 @@ def main():
             popup=s['popup']
         ).add_to(stations_layer)
 
-        folium.Marker(
-            location=[s['lat'], s['lon']],
-            icon=folium.DivIcon(
-                html=f"<div style='font-size: 10px; font-weight: bold; color: black; "
-                     f"background-color: white; padding: 2px 4px; "
-                     f"border-radius: 2px; border: 1px solid #999; "
-                     f"white-space: nowrap; transform: translateX(-50%); "
-                     f"margin-top: 8px;'>{s['label']}</div>",
-                icon_size=(0, 0),
-                icon_anchor=(0, 0)
-            )
-        ).add_to(stations_layer)
+        label_margin_top, label_translate_x = compute_label_offset(s['lat'], s['lon'], layout_state=all_stations_label_layout)
+
+        _add_label_marker(stations_layer, s['lat'], s['lon'], s['label'],
+                          margin_top=label_margin_top,
+                          translate_x_pct=label_translate_x)
+
+    if 'stations_by_label' not in st.session_state:
+        st.session_state.stations_by_label = {
+            s.get('label'): s for s in st.session_state.stations_data_cache
+        }
+    stations_by_label = st.session_state.stations_by_label
+    group_labels_layout_state = []
+    for system_name in active_station_group_systems:
+        system_data = station_group_systems.get(system_name, {})
+        groups_map = system_data.get('groups', {}) if isinstance(system_data, dict) else {}
+        if not isinstance(groups_map, dict) or not groups_map:
+            continue
+
+        system_layer = folium.FeatureGroup(name=f"Station System: {system_name}", show=True)
+        for group_name, group_data in sorted(groups_map.items()):
+            if not isinstance(group_data, dict):
+                continue
+            group_labels = set(group_data.get('stations', []))
+            group_shape = group_data.get('shape', 'circle')
+            group_color = group_data.get('color', '#d62728')
+
+            for station_label in group_labels:
+                station = stations_by_label.get(station_label)
+                if not station:
+                    continue
+                add_station_shape_marker(
+                    system_layer,
+                    lat=station['lat'],
+                    lon=station['lon'],
+                    label=station_label,
+                    shape=group_shape,
+                    color=group_color,
+                    size=8,
+                    font_size=LABEL_FONT_SIZE,
+                    label_layout_state=group_labels_layout_state,
+                )
+
+        station_group_layers.append(system_layer)
 
     # Run routing on button click
     if run_btn:
@@ -891,6 +1785,10 @@ def main():
 
             if G is None or len(G) == 0:
                 st.error("No graph built. Try relaxing corridor constraint or increasing buffer.")
+                return
+
+            if edges_pack is None or tree is None:
+                st.error("Graph indexing failed. Try again or disable advanced options.")
                 return
 
             progress_bar.progress(50)
@@ -1004,15 +1902,16 @@ def main():
 
             auto_label = " → ".join(preview_data.get('order', []))
             committed_path_name = preview_data.get('path_name', '').strip() or auto_label
-            st.session_state.committed_highlights[system_name].append({
-                'coords_ll': list(preview_data.get('coords_ll', [])),
-                'order': list(preview_data.get('order', [])),
-                'total_km': float(preview_data.get('total_km', 0.0)),
-                'route_color': preview_data.get('route_color', PREVIEW_COLOR),
-                'highlight_name': system_name,
-                'path_name': committed_path_name,
-                'preview_station_points': list(preview_data.get('preview_station_points', []))
-            })
+            payload = _make_path_payload(
+                coords_ll=list(preview_data.get('coords_ll', [])),
+                order=list(preview_data.get('order', [])),
+                total_km=float(preview_data.get('total_km', 0.0)),
+                route_color=preview_data.get('route_color', PREVIEW_COLOR),
+                highlight_name=system_name,
+                path_name=committed_path_name,
+                preview_station_points=list(preview_data.get('preview_station_points', [])),
+            )
+            st.session_state.committed_highlights[system_name].append(payload)
             save_highlights(st.session_state.committed_highlights)
             st.success(f"Committed: **{system_name}** → {HIGHLIGHTS_SAVE_PATH.name} (auto-saved)")
             st.rerun()
@@ -1054,6 +1953,8 @@ def main():
                     tooltip=p['label'],
                     popup=p['label']
                 ).add_to(route_stations_layer)
+                # Add station name label below the preview endpoint marker
+                _add_label_marker(route_stations_layer, p['lat'], p['lon'], p['label'])
 
     # Draw committed highlights grouped by system.
     # FeatureGroup objects must be freshly created each rerun — they hold a
@@ -1095,18 +1996,31 @@ def main():
                             tooltip=f"{system_name}: {p['label']}",
                             popup=p['label']
                         ).add_to(system_layer)
-                        folium.Marker(
-                            location=[p['lat'], p['lon']],
-                            icon=folium.DivIcon(
-                                html=f"<div style='font-size: 10px; font-weight: bold; "
-                                     f"background-color: white; color: black; padding: 2px 4px; "
-                                     f"border-radius: 2px; border: 1px solid #999; "
-                                     f"white-space: nowrap; transform: translateX(-50%); "
-                                     f"margin-top: 12px;'>{p['label']}</div>",
-                                icon_size=(0, 0),
-                                icon_anchor=(0, 0)
-                            )
-                        ).add_to(system_layer)
+                        _add_label_marker(system_layer, p['lat'], p['lon'], p['label'])
+
+                for station_marker in h.get('selected_station_markers', []):
+                    if not isinstance(station_marker, dict):
+                        continue
+                    lat = station_marker.get('lat')
+                    lon = station_marker.get('lon')
+                    label = station_marker.get('label', 'Selected station')
+                    marker_color = station_marker.get('color', h.get('route_color', PREVIEW_COLOR))
+                    if lat is None or lon is None:
+                        continue
+
+                    folium.CircleMarker(
+                        location=[lat, lon],
+                        radius=7,
+                        color=marker_color,
+                        weight=2,
+                        fill=True,
+                        fill_color=marker_color,
+                        fill_opacity=0.95,
+                        tooltip=f"{system_name}: {label}",
+                        popup=label
+                    ).add_to(system_layer)
+                    # Add station name label below the marker
+                    _add_label_marker(system_layer, lat, lon, label)
             system_layer.add_to(m)
 
     # Draw station finder marker if selected
@@ -1144,7 +2058,14 @@ def main():
     stations_layer.add_to(m)
     route_layer.add_to(m)
     route_stations_layer.add_to(m)
-    folium.LayerControl(collapsed=False).add_to(m)
+    for group_layer in station_group_layers:
+        group_layer.add_to(m)
+    
+    # Create layer control - try collapsed by default for easier use
+    folium.LayerControl(collapsed=True, position='topright').add_to(m)
+
+    # Add comprehensive CSS/JS for layer control scrolling
+    m.get_root().html.add_child(folium.Element(_LAYER_SCROLL_FIX))
 
     # Display map
     st_folium(m, width=1200, height=700, returned_objects=[])

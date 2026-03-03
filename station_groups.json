@@ -1,0 +1,17 @@
+{
+  "MRS Stations": {
+    "groups": {
+      "Crew Change": {
+        "stations": [
+          "Dias Tavares [FDT]",
+          "M\u00e1rio Castilho [FMO]",
+          "Cel. Jo\u00e3o Carlos Guedes [FJC]",
+          "Bom Jardim (idx=1036) [FOJ]",
+          "Brisamar [FBA]"
+        ],
+        "shape": "triangle",
+        "color": "#d62728"
+      }
+    }
+  }
+}
