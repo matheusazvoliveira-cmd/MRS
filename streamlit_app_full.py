@@ -461,6 +461,11 @@ def _make_path_payload(path_info):
     }
 
 
+def _station_render_key(lat, lon):
+    """Stable key for station deduplication based on position."""
+    return (round(float(lat), 6), round(float(lon), 6))
+
+
 def _reverse_path_payload(path_info):
     p = _make_path_payload(path_info)
     p['coords_ll'].reverse()
@@ -1952,11 +1957,11 @@ def main():
     if render_committed:
         for system_name in sorted(st.session_state.get('committed_highlights', {}).keys()):
             system_layer = folium.FeatureGroup(name=f"System: {system_name}", show=False)  # Hidden by default for performance
-            # Share alternation state across all paths in this system
-            route_labels_layout = []
             # Prevent duplicate station markers/labels within the same system layer
-            rendered_station_labels = set()
+            rendered_station_keys = set()
             for h in st.session_state.committed_highlights[system_name]:
+                # Alternation should run in path order (left/right along each path)
+                route_labels_layout = []
                 # Optionally simplify coordinates for better performance
                 coords = h.get('coords_ll', [])
                 if simplify_coords and len(coords) > 100:
@@ -1976,10 +1981,10 @@ def main():
                     endpoint_idxs = [0] if len(pts) == 1 else [0, len(pts) - 1]
                     for idx in endpoint_idxs:
                         p = pts[idx]
-                        label_key = p.get('label')
-                        if label_key in rendered_station_labels:
+                        station_key = _station_render_key(p['lat'], p['lon'])
+                        if station_key in rendered_station_keys:
                             continue
-                        rendered_station_labels.add(label_key)
+                        rendered_station_keys.add(station_key)
                         folium.CircleMarker(
                             location=[p['lat'], p['lon']],
                             radius=8,
@@ -2005,9 +2010,10 @@ def main():
                     marker_color = station_marker.get('color', h.get('route_color', PREVIEW_COLOR))
                     if lat is None or lon is None:
                         continue
-                    if label in rendered_station_labels:
+                    station_key = _station_render_key(lat, lon)
+                    if station_key in rendered_station_keys:
                         continue
-                    rendered_station_labels.add(label)
+                    rendered_station_keys.add(station_key)
 
                     folium.CircleMarker(
                         location=[lat, lon],
