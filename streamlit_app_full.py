@@ -1952,9 +1952,11 @@ def main():
     if render_committed:
         for system_name in sorted(st.session_state.get('committed_highlights', {}).keys()):
             system_layer = folium.FeatureGroup(name=f"System: {system_name}", show=False)  # Hidden by default for performance
+            # Share alternation state across all paths in this system
+            route_labels_layout = []
+            # Prevent duplicate station markers/labels within the same system layer
+            rendered_station_labels = set()
             for h in st.session_state.committed_highlights[system_name]:
-                # Layout state for alternating labels in this route (shared across endpoints and markers)
-                route_labels_layout = []
                 # Optionally simplify coordinates for better performance
                 coords = h.get('coords_ll', [])
                 if simplify_coords and len(coords) > 100:
@@ -1974,6 +1976,10 @@ def main():
                     endpoint_idxs = [0] if len(pts) == 1 else [0, len(pts) - 1]
                     for idx in endpoint_idxs:
                         p = pts[idx]
+                        label_key = p.get('label')
+                        if label_key in rendered_station_labels:
+                            continue
+                        rendered_station_labels.add(label_key)
                         folium.CircleMarker(
                             location=[p['lat'], p['lon']],
                             radius=8,
@@ -1999,6 +2005,9 @@ def main():
                     marker_color = station_marker.get('color', h.get('route_color', PREVIEW_COLOR))
                     if lat is None or lon is None:
                         continue
+                    if label in rendered_station_labels:
+                        continue
+                    rendered_station_labels.add(label)
 
                     folium.CircleMarker(
                         location=[lat, lon],
