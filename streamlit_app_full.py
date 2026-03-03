@@ -1923,6 +1923,7 @@ def main():
 
         pts = preview_data.get('preview_station_points', [])
         if pts:
+            preview_labels_layout = []  # Layout state for alternating labels
             endpoint_idxs = [0] if len(pts) == 1 else [0, len(pts) - 1]
             for idx in endpoint_idxs:
                 p = pts[idx]
@@ -1937,8 +1938,10 @@ def main():
                     tooltip=p['label'],
                     popup=p['label']
                 ).add_to(route_stations_layer)
-                # Add station name label below the preview endpoint marker
-                _add_label_marker(route_stations_layer, p['lat'], p['lon'], p['label'])
+                # Add station name label with alternating offset
+                margin_top, translate_x = compute_label_offset(p['lat'], p['lon'], layout_state=preview_labels_layout)
+                _add_label_marker(route_stations_layer, p['lat'], p['lon'], p['label'],
+                                margin_top=margin_top, translate_x_pct=translate_x)
 
     # Draw committed highlights grouped by system.
     # FeatureGroup objects must be freshly created each rerun — they hold a
@@ -1950,6 +1953,8 @@ def main():
         for system_name in sorted(st.session_state.get('committed_highlights', {}).keys()):
             system_layer = folium.FeatureGroup(name=f"System: {system_name}", show=False)  # Hidden by default for performance
             for h in st.session_state.committed_highlights[system_name]:
+                # Layout state for alternating labels in this route (shared across endpoints and markers)
+                route_labels_layout = []
                 # Optionally simplify coordinates for better performance
                 coords = h.get('coords_ll', [])
                 if simplify_coords and len(coords) > 100:
@@ -1980,7 +1985,10 @@ def main():
                             tooltip=f"{system_name}: {p['label']}",
                             popup=p['label']
                         ).add_to(system_layer)
-                        _add_label_marker(system_layer, p['lat'], p['lon'], p['label'])
+                        # Add label with alternating offset
+                        margin_top, translate_x = compute_label_offset(p['lat'], p['lon'], layout_state=route_labels_layout)
+                        _add_label_marker(system_layer, p['lat'], p['lon'], p['label'],
+                                        margin_top=margin_top, translate_x_pct=translate_x)
 
                 for station_marker in h.get('selected_station_markers', []):
                     if not isinstance(station_marker, dict):
@@ -2003,8 +2011,10 @@ def main():
                         tooltip=f"{system_name}: {label}",
                         popup=label
                     ).add_to(system_layer)
-                    # Add station name label below the marker
-                    _add_label_marker(system_layer, lat, lon, label)
+                    # Add label with alternating offset (shares layout state with route endpoints)
+                    margin_top, translate_x = compute_label_offset(lat, lon, layout_state=route_labels_layout)
+                    _add_label_marker(system_layer, lat, lon, label,
+                                    margin_top=margin_top, translate_x_pct=translate_x)
             system_layer.add_to(m)
 
     # Draw station finder marker if selected
