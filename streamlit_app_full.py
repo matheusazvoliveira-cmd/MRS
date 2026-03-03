@@ -1957,11 +1957,11 @@ def main():
     if render_committed:
         for system_name in sorted(st.session_state.get('committed_highlights', {}).keys()):
             system_layer = folium.FeatureGroup(name=f"System: {system_name}", show=False)  # Hidden by default for performance
+            # Keep one running left/right alternation sequence for the entire system
+            route_labels_layout = []
             # Prevent duplicate station markers/labels within the same system layer
             rendered_station_keys = set()
             for h in st.session_state.committed_highlights[system_name]:
-                # Alternation should run in path order (left/right along each path)
-                route_labels_layout = []
                 # Optionally simplify coordinates for better performance
                 coords = h.get('coords_ll', [])
                 if simplify_coords and len(coords) > 100:
