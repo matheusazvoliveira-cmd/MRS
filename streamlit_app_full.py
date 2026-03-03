@@ -1955,12 +1955,14 @@ def main():
     # is fast even with many committed paths.
     # PERFORMANCE: Only render if toggle is enabled
     if render_committed:
-        # Global dedup + alternation across ALL systems so a station that
-        # appears in multiple systems is only labelled once on the map.
+        # Global alternation so left/right pattern is consistent across systems
         route_labels_layout = []
-        rendered_station_keys = set()
         for system_name in sorted(st.session_state.get('committed_highlights', {}).keys()):
             system_layer = folium.FeatureGroup(name=f"System: {system_name}", show=False)  # Hidden by default for performance
+            # Per-system dedup: prevents duplicate markers across paths within
+            # the same system, but every system keeps its own complete markers
+            # so toggling a single system always shows all its stations.
+            rendered_station_keys = set()
             for h in st.session_state.committed_highlights[system_name]:
                 # Optionally simplify coordinates for better performance
                 coords = h.get('coords_ll', [])
