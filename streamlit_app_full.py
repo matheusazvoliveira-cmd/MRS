@@ -327,47 +327,22 @@ def stations_along_path(coords_ll, stations_lookup, tolerance_m=150.0):
 
 
 def compute_label_offset(lat, lon, layout_state=None, collision_radius_m=5000.0):
-    """Compute vertical/horizontal offsets to reduce collisions among nearby labels."""
+    """Compute vertical/horizontal offsets with alternating left/right pattern along route."""
     if layout_state is None:
         return 8, -50
 
-    x, y = to_3857.transform(float(lon), float(lat))
-    radius_sq = float(collision_radius_m) ** 2
-    overlaps = 0
-    for entry in layout_state:
-        dx = x - entry['x']
-        dy = y - entry['y']
-        if (dx * dx + dy * dy) <= radius_sq:
-            overlaps += 1
-
-    # Expanded offset pattern with more varied positions
-    # (margin_top_px, translate_x_pct) — spreads labels in radial pattern
-    offset_pattern = [
-        (8, -50),      # center below (default)
-        (8, -100),     # far left
-        (8, 0),        # far right
-        (25, -50),     # center below, further down
-        (25, -100),    # far left, further down
-        (25, 0),       # far right, further down
-        (-10, -50),    # center above
-        (-10, -100),   # far left above
-        (-10, 0),      # far right above
-        (40, -50),     # center, even further down
-        (40, -120),    # extra far left down
-        (40, 20),      # extra far right down
-        (-25, -50),    # center, further above
-        (-25, -100),   # far left, further above
-        (-25, 0),      # far right, further above
-        (8, -75),      # mid-left
-        (8, -25),      # mid-right
-        (25, -75),     # mid-left, further down
-        (25, -25),     # mid-right, further down
-        (55, -50),     # very far down center
-        (55, -90),     # very far down left
-        (55, -10),     # very far down right
-    ]
-    margin_top, translate_x_pct = offset_pattern[overlaps % len(offset_pattern)]
-    layout_state.append({'x': x, 'y': y})
+    # Simple alternating pattern: odd stations on left, even on right
+    count = len(layout_state)
+    
+    if count % 2 == 0:
+        # Even: label on left (text extends right, ends at marker)
+        translate_x_pct = -100
+    else:
+        # Odd: label on right (text extends left, starts at marker)
+        translate_x_pct = 0
+    
+    margin_top = 8
+    layout_state.append({'count': count})
     return margin_top, translate_x_pct
 
 
