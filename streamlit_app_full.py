@@ -111,7 +111,7 @@ PREVIEW_COLOR = "#1f77b4"
 HIGHLIGHT_WEIGHT = 5
 HIGHLIGHT_OPACITY = 1.0
 
-LABEL_FONT_SIZE = 20  # px — single source of truth for all station label text
+LABEL_FONT_SIZE = 14  # px — single source of truth for all station label text
 
 # Station label marker offset (px below the marker dot)
 LABEL_MARGIN_TOP_DEFAULT = 12
@@ -436,8 +436,8 @@ def _add_label_marker(layer, lat, lon, text, margin_top=LABEL_MARGIN_TOP_DEFAULT
         icon=folium.DivIcon(
             html=(
                 f"<div style='display:inline-block;font-size:{font_size}px;font-weight:bold;"
-                f"background-color:white;color:black;padding:2px 4px;"
-                f"border-radius:2px;border:1px solid #999;"
+                f"background-color:transparent;color:black;padding:2px 4px;"
+                f"border-radius:2px;border:none;"
                 f"white-space:nowrap;transform:translateX({translate_x_pct}%);"
                 f"margin-top:{margin_top}px;'>{text}</div>"
             ),
