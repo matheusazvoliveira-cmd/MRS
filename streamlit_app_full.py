@@ -2055,8 +2055,8 @@ def main():
     for group_layer in station_group_layers:
         group_layer.add_to(m)
     
-    # Create layer control - try collapsed by default for easier use
-    folium.LayerControl(collapsed=True, position='topright').add_to(m)
+    # Keep layer control expanded so system visibility is a direct click toggle
+    folium.LayerControl(collapsed=False, position='topright').add_to(m)
 
     # Add comprehensive CSS/JS for layer control scrolling
     m.get_root().html.add_child(folium.Element(_LAYER_SCROLL_FIX))
