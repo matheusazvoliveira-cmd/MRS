@@ -19,6 +19,7 @@ class _NoScriptRunCtxFilter(logging.Filter):
 logging.getLogger('streamlit').addFilter(_NoScriptRunCtxFilter())
 
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
 import json
 import time
 import sys
@@ -254,8 +255,12 @@ def load_data():
     if not STATIONS_SHP_PATH.exists():
         raise FileNotFoundError(f"Stations shapefile not found: {STATIONS_SHP_PATH}")
 
-    rails_all = gpd.read_file(RAILS_SHP_PATH)
-    stations_all = gpd.read_file(STATIONS_SHP_PATH)
+    # Read both shapefiles in parallel (I/O-bound — threading helps on first load)
+    with ThreadPoolExecutor(max_workers=2) as ex:
+        f_rails = ex.submit(gpd.read_file, RAILS_SHP_PATH)
+        f_stations = ex.submit(gpd.read_file, STATIONS_SHP_PATH)
+        rails_all = f_rails.result()
+        stations_all = f_stations.result()
 
     # Set CRS if missing
     if rails_all.crs is None and SOURCE_CRS_IF_MISSING:
@@ -917,25 +922,48 @@ def main():
     # Compute and cache all derived data once per session
     if 'derived_data' not in st.session_state or 'operator_geojsons' not in st.session_state.get('derived_data', {}):
         with st.spinner("Preparing data..."):
-            rails_all_m = rails_all.to_crs(epsg=3857)
-            rails_mrs = rails_all[rails_all[FILTER_COLUMN] == MRS_CODE].copy()
-            rails_mrs_ll = rails_mrs.to_crs(epsg=4326)
-            rails_all_ll = rails_all.to_crs(epsg=4326)
-            _, stations_near_ll, stations_lookup, labels = prepare_stations(stations_all)
+            # Phase 1: parallel CRS transforms + station prep
+            # PROJ/GEOS are C libraries that release the GIL → real thread parallelism
+            with ThreadPoolExecutor(max_workers=3) as ex:
+                f_rails_m = ex.submit(rails_all.to_crs, epsg=3857)
+                f_rails_ll = ex.submit(rails_all.to_crs, epsg=4326)
+                f_stations = ex.submit(prepare_stations, stations_all)
+
+                rails_all_m = f_rails_m.result()
+                rails_all_ll = f_rails_ll.result()
+                _, stations_near_ll, stations_lookup, labels = f_stations.result()
+
             centroid = stations_near_ll.geometry.union_all().centroid
-            # Pre-compute minimal GeoJSON for rail layers
-            # (single folium.GeoJson layer vs N individual PolyLines)
-            rails_mrs_geojson = _gdf_to_minimal_geojson(rails_mrs_ll)
-            rails_all_geojson = _gdf_to_minimal_geojson(rails_all_ll)
-            # Pre-compute per-operator GeoJSON layers
-            operator_geojsons = {}
-            for op_name, op_info in RAIL_OPERATORS.items():
-                op_mask = rails_all[FILTER_COLUMN].isin(op_info['codes'])
-                if op_mask.any():
-                    op_ll = rails_all[op_mask].to_crs(epsg=4326)
-                    operator_geojsons[op_name] = _gdf_to_minimal_geojson(op_ll)
-                else:
-                    operator_geojsons[op_name] = {'type': 'FeatureCollection', 'features': []}
+
+            # Derive MRS subset from already-transformed data (no extra CRS transform)
+            rails_mrs_ll = rails_all_ll[rails_all_ll[FILTER_COLUMN] == MRS_CODE].copy()
+
+            # Phase 2: parallel GeoJSON conversions
+            # Filter pre-transformed rails_all_ll instead of re-projecting per operator
+            with ThreadPoolExecutor(max_workers=4) as ex:
+                f_mrs_json = ex.submit(_gdf_to_minimal_geojson, rails_mrs_ll)
+                f_all_json = ex.submit(_gdf_to_minimal_geojson, rails_all_ll)
+
+                # Per-operator GeoJSONs — filter already-transformed data
+                op_futures = {}
+                for op_name, op_info in RAIL_OPERATORS.items():
+                    op_mask = rails_all_ll[FILTER_COLUMN].isin(op_info['codes'])
+                    if op_mask.any():
+                        op_futures[op_name] = ex.submit(
+                            _gdf_to_minimal_geojson, rails_all_ll[op_mask]
+                        )
+                    else:
+                        op_futures[op_name] = None
+
+                rails_mrs_geojson = f_mrs_json.result()
+                rails_all_geojson = f_all_json.result()
+                operator_geojsons = {}
+                for op_name, fut in op_futures.items():
+                    if fut is not None:
+                        operator_geojsons[op_name] = fut.result()
+                    else:
+                        operator_geojsons[op_name] = {'type': 'FeatureCollection', 'features': []}
+
             st.session_state.derived_data = {
                 'rails_all_m': rails_all_m,
                 'rails_mrs_ll': rails_mrs_ll,
