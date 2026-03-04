@@ -79,6 +79,25 @@ STATION_ID_FIELD = None
 
 SOURCE_CRS_IF_MISSING = "EPSG:4674"
 
+# ---------------------------------------------------------------------------
+# Operator ↔ ANTT rail-code mapping
+# ---------------------------------------------------------------------------
+RAIL_OPERATORS = {
+    "MRS":            {"codes": [11],        "color": "#2ca02c",  "label": "MRS Logística"},
+    "Rumo":           {"codes": [1, 5, 7, 9], "color": "#1f77b4", "label": "Rumo (Malha Sul / Paulista / Oeste / Norte)"},
+    "Vale":           {"codes": [3, 4],       "color": "#9467bd",  "label": "Vale (EFC Carajás / EFVM Vitória-Minas)"},
+    "VLI":            {"codes": [8, 12, 13],  "color": "#d62728",  "label": "VLI (FCA / FNS Norte / FNS Central)"},
+    "Transnordestina": {"codes": [2],         "color": "#ff7f0e",  "label": "Transnordestina (CFN)"},
+    "Ferroeste":      {"codes": [6],          "color": "#8c564b",  "label": "Ferroeste"},
+    "FTC":            {"codes": [10],         "color": "#e377c2",  "label": "FTC (Tereza Cristina)"},
+}
+
+# Reverse lookup: code → operator name
+CODE_TO_OPERATOR = {}
+for _op_name, _op_info in RAIL_OPERATORS.items():
+    for _code in _op_info["codes"]:
+        CODE_TO_OPERATOR[_code] = _op_name
+
 STRICT_MRS = "Strict MRS (11 only)"
 PREFER_MRS = "Prefer MRS (penalize non-11)"
 ALLOW_ALL = "Allow all (shortest distance)"
@@ -111,7 +130,7 @@ PREVIEW_COLOR = "#1f77b4"
 HIGHLIGHT_WEIGHT = 5
 HIGHLIGHT_OPACITY = 1.0
 
-LABEL_FONT_SIZE = 14  # px — single source of truth for all station label text
+LABEL_FONT_SIZE = 17  # px — single source of truth for all station label text
 
 # Station label marker offset (px below the marker dot)
 LABEL_MARGIN_TOP_DEFAULT = 12
@@ -885,6 +904,8 @@ def main():
         st.session_state.station_group_systems = load_station_group_systems()
     if 'active_station_group_systems' not in st.session_state:
         st.session_state.active_station_group_systems = []
+    if 'active_operator_layers' not in st.session_state:
+        st.session_state.active_operator_layers = ['MRS']  # MRS shown by default
 
     # Load raw data (instant after first call — @st.cache_data)
     try:
@@ -894,7 +915,7 @@ def main():
         return
 
     # Compute and cache all derived data once per session
-    if 'derived_data' not in st.session_state or 'rails_all_ll' not in st.session_state.derived_data:
+    if 'derived_data' not in st.session_state or 'operator_geojsons' not in st.session_state.get('derived_data', {}):
         with st.spinner("Preparing data..."):
             rails_all_m = rails_all.to_crs(epsg=3857)
             rails_mrs = rails_all[rails_all[FILTER_COLUMN] == MRS_CODE].copy()
@@ -906,6 +927,15 @@ def main():
             # (single folium.GeoJson layer vs N individual PolyLines)
             rails_mrs_geojson = _gdf_to_minimal_geojson(rails_mrs_ll)
             rails_all_geojson = _gdf_to_minimal_geojson(rails_all_ll)
+            # Pre-compute per-operator GeoJSON layers
+            operator_geojsons = {}
+            for op_name, op_info in RAIL_OPERATORS.items():
+                op_mask = rails_all[FILTER_COLUMN].isin(op_info['codes'])
+                if op_mask.any():
+                    op_ll = rails_all[op_mask].to_crs(epsg=4326)
+                    operator_geojsons[op_name] = _gdf_to_minimal_geojson(op_ll)
+                else:
+                    operator_geojsons[op_name] = {'type': 'FeatureCollection', 'features': []}
             st.session_state.derived_data = {
                 'rails_all_m': rails_all_m,
                 'rails_mrs_ll': rails_mrs_ll,
@@ -916,6 +946,7 @@ def main():
                 'map_center': [centroid.y, centroid.x],
                 'rails_mrs_geojson': rails_mrs_geojson,
                 'rails_all_geojson': rails_all_geojson,
+                'operator_geojsons': operator_geojsons,
             }
         st.success(f"Loaded {len(labels)} stations, {len(rails_all)} rail features")
 
@@ -997,7 +1028,19 @@ def main():
                 st.info("Marker cleared")
 
         st.divider()
-        st.subheader("🗂️ Station Group Systems")
+        st.subheader("� Operator Rail Layers")
+        st.caption("Toggle rail network layers by operator/concessionaire.")
+        operator_names = sorted(RAIL_OPERATORS.keys())
+        st.multiselect(
+            "Show operators on map",
+            options=operator_names,
+            default=st.session_state.active_operator_layers,
+            key="active_operator_layers",
+            format_func=lambda op: f"{op} — {RAIL_OPERATORS[op]['label']}",
+        )
+
+        st.divider()
+        st.subheader("�🗂️ Station Group Systems")
         st.caption("Create systems and add multiple station groups per system (each group with its own marker shape/color).")
 
         group_system_name_input = st.text_input(
@@ -1662,7 +1705,6 @@ def main():
     ).add_to(m)
 
     all_rails_layer  = folium.FeatureGroup(name="All Brazil Rails", show=False)
-    rails_layer      = folium.FeatureGroup(name="MRS Rails (Code 11)", show=True)
     stations_layer   = folium.FeatureGroup(name="All Stations", show=False)
     route_layer      = folium.FeatureGroup(name="Preview Route Track", show=True)
     route_stations_layer = folium.FeatureGroup(name="Preview Stations", show=True)
@@ -1683,15 +1725,28 @@ def main():
         },
     ).add_to(all_rails_layer)
 
-    # MRS rails (Code 11) — single GeoJSON layer
-    folium.GeoJson(
-        d['rails_mrs_geojson'],
-        style_function=lambda x: {
-            'color': BASE_RAIL_COLOR,
-            'weight': BASE_RAIL_WEIGHT,
-            'opacity': 0.85,
-        },
-    ).add_to(rails_layer)
+    # Per-operator rail layers — only render operators selected in sidebar
+    active_operators = st.session_state.get('active_operator_layers', ['MRS'])
+    operator_layers = []
+    operator_geojsons = d.get('operator_geojsons', {})
+    for op_name in sorted(RAIL_OPERATORS.keys()):
+        if op_name not in active_operators:
+            continue
+        op_info = RAIL_OPERATORS[op_name]
+        op_geojson = operator_geojsons.get(op_name)
+        if not op_geojson or not op_geojson.get('features'):
+            continue
+        op_color = op_info['color']
+        op_layer = folium.FeatureGroup(name=f"🚂 {op_name} Rails", show=True)
+        folium.GeoJson(
+            op_geojson,
+            style_function=lambda x, c=op_color: {
+                'color': c,
+                'weight': BASE_RAIL_WEIGHT,
+                'opacity': 0.85,
+            },
+        ).add_to(op_layer)
+        operator_layers.append(op_layer)
 
     all_stations_label_layout = []
 
@@ -2065,7 +2120,8 @@ def main():
             st.warning(f"Station marker error: {e}")
 
     all_rails_layer.add_to(m)
-    rails_layer.add_to(m)
+    for op_layer in operator_layers:
+        op_layer.add_to(m)
     stations_layer.add_to(m)
     route_layer.add_to(m)
     route_stations_layer.add_to(m)

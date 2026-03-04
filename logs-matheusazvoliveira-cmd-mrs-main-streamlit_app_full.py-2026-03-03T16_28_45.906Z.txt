@@ -1,0 +1,92 @@
+
+[     UTC     ] Logs for rail-map.streamlit.app/
+────────────────────────────────────────────────────────────────────────────────────────
+[16:25:01] 🖥 Provisioning machine...
+[16:25:01] 🎛 Preparing system...
+[16:25:01] ⛓ Spinning up manager process...
+[16:24:58] 🚀 Starting up repository: 'mrs', branch: 'main', main module: 'streamlit_app_full.py'
+[16:24:58] 🐙 Cloning repository...
+[16:25:01] 🐙 Cloning into '/mount/src/mrs'...
+
+[16:25:01] 🐙 Cloned repository!
+[16:25:01] 🐙 Pulling code changes from Github...
+[16:25:01] 📦 Processing dependencies...
+
+──────────────────────────────────────── uv ───────────────────────────────────────────
+
+Using uv pip install.
+Using Python 3.13.12 environment at /home/adminuser/venv
+Resolved 50 packages in 446ms
+Prepared 50 packages in 2.94s
+Installed 50 packages in 237ms
+ + altair==6.0.0
+ + attrs==25.4.0
+ + blinker==1.9.0
+ + branca==0.8.2
+ + cachetools==6.2.6
+ + certifi==2026.2.25
+ + charset-normalizer==3.4.4
+ + click==8.3.1
+ + click-plugins==1.1.1.2
+ + cligj==0.7.2
+ + fiona==1.10.1
+ + folium==0.20.0
+ + geopandas==1.1.2
+ + gitdb==4.0.12
+ + gitpython==3.1.46
+ + idna==3.11
+ + jinja2[2026-03-03 16:25:05.610978] ==3.1.6
+ + jsonschema==4.26.0
+ + jsonschema-specifications==2025.9.1
+ + markupsafe==3.0.3
+ + narwhals==2.17.0
+ + [2026-03-03 16:25:05.611319] networkx==3.6.1
+ + numpy==2.4.2
+ + packaging==26.0
+ + pandas==2.3.3
+ + pillow==12.1.1[2026-03-03 16:25:05.611564] 
+ + protobuf==6.33.5
+ + pyarrow==23.0.1
+ + pydeck==0.9.1
+ + pyogrio==0.12.1
+ + pyproj==3.7.2
+ + python-dateutil==[2026-03-03 16:25:05.611755] 2.9.0.post0
+ + pytz==2026.1.post1
+ + referencing==0.37.0
+ + requests==2.32.5
+ + rpds-py==0.30.0[2026-03-03 16:25:05.611941] 
+ + scipy==1.17.1
+ + shapely==2.1.2
+ + six==1.17.0
+ + smmap==5.0.2[2026-03-03 16:25:05.612096] 
+ + streamlit==1.54.0
+ + streamlit-folium==0.26.2
+ + tenacity==9.1.4
+ + toml==0.10.2
+ + tornado==6.5.4
+ + [2026-03-03 16:25:05.612279] typing-extensions==4.15.0
+ + tzdata==2025.3
+ + urllib3==2.6.3
+ + watchdog==6.0.0
+ + xyzservices[2026-03-03 16:25:05.612447] ==2025.11.0
+Checking if Streamlit is installed
+Found Streamlit version 1.54.0 in the environment
+Installing rich for an improved exception logging
+Using uv pip install.
+Using Python 3.13.12 environment at /home/adminuser/venv
+Resolved 4 packages in 141ms
+Prepared 4 packages in 118ms
+Installed 4 packages in 12ms
+ + markdown-it-py==4.0.0
+ + mdurl==0.1.2
+ + pygments==2.19.2
+ + rich==14.3.3
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+[16:25:07] 🐍 Python dependencies were installed from /mount/src/mrs/requirements.txt using uv.
+Check if streamlit is installed
+Streamlit is already installed
+[16:25:08] 📦 Processed dependencies!
+
+
