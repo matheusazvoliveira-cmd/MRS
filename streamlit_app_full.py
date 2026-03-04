@@ -274,6 +274,65 @@ def load_data():
     return rails_all, stations_all
 
 
+@st.cache_data(show_spinner="Preparing data...")
+def prepare_derived_data(rails_all, stations_all):
+    """Compute all derived data (CRS transforms, GeoJSON conversions) — cached globally across all users."""
+    # Phase 1: parallel CRS transforms + station prep
+    # PROJ/GEOS are C libraries that release the GIL → real thread parallelism
+    with ThreadPoolExecutor(max_workers=3) as ex:
+        f_rails_m = ex.submit(rails_all.to_crs, epsg=3857)
+        f_rails_ll = ex.submit(rails_all.to_crs, epsg=4326)
+        f_stations = ex.submit(prepare_stations, stations_all)
+
+        rails_all_m = f_rails_m.result()
+        rails_all_ll = f_rails_ll.result()
+        _, stations_near_ll, stations_lookup, labels = f_stations.result()
+
+    centroid = stations_near_ll.geometry.union_all().centroid
+
+    # Derive MRS subset from already-transformed data (no extra CRS transform)
+    rails_mrs_ll = rails_all_ll[rails_all_ll[FILTER_COLUMN] == MRS_CODE].copy()
+
+    # Phase 2: parallel GeoJSON conversions
+    # Filter pre-transformed rails_all_ll instead of re-projecting per operator
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        f_mrs_json = ex.submit(_gdf_to_minimal_geojson, rails_mrs_ll)
+        f_all_json = ex.submit(_gdf_to_minimal_geojson, rails_all_ll)
+
+        # Per-operator GeoJSONs — filter already-transformed data
+        op_futures = {}
+        for op_name, op_info in RAIL_OPERATORS.items():
+            op_mask = rails_all_ll[FILTER_COLUMN].isin(op_info['codes'])
+            if op_mask.any():
+                op_futures[op_name] = ex.submit(
+                    _gdf_to_minimal_geojson, rails_all_ll[op_mask]
+                )
+            else:
+                op_futures[op_name] = None
+
+        rails_mrs_geojson = f_mrs_json.result()
+        rails_all_geojson = f_all_json.result()
+        operator_geojsons = {}
+        for op_name, fut in op_futures.items():
+            if fut is not None:
+                operator_geojsons[op_name] = fut.result()
+            else:
+                operator_geojsons[op_name] = {'type': 'FeatureCollection', 'features': []}
+
+    return {
+        'rails_all_m': rails_all_m,
+        'rails_mrs_ll': rails_mrs_ll,
+        'rails_all_ll': rails_all_ll,
+        'stations_near_ll': stations_near_ll,
+        'stations_lookup': stations_lookup,
+        'labels': labels,
+        'map_center': [centroid.y, centroid.x],
+        'rails_mrs_geojson': rails_mrs_geojson,
+        'rails_all_geojson': rails_all_geojson,
+        'operator_geojsons': operator_geojsons,
+    }
+
+
 def prepare_stations(stations_all):
     """Extract point stations and build labels with 3-letter codes."""
     stations_m = stations_all.to_crs(epsg=3857)
@@ -919,66 +978,13 @@ def main():
         st.error(f"Could not load shapefiles: {e}")
         return
 
-    # Compute and cache all derived data once per session
-    if 'derived_data' not in st.session_state or 'operator_geojsons' not in st.session_state.get('derived_data', {}):
-        with st.spinner("Preparing data..."):
-            # Phase 1: parallel CRS transforms + station prep
-            # PROJ/GEOS are C libraries that release the GIL → real thread parallelism
-            with ThreadPoolExecutor(max_workers=3) as ex:
-                f_rails_m = ex.submit(rails_all.to_crs, epsg=3857)
-                f_rails_ll = ex.submit(rails_all.to_crs, epsg=4326)
-                f_stations = ex.submit(prepare_stations, stations_all)
+    # Compute derived data — globally cached across all users (@st.cache_data)
+    # First user triggers computation (~10-15s), all subsequent users get instant cached result
+    derived_data = prepare_derived_data(rails_all, stations_all)
+    st.session_state.derived_data = derived_data  # Store in session_state for convenience
+    st.success(f"Loaded {derived_data['labels'].__len__()} stations, {len(rails_all)} rail features")
 
-                rails_all_m = f_rails_m.result()
-                rails_all_ll = f_rails_ll.result()
-                _, stations_near_ll, stations_lookup, labels = f_stations.result()
-
-            centroid = stations_near_ll.geometry.union_all().centroid
-
-            # Derive MRS subset from already-transformed data (no extra CRS transform)
-            rails_mrs_ll = rails_all_ll[rails_all_ll[FILTER_COLUMN] == MRS_CODE].copy()
-
-            # Phase 2: parallel GeoJSON conversions
-            # Filter pre-transformed rails_all_ll instead of re-projecting per operator
-            with ThreadPoolExecutor(max_workers=4) as ex:
-                f_mrs_json = ex.submit(_gdf_to_minimal_geojson, rails_mrs_ll)
-                f_all_json = ex.submit(_gdf_to_minimal_geojson, rails_all_ll)
-
-                # Per-operator GeoJSONs — filter already-transformed data
-                op_futures = {}
-                for op_name, op_info in RAIL_OPERATORS.items():
-                    op_mask = rails_all_ll[FILTER_COLUMN].isin(op_info['codes'])
-                    if op_mask.any():
-                        op_futures[op_name] = ex.submit(
-                            _gdf_to_minimal_geojson, rails_all_ll[op_mask]
-                        )
-                    else:
-                        op_futures[op_name] = None
-
-                rails_mrs_geojson = f_mrs_json.result()
-                rails_all_geojson = f_all_json.result()
-                operator_geojsons = {}
-                for op_name, fut in op_futures.items():
-                    if fut is not None:
-                        operator_geojsons[op_name] = fut.result()
-                    else:
-                        operator_geojsons[op_name] = {'type': 'FeatureCollection', 'features': []}
-
-            st.session_state.derived_data = {
-                'rails_all_m': rails_all_m,
-                'rails_mrs_ll': rails_mrs_ll,
-                'rails_all_ll': rails_all_ll,
-                'stations_near_ll': stations_near_ll,
-                'stations_lookup': stations_lookup,
-                'labels': labels,
-                'map_center': [centroid.y, centroid.x],
-                'rails_mrs_geojson': rails_mrs_geojson,
-                'rails_all_geojson': rails_all_geojson,
-                'operator_geojsons': operator_geojsons,
-            }
-        st.success(f"Loaded {len(labels)} stations, {len(rails_all)} rail features")
-
-    d = st.session_state.derived_data
+    d = derived_data
     rails_all_m      = d['rails_all_m']
     rails_mrs_ll     = d['rails_mrs_ll']
     rails_all_ll     = d['rails_all_ll']
