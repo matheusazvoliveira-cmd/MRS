@@ -1718,19 +1718,6 @@ def main():
         subdomains='abc',
         bounds=_BR_BOUNDS,
     ).add_to(m)
-    folium.TileLayer(
-        tiles='https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png',
-        attr=_ORM_ATTR,
-        name='Rail Network (OpenRailwayMap)',
-        overlay=True,
-        control=True,
-        show=False,
-        min_zoom=2,
-        max_zoom=19,
-        opacity=0.8,
-        subdomains='abc',
-        bounds=_BR_BOUNDS,
-    ).add_to(m)
 
     all_rails_layer  = folium.FeatureGroup(name="All Brazil Rails", show=False)
     stations_layer   = folium.FeatureGroup(name="All Stations", show=False)
