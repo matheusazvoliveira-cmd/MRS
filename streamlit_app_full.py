@@ -274,15 +274,23 @@ def load_data():
     return rails_all, stations_all
 
 
+def get_data_version_key():
+    """Build a hashable key so derived-data cache invalidates when source files change."""
+    rails_mtime = RAILS_SHP_PATH.stat().st_mtime_ns if RAILS_SHP_PATH.exists() else 0
+    stations_mtime = STATIONS_SHP_PATH.stat().st_mtime_ns if STATIONS_SHP_PATH.exists() else 0
+    return (str(RAILS_SHP_PATH), rails_mtime, str(STATIONS_SHP_PATH), stations_mtime)
+
+
 @st.cache_data(show_spinner="Preparing data...")
-def prepare_derived_data(rails_all, stations_all):
+def prepare_derived_data(_rails_all, _stations_all, data_version_key):
     """Compute all derived data (CRS transforms, GeoJSON conversions) — cached globally across all users."""
+    _ = data_version_key
     # Phase 1: parallel CRS transforms + station prep
     # PROJ/GEOS are C libraries that release the GIL → real thread parallelism
     with ThreadPoolExecutor(max_workers=3) as ex:
-        f_rails_m = ex.submit(rails_all.to_crs, epsg=3857)
-        f_rails_ll = ex.submit(rails_all.to_crs, epsg=4326)
-        f_stations = ex.submit(prepare_stations, stations_all)
+        f_rails_m = ex.submit(_rails_all.to_crs, epsg=3857)
+        f_rails_ll = ex.submit(_rails_all.to_crs, epsg=4326)
+        f_stations = ex.submit(prepare_stations, _stations_all)
 
         rails_all_m = f_rails_m.result()
         rails_all_ll = f_rails_ll.result()
@@ -980,7 +988,8 @@ def main():
 
     # Compute derived data — globally cached across all users (@st.cache_data)
     # First user triggers computation (~10-15s), all subsequent users get instant cached result
-    derived_data = prepare_derived_data(rails_all, stations_all)
+    data_version_key = get_data_version_key()
+    derived_data = prepare_derived_data(rails_all, stations_all, data_version_key)
     st.session_state.derived_data = derived_data  # Store in session_state for convenience
     st.success(f"Loaded {derived_data['labels'].__len__()} stations, {len(rails_all)} rail features")
 
