@@ -242,12 +242,18 @@ def main():
                                     if move_to != "(keep here)":
                                         data[move_to].append(path)
                                         paths.pop(idx)
+                                        # Remove system if no paths left
+                                        if len(paths) == 0:
+                                            del data[selected_system]
                                         st.session_state.modified = True
                                         st.rerun()
                             
                             # Delete path
                             if st.button(f"🗑️ Delete this path", key=f"del_{selected_system}_{idx}", type="secondary"):
                                 paths.pop(idx)
+                                # Remove system if no paths left
+                                if len(paths) == 0:
+                                    del data[selected_system]
                                 st.session_state.modified = True
                                 st.rerun()
                     
