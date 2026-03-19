@@ -334,6 +334,10 @@ def prepare_derived_data(_rails_all, _stations_all, data_version_key):
         'stations_near_ll': stations_near_ll,
         'stations_lookup': stations_lookup,
         'labels': labels,
+        'station_counts_by_operator': {
+            op_name: int((stations_lookup['operator_name'] == op_name).sum())
+            for op_name in RAIL_OPERATORS.keys()
+        },
         'map_center': [centroid.y, centroid.x],
         'rails_mrs_geojson': rails_mrs_geojson,
         'rails_all_geojson': rails_all_geojson,
@@ -347,6 +351,15 @@ def prepare_stations(stations_all):
     stations_pts_m = stations_m[stations_m.geometry.type == 'Point'].copy()
 
     stations_near = stations_pts_m.copy()
+
+    if FILTER_COLUMN in stations_near.columns:
+        stations_near[FILTER_COLUMN] = pd.to_numeric(
+            stations_near[FILTER_COLUMN], errors='coerce'
+        ).round().astype('Int64')
+    else:
+        stations_near[FILTER_COLUMN] = pd.Series(pd.NA, index=stations_near.index, dtype='Int64')
+
+    stations_near['operator_name'] = stations_near[FILTER_COLUMN].map(CODE_TO_OPERATOR).fillna('Unknown')
 
     # Name series
     if STATION_NAME_FIELD in stations_near.columns:
@@ -382,6 +395,22 @@ def prepare_stations(stations_all):
     labels = sorted(list(stations_lookup.index))
 
     return stations_near, stations_near_ll, stations_lookup, labels
+
+
+def _path_station_count(path_info):
+    """Return the number of stations represented by a preview/committed path."""
+    stored = path_info.get('station_count')
+    if stored is not None and stored is not pd.NA:
+        try:
+            return int(stored)
+        except (TypeError, ValueError):
+            pass
+
+    preview_points = path_info.get('preview_station_points', [])
+    if isinstance(preview_points, list) and preview_points:
+        return len(preview_points)
+
+    return len(path_info.get('order', []))
 
 
 def stations_along_path(coords_ll, stations_lookup, tolerance_m=150.0):
@@ -549,6 +578,7 @@ def _make_path_payload(path_info):
         'route_color': path_info.get('route_color', PREVIEW_COLOR),
         'highlight_name': path_info.get('highlight_name'),
         'path_name': path_info.get('path_name', ''),
+        'station_count': _path_station_count(path_info),
     }
 
 
@@ -648,6 +678,7 @@ def merge_paths_at_shared_station(path_a, path_b, system_name):
         'path_name': f"Merged ({merged_order[0]} → {merged_order[-1]})",
         'preview_station_points': merged_stations,
         'selected_station_markers': merged_markers,
+        'station_count': len(merged_stations),
     }
     return merged_path, None
 
@@ -1000,6 +1031,7 @@ def main():
     stations_near_ll = d['stations_near_ll']
     stations_lookup  = d['stations_lookup']
     labels           = d['labels']
+    station_counts_by_operator = d['station_counts_by_operator']
     map_center       = d['map_center']
 
     # Sidebar controls
@@ -1079,8 +1111,21 @@ def main():
             options=operator_names,
             default=st.session_state.active_operator_layers,
             key="active_operator_layers",
-            format_func=lambda op: f"{op} — {RAIL_OPERATORS[op]['label']}",
+            format_func=lambda op: f"{op} — {RAIL_OPERATORS[op]['label']} ({station_counts_by_operator.get(op, 0)} stations)",
         )
+        active_operator_station_total = sum(
+            station_counts_by_operator.get(op, 0)
+            for op in st.session_state.get('active_operator_layers', [])
+        )
+        if st.session_state.get('active_operator_layers'):
+            st.caption(
+                "Selected operators: "
+                + " | ".join(
+                    f"{op}: {station_counts_by_operator.get(op, 0)}"
+                    for op in st.session_state['active_operator_layers']
+                )
+            )
+            st.caption(f"Total stations across selected operators: {active_operator_station_total}")
 
         st.divider()
         st.subheader("�🗂️ Station Group Systems")
@@ -1460,6 +1505,7 @@ def main():
                     for i, path_info in enumerate(paths_list):
                         route_text = " → ".join(path_info.get('order', []))
                         dist_text = f"{path_info.get('total_km', 0.0):.1f} km"
+                        station_count = _path_station_count(path_info)
                         n_coords = len(path_info.get('coords_ll', []))
                         path_key = f"{system_name}_{i}"
                         
@@ -1498,7 +1544,7 @@ def main():
                                     del highlight_groups[system_name]
                                 save_highlights(st.session_state.committed_highlights)
                                 st.rerun()
-                        st.caption(f"{perf_icon} {route_text} · {dist_text}{perf_hint}")
+                        st.caption(f"{perf_icon} {route_text} · {dist_text} · {station_count} stations{perf_hint}")
 
                         col_pc1, col_pc2 = st.columns([3, 1])
                         with col_pc1:
@@ -1928,7 +1974,8 @@ def main():
                 'route_color': color,
                 'highlight_name': highlight_name,
                 'path_name': path_name.strip(),
-                'preview_station_points': preview_station_points
+                'preview_station_points': preview_station_points,
+                'station_count': len(preview_station_points),
             }
 
             progress_bar.progress(100)
@@ -1955,8 +2002,13 @@ def main():
             status_txt.text(f"✅ Route complete: {total_km:.1f} km")
 
             # Show route info
+            station_count = len(preview_station_points)
             st.success(f"**Route:** {' → '.join(order)}")
-            st.info(f"**Total Distance:** {total_km:.1f} km")
+            info_col1, info_col2 = st.columns(2)
+            with info_col1:
+                st.info(f"**Total Distance:** {total_km:.1f} km")
+            with info_col2:
+                st.info(f"**Stations in path:** {station_count}")
 
             # Show code breakdown
             if do_edge or do_node:
@@ -1987,7 +2039,10 @@ def main():
             payload = _make_path_payload(temp_data)
             st.session_state.committed_highlights[system_name].append(payload)
             save_highlights(st.session_state.committed_highlights)
-            st.success(f"Committed: **{system_name}** → {HIGHLIGHTS_SAVE_PATH.name} (auto-saved)")
+            st.success(
+                f"Committed: **{system_name}** · {payload['station_count']} stations · "
+                f"{payload.get('total_km', 0.0):.1f} km → {HIGHLIGHTS_SAVE_PATH.name}"
+            )
             st.rerun()
 
     # Draw persisted preview layers
