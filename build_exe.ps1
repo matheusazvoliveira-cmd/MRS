@@ -22,7 +22,7 @@ $importCheck = @"
 import importlib
 mods = [
     'streamlit', 'streamlit_folium', 'geopandas', 'shapely', 'pyproj',
-    'fiona', 'pandas', 'networkx', 'folium', 'numpy', 'scipy'
+    'fiona', 'pandas', 'folium', 'numpy', 'scipy', 'pyarrow'
 ]
 missing = []
 for m in mods:
@@ -49,6 +49,7 @@ $Args = @(
     '--collect-all', 'streamlit_folium'
     '--hidden-import', 'streamlit_folium'
     '--add-data', 'streamlit_app_full.py;.'
+    '--add-data', 'routing.py;.'
     '--add-data', 'Estacoes;Estacoes'
     '--add-data', 'LInhas;LInhas'
     'launcher.py'

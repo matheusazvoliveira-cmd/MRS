@@ -25,15 +25,10 @@ import time
 import sys
 
 import streamlit as st
-import geopandas as gpd
 import pandas as pd
 import numpy as np
-import networkx as nx
-import scipy.spatial as scipy_spatial
-from shapely.geometry import LineString, Point
-from shapely.ops import unary_union, snap, nearest_points
+from shapely.geometry import LineString
 from pyproj import Transformer
-import math
 import hashlib
 import shapely
 
@@ -42,6 +37,9 @@ from folium.plugins import Fullscreen
 from folium.elements import JSCSSMixin
 from streamlit_folium import st_folium
 from jinja2 import Template
+
+import routing
+from routing import FILTER_COLUMN, MRS_CODE, NON_MRS_PENALTY_DEFAULT
 
 
 # ============================================================================
@@ -74,14 +72,6 @@ def _resolve_resource(relative_path):
 RAILS_SHP_PATH = _resolve_resource(Path("LInhas") / "Linhas_BR.shp")
 STATIONS_SHP_PATH = _resolve_resource(Path("Estacoes") / "Estacoes.shp")
 
-FILTER_COLUMN = "CodigoFerr"
-MRS_CODE = 11
-
-STATION_NAME_FIELD = "NomeEstaca"
-STATION_ID_FIELD = None
-
-SOURCE_CRS_IF_MISSING = "EPSG:4674"
-
 # ---------------------------------------------------------------------------
 # Operator ↔ ANTT rail-code mapping
 # ---------------------------------------------------------------------------
@@ -105,24 +95,15 @@ STRICT_MRS = "Strict MRS (11 only)"
 PREFER_MRS = "Prefer MRS (penalize non-11)"
 ALLOW_ALL = "Allow all (shortest distance)"
 
-NON_MRS_PENALTY_DEFAULT = 10.0
+# UI label -> routing.py mode id
+ROUTING_MODE_IDS = {
+    STRICT_MRS: routing.STRICT_MRS,
+    PREFER_MRS: routing.PREFER_MRS,
+    ALLOW_ALL: routing.ALLOW_ALL,
+}
 
-# Topology repair
-ROUND_M = 25
-SNAP_ENDPOINTS = True
-SNAP_TOLERANCE_M = 75
-
-# Intersection noding
-NODE_INTERSECTIONS_DEFAULT = True
-ASSIGN_CODIGO_MAX_DIST_M = 10.0
-
-# Waypoint snapping
-SNAP_WAYPOINTS_TO_EDGES_DEFAULT = True
-EDGE_SNAP_SEARCH_RADIUS_M = 2000
-
-# Corridor constraint
-CONSTRAIN_CORRIDOR_DEFAULT = True
-CORRIDOR_BUFFER_KM_DEFAULT = 20.0
+# Routing graph disk cache (built once per shapefile version)
+GRAPH_CACHE_DIR_NAME = ".cache"
 
 # Styles
 BASE_RAIL_COLOR = "#2ca02c"
@@ -265,21 +246,16 @@ def load_data():
 
     # Read both shapefiles in parallel (I/O-bound — threading helps on first load)
     with ThreadPoolExecutor(max_workers=2) as ex:
-        f_rails = ex.submit(gpd.read_file, RAILS_SHP_PATH)
-        f_stations = ex.submit(gpd.read_file, STATIONS_SHP_PATH)
-        rails_all = f_rails.result()
-        stations_all = f_stations.result()
+        f_rails = ex.submit(routing.read_rails, RAILS_SHP_PATH)
+        f_stations = ex.submit(routing.read_stations, STATIONS_SHP_PATH)
+        return f_rails.result(), f_stations.result()
 
-    # Set CRS if missing
-    if rails_all.crs is None and SOURCE_CRS_IF_MISSING:
-        rails_all = rails_all.set_crs(SOURCE_CRS_IF_MISSING)
-    if stations_all.crs is None and SOURCE_CRS_IF_MISSING:
-        stations_all = stations_all.set_crs(SOURCE_CRS_IF_MISSING)
 
-    # Normalize rail codes
-    rails_all[FILTER_COLUMN] = pd.to_numeric(rails_all[FILTER_COLUMN], errors='coerce').round().astype('Int64')
-
-    return rails_all, stations_all
+@st.cache_resource(show_spinner="Building routing graph (first run only)...")
+def get_rail_graph(_rails_all_m, data_version_key):
+    """National routing graph — loaded from the disk cache, or built once (~10 s) and cached."""
+    _ = data_version_key
+    return routing.load_or_build_graph(lambda: _rails_all_m, RAILS_SHP_PATH, _APP_DIR / GRAPH_CACHE_DIR_NAME)
 
 
 def get_data_version_key():
@@ -377,49 +353,9 @@ def prepare_derived_data(_rails_all, _stations_all, data_version_key):
 
 
 def prepare_stations(stations_all):
-    """Extract point stations and build labels with 3-letter codes."""
-    stations_m = stations_all.to_crs(epsg=3857)
-    stations_pts_m = stations_m[stations_m.geometry.type == 'Point'].copy()
-
-    stations_near = stations_pts_m.copy()
-
-    if FILTER_COLUMN in stations_near.columns:
-        stations_near[FILTER_COLUMN] = pd.to_numeric(
-            stations_near[FILTER_COLUMN], errors='coerce'
-        ).round().astype('Int64')
-    else:
-        stations_near[FILTER_COLUMN] = pd.Series(pd.NA, index=stations_near.index, dtype='Int64')
-
+    """Point stations with labels (routing.prepare_stations) plus operator names and lat/lon copy."""
+    stations_near = routing.prepare_stations(stations_all)
     stations_near['operator_name'] = stations_near[FILTER_COLUMN].map(CODE_TO_OPERATOR).fillna('Unknown')
-
-    # Name series
-    if STATION_NAME_FIELD in stations_near.columns:
-        names = stations_near[STATION_NAME_FIELD].astype(str).str.strip()
-    else:
-        names = stations_near.index.astype(str)
-
-    # 3-letter code
-    if 'CodigoTres' in stations_near.columns:
-        stations_near['station_code'] = stations_near['CodigoTres'].astype(str).str.upper().fillna('')
-    elif 'Codigo_Tres' in stations_near.columns:
-        stations_near['station_code'] = stations_near['Codigo_Tres'].astype(str).str.upper().fillna('')
-    else:
-        stations_near['station_code'] = ''
-
-    # Station label
-    if STATION_ID_FIELD and STATION_ID_FIELD in stations_near.columns:
-        ids = stations_near[STATION_ID_FIELD].astype(str)
-        stations_near['station_label'] = names + ' [' + ids + ']'
-    else:
-        dup = names.duplicated(keep=False)
-        stations_near['station_label'] = names
-        stations_near.loc[dup, 'station_label'] = names[dup] + ' (idx=' + stations_near.loc[dup].index.astype(str) + ')'
-
-    # Append code to label (vectorized — avoids row-by-row apply)
-    _has_code = stations_near['station_code'].astype(bool)
-    stations_near.loc[_has_code, 'station_label'] = (
-        stations_near.loc[_has_code, 'station_label'] + ' [' + stations_near.loc[_has_code, 'station_code'] + ']'
-    )
 
     stations_near_ll = stations_near.to_crs(epsg=4326)
     stations_lookup = stations_near.set_index('station_label')
@@ -725,231 +661,6 @@ def merge_paths_at_shared_station(path_a, path_b, system_name):
         'station_count': len(merged_stations),
     }
     return merged_path, None
-
-
-def edge_cost(length, codigo, routing_mode, penalty_mult):
-    """Compute edge traversal cost, applying penalty for non-MRS segments."""
-    if routing_mode == PREFER_MRS and codigo is not None and codigo is not pd.NA and codigo != MRS_CODE:
-        return length * float(penalty_mult)
-    return length
-
-
-def build_graph(points_xy, routing_mode, penalty_mult, rails_all_m, node_intersections=True,
-                constrain_corridor=True, corridor_buffer_m=20_000.0, progress_cb=None):
-    """Build graph from rail network."""
-
-    def cb(msg):
-        if progress_cb:
-            progress_cb(msg)
-
-    cb("Extracting bounding box...")
-    xs = [p[0] for p in points_xy]
-    ys = [p[1] for p in points_xy]
-    margin = 200_000
-    minx, miny = min(xs) - margin, min(ys) - margin
-    maxx, maxy = max(xs) + margin, max(ys) + margin
-
-    rails = rails_all_m.cx[minx:maxx, miny:maxy].copy()
-
-    if constrain_corridor:
-        cb("Applying corridor constraint...")
-        centerline = LineString(points_xy)
-        corridor = centerline.buffer(float(corridor_buffer_m))
-        rails = rails[rails.geometry.intersects(corridor)]
-
-    if routing_mode == STRICT_MRS:
-        rails = rails[rails[FILTER_COLUMN] == MRS_CODE].copy()
-
-    cb(f"Rails in bbox/corridor: {len(rails)} | exploding...")
-    rails = rails.explode(index_parts=False).reset_index(drop=True)
-    rails = rails[rails.geometry.notnull()]
-    rails = rails[rails.geometry.type == 'LineString'].copy()
-
-    if len(rails) == 0:
-        return None, None, None, None
-
-    if SNAP_ENDPOINTS:
-        cb("Snapping linework...")
-        u = unary_union(list(rails.geometry.values))
-        rails['geometry'] = rails.geometry.apply(lambda g: snap(g, u, SNAP_TOLERANCE_M))
-
-    if node_intersections:
-        cb("Noding intersections...")
-        rails = node_and_assign_codigo(rails)
-
-    cb("Building graph...")
-
-    def round_xy(xy, r=ROUND_M):
-        return (round(xy[0] / r) * r, round(xy[1] / r) * r)
-
-    node_index = {}
-    node_coords = []
-
-    def get_node_id(xy):
-        xy_r = round_xy(xy)
-        if xy_r not in node_index:
-            node_index[xy_r] = len(node_coords)
-            node_coords.append(xy_r)
-        return node_index[xy_r]
-
-    G = nx.Graph()
-    edge_rows = []
-
-    # Pre-resolve penalty flag outside the hot loop so the inner iterations
-    # do a simple boolean check instead of a string comparison + pd.notna()
-    _apply_penalty = (routing_mode == PREFER_MRS)
-    _penalty_f = float(penalty_mult)
-    _hypot = math.hypot  # local alias avoids module lookup per iteration
-
-    # Direct array access — avoids pandas iterrows() overhead
-    _rail_geoms = rails.geometry.values
-    _rail_codigos = rails[FILTER_COLUMN].values
-    for i in range(len(_rail_geoms)):
-        codigo = _rail_codigos[i]
-        coords = _rail_geoms[i].coords[:]
-        for j in range(len(coords) - 1):
-            a, b = coords[j], coords[j + 1]
-            u_id = get_node_id(a)
-            v_id = get_node_id(b)
-            length_m = _hypot(b[0] - a[0], b[1] - a[1])
-
-            # Inlined edge_cost — avoids function-call overhead per segment
-            if _apply_penalty and codigo is not None and codigo is not pd.NA and codigo != MRS_CODE:
-                w = length_m * _penalty_f
-            else:
-                w = length_m
-
-            if G.has_edge(u_id, v_id):
-                if w < G[u_id][v_id]['weight']:
-                    G[u_id][v_id].update({'weight': w, 'length_m': length_m, 'codigo': codigo})
-            else:
-                G.add_edge(u_id, v_id, weight=w, length_m=length_m, codigo=codigo)
-
-            edge_rows.append({'u': u_id, 'v': v_id, 'geometry': LineString([a, b]), 'codigo': codigo, 'length_m': length_m})
-
-    edges_gdf = gpd.GeoDataFrame(edge_rows, geometry='geometry', crs='EPSG:3857')
-    edges_sidx = edges_gdf.sindex
-
-    node_xy = np.array(node_coords)
-    tree = scipy_spatial.KDTree(node_xy)
-
-    cb(f"Graph ready: {G.number_of_nodes()} nodes / {G.number_of_edges()} edges")
-    return G, node_coords, tree, (edges_gdf, edges_sidx)
-
-
-def node_and_assign_codigo(rails_sub_m):
-    """Noding and codigo assignment."""
-    merged = unary_union(list(rails_sub_m.geometry.values))
-    noded = gpd.GeoSeries([merged], crs=rails_sub_m.crs).explode(index_parts=False)
-    segs = gpd.GeoDataFrame(geometry=noded).reset_index(drop=True)
-    segs = segs[segs.geometry.notnull()]
-    segs = segs[segs.geometry.type == 'LineString'].copy()
-
-    sidx = rails_sub_m.sindex
-    codigos = []
-
-    for geom in segs.geometry.values:
-        cand_idx = list(sidx.intersection(geom.bounds))
-        if not cand_idx:
-            codigos.append(pd.NA)
-            continue
-        cand = rails_sub_m.iloc[cand_idx]
-        dists = cand.distance(geom)
-        j = int(dists.idxmin())
-        min_dist = float(dists.loc[j])
-        if min_dist <= ASSIGN_CODIGO_MAX_DIST_M:
-            codigos.append(cand.loc[j, FILTER_COLUMN])
-        else:
-            codigos.append(pd.NA)
-
-    segs[FILTER_COLUMN] = pd.array(codigos, dtype='Int64')
-    return segs
-
-
-def insert_waypoint_node_on_edge(G, node_coords, edges_gdf, edges_sidx, x, y, routing_mode, penalty_mult):
-    """Snap waypoint to nearest edge."""
-    pt = Point(x, y)
-    r = EDGE_SNAP_SEARCH_RADIUS_M
-
-    cand_idx = list(edges_sidx.intersection((x - r, y - r, x + r, y + r)))
-    if not cand_idx:
-        return None, None, None
-
-    cand = edges_gdf.iloc[cand_idx].copy()
-    cand['dist'] = cand.geometry.distance(pt)
-    best = cand.loc[cand['dist'].idxmin()]
-    if best['dist'] > r:
-        return None, None, None
-
-    u = int(best['u'])
-    v = int(best['v'])
-    line = best.geometry
-    codigo = best.get('codigo')
-
-    snapped_pt = nearest_points(line, pt)[0]
-    sx, sy = float(snapped_pt.x), float(snapped_pt.y)
-
-    new_id = len(node_coords)
-    node_coords.append((sx, sy))
-
-    if G.has_edge(u, v):
-        G.remove_edge(u, v)
-
-    seg1 = LineString([node_coords[u], (sx, sy)])
-    seg2 = LineString([(sx, sy), node_coords[v]])
-    len1, len2 = seg1.length, seg2.length
-
-    G.add_edge(u, new_id, weight=edge_cost(len1, codigo, routing_mode, penalty_mult), length_m=len1, codigo=codigo)
-    G.add_edge(new_id, v, weight=edge_cost(len2, codigo, routing_mode, penalty_mult), length_m=len2, codigo=codigo)
-
-    return new_id, float(best['dist']), codigo
-
-
-def stitch_paths(paths):
-    """Concatenate path segments."""
-    out = []
-    for i, p in enumerate(paths):
-        if i == 0:
-            out.extend(p)
-        else:
-            out.extend(p[1:])
-    return out
-
-
-def nodes_to_latlon(node_coords, path_nodes):
-    """Convert node IDs to (lat, lon) coordinates."""
-    coords = []
-    for n in path_nodes:
-        x, y = node_coords[n]
-        lon, lat = to_4326.transform(x, y)
-        coords.append((lat, lon))
-    return coords
-
-
-def path_length_km(G, path_nodes):
-    """Total path distance in km."""
-    return sum(float(G[u][v].get('length_m', 0.0)) for u, v in zip(path_nodes[:-1], path_nodes[1:])) / 1000.0
-
-
-def codigo_breakdown_km(G, path_nodes):
-    """Distance breakdown by rail code."""
-    by = {}
-    for u, v in zip(path_nodes[:-1], path_nodes[1:]):
-        codigo = G[u][v].get('codigo')
-        by[codigo] = by.get(codigo, 0.0) + float(G[u][v].get('length_m', 0.0)) / 1000.0
-    return dict(sorted(by.items(), key=lambda kv: (-kv[1], str(kv[0]))))
-
-
-def iter_lines(geom):
-    """Yield LineString parts from LineString/MultiLineString geometry."""
-    if geom is None:
-        return
-    gtype = geom.geom_type
-    if gtype == 'LineString':
-        yield geom
-    elif gtype == 'MultiLineString':
-        for part in geom.geoms:
-            yield part
 
 
 def _gdf_to_minimal_geojson(gdf):
@@ -1270,15 +981,6 @@ def main():
             routing_mode = st.radio("Routing mode", [STRICT_MRS, PREFER_MRS, ALLOW_ALL], index=2)
             penalty_input = st.slider("Non-MRS penalty (Prefer MRS mode)", 1.0, 100.0, NON_MRS_PENALTY_DEFAULT, key="penalty")
             penalty = penalty_input if routing_mode == PREFER_MRS else 1.0
-
-            do_node = st.checkbox("Node intersections", value=NODE_INTERSECTIONS_DEFAULT, key="node",
-                                 help="⚠️ SLOW - Expensive geometry operation")
-            do_edge = st.checkbox("Snap waypoints to edges", value=SNAP_WAYPOINTS_TO_EDGES_DEFAULT, key="edge",
-                                 help="Spatial search - can add 30-60 seconds")
-            do_corr = st.checkbox("Constrain to corridor", value=CONSTRAIN_CORRIDOR_DEFAULT, key="corr",
-                                 help="⚠️ SLOW for complex networks")
-            buf_km = st.slider("Corridor buffer (km)", 5.0, 80.0, CORRIDOR_BUFFER_KM_DEFAULT, key="buf",
-                               help="Only used with 'Constrain to corridor'. Smaller = faster")
 
             color = st.color_picker("Route color", "#1f77b4", key="color")
             highlight_name = st.text_input("System name", "Corridor 1", key="name")
@@ -2050,77 +1752,38 @@ def main():
     # Run routing on button click
     if run_btn:
         t_start = time.time()
-        with st.spinner("Building graph..."):
+        with st.spinner("Computing route..."):
             order = [origin] + list(vias) + [destination]
-
-            # Progress callback
-            def prog_cb(msg):
-                status_txt.text(msg)
-                progress_bar.progress(min(100, int(time.time() * 10) % 100))
 
             pts = []
             for lab in order:
                 row = stations_lookup.loc[lab]
                 pts.append((float(row.geometry.x), float(row.geometry.y)))
 
+            progress_bar.progress(10)
+            status_txt.text("Loading routing graph...")
             t_graph_start = time.time()
-            G, node_coords, tree, edges_pack = build_graph(
-                pts, routing_mode, penalty, rails_all_m,
-                node_intersections=do_node,
-                constrain_corridor=do_corr,
-                corridor_buffer_m=buf_km * 1000.0,
-                progress_cb=prog_cb
-            )
+            graph = get_rail_graph(rails_all_m, data_version_key)
             t_graph = time.time() - t_graph_start
 
-            if G is None or len(G) == 0:
-                st.error("No graph built. Try relaxing corridor constraint or increasing buffer.")
-                return
-
-            if edges_pack is None or tree is None:
-                st.error("Graph indexing failed. Try again or disable advanced options.")
-                return
-
-            progress_bar.progress(50)
-            status_txt.text("Snapping waypoints...")
-
-            edges_gdf, edges_sidx = edges_pack
-            wp_nodes = []
-
-            for (x, y), lab in zip(pts, order):
-                if do_edge:
-                    new_id, _, _ = insert_waypoint_node_on_edge(G, node_coords, edges_gdf, edges_sidx, x, y, routing_mode, penalty)
-                    if new_id is not None:
-                        wp_nodes.append(new_id)
-                        continue
-
-                _, n = tree.query([x, y], k=1)
-                wp_nodes.append(int(n))
-
-            progress_bar.progress(75)
+            progress_bar.progress(60)
             status_txt.text("Computing route...")
-
-            # Shortest paths
-            w_metric = 'length_m' if routing_mode == ALLOW_ALL else 'weight'
-            seg_paths = []
-            total_km = 0.0
             t_route_start = time.time()
-
-            for i in range(len(wp_nodes) - 1):
-                s, t = wp_nodes[i], wp_nodes[i + 1]
-                try:
-                    p = nx.shortest_path(G, s, t, weight=w_metric)
-                    km = path_length_km(G, p)
-                    total_km += km
-                    seg_paths.append(p)
-                except nx.NetworkXNoPath:
-                    st.error(f"No path found for segment {order[i]} → {order[i+1]}")
-                    return
-
+            try:
+                result = routing.route(graph, pts, ROUTING_MODE_IDS[routing_mode], penalty)
+            except routing.NoPathError as e:
+                progress_bar.progress(0)
+                status_txt.text("")
+                msg = f"No path found for segment {order[e.segment_index]} → {order[e.segment_index + 1]}"
+                if routing_mode == STRICT_MRS:
+                    msg += (" — Strict MRS only uses track coded as MRS (11); some track in the"
+                            " shapefile has no operator code. Try Prefer MRS.")
+                st.error(msg)
+                return
             t_route = time.time() - t_route_start
 
-            full_path = stitch_paths(seg_paths)
-            coords_ll = nodes_to_latlon(node_coords, full_path)
+            total_km = result['total_km']
+            coords_ll = result['coords_ll']
 
             # Draw route on map
             preview_station_points = []
@@ -2146,25 +1809,16 @@ def main():
 
             progress_bar.progress(100)
             t_total = time.time() - t_start
-            
+
             # Show performance breakdown
             perf_col1, perf_col2, perf_col3 = st.columns(3)
             with perf_col1:
-                st.metric("Graph Build", f"{t_graph:.1f}s")
+                st.metric("Graph Load", f"{t_graph:.2f}s")
             with perf_col2:
-                st.metric("Routing", f"{t_route:.1f}s")
+                st.metric("Routing", f"{t_route:.2f}s")
             with perf_col3:
-                st.metric("Total Time", f"{t_total:.1f}s")
-            
-            if t_total > 60:
-                st.warning(
-                    f"⚠️ **Computation took {t_total:.0f}s**. To speed up:\n"
-                    f"- Uncheck '**Node intersections**' (most time-consuming)\n"
-                    f"- Uncheck '**Snap waypoints to edges**'\n"
-                    f"- Uncheck '**Constrain to corridor**' or reduce buffer\n"
-                    f"- Use fewer VIA stations"
-                )
-            
+                st.metric("Total Time", f"{t_total:.2f}s")
+
             status_txt.text(f"✅ Route complete: {total_km:.1f} km")
 
             # Show route info
@@ -2177,14 +1831,12 @@ def main():
                 st.info(f"**Stations in path:** {station_count}")
 
             # Show code breakdown
-            if do_edge or do_node:
-                st.subheader("Rail Code Breakdown (km)")
-                seg_diag = []
-                for i, p in enumerate(seg_paths):
-                    km = path_length_km(G, p)
-                    codes = codigo_breakdown_km(G, p)
-                    seg_diag.append({'Segment': f"{order[i]} → {order[i+1]}", 'Distance (km)': f"{km:.1f}", 'Codes': str(codes)})
-                st.table(pd.DataFrame(seg_diag))
+            st.subheader("Rail Code Breakdown (km)")
+            seg_diag = []
+            for i, (km, codes) in enumerate(zip(result['segment_km'], result['segment_codes'])):
+                codes = {k: round(v, 1) for k, v in codes.items()}
+                seg_diag.append({'Segment': f"{order[i]} → {order[i+1]}", 'Distance (km)': f"{km:.1f}", 'Codes': str(codes)})
+            st.table(pd.DataFrame(seg_diag))
 
     # Commit current preview as a persistent highlight
     if commit_btn:
