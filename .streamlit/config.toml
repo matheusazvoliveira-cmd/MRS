@@ -1,0 +1,4 @@
+[server]
+# Serve ./static (generated, versioned map layers) at /app/static so the browser
+# downloads them once and caches them, instead of receiving them on every rerun.
+enableStaticServing = true

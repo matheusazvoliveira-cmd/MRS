@@ -34,6 +34,8 @@ from shapely.geometry import LineString, Point
 from shapely.ops import unary_union, snap, nearest_points
 from pyproj import Transformer
 import math
+import hashlib
+import shapely
 
 import folium
 from folium.plugins import Fullscreen
@@ -132,6 +134,12 @@ HIGHLIGHT_WEIGHT = 5
 HIGHLIGHT_OPACITY = 1.0
 
 LABEL_FONT_SIZE = 17  # px — single source of truth for all station label text
+
+# Map payload size
+MAP_SIMPLIFY_TOLERANCE_DEG = 0.0005   # ~50 m — invisible at the zoom levels the map is used at
+MAP_COORD_DECIMALS = 5                # ~1 m
+HIGHLIGHT_DISPLAY_TOLERANCE_DEG = 0.0002  # ~20 m — "Simplify path coordinates" display option
+STATION_LABEL_MIN_ZOOM = 10           # "All Stations" labels only appear from this zoom in
 
 # Station label marker offset (px below the marker dot)
 LABEL_MARGIN_TOP_DEFAULT = 12
@@ -247,7 +255,7 @@ def load_station_group_systems():
     return {}
 
 
-@st.cache_data
+@st.cache_resource(show_spinner="Loading shapefiles...")
 def load_data():
     """Load shapefiles — raises on failure so the caller can show the error in context."""
     if not RAILS_SHP_PATH.exists():
@@ -281,7 +289,8 @@ def get_data_version_key():
     return (str(RAILS_SHP_PATH), rails_mtime, str(STATIONS_SHP_PATH), stations_mtime)
 
 
-@st.cache_data(show_spinner="Preparing data...")
+# cache_resource (not cache_data): returns shared objects instead of unpickling a copy on every rerun
+@st.cache_resource(show_spinner="Preparing data...")
 def prepare_derived_data(_rails_all, _stations_all, data_version_key):
     """Compute all derived data (CRS transforms, GeoJSON conversions) — cached globally across all users."""
     _ = data_version_key
@@ -327,6 +336,25 @@ def prepare_derived_data(_rails_all, _stations_all, data_version_key):
             else:
                 operator_geojsons[op_name] = {'type': 'FeatureCollection', 'features': []}
 
+    stations_geojson = _stations_to_geojson(stations_near_ll)
+    stations_by_label = {
+        f['properties']['label']: {
+            'label': f['properties']['label'],
+            'lat': f['geometry']['coordinates'][1],
+            'lon': f['geometry']['coordinates'][0],
+        }
+        for f in stations_geojson['features']
+    }
+
+    # Versioned files for the browser to fetch and cache (None -> embed in the map)
+    static_layer_urls = {
+        'rails_all': _publish_static_geojson('rails_all', rails_all_geojson),
+        'stations': _publish_static_geojson('stations', stations_geojson),
+    }
+    for op_name, op_geojson in operator_geojsons.items():
+        if op_geojson['features']:
+            static_layer_urls[f"op_{op_name}"] = _publish_static_geojson(f"op_{op_name}", op_geojson)
+
     return {
         'rails_all_m': rails_all_m,
         'rails_mrs_ll': rails_mrs_ll,
@@ -342,6 +370,9 @@ def prepare_derived_data(_rails_all, _stations_all, data_version_key):
         'rails_mrs_geojson': rails_mrs_geojson,
         'rails_all_geojson': rails_all_geojson,
         'operator_geojsons': operator_geojsons,
+        'stations_geojson': stations_geojson,
+        'stations_by_label': stations_by_label,
+        'static_layer_urls': static_layer_urls,
     }
 
 
@@ -414,10 +445,23 @@ def _path_station_count(path_info):
 
 
 def stations_along_path(coords_ll, stations_lookup, tolerance_m=150.0):
-    """Find stations that lie near a route polyline (meters in EPSG:3857)."""
+    """Find stations that lie near a route polyline (meters in EPSG:3857).
+
+    Memoized by a hash of the coordinates: the sidebar asks for every committed
+    path on every rerun, but the answer only changes when the path does."""
     if not coords_ll or len(coords_ll) < 2:
         return []
+    try:
+        coords_key = hashlib.md5(np.asarray(coords_ll, dtype=float).tobytes()).hexdigest()
+    except Exception:
+        return []
+    return _stations_along_path_cached(coords_key, float(tolerance_m), coords_ll, stations_lookup)
 
+
+@st.cache_data(max_entries=512, show_spinner=False)
+def _stations_along_path_cached(coords_key, tolerance_m, _coords_ll, _stations_lookup):
+    coords_ll = _coords_ll
+    stations_lookup = _stations_lookup
     try:
         route_xy = [to_3857.transform(float(lon), float(lat)) for lat, lon in coords_ll]
         route_line = LineString(route_xy)
@@ -909,31 +953,69 @@ def iter_lines(geom):
 
 
 def _gdf_to_minimal_geojson(gdf):
-    """Convert GeoDataFrame geometries to a minimal GeoJSON FeatureCollection.
+    """Convert EPSG:4326 line geometries to a compact GeoJSON FeatureCollection.
 
-    Strips all attribute columns — much smaller than gdf.to_json().
-    Used to render rail layers as a single folium.GeoJson layer
-    instead of N individual PolyLine objects.
+    Strips all attribute columns, simplifies (~50 m), rounds coordinates (~1 m)
+    and packs every line into ONE MultiLineString feature — a fraction of the
+    size of gdf.to_json().  Used to render rail layers as a single folium.GeoJson.
     """
-    features = []
-    for geom in gdf.geometry.values:
-        if geom is None:
-            continue
-        gtype = geom.geom_type
-        if gtype == 'LineString':
-            features.append({
-                'type': 'Feature',
-                'geometry': geom.__geo_interface__,
-                'properties': {},
-            })
-        elif gtype == 'MultiLineString':
-            for part in geom.geoms:
-                features.append({
-                    'type': 'Feature',
-                    'geometry': part.__geo_interface__,
-                    'properties': {},
-                })
+    geoms = np.asarray(gdf.geometry.values, dtype=object)
+    geoms = geoms[~shapely.is_missing(geoms)]
+    parts = shapely.get_parts(shapely.simplify(geoms, MAP_SIMPLIFY_TOLERANCE_DEG))
+    parts = parts[shapely.get_type_id(parts) == 1]  # LineStrings only
+    lines = [np.round(shapely.get_coordinates(p), MAP_COORD_DECIMALS).tolist() for p in parts]
+    if not lines:
+        return {'type': 'FeatureCollection', 'features': []}
+    return {'type': 'FeatureCollection', 'features': [{
+        'type': 'Feature',
+        'geometry': {'type': 'MultiLineString', 'coordinates': lines},
+        'properties': {},
+    }]}
+
+
+def _stations_to_geojson(stations_ll):
+    """Point FeatureCollection of all stations (label + popup text) for one GeoJson layer."""
+    labels = stations_ll['station_label'].astype(str).values
+    codes = (
+        stations_ll['station_code'].astype(str).values
+        if 'station_code' in stations_ll.columns
+        else np.full(len(stations_ll), '', dtype=object)
+    )
+    lons = np.round(stations_ll.geometry.x.values, MAP_COORD_DECIMALS)
+    lats = np.round(stations_ll.geometry.y.values, MAP_COORD_DECIMALS)
+    features = [
+        {
+            'type': 'Feature',
+            'geometry': {'type': 'Point', 'coordinates': [float(lons[i]), float(lats[i])]},
+            'properties': {
+                'label': labels[i],
+                'popup': f"{labels[i]} | Code: {codes[i]}" if codes[i] else labels[i],
+            },
+        }
+        for i in range(len(stations_ll))
+    ]
     return {'type': 'FeatureCollection', 'features': features}
+
+
+def _simplify_latlon(coords, tolerance=None, max_points=None):
+    """Douglas-Peucker simplification of [(lat, lon), ...] that keeps the route's shape
+    (unlike keeping every Nth point).  With *max_points*, the tolerance grows until
+    the result fits.  Returns [[lat, lon], ...]."""
+    if len(coords) < 3:
+        return [list(c) for c in coords]
+    line = LineString([(c[1], c[0]) for c in coords])
+
+    def run(tol):
+        return [[lat, lon] for lon, lat in line.simplify(tol, preserve_topology=False).coords]
+
+    if max_points is None:
+        return run(tolerance)
+    tol = 1e-5
+    out = run(tol)
+    while len(out) > max_points and tol < 1.0:
+        tol *= 1.5
+        out = run(tol)
+    return out
 
 
 # ============================================================================
@@ -963,6 +1045,142 @@ class _ZoomDisplay(JSCSSMixin, folium.MacroElement):
         {{ this._parent.get_name() }}.addControl(new zoomDisplay());
     {% endmacro %}
     """)
+
+
+class _RemoteGeoJson(JSCSSMixin, folium.MacroElement):
+    """Static GeoJSON layer the browser loads by URL instead of having it embedded
+    in the map HTML on every rerun.
+
+    The file name carries a content hash, so the browser downloads it once and
+    reuses its HTTP cache until the data changes.  Data is only fetched the first
+    time the parent FeatureGroup is shown, and drawn on canvas.  Falls back to
+    embedding *data* when static serving is unavailable (url=None).
+
+    kind='lines'    -> polylines styled with *style*
+    kind='stations' -> circle markers (*style*) with popup + permanent label that
+                       is hidden below STATION_LABEL_MIN_ZOOM
+    """
+    _template = Template("""
+    {% macro header(this, kwargs) %}
+        {% if this.kind == 'stations' %}
+        <style>
+            .leaflet-tooltip.station-label {
+                background: transparent; border: none; box-shadow: none; padding: 0 4px;
+                font-size: {{ this.font_size }}px; font-weight: bold; color: black; white-space: nowrap;
+            }
+            .leaflet-tooltip.station-label:before { display: none; }
+            .hide-station-labels .leaflet-tooltip.station-label { display: none; }
+        </style>
+        {% endif %}
+    {% endmacro %}
+    {% macro script(this, kwargs) %}
+    (function () {
+        var group = {{ this._parent.get_name() }};
+        var renderer = L.canvas({padding: 0.5});
+        var started = false;
+        var labelled = [];
+        function draw(data) {
+            L.geoJSON(data, {
+            {% if this.kind == 'stations' %}
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, Object.assign({renderer: renderer}, {{ this.style|tojson }}));
+                },
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(feature.properties.popup);
+                    layer.bindTooltip(feature.properties.label,
+                        {permanent: true, direction: 'bottom', className: 'station-label'});
+                    labelled.push(layer);
+                }
+            {% else %}
+                renderer: renderer,
+                style: function () { return {{ this.style|tojson }}; }
+            {% endif %}
+            }).addTo(group);
+            {% if this.kind == 'stations' %}declutter();{% endif %}
+        }
+        function load() {
+            if (started) return;
+            started = true;
+            {% if this.url %}
+            fetch({{ this.url|tojson }}).then(function (r) { return r.json(); }).then(draw);
+            {% else %}
+            draw({{ this.data|tojson }});
+            {% endif %}
+        }
+        group.on('add', load);
+        // Layers start on the map and LayerControl removes hidden ones afterwards,
+        // so only load once all scripts have run.
+        setTimeout(function () { if (group._map) load(); }, 0);
+        {% if this.kind == 'stations' %}
+        var map = {{ this._parent._parent.get_name() }};
+        function toggleLabels() {
+            map.getContainer().classList.toggle('hide-station-labels', map.getZoom() < {{ this.min_label_zoom }});
+        }
+        // Hide labels that would overlap one already shown (like OpenLayers' declutter).
+        // All writes, then all reads, then all writes — keeps it to one layout pass.
+        function declutter() {
+            if (!group._map || map.getZoom() < {{ this.min_label_zoom }}) return;
+            var els = [];
+            labelled.forEach(function (layer) {
+                var el = layer.getTooltip() && layer.getTooltip().getElement();
+                if (el) { el.style.visibility = ''; els.push(el); }
+            });
+            var view = map.getContainer().getBoundingClientRect();
+            var rects = els.map(function (el) { return el.getBoundingClientRect(); });
+            var placed = [];
+            rects.forEach(function (r, i) {
+                if (r.right < view.left || r.left > view.right || r.bottom < view.top || r.top > view.bottom) return;
+                var hit = placed.some(function (p) {
+                    return r.left < p.right && r.right > p.left && r.top < p.bottom && r.bottom > p.top;
+                });
+                if (hit) { els[i].style.visibility = 'hidden'; } else { placed.push(r); }
+            });
+        }
+        map.on('zoomend', toggleLabels);
+        map.on('zoomend moveend', declutter);
+        group.on('add', function () { setTimeout(declutter, 0); });
+        toggleLabels();
+        {% endif %}
+    })();
+    {% endmacro %}
+    """)
+
+    def __init__(self, url, data, kind, style, font_size=LABEL_FONT_SIZE, min_label_zoom=STATION_LABEL_MIN_ZOOM):
+        super().__init__()
+        self._name = 'RemoteGeoJson'
+        self.url = url
+        self.data = data if url is None else None
+        self.kind = kind
+        self.style = style
+        self.font_size = font_size
+        self.min_label_zoom = min_label_zoom
+
+
+# Generated GeoJSON served by Streamlit at <base>/app/static/ (server.enableStaticServing).
+# Must live next to the main script — that is where Streamlit looks for it.
+STATIC_DIR = Path(__file__).parent.resolve() / "static"
+
+
+def _publish_static_geojson(name, data):
+    """Write *data* to STATIC_DIR under a content-hashed file name and return its URL,
+    or None if static serving is disabled or the folder is not writable."""
+    try:
+        if not st.get_option("server.enableStaticServing"):
+            return None
+        payload = json.dumps(data, separators=(',', ':')).encode('utf-8')
+        file_name = f"{name}.{hashlib.md5(payload).hexdigest()[:12]}.json"
+        path = STATIC_DIR / file_name
+        if not path.exists():
+            STATIC_DIR.mkdir(exist_ok=True)
+            for old in STATIC_DIR.glob(f"{name}.*.json"):
+                old.unlink(missing_ok=True)
+            tmp = path.with_suffix('.tmp')
+            tmp.write_bytes(payload)
+            tmp.replace(path)
+        base = (st.get_option("server.baseUrlPath") or "").strip('/')
+        return f"{'/' + base if base else ''}/app/static/{file_name}"
+    except Exception:
+        return None
 
 
 # Brazil bounding box — tiles outside this rectangle are never requested
@@ -1038,39 +1256,37 @@ def main():
     with st.sidebar:
         st.header("Route Builder")
 
-        col1, col2 = st.columns(2)
-        with col1:
-            origin = st.selectbox("Station A", options=labels, key="origin")
-        with col2:
-            destination = st.selectbox("Station B", options=labels, index=min(1, len(labels)-1), key="dest")
+        # A form: picking stations/options does not rerun the app (and re-send the
+        # map) until one of the buttons is pressed.
+        with st.form("route_form", border=False):
+            col1, col2 = st.columns(2)
+            with col1:
+                origin = st.selectbox("Station A", options=labels, key="origin")
+            with col2:
+                destination = st.selectbox("Station B", options=labels, index=min(1, len(labels)-1), key="dest")
 
-        vias = st.multiselect("VIA stations (optional)", options=labels, key="vias")
+            vias = st.multiselect("VIA stations (optional)", options=labels, key="vias")
 
-        routing_mode = st.radio("Routing mode", [STRICT_MRS, PREFER_MRS, ALLOW_ALL], index=2)
-        if routing_mode == PREFER_MRS:
-            penalty = st.slider("Non-MRS penalty", 1.0, 100.0, NON_MRS_PENALTY_DEFAULT, key="penalty")
-        else:
-            penalty = 1.0
+            routing_mode = st.radio("Routing mode", [STRICT_MRS, PREFER_MRS, ALLOW_ALL], index=2)
+            penalty_input = st.slider("Non-MRS penalty (Prefer MRS mode)", 1.0, 100.0, NON_MRS_PENALTY_DEFAULT, key="penalty")
+            penalty = penalty_input if routing_mode == PREFER_MRS else 1.0
 
-        do_node = st.checkbox("Node intersections", value=NODE_INTERSECTIONS_DEFAULT, key="node", 
-                             help="⚠️ SLOW - Expensive geometry operation")
-        do_edge = st.checkbox("Snap waypoints to edges", value=SNAP_WAYPOINTS_TO_EDGES_DEFAULT, key="edge",
-                             help="Spatial search - can add 30-60 seconds")
-        do_corr = st.checkbox("Constrain to corridor", value=CONSTRAIN_CORRIDOR_DEFAULT, key="corr",
-                             help="⚠️ SLOW for complex networks")
-        if do_corr:
+            do_node = st.checkbox("Node intersections", value=NODE_INTERSECTIONS_DEFAULT, key="node",
+                                 help="⚠️ SLOW - Expensive geometry operation")
+            do_edge = st.checkbox("Snap waypoints to edges", value=SNAP_WAYPOINTS_TO_EDGES_DEFAULT, key="edge",
+                                 help="Spatial search - can add 30-60 seconds")
+            do_corr = st.checkbox("Constrain to corridor", value=CONSTRAIN_CORRIDOR_DEFAULT, key="corr",
+                                 help="⚠️ SLOW for complex networks")
             buf_km = st.slider("Corridor buffer (km)", 5.0, 80.0, CORRIDOR_BUFFER_KM_DEFAULT, key="buf",
-                             help="Smaller = faster")
-        else:
-            buf_km = CORRIDOR_BUFFER_KM_DEFAULT
+                               help="Only used with 'Constrain to corridor'. Smaller = faster")
 
-        color = st.color_picker("Route color", "#1f77b4", key="color")
-        highlight_name = st.text_input("System name", "Corridor 1", key="name")
-        path_name = st.text_input("Path name (optional)", "", key="path_name",
-                                   placeholder="e.g. Direct, Via Campinas…")
+            color = st.color_picker("Route color", "#1f77b4", key="color")
+            highlight_name = st.text_input("System name", "Corridor 1", key="name")
+            path_name = st.text_input("Path name (optional)", "", key="path_name",
+                                       placeholder="e.g. Direct, Via Campinas…")
 
-        run_btn = st.button("Compute Preview", key="run")
-        commit_btn = st.button("Commit Highlight", key="commit")
+            run_btn = st.form_submit_button("Compute Preview")
+            commit_btn = st.form_submit_button("Commit Highlight")
         progress_bar = st.progress(0)
         status_txt = st.empty()
 
@@ -1086,18 +1302,18 @@ def main():
 
         st.divider()
         st.subheader("📍 Station Finder")
-        find_station = st.selectbox(
-            "Find station on map:",
-            options=["(Select a station...)"] + labels,
-            key="find_station",
-            help="Highlight a station on the map to find its location"
-        )
-        if find_station != "(Select a station...)":
-            if 'highlighted_station' not in st.session_state:
-                st.session_state.highlighted_station = None
-            if st.button("📌 Mark on Map", key="mark_station"):
-                st.session_state.highlighted_station = find_station
-                st.success(f"Marked: {find_station}")
+        with st.form("station_finder_form", border=False):
+            find_station = st.selectbox(
+                "Find station on map:",
+                options=["(Select a station...)"] + labels,
+                key="find_station",
+                help="Highlight a station on the map to find its location"
+            )
+            mark_btn = st.form_submit_button("📌 Mark on Map")
+        if mark_btn and find_station != "(Select a station...)":
+            st.session_state.highlighted_station = find_station
+            st.success(f"Marked: {find_station}")
+        if st.session_state.get('highlighted_station'):
             if st.button("🔄 Clear Marker", key="clear_marker"):
                 st.session_state.highlighted_station = None
                 st.info("Marker cleared")
@@ -1131,35 +1347,39 @@ def main():
         st.subheader("�🗂️ Station Group Systems")
         st.caption("Create systems and add multiple station groups per system (each group with its own marker shape/color).")
 
-        group_system_name_input = st.text_input(
-            "System name",
-            key="group_system_name_input",
-            placeholder="e.g. MRS Crew Operations"
-        )
-        group_name_input = st.text_input(
-            "Group name",
-            key="group_name_input",
-            placeholder="e.g. Crew Change"
-        )
-        selected_group_stations = st.multiselect(
-            "Stations in group",
-            options=labels,
-            key="group_station_selection"
-        )
-        group_marker_shape = st.selectbox(
-            "Marker shape",
-            options=["circle", "square", "triangle"],
-            key="group_marker_shape"
-        )
-        group_marker_color = st.color_picker(
-            "Marker color",
-            "#d62728",
-            key="group_marker_color"
-        )
+        # Form: typing names / picking stations does not rerun the app until Save
+        with st.form("station_group_form", border=False):
+            group_system_name_input = st.text_input(
+                "System name",
+                key="group_system_name_input",
+                placeholder="e.g. MRS Crew Operations"
+            )
+            group_name_input = st.text_input(
+                "Group name",
+                key="group_name_input",
+                placeholder="e.g. Crew Change"
+            )
+            selected_group_stations = st.multiselect(
+                "Stations in group",
+                options=labels,
+                key="group_station_selection"
+            )
+            group_marker_shape = st.selectbox(
+                "Marker shape",
+                options=["circle", "square", "triangle"],
+                key="group_marker_shape"
+            )
+            group_marker_color = st.color_picker(
+                "Marker color",
+                "#d62728",
+                key="group_marker_color"
+            )
+            save_group_btn = st.form_submit_button("💾 Save/Update Group", use_container_width=True)
 
-        col_g1, col_g2 = st.columns(2)
+        col_g1 = st.container()  # save feedback
+        col_g2 = st.container()  # delete controls (below the form)
         with col_g1:
-            if st.button("💾 Save/Update Group", key="save_group_btn", use_container_width=True):
+            if save_group_btn:
                 system_name_clean = (group_system_name_input or "").strip()
                 group_name_clean = (group_name_input or "").strip()
                 if not system_name_clean:
@@ -1711,8 +1931,7 @@ def main():
                                         except:
                                             pass  # Continue even if backup fails
                                         
-                                        step = len(coords) // simplify_factor
-                                        path_info['coords_ll'] = coords[::step] + [coords[-1]]
+                                        path_info['coords_ll'] = _simplify_latlon(coords, max_points=simplify_factor)
                                         save_highlights(st.session_state.committed_highlights)
                                         st.success(f"✅ Reduced from {n_coords:,} to {len(path_info['coords_ll']):,} coords | Backup: {backup_path.name}")
                                         st.rerun()
@@ -1725,43 +1944,14 @@ def main():
     st.subheader("Interactive Map")
     map_zoom = 6  # Initial zoom level
 
-    # ------------------------------------------------------------------
-    # Pre-process station data ONCE per session.  Rail geometries now use
-    # pre-computed GeoJSON (in derived_data) rendered as a single
-    # folium.GeoJson layer instead of N individual PolyLines.
-    # ------------------------------------------------------------------
-    if 'stations_data_cache' not in st.session_state:
-        # Vectorized extraction — avoids iterrows() overhead
-        _lats = stations_near_ll.geometry.y.values
-        _lons = stations_near_ll.geometry.x.values
-        _slabels = stations_near_ll['station_label'].values
-        _codes = (
-            stations_near_ll['station_code'].values
-            if 'station_code' in stations_near_ll.columns
-            else np.full(len(stations_near_ll), '', dtype=object)
-        )
-        _cache = []
-        for i in range(len(stations_near_ll)):
-            label = str(_slabels[i])
-            code = str(_codes[i])
-            popup_text = f"{label} | Code: {code}" if code else label
-            _cache.append({
-                'lat': float(_lats[i]),
-                'lon': float(_lons[i]),
-                'label': label,
-                'popup': popup_text,
-            })
-        st.session_state.stations_data_cache = _cache
-        # Invalidate derived lookup so it gets rebuilt
-        st.session_state.pop('stations_by_label', None)
-
     m = folium.Map(
-        location=map_center, 
-        zoom_start=int(map_zoom), 
+        location=map_center,
+        zoom_start=int(map_zoom),
         height=700,
         zoom_snap=0.25,
         zoom_delta=0.25,
-        wheel_px_per_zoom_level=120
+        wheel_px_per_zoom_level=120,
+        prefer_canvas=True,  # draw vectors on one canvas instead of thousands of SVG nodes
     )
     Fullscreen(position='topleft', title='Fullscreen', title_cancel='Exit fullscreen', force_separate_button=True).add_to(m)
     _ZoomDisplay().add_to(m)
@@ -1791,14 +1981,13 @@ def main():
     if not isinstance(active_station_group_systems, list):
         active_station_group_systems = []
 
-    # All Brazil rails — single GeoJSON layer (much faster than N individual PolyLines)
-    folium.GeoJson(
-        d['rails_all_geojson'],
-        style_function=lambda x: {
-            'color': '#ff7f0e',
-            'weight': BASE_RAIL_WEIGHT,
-            'opacity': 0.85,
-        },
+    # Static layers (all rails, operators, all stations) are loaded by URL from
+    # versioned files the browser caches — see _RemoteGeoJson.  Hidden layers
+    # cost nothing until switched on in the layer control.
+    static_urls = d['static_layer_urls']
+    _RemoteGeoJson(
+        static_urls['rails_all'], d['rails_all_geojson'], 'lines',
+        {'color': '#ff7f0e', 'weight': BASE_RAIL_WEIGHT, 'opacity': 0.85},
     ).add_to(all_rails_layer)
 
     # Per-operator rail layers — only render operators selected in sidebar
@@ -1808,46 +1997,23 @@ def main():
     for op_name in sorted(RAIL_OPERATORS.keys()):
         if op_name not in active_operators:
             continue
-        op_info = RAIL_OPERATORS[op_name]
         op_geojson = operator_geojsons.get(op_name)
         if not op_geojson or not op_geojson.get('features'):
             continue
-        op_color = op_info['color']
         op_layer = folium.FeatureGroup(name=f"🚂 {op_name} Rails", show=True)
-        folium.GeoJson(
-            op_geojson,
-            style_function=lambda x, c=op_color: {
-                'color': c,
-                'weight': BASE_RAIL_WEIGHT,
-                'opacity': 0.85,
-            },
+        _RemoteGeoJson(
+            static_urls.get(f"op_{op_name}"), op_geojson, 'lines',
+            {'color': RAIL_OPERATORS[op_name]['color'], 'weight': BASE_RAIL_WEIGHT, 'opacity': 0.85},
         ).add_to(op_layer)
         operator_layers.append(op_layer)
 
-    all_stations_label_layout = []
+    # All stations (off by default): circle markers + labels shown from STATION_LABEL_MIN_ZOOM
+    _RemoteGeoJson(
+        static_urls['stations'], d['stations_geojson'], 'stations',
+        {'radius': 4, 'color': '#0077cc', 'fill': True, 'fillOpacity': 0.75},
+    ).add_to(stations_layer)
 
-    # Add station markers (off by default) with persistent labels (from cache)
-    for s in st.session_state.stations_data_cache:
-        folium.CircleMarker(
-            location=[s['lat'], s['lon']],
-            radius=4,
-            color="#0077cc",
-            fill=True,
-            fill_opacity=0.75,
-            popup=s['popup']
-        ).add_to(stations_layer)
-
-        label_margin_top, label_translate_x = compute_label_offset(s['lat'], s['lon'], layout_state=all_stations_label_layout)
-
-        _add_label_marker(stations_layer, s['lat'], s['lon'], s['label'],
-                          margin_top=label_margin_top,
-                          translate_x_pct=label_translate_x)
-
-    if 'stations_by_label' not in st.session_state:
-        st.session_state.stations_by_label = {
-            s.get('label'): s for s in st.session_state.stations_data_cache
-        }
-    stations_by_label = st.session_state.stations_by_label
+    stations_by_label = d['stations_by_label']
     group_labels_layout_state = []
     for system_name in active_station_group_systems:
         system_data = station_group_systems.get(system_name, {})
@@ -2107,9 +2273,7 @@ def main():
                 # Optionally simplify coordinates for better performance
                 coords = h.get('coords_ll', [])
                 if simplify_coords and len(coords) > 100:
-                    # Keep every Nth point (adaptive based on path length)
-                    step = max(2, len(coords) // 100)
-                    coords = coords[::step] + [coords[-1]]  # Always include last point
+                    coords = _simplify_latlon(coords, tolerance=HIGHLIGHT_DISPLAY_TOLERANCE_DEG)
                 if coords:
                     folium.PolyLine(
                         coords,

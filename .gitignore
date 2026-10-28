@@ -14,6 +14,10 @@ __pycache__/
 venv/
 env/
 
+# Generated at runtime (versioned map layers, routing graph cache)
+static/
+.cache/
+
 # Logs
 logs/
 *.log

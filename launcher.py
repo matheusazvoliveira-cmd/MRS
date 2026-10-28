@@ -39,6 +39,7 @@ def main() -> int:
         "--global.developmentMode=false",
         "--server.headless=true",
         "--browser.gatherUsageStats=false",
+        "--server.enableStaticServing=true",
     ]
     return stcli.main()
 
