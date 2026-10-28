@@ -40,6 +40,17 @@ def main() -> int:
         "--server.headless=true",
         "--browser.gatherUsageStats=false",
         "--server.enableStaticServing=true",
+        # Same Google / Material 3 theme as .streamlit/config.toml (not read by the exe)
+        "--theme.base=light",
+        "--theme.primaryColor=#1a73e8",
+        "--theme.backgroundColor=#ffffff",
+        "--theme.secondaryBackgroundColor=#f1f3f4",
+        "--theme.textColor=#202124",
+        "--theme.borderColor=#dadce0",
+        "--theme.font=Roboto:https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap, sans-serif",
+        "--theme.baseFontSize=14",
+        "--theme.baseRadius=0.5rem",
+        "--theme.buttonRadius=full",
     ]
     return stcli.main()
 

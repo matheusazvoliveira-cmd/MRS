@@ -2,3 +2,17 @@
 # Serve ./static (generated, versioned map layers) at /app/static so the browser
 # downloads them once and caches them, instead of receiving them on every rerun.
 enableStaticServing = true
+
+[theme]
+# Google / Material 3 look: Roboto, Google Blue primary, Google grey surfaces,
+# 8px corners on fields and cards, fully rounded (pill) buttons.
+base = "light"
+primaryColor = "#1a73e8"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f1f3f4"
+textColor = "#202124"
+borderColor = "#dadce0"
+font = "Roboto:https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap, sans-serif"
+baseFontSize = 14
+baseRadius = "0.5rem"
+buttonRadius = "full"

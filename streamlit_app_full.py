@@ -95,6 +95,9 @@ STRICT_MRS = "Strict MRS (11 only)"
 PREFER_MRS = "Prefer MRS (penalize non-11)"
 ALLOW_ALL = "Allow all (shortest distance)"
 
+# Short labels for the routing-mode segmented button
+ROUTING_MODE_SHORT = {STRICT_MRS: "Strict", PREFER_MRS: "Prefer", ALLOW_ALL: "All"}
+
 # UI label -> routing.py mode id
 ROUTING_MODE_IDS = {
     STRICT_MRS: routing.STRICT_MRS,
@@ -909,8 +912,8 @@ class _LayersToggle(JSCSSMixin, folium.MacroElement):
         <style>
             .layers-hidden .leaflet-control-layers { display: none; }
             .leaflet-bar.layers-toggle a {
-                width: auto; padding: 0 10px; white-space: nowrap;
-                font: bold 13px/30px sans-serif; color: #333; cursor: pointer;
+                width: auto; padding: 0 16px; white-space: nowrap;
+                font: 500 14px/40px Roboto, Arial, sans-serif; color: #1a73e8; cursor: pointer;
             }
         </style>
     {% endmacro %}
@@ -953,67 +956,96 @@ class _LayersToggle(JSCSSMixin, folium.MacroElement):
 # Full-screen map with the UI floating on top of it (like kmvia.rrs-software.com.br)
 _FULLSCREEN_LAYOUT_CSS = """
 <style>
-    :root { --topbar-h: 84px; }
+    /* Material 3 tokens (Google colours / elevation) */
+    :root {
+        --topbar-h: 124px;
+        --m3-surface: #ffffff;
+        --m3-on-surface: #202124;
+        --m3-on-surface-variant: #5f6368;
+        --m3-outline: #dadce0;
+        --m3-elev-1: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
+        --m3-elev-2: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 2px 6px 2px rgba(60, 64, 67, .15);
+        --m3-elev-3: 0 1px 3px 0 rgba(60, 64, 67, .3), 0 4px 8px 3px rgba(60, 64, 67, .15);
+    }
 
-    /* Map fills the window below the top bar, behind everything else */
+    /* Map fills the window below the top app bar, behind everything else */
     iframe[title="streamlit_folium.st_folium"] {
         position: fixed !important; top: var(--topbar-h); left: 0; z-index: 0; border: 0;
         width: 100vw !important; height: calc(100vh - var(--topbar-h)) !important;
     }
+    [data-testid="stMainBlockContainer"] { padding: 0 !important; max-width: none; }
 
-    /* Route builder: one horizontal line across the top (scrolls sideways on narrow screens);
-       left padding leaves room for the "open sidebar" button */
+    /* Top app bar: two rows (route, explore). Scrolls sideways on narrow windows;
+       left padding leaves room for the "open side panel" button */
     .st-key-top_bar {
         position: fixed; top: 0; left: 0; right: 0; z-index: 2; height: var(--topbar-h);
-        padding: 6px 16px 0 60px; overflow-x: auto; overflow-y: hidden;
-        background: rgba(255, 255, 255, 0.97); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        padding: 8px 16px 8px 64px; gap: 8px; overflow-x: auto; overflow-y: hidden;
+        background: var(--m3-surface); box-shadow: var(--m3-elev-2);
     }
     .st-key-top_bar [data-testid="stForm"] { padding: 0; border: 0; }
-    .st-key-top_bar [data-testid="stHorizontalBlock"] { flex-wrap: nowrap; min-width: 860px; gap: 0.5rem; }
-    [data-testid="stMainBlockContainer"] { padding: 0 !important; max-width: none; }
-    /* Transparent header lets clicks through, except on the "open sidebar" button */
+    .st-key-top_bar [data-testid="stHorizontalBlock"] { flex-wrap: nowrap; min-width: 900px; gap: 8px; }
+    /* M3 "label small": 12px / 500, on-surface-variant */
+    .st-key-top_bar [data-testid="stWidgetLabel"] { min-height: 0; margin-bottom: 2px; }
+    .st-key-top_bar [data-testid="stWidgetLabel"] p {
+        font-size: 12px; font-weight: 500; line-height: 16px; color: var(--m3-on-surface-variant);
+    }
+
+    /* Transparent Streamlit header lets clicks through, except on the "open side panel" button */
     [data-testid="stHeader"], [data-testid="stHeader"] * { background: transparent; pointer-events: none; }
     [data-testid="stExpandSidebarButton"], [data-testid="stExpandSidebarButton"] * { pointer-events: auto; }
     [data-testid="stExpandSidebarButton"] {
-        background: rgba(255, 255, 255, 0.92) !important; border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        background: var(--m3-surface) !important; border-radius: 50%; box-shadow: var(--m3-elev-1);
     }
-    /* Hide Deploy / main menu (they sat on top of the layer list); the toolbar
-       itself stays because it holds the button that re-opens a collapsed sidebar */
+    /* Hide Deploy / main menu; the toolbar stays because it holds the "open side panel" button */
     [data-testid="stAppDeployButton"], [data-testid="stMainMenu"] { display: none; }
 
-    /* Sidebar floats over the map below the top bar, so the route bar stays usable */
+    /* Side panel (M3 modal side sheet) below the top bar, so the route bar stays usable */
     section[data-testid="stSidebar"] {
-        position: fixed !important; top: calc(var(--topbar-h) + 8px); left: 12px; z-index: 3;
-        height: calc(100vh - var(--topbar-h) - 20px) !important; border-radius: 10px; overflow: hidden;
-        background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(4px);
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+        position: fixed !important; top: calc(var(--topbar-h) + 8px); left: 8px; z-index: 3;
+        height: calc(100vh - var(--topbar-h) - 16px) !important; border-radius: 16px; overflow: hidden;
+        background: var(--m3-surface); box-shadow: var(--m3-elev-3);
     }
     section[data-testid="stSidebar"] > div { background: transparent; }
-    /* Keep the « close button in view while the sidebar content scrolls */
+    /* Keep the « close button in view while the panel scrolls */
     [data-testid="stSidebarHeader"] {
         position: sticky; top: 0; z-index: 5; height: auto; padding-top: 8px; padding-bottom: 8px;
-        background: #ffffff !important; border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        background: var(--m3-surface) !important; border-bottom: 1px solid var(--m3-outline);
     }
     /* Streamlit only shows « on hover — keep it always visible */
     [data-testid="stSidebarCollapseButton"] { display: block !important; visibility: visible !important; opacity: 1 !important; }
 
-    /* Messages and route results: floating card at the bottom, hidden while empty */
+    /* Messages and route results: M3 elevated card at the bottom, hidden while empty */
     .st-key-map_overlay {
         position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 2;
         width: min(560px, calc(100vw - 32px)); max-height: 45vh; overflow-y: auto;
-        background: rgba(255, 255, 255, 0.95); border-radius: 10px; padding: 12px 16px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+        background: var(--m3-surface); border-radius: 12px; padding: 16px 20px;
+        box-shadow: var(--m3-elev-3);
     }
     .st-key-map_overlay:not(:has([data-testid="stElementContainer"])) { display: none; }
 </style>
 """
 
-# Inside the map iframe: make the Leaflet map fill it
+# Inside the map iframe: make the Leaflet map fill it, Roboto, M3-style map controls
 _MAP_FILL_CSS = """
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
 <style>
     html, body { margin: 0; height: 100%; overflow: hidden; }
     #map_div, .folium-map { width: 100vw !important; height: 100vh !important; }
+    .leaflet-container { font-family: Roboto, Arial, sans-serif; font-size: 14px; }
+
+    /* Map controls: 40px targets, 8px corners, elevation instead of borders */
+    .leaflet-bar, .leaflet-control-layers {
+        border: none !important; border-radius: 8px !important;
+        box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 2px 6px 2px rgba(60, 64, 67, .15) !important;
+    }
+    .leaflet-bar a { width: 40px; height: 40px; line-height: 40px; color: #3c4043; }
+    .leaflet-bar a:first-child { border-top-left-radius: 8px; border-top-right-radius: 8px; }
+    .leaflet-bar a:last-child { border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; }
+
+    /* Layer list: M3 surface card with 14px body text */
+    .leaflet-control-layers-expanded { padding: 8px 12px !important; border-radius: 12px !important; }
+    .leaflet-control-layers label { font-size: 14px; line-height: 20px; color: #202124; }
+    .leaflet-control-layers-separator { border-top-color: #dadce0; }
     /* Leave room for the zoom buttons below the layer list */
     .leaflet-control-layers-list { max-height: calc(100vh - 200px) !important; }
 </style>
@@ -1041,9 +1073,25 @@ var l=document.querySelector('.leaflet-control-layers-list');if(l){l.style.maxHe
 # STREAMLIT APP
 # ============================================================================
 
+def _swap_route_ends():
+    """Form callback: swap origin and destination (like Google Maps directions)."""
+    ss = st.session_state
+    ss.origin, ss.dest = ss.dest, ss.origin
+
+
+def _set_map_focus(kind):
+    """Remember what the map frames on the next render: 'station' (search result) or 'route' (preview)."""
+    st.session_state.map_focus = kind
+
+
 def main():
     st.set_page_config(page_title="MRS Corridor Builder", layout="wide", initial_sidebar_state="collapsed")
     st.markdown(_FULLSCREEN_LAYOUT_CSS, unsafe_allow_html=True)
+
+    # Snackbar-style confirmation queued by an action before its st.rerun()
+    pending_toast = st.session_state.pop('pending_toast', None)
+    if pending_toast:
+        st.toast(pending_toast, icon="✅")
 
     if 'preview_data' not in st.session_state:
         st.session_state.preview_data = None
@@ -1079,25 +1127,38 @@ def main():
     station_counts_by_operator = d['station_counts_by_operator']
     map_center       = d['map_center']
 
-    # Route builder: one horizontal bar across the top of the map (see _FULLSCREEN_LAYOUT_CSS).
-    # A form, so picking stations/options does not rerun the app (and re-send the
-    # map) until one of the buttons is pressed.
+    # Station-group systems that no longer exist must leave the selection before its
+    # widget (top bar, below) is created
+    group_system_names = sorted(st.session_state.station_group_systems.keys())
+    st.session_state.active_station_group_systems = [
+        s for s in st.session_state.active_station_group_systems if s in group_system_names
+    ]
+
+    # Top app bar (Material 3 / Google Maps style), pinned above the map — see _FULLSCREEN_LAYOUT_CSS.
+    #   Row 1  route:   origin ⇄ destination · via · mode (segmented) · options · Compute (filled) · Commit
+    #   Row 2  explore: station search · saved highlights switch · station groups · operator filter chips
     with st.container(key="top_bar"):
+        # Row 1 is a form, so picking stations/options does not rerun the app (and
+        # re-send the map) until a button is pressed.
         with st.form("route_form", border=False):
-            c_a, c_b, c_via, c_mode, c_opt, c_run, c_commit = st.columns(
-                [2.6, 2.6, 2.4, 2, 0.8, 1.5, 1.5], vertical_alignment="bottom"
+            c_a, c_swap, c_b, c_via, c_mode, c_opt, c_run, c_commit = st.columns(
+                [2.2, 0.62, 2.2, 1.7, 2.5, 0.78, 1.3, 1.2], vertical_alignment="bottom"
             )
             with c_a:
-                origin = st.selectbox("Station A", options=labels, key="origin")
+                origin = st.selectbox("Origin (A)", options=labels, key="origin")
+            with c_swap:
+                st.form_submit_button("⇄", on_click=_swap_route_ends, help="Swap origin and destination",
+                                      use_container_width=True)
             with c_b:
-                destination = st.selectbox("Station B", options=labels, index=min(1, len(labels)-1), key="dest")
+                destination = st.selectbox("Destination (B)", options=labels, index=min(1, len(labels)-1), key="dest")
             with c_via:
-                vias = st.multiselect("VIA stations (optional)", options=labels, key="vias")
+                vias = st.multiselect("Via (optional)", options=labels, key="vias", placeholder="Add stops")
             with c_mode:
-                routing_mode = st.selectbox(
-                    "Routing mode", [STRICT_MRS, PREFER_MRS, ALLOW_ALL], index=2,
-                    format_func=lambda m: m.split(' (')[0],  # "Strict MRS" / "Prefer MRS" / "Allow all"
-                    help="Strict MRS: MRS track (code 11) only · Prefer MRS: penalize non-MRS track · Allow all: shortest distance",
+                routing_mode = st.segmented_control(
+                    "Routing mode", [STRICT_MRS, PREFER_MRS, ALLOW_ALL], default=ALLOW_ALL, required=True,
+                    format_func=ROUTING_MODE_SHORT.get,
+                    help="Strict: MRS track (code 11) only · Prefer: penalize non-MRS track · All: shortest distance on any track",
+                    key="routing_mode",
                 )
             with c_opt:
                 with st.popover("⚙", help="Route options: penalty, color, system and path name"):
@@ -1110,7 +1171,34 @@ def main():
                 run_btn = st.form_submit_button("Compute", type="primary", use_container_width=True)
             with c_commit:
                 commit_btn = st.form_submit_button("Commit", use_container_width=True,
-                                                   help=f"Commit the preview as a highlight of system '{highlight_name}'")
+                                                   help=f"Save the preview as a highlight of system '{highlight_name}'")
+
+        # Row 2: map filters — apply immediately
+        c_find, c_hl, c_groups, c_ops = st.columns([2.5, 1.45, 1.4, 6.65], vertical_alignment="center")
+        with c_find:
+            st.selectbox("Find station", options=labels, index=None, key="find_station",
+                         placeholder="🔍  Find a station", label_visibility="collapsed",
+                         on_change=_set_map_focus, args=("station",))
+        with c_hl:
+            render_committed = st.toggle("Highlights", value=True, key="render_committed")
+        with c_groups:
+            n_groups_on = len(st.session_state.active_station_group_systems)
+            with st.popover(f"🗂️ Groups{f' · {n_groups_on}' if n_groups_on else ''}", help="Station groups on the map",
+                            use_container_width=True):
+                if group_system_names:
+                    st.pills("Show on map", group_system_names, selection_mode="multi",
+                             key="active_station_group_systems")
+                else:
+                    st.caption("No station groups yet — create them in the side panel (»).")
+        with c_ops:
+            st.pills(
+                "Operators", sorted(RAIL_OPERATORS.keys()), selection_mode="multi",
+                key="active_operator_layers", label_visibility="collapsed",
+                help="Rail network layers by operator · stations: " + ", ".join(
+                    f"{op} {station_counts_by_operator.get(op, 0)}" for op in sorted(RAIL_OPERATORS.keys())
+                ),
+            )
+    routing_mode = routing_mode or ALLOW_ALL
     penalty = penalty_input if routing_mode == PREFER_MRS else 1.0
 
     # Sidebar: everything else (collapsed by default so the map is fully visible)
@@ -1119,57 +1207,10 @@ def main():
         st.caption(f"{len(derived_data['labels'])} stations · {len(rails_all)} rail features")
 
         st.divider()
-        st.subheader("🎨 Rendering Options")
-        render_committed = st.checkbox("Show committed highlights on map", value=True, key="render_committed",
-                                       help="Toggle off to speed up map rendering with many paths")
-        if render_committed:
-            simplify_coords = st.checkbox("Simplify path coordinates", value=False, key="simplify",
-                                         help="Reduce coordinate density for faster rendering (slight visual quality loss)")
-        else:
-            simplify_coords = False
-
-        st.divider()
-        st.subheader("📍 Station Finder")
-        with st.form("station_finder_form", border=False):
-            find_station = st.selectbox(
-                "Find station on map:",
-                options=["(Select a station...)"] + labels,
-                key="find_station",
-                help="Highlight a station on the map to find its location"
-            )
-            mark_btn = st.form_submit_button("📌 Mark on Map")
-        if mark_btn and find_station != "(Select a station...)":
-            st.session_state.highlighted_station = find_station
-            st.success(f"Marked: {find_station}")
-        if st.session_state.get('highlighted_station'):
-            if st.button("🔄 Clear Marker", key="clear_marker"):
-                st.session_state.highlighted_station = None
-                st.info("Marker cleared")
-
-        st.divider()
-        st.subheader("🚂 Operator Rail Layers")
-        st.caption("Toggle rail network layers by operator/concessionaire.")
-        operator_names = sorted(RAIL_OPERATORS.keys())
-        st.multiselect(
-            "Show operators on map",
-            options=operator_names,
-            default=st.session_state.active_operator_layers,
-            key="active_operator_layers",
-            format_func=lambda op: f"{op} — {RAIL_OPERATORS[op]['label']} ({station_counts_by_operator.get(op, 0)} stations)",
-        )
-        active_operator_station_total = sum(
-            station_counts_by_operator.get(op, 0)
-            for op in st.session_state.get('active_operator_layers', [])
-        )
-        if st.session_state.get('active_operator_layers'):
-            st.caption(
-                "Selected operators: "
-                + " | ".join(
-                    f"{op}: {station_counts_by_operator.get(op, 0)}"
-                    for op in st.session_state['active_operator_layers']
-                )
-            )
-            st.caption(f"Total stations across selected operators: {active_operator_station_total}")
+        st.subheader("🎨 Display")
+        simplify_coords = render_committed and st.checkbox(
+            "Simplify saved highlights", value=False, key="simplify",
+            help="Draw saved highlights with fewer points (faster with many paths; slight visual loss)")
 
         st.divider()
         st.subheader("🗂️ Station Group Systems")
@@ -1236,13 +1277,6 @@ def main():
                     st.rerun()
 
         system_names = sorted(st.session_state.station_group_systems.keys())
-        # Clean up active systems - keep only those that still exist
-        filtered_active = [
-            s for s in st.session_state.get('active_station_group_systems', [])
-            if s in system_names
-        ]
-        if filtered_active != st.session_state.get('active_station_group_systems', []):
-            st.session_state.active_station_group_systems = filtered_active
 
         col_sg_exp, col_sg_hint = st.columns([1, 1])
         with col_sg_exp:
@@ -1313,13 +1347,7 @@ def main():
                     st.rerun()
 
         if system_names:
-            st.multiselect(
-                "Show systems on map",
-                options=system_names,
-                default=st.session_state.active_station_group_systems,
-                key="active_station_group_systems"
-            )
-
+            st.caption("Show or hide systems with 🗂️ Groups in the top bar.")
             with col_g2:
                 delete_system = st.selectbox(
                     "System",
@@ -1918,6 +1946,7 @@ def main():
                     'lon': lon
                 })
 
+            _set_map_focus('route')
             st.session_state.preview_data = {
                 'coords_ll': coords_ll,
                 'order': order,
@@ -1955,7 +1984,7 @@ def main():
         with overlay:
             preview_data = st.session_state.get('preview_data')
             if not preview_data:
-                st.warning("Compute a preview first, then click Commit Highlight.")
+                st.warning("Compute a route first, then click Commit.")
             else:
                 system_name = preview_data.get('highlight_name', 'Committed Route')
                 if system_name not in st.session_state.committed_highlights:
@@ -1970,9 +1999,9 @@ def main():
                 payload = _make_path_payload(temp_data)
                 st.session_state.committed_highlights[system_name].append(payload)
                 save_highlights(st.session_state.committed_highlights)
-                st.success(
-                    f"Committed: **{system_name}** · {payload['station_count']} stations · "
-                    f"{payload.get('total_km', 0.0):.1f} km → {HIGHLIGHTS_SAVE_PATH.name}"
+                st.session_state.pending_toast = (
+                    f"Saved to **{system_name}** · {payload['station_count']} stations · "
+                    f"{payload.get('total_km', 0.0):.1f} km"
                 )
                 st.rerun()
 
@@ -2104,7 +2133,7 @@ def main():
             system_layer.add_to(m)
 
     # Draw station finder marker if selected
-    highlighted_station = st.session_state.get('highlighted_station')
+    highlighted_station = st.session_state.get('find_station')
     if highlighted_station:
         try:
             station_row = stations_lookup.loc[highlighted_station]
@@ -2143,6 +2172,15 @@ def main():
         group_layer.add_to(m)
     
     # Keep layer control expanded so system visibility is a direct click toggle
+    map_focus = st.session_state.get('map_focus')
+    if map_focus == 'station' and highlighted_station in stations_by_label:
+        s_ = stations_by_label[highlighted_station]
+        m.fit_bounds([[s_['lat'] - 0.04, s_['lon'] - 0.04], [s_['lat'] + 0.04, s_['lon'] + 0.04]])
+    elif map_focus == 'route' and preview_data and preview_data.get('coords_ll'):
+        lats = [c[0] for c in preview_data['coords_ll']]
+        lons = [c[1] for c in preview_data['coords_ll']]
+        m.fit_bounds([[min(lats), min(lons)], [max(lats), max(lons)]], padding=(60, 60))
+
     _LayersToggle().add_to(m)  # added first so it sits above the layer list
     folium.LayerControl(collapsed=False, position='topright').add_to(m)
 
