@@ -902,14 +902,74 @@ _ORM_ATTR = (
     'Data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 )
 
+class _LayersToggle(JSCSSMixin, folium.MacroElement):
+    """Map button that shows/hides the layer list on the right (choice kept in localStorage)."""
+    _template = Template("""
+    {% macro header(this, kwargs) %}
+        <style>
+            .layers-hidden .leaflet-control-layers { display: none; }
+            .leaflet-bar.layers-toggle a {
+                width: auto; padding: 0 10px; white-space: nowrap;
+                font: bold 13px/30px sans-serif; color: #333; cursor: pointer;
+            }
+        </style>
+    {% endmacro %}
+    {% macro script(this, kwargs) %}
+    (function () {
+        var map = {{ this._parent.get_name() }};
+        var key = 'mrs-layers-hidden';
+        function stored() { try { return localStorage.getItem(key) === '1'; } catch (e) { return false; } }
+        function apply(hidden, btn) {
+            map.getContainer().classList.toggle('layers-hidden', hidden);
+            btn.textContent = hidden ? '☰ Layers' : '✕ Hide layers';
+            try { localStorage.setItem(key, hidden ? '1' : '0'); } catch (e) {}
+        }
+        var Toggle = L.Control.extend({
+            options: { position: 'topright' },
+            onAdd: function () {
+                var div = L.DomUtil.create('div', 'leaflet-bar layers-toggle');
+                var btn = L.DomUtil.create('a', '', div);
+                btn.href = '#';
+                btn.setAttribute('role', 'button');
+                L.DomEvent.disableClickPropagation(div);
+                L.DomEvent.on(btn, 'click', function (e) {
+                    L.DomEvent.preventDefault(e);
+                    apply(!map.getContainer().classList.contains('layers-hidden'), btn);
+                });
+                apply(stored(), btn);
+                return div;
+            }
+        });
+        map.addControl(new Toggle());
+    })();
+    {% endmacro %}
+    """)
+
+    def __init__(self):
+        super().__init__()
+        self._name = 'LayersToggle'
+
+
 # Full-screen map with the UI floating on top of it (like kmvia.rrs-software.com.br)
 _FULLSCREEN_LAYOUT_CSS = """
 <style>
-    /* Map fills the window, behind everything */
+    :root { --topbar-h: 84px; }
+
+    /* Map fills the window below the top bar, behind everything else */
     iframe[title="streamlit_folium.st_folium"] {
-        position: fixed !important; inset: 0; z-index: 0; border: 0;
-        width: 100vw !important; height: 100vh !important;
+        position: fixed !important; top: var(--topbar-h); left: 0; z-index: 0; border: 0;
+        width: 100vw !important; height: calc(100vh - var(--topbar-h)) !important;
     }
+
+    /* Route builder: one horizontal line across the top (scrolls sideways on narrow screens);
+       left padding leaves room for the "open sidebar" button */
+    .st-key-top_bar {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 2; height: var(--topbar-h);
+        padding: 6px 16px 0 60px; overflow-x: auto; overflow-y: hidden;
+        background: rgba(255, 255, 255, 0.97); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .st-key-top_bar [data-testid="stForm"] { padding: 0; border: 0; }
+    .st-key-top_bar [data-testid="stHorizontalBlock"] { flex-wrap: nowrap; min-width: 860px; gap: 0.5rem; }
     [data-testid="stMainBlockContainer"] { padding: 0 !important; max-width: none; }
     /* Transparent header lets clicks through, except on the "open sidebar" button */
     [data-testid="stHeader"], [data-testid="stHeader"] * { background: transparent; pointer-events: none; }
@@ -975,7 +1035,7 @@ var l=document.querySelector('.leaflet-control-layers-list');if(l){l.style.maxHe
 # ============================================================================
 
 def main():
-    st.set_page_config(page_title="MRS Corridor Builder", layout="wide")
+    st.set_page_config(page_title="MRS Corridor Builder", layout="wide", initial_sidebar_state="collapsed")
     st.markdown(_FULLSCREEN_LAYOUT_CSS, unsafe_allow_html=True)
 
     if 'preview_data' not in st.session_state:
@@ -1012,37 +1072,44 @@ def main():
     station_counts_by_operator = d['station_counts_by_operator']
     map_center       = d['map_center']
 
-    # Sidebar controls
+    # Route builder: one horizontal bar across the top of the map (see _FULLSCREEN_LAYOUT_CSS).
+    # A form, so picking stations/options does not rerun the app (and re-send the
+    # map) until one of the buttons is pressed.
+    with st.container(key="top_bar"):
+        with st.form("route_form", border=False):
+            c_a, c_b, c_via, c_mode, c_opt, c_run, c_commit = st.columns(
+                [2.6, 2.6, 2.4, 2, 0.8, 1.5, 1.5], vertical_alignment="bottom"
+            )
+            with c_a:
+                origin = st.selectbox("Station A", options=labels, key="origin")
+            with c_b:
+                destination = st.selectbox("Station B", options=labels, index=min(1, len(labels)-1), key="dest")
+            with c_via:
+                vias = st.multiselect("VIA stations (optional)", options=labels, key="vias")
+            with c_mode:
+                routing_mode = st.selectbox(
+                    "Routing mode", [STRICT_MRS, PREFER_MRS, ALLOW_ALL], index=2,
+                    format_func=lambda m: m.split(' (')[0],  # "Strict MRS" / "Prefer MRS" / "Allow all"
+                    help="Strict MRS: MRS track (code 11) only · Prefer MRS: penalize non-MRS track · Allow all: shortest distance",
+                )
+            with c_opt:
+                with st.popover("⚙", help="Route options: penalty, color, system and path name"):
+                    penalty_input = st.slider("Non-MRS penalty (Prefer MRS mode)", 1.0, 100.0, NON_MRS_PENALTY_DEFAULT, key="penalty")
+                    color = st.color_picker("Route color", "#1f77b4", key="color")
+                    highlight_name = st.text_input("System name", "Corridor 1", key="name")
+                    path_name = st.text_input("Path name (optional)", "", key="path_name",
+                                               placeholder="e.g. Direct, Via Campinas…")
+            with c_run:
+                run_btn = st.form_submit_button("Compute", type="primary", use_container_width=True)
+            with c_commit:
+                commit_btn = st.form_submit_button("Commit", use_container_width=True,
+                                                   help=f"Commit the preview as a highlight of system '{highlight_name}'")
+    penalty = penalty_input if routing_mode == PREFER_MRS else 1.0
+
+    # Sidebar: everything else (collapsed by default so the map is fully visible)
     with st.sidebar:
         st.markdown("### 🚂 MRS Corridor Builder")
         st.caption(f"{len(derived_data['labels'])} stations · {len(rails_all)} rail features")
-
-        st.header("Route Builder")
-
-        # A form: picking stations/options does not rerun the app (and re-send the
-        # map) until one of the buttons is pressed.
-        with st.form("route_form", border=False):
-            col1, col2 = st.columns(2)
-            with col1:
-                origin = st.selectbox("Station A", options=labels, key="origin")
-            with col2:
-                destination = st.selectbox("Station B", options=labels, index=min(1, len(labels)-1), key="dest")
-
-            vias = st.multiselect("VIA stations (optional)", options=labels, key="vias")
-
-            routing_mode = st.radio("Routing mode", [STRICT_MRS, PREFER_MRS, ALLOW_ALL], index=2)
-            penalty_input = st.slider("Non-MRS penalty (Prefer MRS mode)", 1.0, 100.0, NON_MRS_PENALTY_DEFAULT, key="penalty")
-            penalty = penalty_input if routing_mode == PREFER_MRS else 1.0
-
-            color = st.color_picker("Route color", "#1f77b4", key="color")
-            highlight_name = st.text_input("System name", "Corridor 1", key="name")
-            path_name = st.text_input("Path name (optional)", "", key="path_name",
-                                       placeholder="e.g. Direct, Via Campinas…")
-
-            run_btn = st.form_submit_button("Compute Preview")
-            commit_btn = st.form_submit_button("Commit Highlight")
-        progress_bar = st.progress(0)
-        status_txt = st.empty()
 
         st.divider()
         st.subheader("🎨 Rendering Options")
@@ -1073,7 +1140,7 @@ def main():
                 st.info("Marker cleared")
 
         st.divider()
-        st.subheader("� Operator Rail Layers")
+        st.subheader("🚂 Operator Rail Layers")
         st.caption("Toggle rail network layers by operator/concessionaire.")
         operator_names = sorted(RAIL_OPERATORS.keys())
         st.multiselect(
@@ -1098,7 +1165,7 @@ def main():
             st.caption(f"Total stations across selected operators: {active_operator_station_total}")
 
         st.divider()
-        st.subheader("�🗂️ Station Group Systems")
+        st.subheader("🗂️ Station Group Systems")
         st.caption("Create systems and add multiple station groups per system (each group with its own marker shape/color).")
 
         # Form: typing names / picking stations does not rerun the app until Save
@@ -1814,20 +1881,14 @@ def main():
                 row = stations_lookup.loc[lab]
                 pts.append((float(row.geometry.x), float(row.geometry.y)))
 
-            progress_bar.progress(10)
-            status_txt.text("Loading routing graph...")
             t_graph_start = time.time()
             graph = get_rail_graph(rails_all_m, data_version_key)
             t_graph = time.time() - t_graph_start
 
-            progress_bar.progress(60)
-            status_txt.text("Computing route...")
             t_route_start = time.time()
             try:
                 result = routing.route(graph, pts, ROUTING_MODE_IDS[routing_mode], penalty)
             except routing.NoPathError as e:
-                progress_bar.progress(0)
-                status_txt.text("")
                 msg = f"No path found for segment {order[e.segment_index]} → {order[e.segment_index + 1]}"
                 if routing_mode == STRICT_MRS:
                     msg += (" — Strict MRS only uses track coded as MRS (11); some track in the"
@@ -1861,14 +1922,11 @@ def main():
                 'station_count': len(preview_station_points),
             }
 
-            progress_bar.progress(100)
             t_total = time.time() - t_start
-
-            status_txt.text(f"✅ Route complete: {total_km:.1f} km")
 
             # Compact summary card over the map
             station_count = len(preview_station_points)
-            st.markdown(f"#### {total_km:.1f} km · {station_count} stations")
+            st.markdown(f"#### ✅ Route complete: {total_km:.1f} km · {station_count} stations")
             st.caption(
                 f"{' → '.join(order)}  ·  graph {t_graph:.2f}s, routing {t_route:.2f}s, total {t_total:.2f}s"
             )
@@ -2078,6 +2136,7 @@ def main():
         group_layer.add_to(m)
     
     # Keep layer control expanded so system visibility is a direct click toggle
+    _LayersToggle().add_to(m)  # added first so it sits above the layer list
     folium.LayerControl(collapsed=False, position='topright').add_to(m)
 
     # Add comprehensive CSS/JS for layer control scrolling
