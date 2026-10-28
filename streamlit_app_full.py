@@ -982,14 +982,21 @@ _FULLSCREEN_LAYOUT_CSS = """
        itself stays because it holds the button that re-opens a collapsed sidebar */
     [data-testid="stAppDeployButton"], [data-testid="stMainMenu"] { display: none; }
 
-    /* Sidebar floats over the map (collapse it with its « button) */
+    /* Sidebar floats over the map below the top bar, so the route bar stays usable */
     section[data-testid="stSidebar"] {
-        position: fixed !important; top: 12px; left: 12px; z-index: 3;
-        height: calc(100vh - 24px) !important; border-radius: 10px; overflow: hidden;
+        position: fixed !important; top: calc(var(--topbar-h) + 8px); left: 12px; z-index: 3;
+        height: calc(100vh - var(--topbar-h) - 20px) !important; border-radius: 10px; overflow: hidden;
         background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(4px);
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
     }
     section[data-testid="stSidebar"] > div { background: transparent; }
+    /* Keep the « close button in view while the sidebar content scrolls */
+    [data-testid="stSidebarHeader"] {
+        position: sticky; top: 0; z-index: 5; height: auto; padding-top: 8px; padding-bottom: 8px;
+        background: #ffffff !important; border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    /* Streamlit only shows « on hover — keep it always visible */
+    [data-testid="stSidebarCollapseButton"] { display: block !important; visibility: visible !important; opacity: 1 !important; }
 
     /* Messages and route results: floating card at the bottom, hidden while empty */
     .st-key-map_overlay {
