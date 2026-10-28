@@ -96,7 +96,17 @@ LABEL_FONT_SIZE = 17  # px — single source of truth for all station label text
 MAP_SIMPLIFY_TOLERANCE_DEG = 0.00002  # ~2 m — keeps curves smooth at any zoom (layers are browser-cached files)
 MAP_COORD_DECIMALS = 5                # ~1 m
 HIGHLIGHT_DISPLAY_TOLERANCE_DEG = 0.0002  # ~20 m — "Simplify path coordinates" display option
-STATION_LABEL_MIN_ZOOM = 10           # "All Stations" labels only appear from this zoom in
+# "All Stations" level of detail (like Google Maps): fewer stations when zoomed out.
+#   tier 1  landmarks — ports, railway interchanges, major yards (ANTT IndicadorP / IndicadorF, CodigoEsca 2-3)
+#   tier 2  cities and terminals (CodigoEsca 4-7, IndicadorT)
+#   tier 3  everything else — small stations, km posts, switches
+STATION_TIER_DOT_ZOOM = {1: 0, 2: 8, 3: 10}     # zoom from which the tier's markers appear
+STATION_TIER_LABEL_ZOOM = {1: 7, 2: 9, 3: 11}   # zoom from which the tier's names appear
+STATION_TIER_STYLE = {
+    1: {'radius': 6, 'color': '#ffffff', 'weight': 2, 'fillColor': '#1a73e8', 'fillOpacity': 1},
+    2: {'radius': 4, 'color': '#ffffff', 'weight': 1.5, 'fillColor': '#1a73e8', 'fillOpacity': 1},
+    3: {'radius': 3, 'color': '#ffffff', 'weight': 1, 'fillColor': '#5f6368', 'fillOpacity': 1},
+}
 
 # Station label marker offset (px below the marker dot)
 LABEL_MARGIN_TOP_DEFAULT = 12
@@ -660,9 +670,30 @@ def _gdf_to_minimal_geojson(gdf):
     }]}
 
 
+def _station_tiers(stations):
+    """Level-of-detail tier (1 landmark .. 3 minor) and landmark kind ('port' / 'interchange' / '')
+    from the ANTT station fields (see STATION_TIER_DOT_ZOOM)."""
+    def col(name):
+        if name not in stations.columns:
+            return pd.Series(np.nan, index=stations.index)
+        return pd.to_numeric(stations[name], errors='coerce')
+
+    port = (col('IndicadorP') == 1).values
+    interchange = (col('IndicadorF') == 1).values
+    esca = col('CodigoEsca')
+    major = esca.isin([2, 3]).values
+    mid = (esca.between(4, 7) | (col('IndicadorT') == 1)).values
+    tier = np.where(port | interchange | major, 1, np.where(mid, 2, 3))
+    kind = np.where(port, 'port', np.where(interchange, 'interchange', ''))
+    return tier, kind
+
+
 def _stations_to_geojson(stations_ll):
-    """Point FeatureCollection of all stations (label + popup text) for one GeoJson layer."""
+    """Point FeatureCollection of all stations (label, popup text, level-of-detail tier,
+    landmark kind) for the "All Stations" layer."""
     labels = stations_ll['station_label'].astype(str).values
+    tiers, kinds = _station_tiers(stations_ll)
+    kind_text = {'port': ' · Port', 'interchange': ' · Railway interchange', '': ''}
     codes = (
         stations_ll['station_code'].astype(str).values
         if 'station_code' in stations_ll.columns
@@ -676,7 +707,9 @@ def _stations_to_geojson(stations_ll):
             'geometry': {'type': 'Point', 'coordinates': [float(lons[i]), float(lats[i])]},
             'properties': {
                 'label': labels[i],
-                'popup': f"{labels[i]} | Code: {codes[i]}" if codes[i] else labels[i],
+                'popup': (f"{labels[i]} | Code: {codes[i]}" if codes[i] else labels[i]) + kind_text[kinds[i]],
+                'tier': int(tiers[i]),
+                'kind': str(kinds[i]),
             },
         }
         for i in range(len(stations_ll))
@@ -744,47 +777,113 @@ class _RemoteGeoJson(JSCSSMixin, folium.MacroElement):
     embedding *data* when static serving is unavailable (url=None).
 
     kind='lines'    -> polylines styled with *style*
-    kind='stations' -> circle markers (*style*) with popup + permanent label that
-                       is hidden below STATION_LABEL_MIN_ZOOM
+    kind='stations' -> level of detail by tier (STATION_TIER_*): each tier's markers
+                       and names appear from its own zoom; ports / interchanges are
+                       icons; overlapping names are hidden, most important kept
     """
     _template = Template("""
     {% macro header(this, kwargs) %}
         {% if this.kind == 'stations' %}
         <style>
             .leaflet-tooltip.station-label {
-                background: transparent; border: none; box-shadow: none; padding: 0 4px;
-                font-size: {{ this.font_size }}px; font-weight: bold; color: black; white-space: nowrap;
+                display: none; background: transparent; border: none; box-shadow: none; padding: 0 4px;
+                color: #202124; white-space: nowrap; font-family: Roboto, Arial, sans-serif;
+                text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff;
             }
             .leaflet-tooltip.station-label:before { display: none; }
-            .hide-station-labels .leaflet-tooltip.station-label { display: none; }
+            .leaflet-tooltip.station-label.t1 { font-size: 14px; font-weight: 700; }
+            .leaflet-tooltip.station-label.t2 { font-size: 13px; font-weight: 500; }
+            .leaflet-tooltip.station-label.t3 { font-size: 12px; font-weight: 400; color: #3c4043; }
+            .station-labels-t1 .station-label.t1,
+            .station-labels-t2 .station-label.t2,
+            .station-labels-t3 .station-label.t3 { display: block; }
+            .station-landmark {
+                display: flex !important; align-items: center; justify-content: center;
+                border-radius: 50%; background: #fff; border: 2px solid #1a73e8;
+                font-size: 12px; line-height: 1; color: #1a73e8;
+                box-shadow: 0 1px 2px rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
+            }
+            .station-landmark.interchange { border-color: #e37400; color: #e37400; font-weight: 700; }
         </style>
         {% endif %}
     {% endmacro %}
     {% macro script(this, kwargs) %}
     (function () {
         var group = {{ this._parent.get_name() }};
+        var map = {{ this._parent._parent.get_name() }};
         var renderer = L.canvas({padding: 0.5});
         var started = false;
+        {% if this.kind == 'stations' %}
+        var dotZoom = {{ this.tier_dot_zoom|tojson }};
+        var labelZoom = {{ this.tier_label_zoom|tojson }};
+        var tierStyle = {{ this.tier_style|tojson }};
+        var tiers = {1: L.layerGroup(), 2: L.layerGroup(), 3: L.layerGroup()};
         var labelled = [];
+
+        function stationLayer(f) {
+            var p = f.properties, t = p.tier;
+            var latlng = L.latLng(f.geometry.coordinates[1], f.geometry.coordinates[0]);
+            var layer = p.kind
+                ? L.marker(latlng, {icon: L.divIcon({
+                      className: 'station-landmark ' + p.kind,
+                      html: p.kind === 'port' ? '⚓' : '⇄', iconSize: [22, 22], iconAnchor: [11, 11]})})
+                : L.circleMarker(latlng, Object.assign({renderer: renderer}, tierStyle[t]));
+            layer.bindPopup(p.popup);
+            layer.bindTooltip(p.label, {permanent: true, direction: 'bottom',
+                                        className: 'station-label t' + t, offset: [0, p.kind ? 10 : 4]});
+            layer._tier = t;
+            labelled.push(layer);
+            tiers[t].addLayer(layer);
+        }
+        function draw(data) {
+            data.features.forEach(stationLayer);
+            labelled.sort(function (a, b) { return a._tier - b._tier; });  // landmarks win name collisions
+            update();
+        }
+        // Show each tier's markers / names only from its zoom
+        function update() {
+            if (!group._map) return;
+            var z = map.getZoom(), c = map.getContainer();
+            [1, 2, 3].forEach(function (t) {
+                var show = z >= dotZoom[t];
+                if (show && !group.hasLayer(tiers[t])) group.addLayer(tiers[t]);
+                if (!show && group.hasLayer(tiers[t])) group.removeLayer(tiers[t]);
+                c.classList.toggle('station-labels-t' + t, z >= labelZoom[t]);
+            });
+            declutter();
+        }
+        // Hide names that would overlap one already shown (like OpenLayers' declutter).
+        // All writes, then all reads, then all writes — keeps it to one layout pass.
+        function declutter() {
+            if (!group._map) return;
+            var els = [];
+            labelled.forEach(function (layer) {
+                var tip = layer._map && layer.getTooltip();
+                var el = tip && tip.getElement();
+                if (el) { el.style.visibility = ''; els.push(el); }
+            });
+            var view = map.getContainer().getBoundingClientRect();
+            var rects = els.map(function (el) { return el.getBoundingClientRect(); });
+            var placed = [];
+            rects.forEach(function (r, i) {
+                if (!r.width || r.right < view.left || r.left > view.right || r.bottom < view.top || r.top > view.bottom) return;
+                var hit = placed.some(function (q) {
+                    return r.left < q.right && r.right > q.left && r.top < q.bottom && r.bottom > q.top;
+                });
+                if (hit) { els[i].style.visibility = 'hidden'; } else { placed.push(r); }
+            });
+        }
+        map.on('zoomend', update);
+        map.on('moveend', declutter);
+        group.on('add', function () { setTimeout(update, 0); });
+        {% else %}
         function draw(data) {
             L.geoJSON(data, {
-            {% if this.kind == 'stations' %}
-                pointToLayer: function (feature, latlng) {
-                    return L.circleMarker(latlng, Object.assign({renderer: renderer}, {{ this.style|tojson }}));
-                },
-                onEachFeature: function (feature, layer) {
-                    layer.bindPopup(feature.properties.popup);
-                    layer.bindTooltip(feature.properties.label,
-                        {permanent: true, direction: 'bottom', className: 'station-label'});
-                    labelled.push(layer);
-                }
-            {% else %}
                 renderer: renderer,
                 style: function () { return {{ this.style|tojson }}; }
-            {% endif %}
             }).addTo(group);
-            {% if this.kind == 'stations' %}declutter();{% endif %}
         }
+        {% endif %}
         function load() {
             if (started) return;
             started = true;
@@ -798,49 +897,20 @@ class _RemoteGeoJson(JSCSSMixin, folium.MacroElement):
         // Layers start on the map and LayerControl removes hidden ones afterwards,
         // so only load once all scripts have run.
         setTimeout(function () { if (group._map) load(); }, 0);
-        {% if this.kind == 'stations' %}
-        var map = {{ this._parent._parent.get_name() }};
-        function toggleLabels() {
-            map.getContainer().classList.toggle('hide-station-labels', map.getZoom() < {{ this.min_label_zoom }});
-        }
-        // Hide labels that would overlap one already shown (like OpenLayers' declutter).
-        // All writes, then all reads, then all writes — keeps it to one layout pass.
-        function declutter() {
-            if (!group._map || map.getZoom() < {{ this.min_label_zoom }}) return;
-            var els = [];
-            labelled.forEach(function (layer) {
-                var el = layer.getTooltip() && layer.getTooltip().getElement();
-                if (el) { el.style.visibility = ''; els.push(el); }
-            });
-            var view = map.getContainer().getBoundingClientRect();
-            var rects = els.map(function (el) { return el.getBoundingClientRect(); });
-            var placed = [];
-            rects.forEach(function (r, i) {
-                if (r.right < view.left || r.left > view.right || r.bottom < view.top || r.top > view.bottom) return;
-                var hit = placed.some(function (p) {
-                    return r.left < p.right && r.right > p.left && r.top < p.bottom && r.bottom > p.top;
-                });
-                if (hit) { els[i].style.visibility = 'hidden'; } else { placed.push(r); }
-            });
-        }
-        map.on('zoomend', toggleLabels);
-        map.on('zoomend moveend', declutter);
-        group.on('add', function () { setTimeout(declutter, 0); });
-        toggleLabels();
-        {% endif %}
     })();
     {% endmacro %}
     """)
 
-    def __init__(self, url, data, kind, style, font_size=LABEL_FONT_SIZE, min_label_zoom=STATION_LABEL_MIN_ZOOM):
+    def __init__(self, url, data, kind, style=None):
         super().__init__()
         self._name = 'RemoteGeoJson'
         self.url = url
         self.data = data if url is None else None
         self.kind = kind
         self.style = style
-        self.font_size = font_size
-        self.min_label_zoom = min_label_zoom
+        self.tier_dot_zoom = STATION_TIER_DOT_ZOOM
+        self.tier_label_zoom = STATION_TIER_LABEL_ZOOM
+        self.tier_style = STATION_TIER_STYLE
 
 
 # Generated GeoJSON served by Streamlit at <base>/app/static/ (server.enableStaticServing).
@@ -1850,11 +1920,8 @@ def main():
         ).add_to(op_layer)
         operator_layers.append(op_layer)
 
-    # All stations (off by default): circle markers + labels shown from STATION_LABEL_MIN_ZOOM
-    _RemoteGeoJson(
-        static_urls['stations'], d['stations_geojson'], 'stations',
-        {'radius': 4, 'color': '#0077cc', 'fill': True, 'fillOpacity': 0.75},
-    ).add_to(stations_layer)
+    # All stations (off by default): level of detail by tier — see STATION_TIER_DOT_ZOOM
+    _RemoteGeoJson(static_urls['stations'], d['stations_geojson'], 'stations').add_to(stations_layer)
 
     stations_by_label = d['stations_by_label']
     group_labels_layout_state = []
