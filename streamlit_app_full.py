@@ -117,7 +117,7 @@ HIGHLIGHT_OPACITY = 1.0
 LABEL_FONT_SIZE = 17  # px — single source of truth for all station label text
 
 # Map payload size
-MAP_SIMPLIFY_TOLERANCE_DEG = 0.0005   # ~50 m — invisible at the zoom levels the map is used at
+MAP_SIMPLIFY_TOLERANCE_DEG = 0.00002  # ~2 m — keeps curves smooth at any zoom (layers are browser-cached files)
 MAP_COORD_DECIMALS = 5                # ~1 m
 HIGHLIGHT_DISPLAY_TOLERANCE_DEG = 0.0002  # ~20 m — "Simplify path coordinates" display option
 STATION_LABEL_MIN_ZOOM = 10           # "All Stations" labels only appear from this zoom in
@@ -666,7 +666,7 @@ def merge_paths_at_shared_station(path_a, path_b, system_name):
 def _gdf_to_minimal_geojson(gdf):
     """Convert EPSG:4326 line geometries to a compact GeoJSON FeatureCollection.
 
-    Strips all attribute columns, simplifies (~50 m), rounds coordinates (~1 m)
+    Strips all attribute columns, simplifies (~2 m), rounds coordinates (~1 m)
     and packs every line into ONE MultiLineString feature — a fraction of the
     size of gdf.to_json().  Used to render rail layers as a single folium.GeoJson.
     """
@@ -738,7 +738,7 @@ class _ZoomDisplay(JSCSSMixin, folium.MacroElement):
     _template = Template("""
     {% macro script(this, kwargs) %}
         var zoomDisplay = L.Control.extend({
-            options: { position: 'topleft' },
+            options: { position: 'bottomright' },
             onAdd: function (map) {
                 var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
                 container.style.backgroundColor = 'white';
@@ -902,6 +902,56 @@ _ORM_ATTR = (
     'Data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 )
 
+# Full-screen map with the UI floating on top of it (like kmvia.rrs-software.com.br)
+_FULLSCREEN_LAYOUT_CSS = """
+<style>
+    /* Map fills the window, behind everything */
+    iframe[title="streamlit_folium.st_folium"] {
+        position: fixed !important; inset: 0; z-index: 0; border: 0;
+        width: 100vw !important; height: 100vh !important;
+    }
+    [data-testid="stMainBlockContainer"] { padding: 0 !important; max-width: none; }
+    /* Transparent header lets clicks through, except on the "open sidebar" button */
+    [data-testid="stHeader"], [data-testid="stHeader"] * { background: transparent; pointer-events: none; }
+    [data-testid="stExpandSidebarButton"], [data-testid="stExpandSidebarButton"] * { pointer-events: auto; }
+    [data-testid="stExpandSidebarButton"] {
+        background: rgba(255, 255, 255, 0.92) !important; border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+    /* Hide Deploy / main menu (they sat on top of the layer list); the toolbar
+       itself stays because it holds the button that re-opens a collapsed sidebar */
+    [data-testid="stAppDeployButton"], [data-testid="stMainMenu"] { display: none; }
+
+    /* Sidebar floats over the map (collapse it with its « button) */
+    section[data-testid="stSidebar"] {
+        position: fixed !important; top: 12px; left: 12px; z-index: 3;
+        height: calc(100vh - 24px) !important; border-radius: 10px; overflow: hidden;
+        background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(4px);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    }
+    section[data-testid="stSidebar"] > div { background: transparent; }
+
+    /* Messages and route results: floating card at the bottom, hidden while empty */
+    .st-key-map_overlay {
+        position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 2;
+        width: min(560px, calc(100vw - 32px)); max-height: 45vh; overflow-y: auto;
+        background: rgba(255, 255, 255, 0.95); border-radius: 10px; padding: 12px 16px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    }
+    .st-key-map_overlay:not(:has([data-testid="stElementContainer"])) { display: none; }
+</style>
+"""
+
+# Inside the map iframe: make the Leaflet map fill it
+_MAP_FILL_CSS = """
+<style>
+    html, body { margin: 0; height: 100%; overflow: hidden; }
+    #map_div, .folium-map { width: 100vw !important; height: 100vh !important; }
+    /* Leave room for the zoom buttons below the layer list */
+    .leaflet-control-layers-list { max-height: calc(100vh - 200px) !important; }
+</style>
+"""
+
 _LAYER_SCROLL_FIX = """
 <style>
     .leaflet-control-layers{width:auto;min-width:200px;max-width:300px;max-height:75vh;overflow:visible;bottom:10px!important}
@@ -926,7 +976,7 @@ var l=document.querySelector('.leaflet-control-layers-list');if(l){l.style.maxHe
 
 def main():
     st.set_page_config(page_title="MRS Corridor Builder", layout="wide")
-    st.title("MRS Interactive Corridor Builder — Streamlit")
+    st.markdown(_FULLSCREEN_LAYOUT_CSS, unsafe_allow_html=True)
 
     if 'preview_data' not in st.session_state:
         st.session_state.preview_data = None
@@ -951,7 +1001,6 @@ def main():
     data_version_key = get_data_version_key()
     derived_data = prepare_derived_data(rails_all, stations_all, data_version_key)
     st.session_state.derived_data = derived_data  # Store in session_state for convenience
-    st.success(f"Loaded {derived_data['labels'].__len__()} stations, {len(rails_all)} rail features")
 
     d = derived_data
     rails_all_m      = d['rails_all_m']
@@ -965,6 +1014,9 @@ def main():
 
     # Sidebar controls
     with st.sidebar:
+        st.markdown("### 🚂 MRS Corridor Builder")
+        st.caption(f"{len(derived_data['labels'])} stations · {len(rails_all)} rail features")
+
         st.header("Route Builder")
 
         # A form: picking stations/options does not rerun the app (and re-send the
@@ -1643,20 +1695,21 @@ def main():
             st.info("No committed highlights yet. Compute and commit a route above.")
 
 
-    # Main map area
-    st.subheader("Interactive Map")
+    # Main map area — the map fills the window; messages and route results go
+    # in a floating card on top of it (see _FULLSCREEN_LAYOUT_CSS)
+    overlay = st.container(key="map_overlay")
     map_zoom = 6  # Initial zoom level
 
     m = folium.Map(
         location=map_center,
         zoom_start=int(map_zoom),
-        height=700,
+        zoom_control='bottomright',
         zoom_snap=0.25,
         zoom_delta=0.25,
         wheel_px_per_zoom_level=120,
         prefer_canvas=True,  # draw vectors on one canvas instead of thousands of SVG nodes
     )
-    Fullscreen(position='topleft', title='Fullscreen', title_cancel='Exit fullscreen', force_separate_button=True).add_to(m)
+    Fullscreen(position='bottomright', title='Fullscreen', title_cancel='Exit fullscreen', force_separate_button=True).add_to(m)
     _ZoomDisplay().add_to(m)
 
     folium.TileLayer(
@@ -1750,8 +1803,8 @@ def main():
 
         station_group_layers.append(system_layer)
 
-    # Run routing on button click
-    if run_btn:
+    def compute_preview():
+        """Compute the preview route (returns early with a message on failure)."""
         t_start = time.time()
         with st.spinner("Computing route..."):
             order = [origin] + list(vias) + [destination]
@@ -1811,58 +1864,52 @@ def main():
             progress_bar.progress(100)
             t_total = time.time() - t_start
 
-            # Show performance breakdown
-            perf_col1, perf_col2, perf_col3 = st.columns(3)
-            with perf_col1:
-                st.metric("Graph Load", f"{t_graph:.2f}s")
-            with perf_col2:
-                st.metric("Routing", f"{t_route:.2f}s")
-            with perf_col3:
-                st.metric("Total Time", f"{t_total:.2f}s")
-
             status_txt.text(f"✅ Route complete: {total_km:.1f} km")
 
-            # Show route info
+            # Compact summary card over the map
             station_count = len(preview_station_points)
-            st.success(f"**Route:** {' → '.join(order)}")
-            info_col1, info_col2 = st.columns(2)
-            with info_col1:
-                st.info(f"**Total Distance:** {total_km:.1f} km")
-            with info_col2:
-                st.info(f"**Stations in path:** {station_count}")
+            st.markdown(f"#### {total_km:.1f} km · {station_count} stations")
+            st.caption(
+                f"{' → '.join(order)}  ·  graph {t_graph:.2f}s, routing {t_route:.2f}s, total {t_total:.2f}s"
+            )
 
-            # Show code breakdown
-            st.subheader("Rail Code Breakdown (km)")
+            # Rail code breakdown (km)
             seg_diag = []
             for i, (km, codes) in enumerate(zip(result['segment_km'], result['segment_codes'])):
                 codes = {k: round(v, 1) for k, v in codes.items()}
-                seg_diag.append({'Segment': f"{order[i]} → {order[i+1]}", 'Distance (km)': f"{km:.1f}", 'Codes': str(codes)})
-            st.table(pd.DataFrame(seg_diag))
+                seg_diag.append({'Segment': f"{order[i]} → {order[i+1]}", 'Distance (km)': f"{km:.1f}", 'Codes (km)': str(codes)})
+            st.dataframe(pd.DataFrame(seg_diag), hide_index=True, use_container_width=True)
+
+    # Run routing on button click
+    if run_btn:
+        with overlay:
+            compute_preview()
 
     # Commit current preview as a persistent highlight
     if commit_btn:
-        preview_data = st.session_state.get('preview_data')
-        if not preview_data:
-            st.warning("Compute a preview first, then click Commit Highlight.")
-        else:
-            system_name = preview_data.get('highlight_name', 'Committed Route')
-            if system_name not in st.session_state.committed_highlights:
-                st.session_state.committed_highlights[system_name] = []
+        with overlay:
+            preview_data = st.session_state.get('preview_data')
+            if not preview_data:
+                st.warning("Compute a preview first, then click Commit Highlight.")
+            else:
+                system_name = preview_data.get('highlight_name', 'Committed Route')
+                if system_name not in st.session_state.committed_highlights:
+                    st.session_state.committed_highlights[system_name] = []
 
-            auto_label = " → ".join(preview_data.get('order', []))
-            committed_path_name = preview_data.get('path_name', '').strip() or auto_label
-            # Build payload with updated highlight_name and path_name
-            temp_data = dict(preview_data)
-            temp_data['highlight_name'] = system_name
-            temp_data['path_name'] = committed_path_name
-            payload = _make_path_payload(temp_data)
-            st.session_state.committed_highlights[system_name].append(payload)
-            save_highlights(st.session_state.committed_highlights)
-            st.success(
-                f"Committed: **{system_name}** · {payload['station_count']} stations · "
-                f"{payload.get('total_km', 0.0):.1f} km → {HIGHLIGHTS_SAVE_PATH.name}"
-            )
-            st.rerun()
+                auto_label = " → ".join(preview_data.get('order', []))
+                committed_path_name = preview_data.get('path_name', '').strip() or auto_label
+                # Build payload with updated highlight_name and path_name
+                temp_data = dict(preview_data)
+                temp_data['highlight_name'] = system_name
+                temp_data['path_name'] = committed_path_name
+                payload = _make_path_payload(temp_data)
+                st.session_state.committed_highlights[system_name].append(payload)
+                save_highlights(st.session_state.committed_highlights)
+                st.success(
+                    f"Committed: **{system_name}** · {payload['station_count']} stations · "
+                    f"{payload.get('total_km', 0.0):.1f} km → {HIGHLIGHTS_SAVE_PATH.name}"
+                )
+                st.rerun()
 
     # Draw persisted preview layers
     preview_data = st.session_state.get('preview_data')
@@ -2019,7 +2066,7 @@ def main():
             ).add_to(marker_layer)
             marker_layer.add_to(m)
         except Exception as e:
-            st.warning(f"Station marker error: {e}")
+            overlay.warning(f"Station marker error: {e}")
 
     all_rails_layer.add_to(m)
     for op_layer in operator_layers:
@@ -2037,7 +2084,8 @@ def main():
     m.get_root().html.add_child(folium.Element(_LAYER_SCROLL_FIX))
 
     # Display map
-    st_folium(m, width=1200, height=700, returned_objects=[])
+    m.get_root().header.add_child(folium.Element(_MAP_FILL_CSS))
+    st_folium(m, height=700, use_container_width=True, returned_objects=[])
 
 
 if __name__ == "__main__":
