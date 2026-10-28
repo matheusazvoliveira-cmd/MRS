@@ -1627,15 +1627,16 @@ def main():
                                     if len(coords) > simplify_factor:
                                         # Auto-backup before simplification
                                         backup_path = _APP_DIR / f"{system_name}_path{i}_backup_{int(time.time())}.json"
+                                        backup_note = f"Backup: {backup_path.name}"
                                         try:
                                             with open(str(backup_path), 'w') as f:
                                                 json.dump({f"{system_name}_original": [path_info.copy()]}, f, indent=2)
-                                        except:
-                                            pass  # Continue even if backup fails
-                                        
+                                        except (OSError, TypeError, ValueError) as e:
+                                            backup_note = f"⚠️ Backup failed: {e}"  # simplify anyway, as before
+
                                         path_info['coords_ll'] = _simplify_latlon(coords, max_points=simplify_factor)
                                         save_highlights(st.session_state.committed_highlights)
-                                        st.success(f"✅ Reduced from {n_coords:,} to {len(path_info['coords_ll']):,} coords | Backup: {backup_path.name}")
+                                        st.success(f"✅ Reduced from {n_coords:,} to {len(path_info['coords_ll']):,} coords | {backup_note}")
                                         st.rerun()
                             st.caption("⚠️ Simplification is PERMANENT. Original coordinates cannot be restored. Backup first!")
         else:
