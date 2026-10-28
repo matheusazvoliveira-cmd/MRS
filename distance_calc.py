@@ -12,7 +12,10 @@ python distance_calc.py "Belo Horizonte [BHZ]" "Santos [STS]"
 python distance_calc.py "Belo Horizonte [BHZ]" "Ouro Preto [OPT]" "Santos [STS]"
 
 # Restrict to MRS track only
-python distance_calc.py --mode strict_mrs "Belo Horizonte [BHZ]" "Santos [STS]"
+python distance_calc.py --mode strict "Belo Horizonte [BHZ]" "Santos [STS]"
+
+# Prefer MRS + Rumo track (other networks penalised)
+python distance_calc.py --mode prefer --network MRS Rumo "Belo Horizonte [BHZ]" "Santos [STS]"
 
 # List all available station names
 python distance_calc.py --list-stations
@@ -22,8 +25,11 @@ python distance_calc.py --search "belo"
 
 Options
 -------
---mode          Routing mode: allow_all (default) | prefer_mrs | strict_mrs
---penalty       Non-MRS penalty multiplier (only with prefer_mrs mode), default=10
+--mode          Routing mode: allow_all (default) | prefer | strict
+                (prefer_mrs / strict_mrs still work and mean --network MRS)
+--network       Rail networks for prefer/strict: MRS (default), Rumo, Vale, VLI,
+                Transnordestina, Ferroeste, FTC — one or more
+--penalty       Penalty multiplier for other networks (prefer mode), default=10
 
 Routing uses the national rail graph from routing.py, cached on disk in .cache/
 (shared with the Streamlit app), so only the very first run builds it.
@@ -34,7 +40,7 @@ import sys
 from pathlib import Path
 
 import routing
-from routing import ALLOW_ALL, NON_MRS_PENALTY_DEFAULT
+from routing import ALLOW_ALL, OTHER_NETWORK_PENALTY_DEFAULT, RAIL_OPERATORS
 
 _BASE = Path(__file__).parent.resolve()
 
@@ -63,7 +69,8 @@ CODIGO_OPERATOR = {
 # ---------------------------------------------------------------------------
 # Main calculation routine
 # ---------------------------------------------------------------------------
-def calculate_distance(waypoints, routing_mode=ALLOW_ALL, penalty_mult=NON_MRS_PENALTY_DEFAULT, verbose=True):
+def calculate_distance(waypoints, routing_mode=ALLOW_ALL, penalty_mult=OTHER_NETWORK_PENALTY_DEFAULT,
+                       networks=("MRS",), verbose=True):
     """
     Calculate the shortest rail distance along a sequence of waypoints.
 
@@ -72,9 +79,11 @@ def calculate_distance(waypoints, routing_mode=ALLOW_ALL, penalty_mult=NON_MRS_P
     waypoints : list[str]
         Ordered station labels, e.g. ["Belo Horizonte [BHZ]", "Santos [STS]"]
     routing_mode : str
-        "allow_all" | "prefer_mrs" | "strict_mrs"
+        "allow_all" | "prefer" | "strict" (legacy "prefer_mrs" / "strict_mrs" = MRS)
     penalty_mult : float
-        Non-MRS penalty multiplier (only used with prefer_mrs mode)
+        Penalty multiplier for track outside *networks* (only used with prefer mode)
+    networks : sequence of str
+        Operator names from routing.RAIL_OPERATORS used by prefer / strict
     verbose : bool
         Print progress messages.
 
@@ -115,7 +124,7 @@ def calculate_distance(waypoints, routing_mode=ALLOW_ALL, penalty_mult=NON_MRS_P
 
     if verbose:
         print(f"\nWaypoints: {' → '.join(resolved)}")
-        print(f"Routing mode : {routing_mode}")
+        print(f"Routing mode : {routing_mode}" + ("" if routing_mode == ALLOW_ALL else f" ({' + '.join(networks)})"))
         print("Loading routing graph...")
 
     graph = routing.load_or_build_graph(
@@ -131,11 +140,12 @@ def calculate_distance(waypoints, routing_mode=ALLOW_ALL, penalty_mult=NON_MRS_P
     if verbose:
         print("\nComputing shortest paths...")
     try:
-        result = routing.route(graph, points_xy, routing_mode, penalty_mult)
+        result = routing.route(graph, points_xy, routing_mode, penalty_mult,
+                               codes=routing.network_codes(networks))
     except routing.NoPathError as e:
         i = e.segment_index
         print(f"  ERROR: No path found for segment '{resolved[i]}' → '{resolved[i+1]}'")
-        print("  Try: --mode prefer_mrs or --mode allow_all")
+        print("  Try: --mode prefer, --mode allow_all, or add networks with --network")
         sys.exit(1)
 
     segment_km = result['segment_km']
@@ -177,10 +187,13 @@ def main():
         epilog=__doc__,
     )
     parser.add_argument('waypoints', nargs='*', help='Station names in order (origin via... destination)')
-    parser.add_argument('--mode', choices=['allow_all', 'prefer_mrs', 'strict_mrs'],
+    parser.add_argument('--mode', choices=['allow_all', 'prefer', 'strict', 'prefer_mrs', 'strict_mrs'],
                         default='allow_all', help='Routing mode (default: allow_all)')
-    parser.add_argument('--penalty', type=float, default=NON_MRS_PENALTY_DEFAULT,
-                        help='Non-MRS penalty multiplier for prefer_mrs mode (default: 10)')
+    parser.add_argument('--network', nargs='+', default=['MRS'], metavar='NAME',
+                        help='Rail networks for prefer/strict (default: MRS). Choices: '
+                             + ', '.join(RAIL_OPERATORS))
+    parser.add_argument('--penalty', type=float, default=OTHER_NETWORK_PENALTY_DEFAULT,
+                        help='Penalty multiplier for other networks in prefer mode (default: 10)')
     # Kept so existing commands keep working; the precomputed graph needs no corridor/noding options
     parser.add_argument('--no-corridor', action='store_true', help=argparse.SUPPRESS)
     parser.add_argument('--buffer-km', type=float, default=20.0, help=argparse.SUPPRESS)
@@ -213,6 +226,13 @@ def main():
             print(f"No stations found matching '{args.search}'.")
         return
 
+    # Network names are case-insensitive
+    by_lower = {name.lower(): name for name in RAIL_OPERATORS}
+    unknown = [n for n in args.network if n.lower() not in by_lower]
+    if unknown:
+        parser.error(f"Unknown network(s): {', '.join(unknown)}. Choices: {', '.join(RAIL_OPERATORS)}")
+    networks = [by_lower[n.lower()] for n in args.network]
+
     if len(args.waypoints) < 2:
         parser.error("Provide at least two station names (origin and destination).")
 
@@ -220,6 +240,7 @@ def main():
         waypoints=args.waypoints,
         routing_mode=args.mode,
         penalty_mult=args.penalty,
+        networks=networks,
         verbose=True,
     )
 

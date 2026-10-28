@@ -35,12 +35,30 @@ STATION_ID_FIELD = None
 
 SOURCE_CRS_IF_MISSING = "EPSG:4674"
 
-# Routing modes
-STRICT_MRS = "strict_mrs"
-PREFER_MRS = "prefer_mrs"
-ALLOW_ALL = "allow_all"
+# Operator <-> ANTT rail code (CodigoFerr) mapping
+RAIL_OPERATORS = {
+    "MRS":            {"codes": [11],        "color": "#2ca02c",  "label": "MRS Logística"},
+    "Rumo":           {"codes": [1, 5, 7, 9], "color": "#1f77b4", "label": "Rumo (Malha Sul / Paulista / Oeste / Norte)"},
+    "Vale":           {"codes": [3, 4],       "color": "#9467bd",  "label": "Vale (EFC Carajás / EFVM Vitória-Minas)"},
+    "VLI":            {"codes": [8, 12, 13],  "color": "#d62728",  "label": "VLI (FCA / FNS Norte / FNS Central)"},
+    "Transnordestina": {"codes": [2],         "color": "#ff7f0e",  "label": "Transnordestina (CFN)"},
+    "Ferroeste":      {"codes": [6],          "color": "#8c564b",  "label": "Ferroeste"},
+    "FTC":            {"codes": [10],         "color": "#e377c2",  "label": "FTC (Tereza Cristina)"},
+}
+CODE_TO_OPERATOR = {code: name for name, info in RAIL_OPERATORS.items() for code in info["codes"]}
 
-NON_MRS_PENALTY_DEFAULT = 10.0
+# Routing modes, relative to a chosen set of rail networks (operators)
+STRICT = "strict"        # only the chosen networks
+PREFER = "prefer"        # other networks cost penalty_mult x their length
+ALLOW_ALL = "allow_all"  # shortest distance on any track
+LEGACY_MODES = {"strict_mrs": STRICT, "prefer_mrs": PREFER}  # older ids, network = MRS
+
+OTHER_NETWORK_PENALTY_DEFAULT = 10.0
+
+
+def network_codes(operators):
+    """Sorted CodigoFerr codes of the given operator names (see RAIL_OPERATORS)."""
+    return tuple(sorted({c for op in operators for c in RAIL_OPERATORS[op]["codes"]}))
 
 # Topology repair: line ends within this distance of other track get a connector
 SNAP_TOLERANCE_M = 75.0
@@ -157,11 +175,11 @@ class RailGraph:
         state['_trees'] = {}  # STRtrees are rebuilt on demand
         return state
 
-    def edge_tree(self, mode):
-        """STRtree over the edges usable in *mode* (MRS-only for strict mode)."""
-        key = 'mrs' if mode == STRICT_MRS else 'all'
+    def edge_tree(self, mode, codes):
+        """STRtree over the edges usable in *mode* (only the *codes* networks in strict mode)."""
+        key = tuple(codes) if mode == STRICT else 'all'
         if key not in self._trees:
-            idx = np.flatnonzero(self.code == MRS_CODE) if key == 'mrs' else np.arange(self.n_edges)
+            idx = np.flatnonzero(np.isin(self.code, codes)) if mode == STRICT else np.arange(self.n_edges)
             self._trees[key] = (shapely.STRtree(self.geoms[idx]), idx)
         return self._trees[key]
 
@@ -289,21 +307,21 @@ class NoPathError(Exception):
         self.segment_index = segment_index
 
 
-def edge_weights(graph, mode, penalty_mult=NON_MRS_PENALTY_DEFAULT):
-    """Traversal cost per edge for a routing mode (inf = not allowed)."""
+def edge_weights(graph, mode, penalty_mult=OTHER_NETWORK_PENALTY_DEFAULT, codes=(MRS_CODE,)):
+    """Traversal cost per edge for a routing mode relative to the *codes* networks (inf = not allowed)."""
     if mode == ALLOW_ALL:
         return graph.length
-    non_mrs = graph.code != MRS_CODE  # NaN codes count as non-MRS here
-    if mode == STRICT_MRS:
-        return np.where(non_mrs, np.inf, graph.length)
-    # Prefer MRS: unknown codes are not penalised (same as the original app)
-    penalised = non_mrs & ~np.isnan(graph.code)
+    outside = ~np.isin(graph.code, codes)  # NaN codes count as outside here
+    if mode == STRICT:
+        return np.where(outside, np.inf, graph.length)
+    # Prefer: unknown codes are not penalised (same as the original app)
+    penalised = outside & ~np.isnan(graph.code)
     return np.where(penalised, graph.length * float(penalty_mult), graph.length)
 
 
-def _snap_to_edge(graph, mode, x, y):
+def _snap_to_edge(graph, mode, codes, x, y):
     """Nearest usable edge and the distance along it of the projected point."""
-    tree, idx = graph.edge_tree(mode)
+    tree, idx = graph.edge_tree(mode, codes)
     if len(idx) == 0:
         return None, None
     pt = shapely.Point(x, y)
@@ -312,13 +330,19 @@ def _snap_to_edge(graph, mode, x, y):
     return e, float(shapely.line_locate_point(graph.geoms[e], pt))
 
 
-def route(graph, points_xy, mode, penalty_mult=NON_MRS_PENALTY_DEFAULT):
+def route(graph, points_xy, mode, penalty_mult=OTHER_NETWORK_PENALTY_DEFAULT, codes=(MRS_CODE,)):
     """Shortest route through the waypoints (EPSG:3857 x/y), in order.
+
+    *mode* is STRICT / PREFER / ALLOW_ALL relative to the rail networks with
+    CodigoFerr in *codes* (see network_codes()); legacy 'strict_mrs' /
+    'prefer_mrs' are accepted.
 
     Returns dict(total_km, segment_km, coords_ll [(lat, lon)], segment_codes
     [{codigo: km}] per segment).  Raises NoPathError(segment_index).
     """
-    w = edge_weights(graph, mode, penalty_mult)
+    mode = LEGACY_MODES.get(mode, mode)
+    codes = tuple(sorted(codes))
+    w = edge_weights(graph, mode, penalty_mult, codes)
     usable = np.isfinite(w)
     n = graph.n_nodes
 
@@ -326,7 +350,7 @@ def route(graph, points_xy, mode, penalty_mult=NON_MRS_PENALTY_DEFAULT):
     virtual = []
     snapped = []
     for k, (x, y) in enumerate(points_xy):
-        e, d = _snap_to_edge(graph, mode, x, y)
+        e, d = _snap_to_edge(graph, mode, codes, x, y)
         if e is None:
             raise NoPathError(max(0, k - 1))
         node = n + k

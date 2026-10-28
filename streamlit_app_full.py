@@ -39,7 +39,10 @@ from streamlit_folium import st_folium
 from jinja2 import Template
 
 import routing
-from routing import FILTER_COLUMN, MRS_CODE, NON_MRS_PENALTY_DEFAULT
+from routing import (
+    FILTER_COLUMN, MRS_CODE, OTHER_NETWORK_PENALTY_DEFAULT, RAIL_OPERATORS, CODE_TO_OPERATOR,
+    STRICT, PREFER, ALLOW_ALL,
+)
 
 
 # ============================================================================
@@ -72,38 +75,8 @@ def _resolve_resource(relative_path):
 RAILS_SHP_PATH = _resolve_resource(Path("LInhas") / "Linhas_BR.shp")
 STATIONS_SHP_PATH = _resolve_resource(Path("Estacoes") / "Estacoes.shp")
 
-# ---------------------------------------------------------------------------
-# Operator ↔ ANTT rail-code mapping
-# ---------------------------------------------------------------------------
-RAIL_OPERATORS = {
-    "MRS":            {"codes": [11],        "color": "#2ca02c",  "label": "MRS Logística"},
-    "Rumo":           {"codes": [1, 5, 7, 9], "color": "#1f77b4", "label": "Rumo (Malha Sul / Paulista / Oeste / Norte)"},
-    "Vale":           {"codes": [3, 4],       "color": "#9467bd",  "label": "Vale (EFC Carajás / EFVM Vitória-Minas)"},
-    "VLI":            {"codes": [8, 12, 13],  "color": "#d62728",  "label": "VLI (FCA / FNS Norte / FNS Central)"},
-    "Transnordestina": {"codes": [2],         "color": "#ff7f0e",  "label": "Transnordestina (CFN)"},
-    "Ferroeste":      {"codes": [6],          "color": "#8c564b",  "label": "Ferroeste"},
-    "FTC":            {"codes": [10],         "color": "#e377c2",  "label": "FTC (Tereza Cristina)"},
-}
-
-# Reverse lookup: code → operator name
-CODE_TO_OPERATOR = {}
-for _op_name, _op_info in RAIL_OPERATORS.items():
-    for _code in _op_info["codes"]:
-        CODE_TO_OPERATOR[_code] = _op_name
-
-STRICT_MRS = "Strict MRS (11 only)"
-PREFER_MRS = "Prefer MRS (penalize non-11)"
-ALLOW_ALL = "Allow all (shortest distance)"
-
-# Short labels for the routing-mode segmented button
-ROUTING_MODE_SHORT = {STRICT_MRS: "Strict", PREFER_MRS: "Prefer", ALLOW_ALL: "All"}
-
-# UI label -> routing.py mode id
-ROUTING_MODE_IDS = {
-    STRICT_MRS: routing.STRICT_MRS,
-    PREFER_MRS: routing.PREFER_MRS,
-    ALLOW_ALL: routing.ALLOW_ALL,
-}
+# Routing modes (routing.py ids) and their labels in the segmented button
+ROUTING_MODE_LABELS = {STRICT: "Only", PREFER: "Prefer", ALLOW_ALL: "Any"}
 
 # Routing graph disk cache (built once per shapefile version)
 GRAPH_CACHE_DIR_NAME = ".cache"
@@ -1103,6 +1076,8 @@ def main():
         st.session_state.active_station_group_systems = []
     if 'active_operator_layers' not in st.session_state:
         st.session_state.active_operator_layers = ['MRS']  # MRS shown by default
+    if 'route_networks' not in st.session_state:
+        st.session_state.route_networks = ['MRS']  # rail networks for Only / Prefer routing
 
     # Load raw data (instant after first call — @st.cache_data)
     try:
@@ -1141,8 +1116,8 @@ def main():
         # Row 1 is a form, so picking stations/options does not rerun the app (and
         # re-send the map) until a button is pressed.
         with st.form("route_form", border=False):
-            c_a, c_swap, c_b, c_via, c_mode, c_opt, c_run, c_commit = st.columns(
-                [2.2, 0.62, 2.2, 1.7, 2.5, 0.78, 1.3, 1.2], vertical_alignment="bottom"
+            c_a, c_swap, c_b, c_via, c_mode, c_net, c_opt, c_run, c_commit = st.columns(
+                [1.7, 0.62, 1.7, 1.2, 2.75, 1.45, 0.72, 1.2, 1.1], vertical_alignment="bottom"
             )
             with c_a:
                 origin = st.selectbox("Origin (A)", options=labels, key="origin")
@@ -1155,14 +1130,23 @@ def main():
                 vias = st.multiselect("Via (optional)", options=labels, key="vias", placeholder="Add stops")
             with c_mode:
                 routing_mode = st.segmented_control(
-                    "Routing mode", [STRICT_MRS, PREFER_MRS, ALLOW_ALL], default=ALLOW_ALL, required=True,
-                    format_func=ROUTING_MODE_SHORT.get,
-                    help="Strict: MRS track (code 11) only · Prefer: penalize non-MRS track · All: shortest distance on any track",
+                    "Routing mode", [STRICT, PREFER, ALLOW_ALL], default=ALLOW_ALL, required=True,
+                    format_func=ROUTING_MODE_LABELS.get,
+                    help="Only: chosen rail networks only · Prefer: penalize other networks · "
+                         "Any: shortest distance on any track. Choose the networks with 🚂.",
                     key="routing_mode",
                 )
+            with c_net:
+                nets = st.session_state.route_networks
+                net_label = (nets[0] + (f" +{len(nets) - 1}" if len(nets) > 1 else "")) if nets else "None"
+                with st.popover(f"🚂 {net_label}", use_container_width=True,
+                                help="Rail networks used by Only / Prefer routing"):
+                    st.pills("Rail networks", sorted(RAIL_OPERATORS.keys()), selection_mode="multi",
+                             key="route_networks",
+                             help="Only: route on these networks · Prefer: favour them over the others")
             with c_opt:
                 with st.popover("⚙", help="Route options: penalty, color, system and path name"):
-                    penalty_input = st.slider("Non-MRS penalty (Prefer MRS mode)", 1.0, 100.0, NON_MRS_PENALTY_DEFAULT, key="penalty")
+                    penalty_input = st.slider("Penalty for other networks (Prefer mode)", 1.0, 100.0, OTHER_NETWORK_PENALTY_DEFAULT, key="penalty")
                     color = st.color_picker("Route color", "#1f77b4", key="color")
                     highlight_name = st.text_input("System name", "Corridor 1", key="name")
                     path_name = st.text_input("Path name (optional)", "", key="path_name",
@@ -1199,7 +1183,8 @@ def main():
                 ),
             )
     routing_mode = routing_mode or ALLOW_ALL
-    penalty = penalty_input if routing_mode == PREFER_MRS else 1.0
+    route_networks = list(st.session_state.route_networks or [])
+    penalty = penalty_input if routing_mode == PREFER else 1.0
 
     # Sidebar: everything else (collapsed by default so the map is fully visible)
     with st.sidebar:
@@ -1907,6 +1892,10 @@ def main():
 
     def compute_preview():
         """Compute the preview route (returns early with a message on failure)."""
+        if routing_mode != ALLOW_ALL and not route_networks:
+            st.warning("Choose at least one rail network (🚂) for Only / Prefer routing.")
+            return
+        networks_text = " + ".join(route_networks)
         t_start = time.time()
         with st.spinner("Computing route..."):
             order = [origin] + list(vias) + [destination]
@@ -1922,12 +1911,13 @@ def main():
 
             t_route_start = time.time()
             try:
-                result = routing.route(graph, pts, ROUTING_MODE_IDS[routing_mode], penalty)
+                result = routing.route(graph, pts, routing_mode, penalty,
+                                       codes=routing.network_codes(route_networks))
             except routing.NoPathError as e:
                 msg = f"No path found for segment {order[e.segment_index]} → {order[e.segment_index + 1]}"
-                if routing_mode == STRICT_MRS:
-                    msg += (" — Strict MRS only uses track coded as MRS (11); some track in the"
-                            " shapefile has no operator code. Try Prefer MRS.")
+                if routing_mode == STRICT:
+                    msg += (f" — there is no connection using only {networks_text} track (gaps can also be"
+                            " track with no operator code in the shapefile). Add a network (🚂) or try Prefer.")
                 st.error(msg)
                 return
             t_route = time.time() - t_route_start
@@ -1963,15 +1953,24 @@ def main():
             # Compact summary card over the map
             station_count = len(preview_station_points)
             st.markdown(f"#### ✅ Route complete: {total_km:.1f} km · {station_count} stations")
+            mode_text = "Any network" if routing_mode == ALLOW_ALL else f"{ROUTING_MODE_LABELS[routing_mode]} {networks_text}"
             st.caption(
-                f"{' → '.join(order)}  ·  graph {t_graph:.2f}s, routing {t_route:.2f}s, total {t_total:.2f}s"
+                f"{' → '.join(order)}  ·  {mode_text}  ·  "
+                f"graph {t_graph:.2f}s, routing {t_route:.2f}s, total {t_total:.2f}s"
             )
 
-            # Rail code breakdown (km)
+            # Distance per segment by operator (km)
             seg_diag = []
             for i, (km, codes) in enumerate(zip(result['segment_km'], result['segment_codes'])):
-                codes = {k: round(v, 1) for k, v in codes.items()}
-                seg_diag.append({'Segment': f"{order[i]} → {order[i+1]}", 'Distance (km)': f"{km:.1f}", 'Codes (km)': str(codes)})
+                by_operator = {}
+                for code, code_km in codes.items():
+                    name = CODE_TO_OPERATOR.get(code, f"Code {code}") if code is not None else "Unknown"
+                    by_operator[name] = by_operator.get(name, 0.0) + code_km
+                operators_text = ", ".join(
+                    f"{name} {v:.1f}" for name, v in sorted(by_operator.items(), key=lambda kv: -kv[1])
+                )
+                seg_diag.append({'Segment': f"{order[i]} → {order[i+1]}", 'Distance (km)': f"{km:.1f}",
+                                 'By operator (km)': operators_text})
             st.dataframe(pd.DataFrame(seg_diag), hide_index=True, use_container_width=True)
 
     # Run routing on button click
