@@ -9,7 +9,9 @@ GeoJSON FeatureCollections (EPSG:4326) whose feature properties carry their
 own style (color / weight / dash / icon) and popup HTML.
 """
 
+import hashlib
 import html
+import pickle
 import re
 import zipfile
 from pathlib import Path
@@ -37,17 +39,134 @@ SUBDIV_LAYERS = {
     'km':         ('KM markers', 12),
 }
 
-_SKIP_DIRS = {'.venv', 'venv', '.cache', 'static', 'build', 'dist', '__pycache__', '.git'}
+_SKIP_DIRS = {'.venv', 'venv', '.cache', 'static', 'build', 'dist', '__pycache__', '.git', '.claude'}
+
+# Railroad by the RRID in the KML document name
+RAILROADS = {'150': 'Rumo', '125': 'MRS'}
+
+# Bump when load_subdivision() output changes so disk caches are rebuilt
+PARSER_VERSION = 1
+
+
+def display_name(raw):
+    """'FERROVIA DO ACO' -> 'Ferrovia do Aco' (Portuguese prepositions stay lower case)."""
+    words = raw.title().split()
+    return ' '.join(w.lower() if i and w.lower() in {'do', 'da', 'de', 'dos', 'das', 'e'} else w
+                    for i, w in enumerate(words))
+
+
+def _is_qa_input(path):
+    """Survey / QA input files ship next to the exports ('QA Artifacts/Inputs/...') — not track databases."""
+    return any(part.lower().startswith('qa ') or part.lower() == 'inputs' for part in path.parts)
 
 
 def find_kmz_files(base_dir):
-    """KMZ files in *base_dir* and its direct subfolders (generated/tool folders skipped)."""
-    base = Path(base_dir)
-    files = list(base.glob('*.kmz'))
-    for sub in base.iterdir():
-        if sub.is_dir() and sub.name not in _SKIP_DIRS:
-            files.extend(sub.glob('*.kmz'))
-    return sorted(files)
+    """Every subdivision KMZ under *base_dir*, at any depth (tool folders and QA inputs skipped)."""
+    out = []
+    for f in Path(base_dir).rglob('*.kmz'):
+        rel = f.relative_to(base_dir)
+        if not (set(rel.parts) & _SKIP_DIRS) and not _is_qa_input(rel):
+            out.append(f)
+    return sorted(out)
+
+
+def read_header(path):
+    """Cheap catalogue entry from the first bytes of the KML: name, railroad, subdivision id,
+    version and whether it is an engineering build — without parsing the whole file."""
+    path = Path(path)
+    with zipfile.ZipFile(path) as z:
+        kml = next(n for n in z.namelist() if n.lower().endswith('.kml'))
+        with z.open(kml) as fh:
+            head = fh.read(4000).decode('utf-8', 'replace')
+    title = re.search(r'<name>(.*?)</name>', head, re.S)
+    title = re.sub(r'<!\[CDATA\[|\]\]>|\s+', ' ', title.group(1)).strip() if title else path.stem
+    m = re.match(r'(.*?)\s*RRID:\s*(\S+)$', title)
+    name, rrid = (m.group(1), m.group(2)) if m else (title, '')
+    desc = re.search(r'<description>(.*?)</description>', head, re.S)
+    info = dict(re.findall(r'^\s*([^:\n]+?):\s*(.+?)\s*$', desc.group(1), re.M)) if desc else {}
+
+    # Version from "<RR>.<subdiv>.<version>" in the file name, else in a parent folder name
+    version = ''
+    for part in [path.stem] + [p.name for p in path.parents]:
+        vm = re.match(r'^[A-Z]+\.\d{5}\.(\d+)', part)
+        if vm:
+            version = vm.group(1)
+            break
+    path_text = str(path).lower()
+    eng = (len(version) == 7 and version.startswith('9')) or '_eng' in path_text or 'test release' in path_text
+
+    railroad = RAILROADS.get(rrid) or path.stem.split('.')[0].title()
+    subdiv_id = int(info.get('Subdivision ID', '0') or 0)
+    return {
+        'key': f"{railroad}.{subdiv_id:05d}",
+        'path': str(path),
+        'mtime': path.stat().st_mtime_ns,
+        'name': display_name(name),
+        'railroad': railroad,
+        'subdiv_id': subdiv_id,
+        'version': version,
+        'eng': eng,
+        'info': info,
+    }
+
+
+def catalog(base_dir):
+    """Headers of every subdivision KMZ under *base_dir* (unreadable files are listed with 'error')."""
+    entries = []
+    for f in find_kmz_files(base_dir):
+        try:
+            entries.append(read_header(f))
+        except Exception as e:
+            entries.append({'key': None, 'path': str(f), 'error': f"{f.name}: {e}"})
+    return entries
+
+
+def pick_versions(entries, prefer_eng=False):
+    """One entry per subdivision: the newest production build (or engineering build when
+    *prefer_eng* and one exists).  Returns {key: entry} sorted by railroad and subdivision."""
+    by_key = {}
+    for e in entries:
+        if e.get('key'):
+            by_key.setdefault(e['key'], []).append(e)
+    picked = {}
+    for key, cands in by_key.items():
+        pool = [c for c in cands if c['eng'] == prefer_eng] or cands
+        picked[key] = max(pool, key=lambda c: (int(c['version'] or 0), c['mtime']))
+    return dict(sorted(picked.items(), key=lambda kv: (kv[1]['railroad'], kv[1]['subdiv_id'])))
+
+
+def _cache_path(path, cache_dir):
+    path = Path(path)
+    st_ = path.stat()
+    key = f"{path.resolve()}|{st_.st_size}|{st_.st_mtime_ns}|v{PARSER_VERSION}"
+    return Path(cache_dir) / f"subdiv_{hashlib.sha1(key.encode()).hexdigest()[:16]}.pkl"
+
+
+def is_cached(path, cache_dir):
+    """True if load_subdivision_cached() would read *path* from the disk cache."""
+    return _cache_path(path, cache_dir).exists()
+
+
+def load_subdivision_cached(path, cache_dir):
+    """load_subdivision() with a disk cache keyed by file path, size, mtime and PARSER_VERSION."""
+    path = Path(path)
+    cache_path = _cache_path(path, cache_dir)
+    if cache_path.exists():
+        try:
+            with open(cache_path, 'rb') as f:
+                return pickle.load(f)
+        except Exception:
+            pass  # corrupt cache — parse again
+    data = load_subdivision(path)
+    try:
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        tmp = cache_path.with_suffix('.tmp')
+        with open(tmp, 'wb') as f:
+            pickle.dump(data, f, protocol=pickle.HIGHEST_PROTOCOL)
+        tmp.replace(cache_path)
+    except OSError:
+        pass
+    return data
 
 
 def speed_color(limit):
@@ -111,7 +230,7 @@ def load_subdivision(path):
 
     title = re.sub(r'\s+', ' ', ''.join(doc.find(KML_NS + 'name').itertext())).strip()  # "SERRA DE SANTOS RRID: 150"
     m = re.match(r'(.*?)\s*RRID:\s*(\S+)$', title)
-    name = (m.group(1) if m else title).title()
+    name = display_name(m.group(1) if m else title)
     description = doc.findtext(KML_NS + 'description') or ''
     info = dict(re.findall(r'^\s*([^:\n]+?):\s*(.+?)\s*$', description, flags=re.M))
     if m:
@@ -201,3 +320,16 @@ def load_subdivision(path):
         'bounds': bounds,
         'layers': {key: {'type': 'FeatureCollection', 'features': feats} for key, feats in layers.items()},
     }
+
+
+if __name__ == '__main__':
+    # python subdivisions.py <cache_dir> <kmz> [<kmz> ...]
+    # Fills the disk cache; the app runs this in a background process at start-up.
+    import sys
+
+    cache_dir, *kmz_paths = sys.argv[1:]
+    for kmz in kmz_paths:
+        try:
+            load_subdivision_cached(kmz, cache_dir)
+        except Exception as e:
+            print(f"skipped {kmz}: {e}", file=sys.stderr)

@@ -22,6 +22,7 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 import json
 import time
+import subprocess
 import sys
 
 import streamlit as st
@@ -37,6 +38,7 @@ from folium.plugins import Fullscreen
 from folium.elements import JSCSSMixin
 from streamlit_folium import st_folium
 from jinja2 import Template
+from html import escape as html_escape
 
 import routing
 import subdivisions
@@ -823,6 +825,12 @@ class _RemoteGeoJson(JSCSSMixin, folium.MacroElement):
                 text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 3px #fff;
             }
             .leaflet-tooltip.feature-label:before { display: none; }
+            .leaflet-tooltip.highlight-label {
+                background: transparent; border: none; box-shadow: none; padding: 0 6px;
+                font: 700 {{ this.label_font_size }}px Roboto, Arial, sans-serif; color: #202124; white-space: nowrap;
+                text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff;
+            }
+            .leaflet-tooltip.highlight-label:before { display: none; }
         </style>
         {% endif %}
     {% endmacro %}
@@ -909,7 +917,7 @@ class _RemoteGeoJson(JSCSSMixin, folium.MacroElement):
                 renderer: paneRenderer,
                 style: function (f) {
                     var p = f.properties;
-                    return {color: p.color || '#5f6368', weight: p.weight || 4, opacity: 0.95,
+                    return {color: p.color || '#5f6368', weight: p.weight || 4, opacity: p.opacity || 0.95,
                             dashArray: p.dash || null, lineCap: 'round'};
                 },
                 pointToLayer: function (f, latlng) {
@@ -919,13 +927,15 @@ class _RemoteGeoJson(JSCSSMixin, folium.MacroElement):
                             html: '<span style="background:' + (p.color || '#5f6368') + '">' + p.icon + '</span>',
                             iconSize: [20, 20], iconAnchor: [10, 10]})});
                     }
-                    return L.circleMarker(latlng, {renderer: paneRenderer, radius: p.radius || 4, color: '#fff',
-                                                   weight: 1.5, fillColor: p.color || '#5f6368', fillOpacity: 1});
+                    return L.circleMarker(latlng, {renderer: paneRenderer, radius: p.radius || 4,
+                                                   color: p.stroke || '#fff', weight: p.stroke ? 2 : 1.5,
+                                                   fillColor: p.fill || p.color || '#5f6368', fillOpacity: 1});
                 },
                 onEachFeature: function (f, layer) {
                     if (f.properties.popup) layer.bindPopup(f.properties.popup);
                     if (f.properties.label) layer.bindTooltip(f.properties.label,
-                        {permanent: true, direction: 'right', className: 'feature-label'});
+                        {permanent: true, direction: f.properties.labelDir || 'right',
+                         className: f.properties.labelClass || 'feature-label'});
                 }
             });
             sync();
@@ -973,6 +983,7 @@ class _RemoteGeoJson(JSCSSMixin, folium.MacroElement):
         self.min_zoom = min_zoom
         self.pane = pane
         self.pane_z = pane_z
+        self.label_font_size = LABEL_FONT_SIZE
         self.tier_dot_zoom = STATION_TIER_DOT_ZOOM
         self.tier_label_zoom = STATION_TIER_LABEL_ZOOM
         self.tier_style = STATION_TIER_STYLE
@@ -1011,33 +1022,43 @@ SUBDIV_LINE_PANE_Z = {'track': 410, 'speed': 420, 'nca': 430}
 SUBDIV_LAYERS_DEFAULT = ['speed', 'nca', 'structures', 'crossings', 'switches', 'km']
 
 
-def _subdivision_files_key():
-    """(path, mtime) of every subdivision KMZ, so new or changed files are picked up."""
-    return tuple((str(f), f.stat().st_mtime_ns) for f in subdivisions.find_kmz_files(_APP_DIR))
+SUBDIV_CACHE_DIR = _APP_DIR / GRAPH_CACHE_DIR_NAME / "subdivs"
 
 
-@st.cache_resource(show_spinner="Reading subdivision KMZ files...")
-def load_subdivisions(files_key):
-    """Parsed subdivision KMZs keyed by file stem (e.g. RUMO.00001.1016001), each with the
-    URLs of its layers as browser-cached static files (None -> embed)."""
-    loaded = {}
-    for path_str, _mtime in files_key:
-        sd_id = Path(path_str).stem
-        try:
-            sd = subdivisions.load_subdivision(path_str)
-        except Exception as e:  # a broken file must not break the app
-            loaded[sd_id] = {'error': f"{Path(path_str).name}: {e}"}
-            continue
-        sd['urls'] = {key: _publish_static_geojson(f"subdiv_{sd_id}_{key}", fc)
-                      for key, fc in sd['layers'].items() if fc['features']}
-        loaded[sd_id] = sd
-    return loaded
+@st.cache_data(show_spinner="Scanning subdivision files...")
+def subdivision_catalog():
+    """Headers of every subdivision KMZ under the app folder (any depth; QA inputs skipped).
+    The folder tree is large (a few seconds to scan), so the result is kept until "Rescan"."""
+    return subdivisions.catalog(_APP_DIR)
 
 
-def _subdivision_label(sd_id, sd):
-    """'Serra De Santos · 00001' for the chips."""
-    parts = sd_id.split('.')
-    return f"{sd['name']} · {parts[1]}" if len(parts) > 1 else sd['name']
+@st.cache_resource(show_spinner=False)
+def load_subdivision_layers(path, mtime):
+    """One subdivision's map layers (parsed once, then from the disk cache) plus the URLs of
+    their browser-cached static files.  *mtime* is part of the key so edited files reload."""
+    _ = mtime
+    sd = subdivisions.load_subdivision_cached(path, SUBDIV_CACHE_DIR)
+    stem = Path(path).stem
+    sd['urls'] = {key: _publish_static_geojson(f"subdiv_{stem}_{key}", fc)
+                  for key, fc in sd['layers'].items() if fc['features']}
+    return sd
+
+
+@st.cache_resource(show_spinner=False)
+def _start_subdivision_warmup(paths):
+    """Fill the subdivision disk cache in a separate low-priority process (once per server and
+    file set), so switching a subdivision on later is instant instead of taking up to ~12 s.
+    A process, not a thread: parsing holds the GIL and would stall the app."""
+    if getattr(sys, 'frozen', False):
+        return False  # in the packaged exe sys.executable is the app itself
+    todo = [p for p in paths if not subdivisions.is_cached(p, SUBDIV_CACHE_DIR)]
+    if todo:
+        subprocess.Popen(
+            [sys.executable, str(Path(subdivisions.__file__).resolve()), str(SUBDIV_CACHE_DIR), *todo],
+            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+            creationflags=getattr(subprocess, 'BELOW_NORMAL_PRIORITY_CLASS', 0),
+        )
+    return True
 
 
 def _speed_legend_html():
@@ -1257,8 +1278,6 @@ def main():
         st.session_state.active_operator_layers = ['MRS']  # MRS shown by default
     if 'route_networks' not in st.session_state:
         st.session_state.route_networks = ['MRS']  # rail networks for Only / Prefer routing
-    if 'active_subdivisions' not in st.session_state:
-        st.session_state.active_subdivisions = []
     if 'subdiv_layers' not in st.session_state:
         st.session_state.subdiv_layers = list(SUBDIV_LAYERS_DEFAULT)
 
@@ -1289,10 +1308,18 @@ def main():
     # widget (top bar, below) is created
     group_system_names = sorted(st.session_state.station_group_systems.keys())
 
-    # Subdivision track data (KMZ exports next to the app) — same clean-up before its widget
-    subdivs = load_subdivisions(_subdivision_files_key())
-    subdiv_ids = [k for k, v in subdivs.items() if 'error' not in v]
-    st.session_state.active_subdivisions = [s for s in st.session_state.active_subdivisions if s in subdiv_ids]
+    # Subdivision track data (KMZ exports anywhere under the app folder): one entry per
+    # subdivision, production build unless "Engineering builds" is on. Selections that no
+    # longer exist leave their chip state before the chips are created.
+    sub_catalog = subdivision_catalog()
+    picked = subdivisions.pick_versions(sub_catalog, prefer_eng=st.session_state.get('subdiv_eng', False))
+    sub_railroads = sorted({e['railroad'] for e in picked.values()}, key=lambda r: (r != 'MRS', r))
+    for rr in sub_railroads:
+        chip_key = f"subdiv_on_{rr}"
+        st.session_state[chip_key] = [k for k in st.session_state.get(chip_key, []) if k in picked]
+    active_subdivisions = [k for rr in sub_railroads for k in st.session_state[f"subdiv_on_{rr}"]]
+    if picked:
+        _start_subdivision_warmup(tuple(e['path'] for e in picked.values()))
     st.session_state.active_station_group_systems = [
         s for s in st.session_state.active_station_group_systems if s in group_system_names
     ]
@@ -1362,23 +1389,33 @@ def main():
                 else:
                     st.caption("No station groups yet — create them in the side panel (»).")
         with c_sub:
-            n_sub_on = len(st.session_state.active_subdivisions)
-            with st.popover(f"🛤️ Subdivisions{f' · {n_sub_on}' if n_sub_on else ''}",
+            with st.popover(f"🛤️ Subdivisions{f' · {len(active_subdivisions)}' if active_subdivisions else ''}",
                             help="Track data from subdivision KMZ exports", use_container_width=True):
-                if subdiv_ids:
-                    st.pills("Subdivisions", subdiv_ids, selection_mode="multi", key="active_subdivisions",
-                             format_func=lambda k: _subdivision_label(k, subdivs[k]),
-                             on_change=_set_map_focus, args=("subdivision",))
+                if picked:
+                    for rr in sub_railroads:
+                        st.pills(rr, [k for k, e in picked.items() if e['railroad'] == rr], selection_mode="multi",
+                                 key=f"subdiv_on_{rr}", format_func=lambda k: picked[k]['name'],
+                                 on_change=_set_map_focus, args=("subdivision",))
                     st.pills("Layers", list(subdivisions.SUBDIV_LAYERS), selection_mode="multi",
                              key="subdiv_layers", format_func=lambda k: subdivisions.SUBDIV_LAYERS[k][0],
                              help="Switches and KM markers appear from zoom 12, crossings and bridges/tunnels from 11")
                     st.markdown(_speed_legend_html(), unsafe_allow_html=True)
+                    st.toggle("Engineering builds", key="subdiv_eng",
+                              help="Use the 9xxxxxx engineering / test-release export where a subdivision has one")
+                    if st.button("↻ Rescan files", key="subdiv_rescan",
+                                 help="Look for new or changed KMZ files under the app folder"):
+                        subdivision_catalog.clear()
+                        st.rerun()
+                    if active_subdivisions:
+                        st.caption("Versions: " + " · ".join(
+                            f"{picked[k]['name']} {picked[k]['version']}{' (eng)' if picked[k]['eng'] else ''}"
+                            for k in active_subdivisions))
                 else:
-                    st.caption("No subdivision KMZ files found — put the .kmz exports in the app folder "
-                               "or a subfolder.")
-                for v in subdivs.values():
-                    if 'error' in v:
-                        st.caption(f"⚠️ Could not read {v['error']}")
+                    st.caption("No subdivision KMZ files found — put the exports anywhere under the app "
+                               "folder (e.g. Subdivs/).")
+                for e in sub_catalog:
+                    if 'error' in e:
+                        st.caption(f"⚠️ Could not read {e['error']}")
         with c_ops:
             st.pills(
                 "Operators", sorted(RAIL_OPERATORS.keys()), selection_mode="multi",
@@ -1675,11 +1712,22 @@ def main():
         # Display committed highlights grouped by name
         if st.session_state.committed_highlights:
             highlight_groups = st.session_state.committed_highlights
-            for system_name in sorted(highlight_groups.keys()):
+            system_choices = sorted(highlight_groups.keys())
+            # One system's tools at a time. Rendering every system's widgets (even inside
+            # collapsed expanders) sent ~300 elements to the browser on every rerun.
+            if st.session_state.get('manage_system_next') in system_choices:  # e.g. after a rename
+                st.session_state.manage_system = st.session_state.pop('manage_system_next')
+            if st.session_state.get('manage_system') not in system_choices:
+                st.session_state.pop('manage_system', None)
+            manage_system = st.selectbox(
+                "Manage system", system_choices, key="manage_system",
+                format_func=lambda n: f"📍 {n} ({len(highlight_groups[n])} paths)",
+            )
+            for system_name in [manage_system]:
                 paths_list = highlight_groups[system_name]
                 color_indicator = paths_list[0].get('route_color', PREVIEW_COLOR) if paths_list else PREVIEW_COLOR
-                
-                with st.expander(f"📍 {system_name} ({len(paths_list)} paths)", expanded=False):
+
+                with st.container(border=True):
                     st.markdown(f"<div style='display:flex; align-items:center; gap:8px;'><div style='width:20px; height:20px; background-color:{color_indicator}; border-radius:2px;'></div><span>System Color</span></div>", unsafe_allow_html=True)
 
                     col_rn, col_rb = st.columns([4, 1])
@@ -1699,6 +1747,7 @@ def main():
                                 for p in highlight_groups[new_name]:
                                     p['highlight_name'] = new_name
                                 save_highlights(st.session_state.committed_highlights)
+                                st.session_state.manage_system_next = new_name
                                 st.rerun()
 
                     col_sj, col_sc, col_sd = st.columns([1, 1, 1])
@@ -2249,58 +2298,52 @@ def main():
                 _add_label_marker(route_stations_layer, p['lat'], p['lon'], p['label'],
                                 margin_top=margin_top, translate_x_pct=translate_x)
 
-    # Draw committed highlights grouped by system.
-    # FeatureGroup objects must be freshly created each rerun — they hold a
-    # reference to the parent map and cannot be safely reused across reruns.
-    # The data (coords_ll, colors, etc.) is already plain Python so this loop
-    # is fast even with many committed paths.
-    # PERFORMANCE: Only render if toggle is enabled
+    # Draw committed highlights grouped by system — one data element per system (line,
+    # endpoint and station markers with their names) instead of a folium object per line /
+    # marker / label: folium compiles a template for every object, which made each rerun take
+    # seconds with a dozen systems. Drawn only when the system is switched on.
     if render_committed:
-        # Global alternation so left/right pattern is consistent across systems
-        route_labels_layout = []
+        label_count = 0  # alternate label sides so neighbouring names separate
+
+        def point(lat, lon, **props):
+            nonlocal label_count
+            label_count += 1
+            props.update(labelDir='left' if label_count % 2 else 'right', labelClass='highlight-label')
+            return {'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [lon, lat]}, 'properties': props}
+
         for system_name in sorted(st.session_state.get('committed_highlights', {}).keys()):
             system_layer = folium.FeatureGroup(name=f"System: {system_name}", show=False)  # Hidden by default for performance
+            features = []
             # Per-system dedup: prevents duplicate markers across paths within
             # the same system, but every system keeps its own complete markers
             # so toggling a single system always shows all its stations.
             rendered_station_keys = set()
             for h in st.session_state.committed_highlights[system_name]:
+                route_color = h.get('route_color', PREVIEW_COLOR)
                 # Optionally simplify coordinates for better performance
                 coords = h.get('coords_ll', [])
                 if simplify_coords and len(coords) > 100:
                     coords = _simplify_latlon(coords, tolerance=HIGHLIGHT_DISPLAY_TOLERANCE_DEG)
                 if coords:
-                    folium.PolyLine(
-                        coords,
-                        color=h.get('route_color', PREVIEW_COLOR),
-                        weight=HIGHLIGHT_WEIGHT,
-                        opacity=0.9,
-                        popup=f"{h.get('path_name') or h.get('highlight_name', 'Route')} ({h.get('total_km', 0.0):.1f} km)"
-                    ).add_to(system_layer)
+                    features.append({
+                        'type': 'Feature',
+                        'geometry': {'type': 'LineString', 'coordinates': [[c[1], c[0]] for c in coords]},
+                        'properties': {
+                            'color': route_color, 'weight': HIGHLIGHT_WEIGHT, 'opacity': 0.9,
+                            'popup': html_escape(f"{h.get('path_name') or h.get('highlight_name', 'Route')} "
+                                                 f"({h.get('total_km', 0.0):.1f} km)"),
+                        },
+                    })
                 pts = h.get('preview_station_points', [])
-                if pts:
-                    endpoint_idxs = [0] if len(pts) == 1 else [0, len(pts) - 1]
-                    for idx in endpoint_idxs:
-                        p = pts[idx]
-                        station_key = _station_render_key(p['lat'], p['lon'])
-                        if station_key in rendered_station_keys:
-                            continue
-                        rendered_station_keys.add(station_key)
-                        folium.CircleMarker(
-                            location=[p['lat'], p['lon']],
-                            radius=8,
-                            color=h.get('route_color', PREVIEW_COLOR),
-                            weight=2,
-                            fill=True,
-                            fill_color="#ffffff",
-                            fill_opacity=1.0,
-                            tooltip=f"{system_name}: {p['label']}",
-                            popup=p['label']
-                        ).add_to(system_layer)
-                        # Add label with alternating offset
-                        margin_top, translate_x = compute_label_offset(p['lat'], p['lon'], layout_state=route_labels_layout)
-                        _add_label_marker(system_layer, p['lat'], p['lon'], p['label'],
-                                        margin_top=margin_top, translate_x_pct=translate_x)
+                endpoint_idxs = [] if not pts else ([0] if len(pts) == 1 else [0, len(pts) - 1])
+                for idx in endpoint_idxs:
+                    p = pts[idx]
+                    station_key = _station_render_key(p['lat'], p['lon'])
+                    if station_key in rendered_station_keys:
+                        continue
+                    rendered_station_keys.add(station_key)
+                    features.append(point(p['lat'], p['lon'], radius=8, stroke=route_color, fill='#ffffff',
+                                          label=html_escape(p['label']), popup=html_escape(f"{system_name}: {p['label']}")))
 
                 for station_marker in h.get('selected_station_markers', []):
                     if not isinstance(station_marker, dict):
@@ -2308,29 +2351,22 @@ def main():
                     lat = station_marker.get('lat')
                     lon = station_marker.get('lon')
                     label = station_marker.get('label', 'Selected station')
-                    marker_color = station_marker.get('color', h.get('route_color', PREVIEW_COLOR))
+                    marker_color = station_marker.get('color', route_color)
                     if lat is None or lon is None:
                         continue
                     station_key = _station_render_key(lat, lon)
                     if station_key in rendered_station_keys:
                         continue
                     rendered_station_keys.add(station_key)
-
-                    folium.CircleMarker(
-                        location=[lat, lon],
-                        radius=7,
-                        color=marker_color,
-                        weight=2,
-                        fill=True,
-                        fill_color=marker_color,
-                        fill_opacity=0.95,
-                        tooltip=f"{system_name}: {label}",
-                        popup=label
-                    ).add_to(system_layer)
-                    # Add label with alternating offset (shares layout state with route endpoints)
-                    margin_top, translate_x = compute_label_offset(lat, lon, layout_state=route_labels_layout)
-                    _add_label_marker(system_layer, lat, lon, label,
-                                    margin_top=margin_top, translate_x_pct=translate_x)
+                    features.append(point(lat, lon, radius=7, stroke=marker_color, fill=marker_color,
+                                          label=html_escape(label), popup=html_escape(f"{system_name}: {label}")))
+            if features:
+                # Served as a versioned, browser-cached file (like the rail layers) so the
+                # coordinates are not re-sent with the map on every rerun
+                fc = {'type': 'FeatureCollection', 'features': features}
+                url = _publish_static_geojson(
+                    f"highlight_{hashlib.md5(system_name.encode('utf-8')).hexdigest()[:12]}", fc)
+                _RemoteGeoJson(url, fc, 'features').add_to(system_layer)
             system_layer.add_to(m)
 
     # Draw station finder marker if selected
@@ -2367,11 +2403,24 @@ def main():
     for op_layer in operator_layers:
         op_layer.add_to(m)
 
-    # Subdivision track data: one layer-control entry per active subdivision
+    # Subdivision track data: one layer-control entry per active subdivision, loaded on demand
     subdiv_layers_on = set(st.session_state.subdiv_layers or [])
-    for sd_id in st.session_state.active_subdivisions:
-        sd = subdivs[sd_id]
-        sd_group = folium.FeatureGroup(name=f"🛤️ {_subdivision_label(sd_id, sd)}", show=True)
+    subdiv_seen = st.session_state.setdefault('subdiv_seen', set())
+    subdiv_loaded = {}
+    for sd_key in active_subdivisions:
+        entry = picked[sd_key]
+        try:
+            if (entry['path'], entry['mtime']) in subdiv_seen:
+                sd = load_subdivision_layers(entry['path'], entry['mtime'])
+            else:  # first time in this session: may parse the file (up to ~12 s)
+                with overlay, st.spinner(f"Reading {entry['name']} {entry['version']}…"):
+                    sd = load_subdivision_layers(entry['path'], entry['mtime'])
+                subdiv_seen.add((entry['path'], entry['mtime']))
+        except Exception as e:  # a broken file must not break the map
+            overlay.warning(f"Could not read {Path(entry['path']).name}: {e}")
+            continue
+        subdiv_loaded[sd_key] = sd
+        sd_group = folium.FeatureGroup(name=f"🛤️ {entry['railroad']} · {entry['name']}", show=True)
         for key in SUBDIV_DRAW_ORDER:
             if key not in subdiv_layers_on or key not in sd['urls']:
                 continue
@@ -2393,8 +2442,8 @@ def main():
     if map_focus == 'station' and highlighted_station in stations_by_label:
         s_ = stations_by_label[highlighted_station]
         m.fit_bounds([[s_['lat'] - 0.04, s_['lon'] - 0.04], [s_['lat'] + 0.04, s_['lon'] + 0.04]])
-    elif map_focus == 'subdivision' and st.session_state.active_subdivisions:
-        boxes = [subdivs[k]['bounds'] for k in st.session_state.active_subdivisions if subdivs[k].get('bounds')]
+    elif map_focus == 'subdivision' and subdiv_loaded:
+        boxes = [sd['bounds'] for sd in subdiv_loaded.values() if sd.get('bounds')]
         if boxes:
             m.fit_bounds([[min(b[0][0] for b in boxes), min(b[0][1] for b in boxes)],
                           [max(b[1][0] for b in boxes), max(b[1][1] for b in boxes)]], padding=(40, 40))
