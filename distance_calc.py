@@ -6,16 +6,16 @@ Calculate rail distance between stations without launching the Streamlit app.
 Usage examples
 --------------
 # Basic: distance from A to B
-python distance_calc.py "Belo Horizonte [BHZ]" "Santos [STS]"
+python distance_calc.py "Barreiro (idx=947) [FBO]" "Brisamar [FBA]"
 
-# Multi-stop: A → via1 → via2 → B
-python distance_calc.py "Belo Horizonte [BHZ]" "Ouro Preto [OPT]" "Santos [STS]"
+# Multi-stop: A → via → B
+python distance_calc.py "Barreiro (idx=947) [FBO]" "Barra do Pirai [FBP]" "Brisamar [FBA]"
 
 # Restrict to MRS track only
-python distance_calc.py --mode strict "Belo Horizonte [BHZ]" "Santos [STS]"
+python distance_calc.py --mode strict "Barreiro (idx=947) [FBO]" "Cel. João Carlos Guedes [FJC]"
 
-# Prefer MRS + Rumo track (other networks penalised)
-python distance_calc.py --mode prefer --network MRS Rumo "Belo Horizonte [BHZ]" "Santos [STS]"
+# Prefer MRS + VLI track (other networks penalised)
+python distance_calc.py --mode prefer --network MRS,VLI "Barreiro (idx=947) [FBO]" "Brisamar [FBA]"
 
 # List all available station names
 python distance_calc.py --list-stations
@@ -27,8 +27,8 @@ Options
 -------
 --mode          Routing mode: allow_all (default) | prefer | strict
                 (prefer_mrs / strict_mrs still work and mean --network MRS)
---network       Rail networks for prefer/strict: MRS (default), Rumo, Vale, VLI,
-                Transnordestina, Ferroeste, FTC — one or more
+--network       Rail networks for prefer/strict, comma-separated: MRS (default), Rumo,
+                Vale, VLI, Transnordestina, Ferroeste, FTC — e.g. MRS,VLI
 --penalty       Penalty multiplier for other networks (prefer mode), default=10
 
 Routing uses the national rail graph from routing.py, cached on disk in .cache/
@@ -77,7 +77,7 @@ def calculate_distance(waypoints, routing_mode=ALLOW_ALL, penalty_mult=OTHER_NET
     Parameters
     ----------
     waypoints : list[str]
-        Ordered station labels, e.g. ["Belo Horizonte [BHZ]", "Santos [STS]"]
+        Ordered station labels, e.g. ["Barreiro (idx=947) [FBO]", "Brisamar [FBA]"]
     routing_mode : str
         "allow_all" | "prefer" | "strict" (legacy "prefer_mrs" / "strict_mrs" = MRS)
     penalty_mult : float
@@ -189,8 +189,9 @@ def main():
     parser.add_argument('waypoints', nargs='*', help='Station names in order (origin via... destination)')
     parser.add_argument('--mode', choices=['allow_all', 'prefer', 'strict', 'prefer_mrs', 'strict_mrs'],
                         default='allow_all', help='Routing mode (default: allow_all)')
-    parser.add_argument('--network', nargs='+', default=['MRS'], metavar='NAME',
-                        help='Rail networks for prefer/strict (default: MRS). Choices: '
+    # Comma-separated, not nargs='+' (that would swallow the station names that follow)
+    parser.add_argument('--network', default='MRS', metavar='NAMES',
+                        help='Rail networks for prefer/strict, comma-separated (default: MRS). Choices: '
                              + ', '.join(RAIL_OPERATORS))
     parser.add_argument('--penalty', type=float, default=OTHER_NETWORK_PENALTY_DEFAULT,
                         help='Penalty multiplier for other networks in prefer mode (default: 10)')
@@ -228,10 +229,11 @@ def main():
 
     # Network names are case-insensitive
     by_lower = {name.lower(): name for name in RAIL_OPERATORS}
-    unknown = [n for n in args.network if n.lower() not in by_lower]
+    requested = [n.strip() for n in args.network.split(',') if n.strip()]
+    unknown = [n for n in requested if n.lower() not in by_lower]
     if unknown:
         parser.error(f"Unknown network(s): {', '.join(unknown)}. Choices: {', '.join(RAIL_OPERATORS)}")
-    networks = [by_lower[n.lower()] for n in args.network]
+    networks = [by_lower[n.lower()] for n in requested]
 
     if len(args.waypoints) < 2:
         parser.error("Provide at least two station names (origin and destination).")
