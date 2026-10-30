@@ -112,8 +112,13 @@ Open **🛤️ Subdivisions** in row 2.
   - **Track blocks** — the track blocks (VIA 1/2/3, yard tracks) with length and km
     (off by default; Speed limits already draws the track).
   - **No-comm areas** — red dashed segments without communication coverage.
-  - **Bridges & tunnels** (from zoom 11), **Level crossings** ✕ (from zoom 11),
-    **Switches** (from zoom 12), **KM markers** with labels (from zoom 12).
+  - **Bridges & tunnels** (from zoom 11) — 🌉 / 🚇 icons at the start and end signs of each
+    bridge or tunnel (click for "Bridge 86 start" and its block). Only shown where the file
+    has those signs: Ferrovia do Aço (≈232 bridges), Baixada Santista and the Rumo
+    subdivisions; Linha do Centro and Pombal-Guaíba have none in their files.
+  - **Level crossings** ✕ (from zoom 11), **Switches** (from zoom 12), **KM markers** with
+    labels (from zoom 12).
+  - Nothing appears below the layer's zoom level: zoom in if a chip is on but the map is empty.
 - **Engineering builds** — use the engineering/test export (version 9xxxxxx) where a
   subdivision has one, instead of the production build (1xxxxxx). The popover lists the
   version in use ("Versions: … Itu 9002003 (eng)").

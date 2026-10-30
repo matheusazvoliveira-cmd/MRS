@@ -45,7 +45,27 @@ _SKIP_DIRS = {'.venv', 'venv', '.cache', 'static', 'build', 'dist', '__pycache__
 RAILROADS = {'150': 'Rumo', '125': 'MRS'}
 
 # Bump when load_subdivision() output changes so disk caches are rebuilt
-PARSER_VERSION = 1
+PARSER_VERSION = 2
+
+# Bridge / tunnel signs.  Rumo writes "#Bridge[#Ponte" / "#Tunnel]#Tunel" ([ = start, ] = end);
+# MRS files are free text: "PONTE 12 BEGIN", "BRIDGE-86 END", "PONTE 4A BEGIN", "Bridge 3B" / "Bridge 3E".
+_SIGN_BRACKET = re.compile(r'^#(Bridge|Tunnel)([\[\]])')
+_SIGN_BEGIN_END = re.compile(r'^(PONTE|BRIDGE|TUNEL|TÚNEL|TUNNEL)[\s-]*(.*?)\s*(BEGIN|END)$', re.I)
+_SIGN_B_E = re.compile(r'^(Bridge|Ponte|Tunnel|Tunel)\s+(\w*?\d\w*?)([BE])$', re.I)
+
+
+def _structure_sign(text):
+    """(kind 'Bridge'|'Tunnel', number, is_start) for a bridge/tunnel sign, else None."""
+    text = text.strip()
+    m = _SIGN_BRACKET.match(text)
+    if m:
+        return m.group(1), '', m.group(2) == '['
+    m = _SIGN_BEGIN_END.match(text) or _SIGN_B_E.match(text)
+    if not m:
+        return None
+    kind = 'Bridge' if m.group(1).upper() in ('PONTE', 'BRIDGE') else 'Tunnel'
+    number = m.group(2).strip()
+    return kind, ('' if number.lower() == 'unknown' else number), m.group(3).upper() in ('BEGIN', 'B')
 
 
 def display_name(raw):
@@ -291,16 +311,16 @@ def load_subdivision(path):
                 ('Block', d.get('blockId')), ('Offset', d.get('offset')),
             ])))
 
-    structures = {'Tunnel[': ('🚇', 'Tunnel start'), 'Tunnel]': ('🚇', 'Tunnel end'),
-                  'Bridge[': ('🌉', 'Bridge start'), 'Bridge]': ('🌉', 'Bridge end')}
     for pm in (folders['Signages'].findall(KML_NS + 'Placemark') if 'Signages' in folders else []):
         d = _data(pm)
-        tag = (d.get('text') or '').split('#')[1] if (d.get('text') or '').startswith('#') else ''
-        if tag in structures:
-            icon, title = structures[tag]
+        parsed = _structure_sign(d.get('text') or '')
+        if parsed:
+            kind, number, is_start = parsed
+            title = f"{kind}{' ' + number if number else ''} {'start' if is_start else 'end'}"
             layers['structures'].append(_feature(
-                'Point', _coords(pm), icon=icon, color='#ffffff',
-                popup=_popup(title, [('Block', d.get('blockId')), ('Offset', d.get('offset'))])))
+                'Point', _coords(pm), icon='🚇' if kind == 'Tunnel' else '🌉', color='#ffffff',
+                popup=_popup(title, [('Sign', d.get('text')), ('Block', d.get('blockId')),
+                                     ('Offset', d.get('offset'))])))
 
     for pm in (folders['Milepost Markers'].findall(KML_NS + 'Placemark') if 'Milepost Markers' in folders else []):
         d = _data(pm)
