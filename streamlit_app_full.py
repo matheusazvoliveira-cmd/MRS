@@ -746,9 +746,11 @@ def _simplify_latlon(coords, tolerance=None, max_points=None):
 # ============================================================================
 
 class _ZoomDisplay(JSCSSMixin, folium.MacroElement):
-    """Leaflet control that shows the current map zoom level."""
+    """Leaflet control that shows the current map zoom level and, below it, which switched-on
+    layers are hidden because the map is zoomed out too far (*hints*: [[label, min_zoom], ...])."""
     _template = Template("""
     {% macro script(this, kwargs) %}
+        var zoomHints = {{ this.hints|tojson }};
         var zoomDisplay = L.Control.extend({
             options: { position: 'bottomright' },
             onAdd: function (map) {
@@ -758,16 +760,31 @@ class _ZoomDisplay(JSCSSMixin, folium.MacroElement):
                 container.style.fontSize = '14px';
                 container.style.fontWeight = 'bold';
                 container.style.cursor = 'default';
-                container.innerHTML = 'Zoom: ' + map.getZoom().toFixed(2);
-                map.on('zoomend', function() {
-                    container.innerHTML = 'Zoom: ' + map.getZoom().toFixed(2);
-                });
+                function update() {
+                    var z = map.getZoom();
+                    var html = 'Zoom: ' + z.toFixed(2);
+                    var hidden = zoomHints.filter(function (h) { return z < h[1]; });
+                    if (hidden.length) {
+                        var need = Math.min.apply(null, hidden.map(function (h) { return h[1]; }));
+                        html += '<div style="font-weight:400;font-size:12px;color:#b06000;max-width:220px">'
+                              + 'Zoom in to ' + need + '+ to see ' + hidden.filter(function (h) { return h[1] === need; })
+                                  .map(function (h) { return h[0]; }).join(', ') + '</div>';
+                    }
+                    container.innerHTML = html;
+                }
+                update();
+                map.on('zoomend', update);
                 return container;
             }
         });
         {{ this._parent.get_name() }}.addControl(new zoomDisplay());
     {% endmacro %}
     """)
+
+    def __init__(self):
+        super().__init__()
+        self._name = 'ZoomDisplay'
+        self.hints = []  # filled in once the switched-on layers are known
 
 
 class _RemoteGeoJson(JSCSSMixin, folium.MacroElement):
@@ -1398,7 +1415,10 @@ def main():
                                  on_change=_set_map_focus, args=("subdivision",))
                     st.pills("Layers", list(subdivisions.SUBDIV_LAYERS), selection_mode="multi",
                              key="subdiv_layers", format_func=lambda k: subdivisions.SUBDIV_LAYERS[k][0],
-                             help="Switches and KM markers appear from zoom 12, crossings and bridges/tunnels from 11")
+                             help="Switches and KM markers appear from zoom 12, crossings from 11, "
+                                  "bridges/tunnels from 9")
+                    if not active_subdivisions:
+                        st.caption("Pick a subdivision above to see these layers on the map.")
                     st.markdown(_speed_legend_html(), unsafe_allow_html=True)
                     st.toggle("Engineering builds", key="subdiv_eng",
                               help="Use the 9xxxxxx engineering / test-release export where a subdivision has one")
@@ -2051,7 +2071,7 @@ def main():
         prefer_canvas=True,  # draw vectors on one canvas instead of thousands of SVG nodes
     )
     Fullscreen(position='bottomright', title='Fullscreen', title_cancel='Exit fullscreen', force_separate_button=True).add_to(m)
-    _ZoomDisplay().add_to(m)
+    zoom_display = _ZoomDisplay().add_to(m)
 
     folium.TileLayer(
         tiles='https://{s}.tiles.openrailwaymap.org/gauge/{z}/{x}/{y}.png',
@@ -2431,6 +2451,10 @@ def main():
                 pane_z=SUBDIV_LINE_PANE_Z.get(key),
             ).add_to(sd_group)
         sd_group.add_to(m)
+    if subdiv_loaded:
+        zoom_display.hints = sorted(
+            [subdivisions.SUBDIV_LAYERS[k][0], subdivisions.SUBDIV_LAYERS[k][1]]
+            for k in subdiv_layers_on if subdivisions.SUBDIV_LAYERS[k][1] > 0)
     stations_layer.add_to(m)
     route_layer.add_to(m)
     route_stations_layer.add_to(m)

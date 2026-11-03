@@ -120,7 +120,9 @@ Open **🛤️ Subdivisions** in row 2.
     Baixada Santista and the Rumo subdivisions; Linha do Centro and Pombal-Guaíba have none.
   - **Level crossings** ✕ (from zoom 11), **Switches** (from zoom 12), **KM markers** with
     labels (from zoom 12).
-  - Nothing appears below the layer's zoom level: zoom in if a chip is on but the map is empty.
+  - Nothing appears below the layer's zoom level; the Zoom box (bottom right) then says
+    "Zoom in to 9+ to see Bridges & tunnels". With no subdivision picked the layers show nothing
+    (the popover says so).
 - **Engineering builds** — use the engineering/test export (version 9xxxxxx) where a
   subdivision has one, instead of the production build (1xxxxxx). The popover lists the
   version in use ("Versions: … Itu 9002003 (eng)").
