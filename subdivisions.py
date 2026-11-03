@@ -11,11 +11,15 @@ own style (color / weight / dash / icon) and popup HTML.
 
 import hashlib
 import html
+import math
 import pickle
 import re
 import zipfile
 from pathlib import Path
 import xml.etree.ElementTree as ET
+
+import shapely
+from shapely.ops import linemerge, substring
 
 KML_NS = '{http://earth.google.com/kml/2.1}'
 
@@ -33,7 +37,7 @@ SUBDIV_LAYERS = {
     'speed':      ('Speed limits', 0),
     'track':      ('Track blocks', 0),
     'nca':        ('No-comm areas', 0),
-    'structures': ('Bridges & tunnels', 11),
+    'structures': ('Bridges & tunnels', 9),
     'crossings':  ('Level crossings', 11),
     'switches':   ('Switches', 12),
     'km':         ('KM markers', 12),
@@ -45,7 +49,7 @@ _SKIP_DIRS = {'.venv', 'venv', '.cache', 'static', 'build', 'dist', '__pycache__
 RAILROADS = {'150': 'Rumo', '125': 'MRS'}
 
 # Bump when load_subdivision() output changes so disk caches are rebuilt
-PARSER_VERSION = 2
+PARSER_VERSION = 3
 
 # Bridge / tunnel signs.  Rumo writes "#Bridge[#Ponte" / "#Tunnel]#Tunel" ([ = start, ] = end);
 # MRS files are free text: "PONTE 12 BEGIN", "BRIDGE-86 END", "PONTE 4A BEGIN", "Bridge 3B" / "Bridge 3E".
@@ -227,6 +231,82 @@ def _feature(geom_type, coords, **props):
     return {'type': 'Feature', 'geometry': geometry, 'properties': props}
 
 
+STRUCTURE_STYLE = {  # drawn as a wide casing under the speed-limit line
+    'Bridge': {'color': '#202124', 'weight': 12, 'opacity': 0.85},
+    'Tunnel': {'color': '#9aa0a6', 'weight': 12, 'opacity': 0.9, 'dash': '2 6'},
+}
+_STRUCTURE_MAX_PAIR_M = 10_000   # a start sign pairs with an end sign at most this far away
+_ON_TRACK_DEG = 0.0003           # ~30 m: both signs must be this close to one track line
+
+
+def _length_m(coords):
+    total = 0.0
+    for (lon1, lat1), (lon2, lat2) in zip(coords, coords[1:]):
+        p1, p2 = math.radians(lat1), math.radians(lat2)
+        a = (math.sin((p2 - p1) / 2) ** 2
+             + math.cos(p1) * math.cos(p2) * math.sin(math.radians(lon2 - lon1) / 2) ** 2)
+        total += 2 * 6_371_000 * math.asin(math.sqrt(a))
+    return total
+
+
+def _structure_segments(signs, track_lines):
+    """Bridge / tunnel features: each start sign paired with its end sign and drawn along the track.
+
+    *signs* are (kind, number, is_start, [lon, lat], data).  Numbered signs pair by number;
+    unnumbered ones (Rumo) pair with the nearest free end sign of the same kind.  The segment
+    follows the track block (or merged track) both signs lie on, else a straight line.
+    """
+    seen, unique = set(), []
+    for s in signs:  # the same sign is often exported once per direction
+        key = (s[0], s[1], s[2], round(s[3][0], 5), round(s[3][1], 5))
+        if key not in seen:
+            seen.add(key)
+            unique.append(s)
+    starts = [s for s in unique if s[2]]
+    ends = [s for s in unique if not s[2]]
+    candidates = sorted(  # same track block first (parallel tracks carry their own signs)
+        (a[4].get('blockId') != b[4].get('blockId'), _length_m([a[3], b[3]]), i, j)
+        for i, a in enumerate(starts) for j, b in enumerate(ends)
+        if a[0] == b[0] and a[1] == b[1] and _length_m([a[3], b[3]]) <= _STRUCTURE_MAX_PAIR_M)
+    used_s, used_e, pairs = set(), set(), []
+    for _, _, i, j in candidates:  # closest pairs first
+        if i not in used_s and j not in used_e:
+            used_s.add(i)
+            used_e.add(j)
+            pairs.append((starts[i], ends[j]))
+
+    lines = [shapely.LineString(c) for c in track_lines if len(c) >= 2]
+    lines += list(getattr(linemerge(lines), 'geoms', [])) if lines else []  # blocks joined end to end
+    tree = shapely.STRtree(lines) if lines else None
+
+    features = []
+    for start, end in pairs:
+        kind, number, _, a, d = start
+        p, q = shapely.Point(a), shapely.Point(end[3])
+        coords = [a, end[3]]
+        if tree is not None:
+            near = [lines[k] for k in tree.query(shapely.MultiPoint([a, end[3]]).envelope.buffer(_ON_TRACK_DEG))]
+            on_both = [ln for ln in near if ln.distance(p) <= _ON_TRACK_DEG and ln.distance(q) <= _ON_TRACK_DEG]
+            if on_both:
+                line = min(on_both, key=lambda ln: ln.distance(p) + ln.distance(q))
+                da, db = sorted((line.project(p), line.project(q)))
+                part = substring(line, da, db)
+                if part.geom_type == 'LineString' and len(part.coords) >= 2:
+                    coords = [[round(x, 6), round(y, 6)] for x, y in part.coords]
+        length = _length_m(coords)
+        title = f"{kind}{' ' + number if number else ''} · {length:,.0f} m"
+        features.append(_feature('LineString', coords, **STRUCTURE_STYLE[kind], popup=_popup(title, [
+            ('Start sign', d.get('text')), ('End sign', end[4].get('text')),
+            ('Block', d.get('blockId')), ('Offset', d.get('offset')),
+        ])))
+    for s in [s for i, s in enumerate(starts) if i not in used_s] + [s for j, s in enumerate(ends) if j not in used_e]:
+        kind, number, is_start, a, d = s  # a sign without its partner: keep it as an icon
+        features.append(_feature('Point', [a], icon='🚇' if kind == 'Tunnel' else '🌉', color='#ffffff', popup=_popup(
+            f"{kind}{' ' + number if number else ''} {'start' if is_start else 'end'} (no matching sign)",
+            [('Sign', d.get('text')), ('Block', d.get('blockId')), ('Offset', d.get('offset'))])))
+    return features
+
+
 def _paired(folder):
     """(point_data, line_coords) pairs from a folder that alternates a data Point and its LineString."""
     pending = None
@@ -311,16 +391,14 @@ def load_subdivision(path):
                 ('Block', d.get('blockId')), ('Offset', d.get('offset')),
             ])))
 
+    signs = []
     for pm in (folders['Signages'].findall(KML_NS + 'Placemark') if 'Signages' in folders else []):
         d = _data(pm)
         parsed = _structure_sign(d.get('text') or '')
         if parsed:
-            kind, number, is_start = parsed
-            title = f"{kind}{' ' + number if number else ''} {'start' if is_start else 'end'}"
-            layers['structures'].append(_feature(
-                'Point', _coords(pm), icon='🚇' if kind == 'Tunnel' else '🌉', color='#ffffff',
-                popup=_popup(title, [('Sign', d.get('text')), ('Block', d.get('blockId')),
-                                     ('Offset', d.get('offset'))])))
+            signs.append((*parsed, _coords(pm)[0], d))
+    track_lines = [f['geometry']['coordinates'] for f in layers['track']]
+    layers['structures'] = _structure_segments(signs, track_lines)
 
     for pm in (folders['Milepost Markers'].findall(KML_NS + 'Placemark') if 'Milepost Markers' in folders else []):
         d = _data(pm)

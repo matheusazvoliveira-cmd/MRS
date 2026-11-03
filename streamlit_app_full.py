@@ -1018,7 +1018,7 @@ def _publish_static_geojson(name, data):
 
 # Subdivision layers: draw order (bottom -> top) and map pane z-index for line layers
 SUBDIV_DRAW_ORDER = ['track', 'speed', 'nca', 'structures', 'crossings', 'switches', 'km']
-SUBDIV_LINE_PANE_Z = {'track': 410, 'speed': 420, 'nca': 430}
+SUBDIV_LINE_PANE_Z = {'track': 410, 'structures': 415, 'speed': 420, 'nca': 430}  # bridges under speed
 SUBDIV_LAYERS_DEFAULT = ['speed', 'nca', 'structures', 'crossings', 'switches', 'km']
 
 
