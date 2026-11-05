@@ -184,12 +184,14 @@ onboard versions of the same data and cannot be read by the app.
 - **"Unknown" km** in results is track with no operator code in the ANTT data. "Only"
   routing cannot use it — e.g. ~2.6 km near Brisamar breaks "Only MRS" routes through
   Brisamar; use Prefer there.
-- **Missing junctions cause long detours.** The ANTT lines are not always connected where
-  two railways meet. Example: "Belo Horizonte [EBH]" is a VLI station and "Any" routing to
-  "Santos [ISN]" returns ~2,100 km instead of ~900 km because the VLI–MRS link near BH is
-  missing in the data. If a distance looks too long, check the drawn route and the
-  **By operator (km)** column, and use a nearby station on the expected railway (e.g.
-  "Barreiro (idx=947) [FBO]" for MRS in BH) or add a Via station.
+- **A few small branches are not connected** to the rest of the network (4 pieces left,
+  the largest 186 km). A route to a station on one of them fails with "no path". If a
+  distance looks too long, check the drawn route and the **By operator (km)** column, and
+  use a nearby station on the expected railway or add a Via station.
+- **"Only" snaps every station to the nearest track of the chosen networks**, however far.
+  A station on another railway can land somewhere unexpected (e.g. "Araguari (idx=15) [LAY]"
+  is in Santa Catarina on Rumo; with Only VLI it snaps next to Campinas). Check the station
+  code and use Prefer/Any for stations off the chosen network.
 - **Several stations share a name** (e.g. "Santos Dumont" exists on MRS and VLI); the
   3-letter code in brackets and "(idx=N)" tell them apart.
 - **Subdivision speed units are not confirmed** (the export mixes feet and metres; values

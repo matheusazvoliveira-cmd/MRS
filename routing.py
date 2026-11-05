@@ -19,7 +19,8 @@ import pandas as pd
 import shapely
 from pyproj import Transformer
 from scipy.sparse import coo_matrix
-from scipy.sparse.csgraph import dijkstra
+from scipy.sparse.csgraph import connected_components, dijkstra
+from scipy.spatial import cKDTree
 from shapely.ops import substring
 
 
@@ -64,11 +65,13 @@ def network_codes(operators):
 SNAP_TOLERANCE_M = 75.0
 # Precision grid used when noding intersections (makes noding robust)
 NODING_GRID_M = 0.5
+# Nodes closer than this are one junction (grid snapping can leave two line ends one grid cell apart)
+NODE_MERGE_M = 1.0
 # Max distance between a noded piece and its source line when assigning CodigoFerr
 ASSIGN_CODIGO_MAX_DIST_M = 10.0
 
 # Bump when the graph-building logic changes so stale disk caches are ignored
-GRAPH_CACHE_VERSION = 1
+GRAPH_CACHE_VERSION = 2
 
 to_4326 = Transformer.from_crs('EPSG:3857', 'EPSG:4326', always_xy=True)
 
@@ -247,6 +250,15 @@ def build_rail_graph(rails_m, progress_cb=None):
     end_xy = shapely.get_coordinates(shapely.get_point(pieces, -1))
     node_xy, inv = np.unique(np.concatenate([start_xy, end_xy]), axis=0, return_inverse=True)
     inv = inv.ravel()
+    # Merge nodes within NODE_MERGE_M: e.g. Rondonopolis was cut off from the network by two
+    # line ends 0.5 m apart that snapped to neighbouring grid cells
+    pairs = cKDTree(node_xy).query_pairs(NODE_MERGE_M, output_type='ndarray')
+    if len(pairs):
+        n_nodes = len(node_xy)
+        adj = coo_matrix((np.ones(len(pairs)), (pairs[:, 0], pairs[:, 1])), shape=(n_nodes, n_nodes))
+        _, cluster = connected_components(adj, directed=False)
+        node_xy = node_xy[np.unique(cluster, return_index=True)[1]]  # first node of each cluster
+        inv = cluster[inv]
     u, v = inv[:len(pieces)], inv[len(pieces):]
 
     keep = u != v  # closed loops can never shorten a route
