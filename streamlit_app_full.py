@@ -228,9 +228,10 @@ def load_station_group_systems():
     return {}
 
 
-@st.cache_resource(show_spinner="Loading shapefiles...")
 def load_data():
-    """Load shapefiles — raises on failure so the caller can show the error in context."""
+    """Load shapefiles — raises on failure so the caller can show the error in context.
+    Not cached: only prepare_derived_data() (cached) and a graph rebuild read them, so the
+    raw tables are not kept in memory."""
     if not RAILS_SHP_PATH.exists():
         raise FileNotFoundError(f"Rails shapefile not found: {RAILS_SHP_PATH}")
     if not STATIONS_SHP_PATH.exists():
@@ -244,10 +245,11 @@ def load_data():
 
 
 @st.cache_resource(show_spinner="Building routing graph (first run only)...")
-def get_rail_graph(_rails_all_m, data_version_key):
+def get_rail_graph(data_version_key):
     """National routing graph — loaded from the disk cache, or built once (~10 s) and cached."""
     _ = data_version_key
-    return routing.load_or_build_graph(lambda: _rails_all_m, RAILS_SHP_PATH, _APP_DIR / GRAPH_CACHE_DIR_NAME)
+    return routing.load_or_build_graph(lambda: load_data()[0].to_crs(epsg=3857), RAILS_SHP_PATH,
+                                       _APP_DIR / GRAPH_CACHE_DIR_NAME)
 
 
 def get_data_version_key():
@@ -259,29 +261,26 @@ def get_data_version_key():
 
 # cache_resource (not cache_data): returns shared objects instead of unpickling a copy on every rerun
 @st.cache_resource(show_spinner="Preparing data...")
-def prepare_derived_data(_rails_all, _stations_all, data_version_key):
-    """Compute all derived data (CRS transforms, GeoJSON conversions) — cached globally across all users."""
+def prepare_derived_data(data_version_key):
+    """Read the shapefiles and compute all derived data (CRS transforms, GeoJSON conversions)
+    — cached globally across all users.  Only what the app reads afterwards is kept: the
+    shapefile tables and the layer GeoJSON (served as static files) are dropped."""
     _ = data_version_key
+    _rails_all, _stations_all = load_data()
     # Phase 1: parallel CRS transforms + station prep
     # PROJ/GEOS are C libraries that release the GIL → real thread parallelism
-    with ThreadPoolExecutor(max_workers=3) as ex:
-        f_rails_m = ex.submit(_rails_all.to_crs, epsg=3857)
+    with ThreadPoolExecutor(max_workers=2) as ex:
         f_rails_ll = ex.submit(_rails_all.to_crs, epsg=4326)
         f_stations = ex.submit(prepare_stations, _stations_all)
 
-        rails_all_m = f_rails_m.result()
         rails_all_ll = f_rails_ll.result()
         _, stations_near_ll, stations_lookup, labels = f_stations.result()
 
     centroid = stations_near_ll.geometry.union_all().centroid
 
-    # Derive MRS subset from already-transformed data (no extra CRS transform)
-    rails_mrs_ll = rails_all_ll[rails_all_ll[FILTER_COLUMN] == MRS_CODE].copy()
-
     # Phase 2: parallel GeoJSON conversions
     # Filter pre-transformed rails_all_ll instead of re-projecting per operator
     with ThreadPoolExecutor(max_workers=4) as ex:
-        f_mrs_json = ex.submit(_gdf_to_minimal_geojson, rails_mrs_ll)
         f_all_json = ex.submit(_gdf_to_minimal_geojson, rails_all_ll)
 
         # Per-operator GeoJSONs — filter already-transformed data
@@ -295,7 +294,6 @@ def prepare_derived_data(_rails_all, _stations_all, data_version_key):
             else:
                 op_futures[op_name] = None
 
-        rails_mrs_geojson = f_mrs_json.result()
         rails_all_geojson = f_all_json.result()
         operator_geojsons = {}
         for op_name, fut in op_futures.items():
@@ -323,11 +321,15 @@ def prepare_derived_data(_rails_all, _stations_all, data_version_key):
         if op_geojson['features']:
             static_layer_urls[f"op_{op_name}"] = _publish_static_geojson(f"op_{op_name}", op_geojson)
 
+    # The browser fetches published layers by URL: keep their GeoJSON only where publishing
+    # failed (it is then embedded in the map), an empty stand-in elsewhere
+    def unless_published(key, fc):
+        if static_layer_urls.get(key) is None:
+            return fc
+        return {'type': 'FeatureCollection', 'features': [], 'published': True}
+
     return {
-        'rails_all_m': rails_all_m,
-        'rails_mrs_ll': rails_mrs_ll,
-        'rails_all_ll': rails_all_ll,
-        'stations_near_ll': stations_near_ll,
+        'rail_feature_count': len(_rails_all),
         'stations_lookup': stations_lookup,
         'labels': labels,
         'station_counts_by_operator': {
@@ -335,10 +337,10 @@ def prepare_derived_data(_rails_all, _stations_all, data_version_key):
             for op_name in RAIL_OPERATORS.keys()
         },
         'map_center': [centroid.y, centroid.x],
-        'rails_mrs_geojson': rails_mrs_geojson,
-        'rails_all_geojson': rails_all_geojson,
-        'operator_geojsons': operator_geojsons,
-        'stations_geojson': stations_geojson,
+        'rails_all_geojson': unless_published('rails_all', rails_all_geojson),
+        'operator_geojsons': {op: unless_published(f"op_{op}", fc) if fc['features'] else fc
+                              for op, fc in operator_geojsons.items()},
+        'stations_geojson': unless_published('stations', stations_geojson),
         'stations_by_label': stations_by_label,
         'static_layer_urls': static_layer_urls,
     }
@@ -1061,6 +1063,8 @@ def load_subdivision_layers(path, mtime):
     stem = Path(path).stem
     sd['urls'] = {key: _publish_static_geojson(f"subdiv_{stem}_{key}", fc)
                   for key, fc in sd['layers'].items() if fc['features']}
+    # The browser fetches published layers by URL; keep only the ones to embed
+    sd['layers'] = {key: fc for key, fc in sd['layers'].items() if sd['urls'].get(key) is None}
     return sd
 
 
@@ -1093,7 +1097,7 @@ def trackdata_files(entries):
     return tuple(out)
 
 
-@st.cache_resource(show_spinner="Loading track elevation data...")
+@st.cache_resource(show_spinner="Loading track elevation data...", max_entries=2)  # one per subdivision set
 def elevation_index(files):
     """ElevationIndex over the TrackData of *files* (from trackdata_files)."""
     datasets = {}
@@ -1357,24 +1361,17 @@ def main():
     if 'subdiv_layers' not in st.session_state:
         st.session_state.subdiv_layers = list(SUBDIV_LAYERS_DEFAULT)
 
-    # Load raw data (instant after first call — @st.cache_data)
+    # Read the shapefiles and compute derived data — globally cached across all users
+    # First user triggers computation (~10-15s), all subsequent users get instant cached result
+    data_version_key = get_data_version_key()
     try:
-        rails_all, stations_all = load_data()
+        derived_data = prepare_derived_data(data_version_key)
     except Exception as e:
         st.error(f"Could not load shapefiles: {e}")
         return
-
-    # Compute derived data — globally cached across all users (@st.cache_data)
-    # First user triggers computation (~10-15s), all subsequent users get instant cached result
-    data_version_key = get_data_version_key()
-    derived_data = prepare_derived_data(rails_all, stations_all, data_version_key)
     st.session_state.derived_data = derived_data  # Store in session_state for convenience
 
     d = derived_data
-    rails_all_m      = d['rails_all_m']
-    rails_mrs_ll     = d['rails_mrs_ll']
-    rails_all_ll     = d['rails_all_ll']
-    stations_near_ll = d['stations_near_ll']
     stations_lookup  = d['stations_lookup']
     labels           = d['labels']
     station_counts_by_operator = d['station_counts_by_operator']
@@ -1514,7 +1511,7 @@ def main():
     # Sidebar: everything else (collapsed by default so the map is fully visible)
     with st.sidebar:
         st.markdown("### 🚂 MRS Corridor Builder")
-        st.caption(f"{len(derived_data['labels'])} stations · {len(rails_all)} rail features")
+        st.caption(f"{len(derived_data['labels'])} stations · {d['rail_feature_count']} rail features")
 
         st.divider()
         st.subheader("🎨 Display")
@@ -2178,7 +2175,7 @@ def main():
         if op_name not in active_operators:
             continue
         op_geojson = operator_geojsons.get(op_name)
-        if not op_geojson or not op_geojson.get('features'):
+        if not op_geojson or not (op_geojson.get('features') or op_geojson.get('published')):
             continue
         op_layer = folium.FeatureGroup(name=f"🚂 {op_name} Rails", show=True)
         _RemoteGeoJson(
@@ -2240,7 +2237,7 @@ def main():
                 pts.append((float(row.geometry.x), float(row.geometry.y)))
 
             t_graph_start = time.time()
-            graph = get_rail_graph(rails_all_m, data_version_key)
+            graph = get_rail_graph(data_version_key)
             t_graph = time.time() - t_graph_start
 
             t_route_start = time.time()
@@ -2555,7 +2552,7 @@ def main():
             if key not in subdiv_layers_on or key not in sd['urls']:
                 continue
             _RemoteGeoJson(
-                sd['urls'][key], sd['layers'][key], 'features',
+                sd['urls'][key], sd['layers'].get(key), 'features',
                 min_zoom=subdivisions.SUBDIV_LAYERS[key][1],
                 pane=f"subdiv-{key}" if key in SUBDIV_LINE_PANE_Z else None,
                 pane_z=SUBDIV_LINE_PANE_Z.get(key),
