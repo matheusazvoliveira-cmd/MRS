@@ -76,6 +76,11 @@ subdivision's own track points (~30 m apart) instead; elsewhere it stays on the 
 The caption says how much ("drawn on the subdivision track for 99 %"). The km figures still
 come from the ANTT network.
 
+**Distances are true km.** The map projection (Web Mercator) stretches lengths by
+1/cos(latitude) — about 6–8 % in the South-East — and routes computed before this change
+reported the stretched length (e.g. Bom Jardim → Volta Redonda showed 120.5 km, really
+111.5 km). Routes saved before keep the km they were saved with.
+
 **⛰️ Elevation** (in the same card, where the route crosses a subdivision in `Subdivs/`):
 a height profile along the route (hover for km, height and subdivision), lowest–highest
 height, total climb ↑ and descent ↓, and the steepest grade over 1 km with where it is

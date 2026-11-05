@@ -5,8 +5,10 @@ The national rail network is noded ONCE into a junction-to-junction graph and
 cached on disk (keyed by the shapefile's path, size and mtime).  Each route
 request is then a Dijkstra search on that graph — no geometry work per request.
 
-All geometry here is in EPSG:3857 metres, matching the original app so that
-reported distances stay comparable with previously saved routes.
+All geometry here is in EPSG:3857 metres, matching the original app.  Mercator
+stretches lengths by 1/cos(latitude) (~6-8 % in the South-East), so reported
+distances are converted to true metres (true_length_m); routes saved before that
+change carry the stretched figure.
 """
 
 import hashlib
@@ -74,6 +76,17 @@ ASSIGN_CODIGO_MAX_DIST_M = 10.0
 GRAPH_CACHE_VERSION = 3
 
 to_4326 = Transformer.from_crs('EPSG:3857', 'EPSG:4326', always_xy=True)
+_EARTH_R = 6378137.0  # EPSG:3857 sphere radius
+
+
+def true_length_m(xy):
+    """Length in true metres of a polyline of EPSG:3857 points ([N, 2] array): each
+    segment's Mercator length times cos(latitude) at its middle."""
+    if len(xy) < 2:
+        return 0.0
+    lat = 2 * np.arctan(np.exp(xy[:, 1] / _EARTH_R)) - np.pi / 2
+    seg = np.hypot(np.diff(xy[:, 0]), np.diff(xy[:, 1]))
+    return float(np.sum(seg * np.cos((lat[1:] + lat[:-1]) / 2)))
 
 
 # ============================================================================
@@ -416,20 +429,21 @@ def route(graph, points_xy, mode, penalty_mult=OTHER_NETWORK_PENALTY_DEFAULT, co
         for a, b in zip(path[:-1], path[1:]):
             r = pair_ref[min(a, b) * n_total + max(a, b)]
             if r >= 0:
-                geom, length, code = graph.geoms[r], graph.length[r], graph.code[r]
+                geom, code = graph.geoms[r], graph.code[r]
                 forward = graph.u[r] == a
             else:
                 fa, fb, e, d0, d1 = virtual[-1 - r]
                 geom = substring(graph.geoms[e], min(d0, d1), max(d0, d1))
-                length, code = abs(d1 - d0), graph.code[e]
+                code = graph.code[e]
                 forward = (fa == a) == (d0 <= d1)
             xy = shapely.get_coordinates(geom)
             if not forward:
                 xy = xy[::-1]
+            length = true_length_m(xy)
             if coords and len(xy):
                 xy = xy[1:]
             coords.extend(map(tuple, xy))
-            seg_m += float(length)
+            seg_m += length
             key = None if np.isnan(code) else int(code)
             codes_km[key] = codes_km.get(key, 0.0) + float(length) / 1000.0
         segment_km.append(seg_m / 1000.0)

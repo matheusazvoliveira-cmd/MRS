@@ -307,7 +307,7 @@ def elevation_profile(coords_ll, index):
     Returns None when no part of the route has elevation data, else dict(km, elevation_m
     [NaN where no data], source [subdivision name or ''], coverage, min_m, max_m, ascent_m,
     descent_m, max_grade_pct, max_grade_km, breaks [dict(km, jump_m, from, to)]).
-    km follows the app's route distance."""
+    km is true distance along the route, like the app's route km."""
     if index.tree is None or len(coords_ll) < 2:
         return None
     lat, lon = np.asarray(coords_ll, dtype=float).T
@@ -338,9 +338,13 @@ def elevation_profile(coords_ll, index):
         warnings.simplefilter('ignore', RuntimeWarning)  # all-NaN windows where there is no data
         smooth = np.where(np.isnan(elev), np.nan, np.nanmedian(windows, axis=1))
 
-    km = dist / 1000.0
-    true_m = dist / scale  # true metres along the route, for grades
-    spacing = max(true_m[1] - true_m[0], 1e-9)
+    # True metres along the route: each vertex-to-vertex step scaled by cos(latitude) there
+    merc_cum = np.concatenate([[0], np.cumsum(np.hypot(np.diff(x), np.diff(y)))])
+    true_cum = np.concatenate([[0], np.cumsum(np.hypot(np.diff(x), np.diff(y))
+                                              * np.cos(np.radians((lat[1:] + lat[:-1]) / 2)))])
+    true_m = np.interp(dist, merc_cum, true_cum)
+    km = true_m / 1000.0
+    spacing = max(true_m[-1] / max(n - 1, 1), 1e-9)
     # Height jumps no track can climb: the route changes between lines at different levels (a
     # grade-separated crossing that the ANTT lines draw as a junction).  Shown as a break, and
     # left out of ascent / descent / grade.
