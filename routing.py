@@ -71,7 +71,7 @@ NODE_MERGE_M = 1.0
 ASSIGN_CODIGO_MAX_DIST_M = 10.0
 
 # Bump when the graph-building logic changes so stale disk caches are ignored
-GRAPH_CACHE_VERSION = 2
+GRAPH_CACHE_VERSION = 3
 
 to_4326 = Transformer.from_crs('EPSG:3857', 'EPSG:4326', always_xy=True)
 
@@ -224,6 +224,9 @@ def build_rail_graph(rails_m, progress_cb=None):
     cb("Preparing rail lines...")
     lines = rails_m[[FILTER_COLUMN, 'geometry']].explode(index_parts=False)
     lines = lines[lines.geometry.notna() & ~lines.geometry.is_empty & (lines.geom_type == 'LineString')]
+    # Identical copies of a line (e.g. the Corrego do Feijao and Suzano/Imperatriz branches) would
+    # make each other's loose ends look connected, so they never got a gap connector
+    lines = lines[~pd.Series(shapely.to_wkb(lines.geometry.array), index=lines.index).duplicated().to_numpy()]
     geoms = np.asarray(lines.geometry.array, dtype=object)
     codes = lines[FILTER_COLUMN].to_numpy(dtype=float, na_value=np.nan)
 

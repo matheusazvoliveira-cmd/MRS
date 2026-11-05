@@ -184,8 +184,8 @@ onboard versions of the same data and cannot be read by the app.
 - **"Unknown" km** in results is track with no operator code in the ANTT data. "Only"
   routing cannot use it — e.g. ~2.6 km near Brisamar breaks "Only MRS" routes through
   Brisamar; use Prefer there.
-- **A few small branches are not connected** to the rest of the network (4 pieces left,
-  the largest 186 km). A route to a station on one of them fails with "no path". If a
+- **Only the FTC (Tereza Cristina, SC) is not connected** to the rest of the network — it is
+  a separate railway. A route between FTC and any other railway fails with "no path". If a
   distance looks too long, check the drawn route and the **By operator (km)** column, and
   use a nearby station on the expected railway or add a Via station.
 - **"Only" snaps every station to the nearest track of the chosen networks**, however far.
