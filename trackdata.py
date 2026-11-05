@@ -22,6 +22,7 @@ from pathlib import Path
 
 import numpy as np
 import shapely
+from shapely.ops import substring
 from pyproj import Transformer
 
 NS = '{http://www.wabtec.com/WRE/SystemTest/Track}'
@@ -181,6 +182,123 @@ class ElevationIndex:
 
     def __len__(self):
         return len(self.lines)
+
+
+SNAP_STEP_M = 50.0           # route sampled every ~50 m for snapping to the track
+SNAP_MAX_SAMPLES = 20000
+SNAP_RADIUS_M = 1000.0       # the ANTT lines are up to ~750 m off the real track in places
+SNAP_K = 8                   # candidate blocks per sample
+SNAP_SIGMA_M = 100.0         # emission: cost per this many metres between route and track
+SNAP_BETA_M = 20.0           # transition: cost per this many metres of progress mismatch
+SNAP_SWITCH_COST = 2.0       # changing block (keeps the match off a parallel track)
+SNAP_OFF_COST = SNAP_RADIUS_M / SNAP_SIGMA_M  # a sample with no track nearby
+SNAP_OFF_SWITCH_COST = 5.0   # entering / leaving the track
+
+
+def snap_to_track(coords_ll, index):
+    """Route of (lat, lon) points moved onto the subdivision track where it runs along it.
+
+    The ANTT lines the router uses are coarse — hundreds of metres off the track in hilly
+    stretches.  Hidden-Markov map matching: the route is sampled every SNAP_STEP_M, each sample
+    may sit on one of the nearest blocks or 'off' the track, and Viterbi picks the sequence
+    whose distance to the route and progress along the blocks best agree with the route.
+    Stretches on a block are replaced by the block's own points (~30 m apart); stretches off
+    the track keep the route.  Returns (coords_ll, fraction of the route on the track)."""
+    if index.tree is None or len(coords_ll) < 2:
+        return coords_ll, 0.0
+    lat, lon = np.asarray(coords_ll, dtype=float).T
+    x, y = _to_3857.transform(lon, lat)
+    route = shapely.LineString(np.column_stack([x, y]))
+    scale = 1 / np.cos(np.radians(np.mean(lat)))
+    n = int(min(SNAP_MAX_SAMPLES, max(2, route.length / (SNAP_STEP_M * scale) + 1)))
+    dist = np.linspace(0, route.length, n)
+    samples = shapely.line_interpolate_point(route, dist)
+    step = (dist[1] - dist[0]) / scale
+
+    # Candidates: the SNAP_K nearest blocks within SNAP_RADIUS_M of each sample
+    s_idx, b_idx = index.tree.query(samples, predicate='dwithin', distance=SNAP_RADIUS_M * scale)
+    if not len(s_idx):
+        return coords_ll, 0.0
+    lines = np.asarray(index.lines, dtype=object)
+    along = shapely.line_locate_point(lines[b_idx], samples[s_idx])
+    pts = shapely.get_coordinates(shapely.line_interpolate_point(lines[b_idx], along))
+    d = shapely.distance(samples[s_idx], shapely.points(pts)) / scale
+    order = np.lexsort((d, s_idx))
+    s_idx, b_idx, along, pts, d = s_idx[order], b_idx[order], along[order], pts[order], d[order]
+    rank = np.arange(len(s_idx)) - np.searchsorted(s_idx, s_idx)
+    keep = rank < SNAP_K
+    s_idx, b_idx, along, pts, d, rank = s_idx[keep], b_idx[keep], along[keep], pts[keep], d[keep], rank[keep]
+
+    # State 0 is 'off the track'; states 1..K are the candidates (missing ones cost inf)
+    K = SNAP_K + 1
+    emit = np.full((n, K), np.inf)
+    emit[:, 0] = SNAP_OFF_COST
+    emit[s_idx, rank + 1] = d / SNAP_SIGMA_M
+    blk = np.full((n, K), -1)
+    blk[s_idx, rank + 1] = b_idx
+    alo = np.zeros((n, K))
+    alo[s_idx, rank + 1] = along
+    pxy = np.zeros((n, K, 2))
+    pxy[s_idx, rank + 1] = pts
+
+    cost = emit[0].copy()
+    back = np.zeros((n, K), dtype=np.int8)
+    off_trans = np.full((K, K), SNAP_OFF_SWITCH_COST)
+    off_trans[0, 0] = 0.0
+    for i in range(1, n):
+        if not np.isfinite(emit[i, 1:]).any() and not np.isfinite(cost[1:]).any():
+            back[i] = 0  # off the track on both sides: nothing to decide
+            cost = cost[0] + emit[i]
+            continue
+        same = blk[i - 1][:, None] == blk[i][None, :]
+        moved = np.where(same, np.abs(alo[i][None, :] - alo[i - 1][:, None]),
+                         np.hypot(*(pxy[i][None, :, :] - pxy[i - 1][:, None, :]).transpose(2, 0, 1)))
+        trans = np.abs(moved / scale - step) / SNAP_BETA_M + np.where(same, 0.0, SNAP_SWITCH_COST)
+        trans[0, :] = off_trans[0, :]
+        trans[:, 0] = off_trans[:, 0]
+        total = cost[:, None] + trans
+        back[i] = np.argmin(total, axis=0)
+        cost = total[back[i], np.arange(K)] + emit[i]
+    state = np.zeros(n, dtype=int)
+    state[-1] = int(np.argmin(cost))
+    for i in range(n - 1, 0, -1):
+        state[i - 1] = back[i, state[i]]
+
+    # Geometry: block points for runs on a block, the route itself for runs off the track
+    sb = blk[np.arange(n), state]
+    sa = alo[np.arange(n), state]
+    out = []
+    i = 0
+    while i < n:
+        j = i
+        while j + 1 < n and sb[j + 1] == sb[i]:
+            j += 1
+        if sb[i] < 0:
+            piece = substring(route, dist[max(i - 1, 0)], dist[min(j + 1, n - 1)])
+        else:
+            line = index.lines[sb[i]]
+            a0, a1 = sa[i], sa[j]
+            # Run the block to its end when the next / previous sample is on another block
+            if i > 0 and sb[i - 1] >= 0:
+                a0 = _towards_end(line, a0, a1, step * scale)
+            if j + 1 < n and sb[j + 1] >= 0:
+                a1 = _towards_end(line, a1, a0, step * scale)
+            piece = substring(line, a0, a1)
+        xy = shapely.get_coordinates(piece)
+        if len(xy):
+            out.append(xy)
+        i = j + 1
+    xy = np.concatenate(out)
+    keep = np.concatenate([[True], np.any(np.diff(xy, axis=0) != 0, axis=1)])
+    xy = xy[keep]
+    lons, lats = _to_3857.transform(xy[:, 0], xy[:, 1], direction='INVERSE')
+    return list(zip(lats.tolist(), lons.tolist())), float((sb >= 0).mean())
+
+
+def _towards_end(line, a, other, reach):
+    """*a* moved to the block end away from *other*, if that end is within *reach*."""
+    end = 0.0 if a < other or (a == other and a < line.length / 2) else line.length
+    return end if abs(end - a) <= reach else a
 
 
 def elevation_profile(coords_ll, index):

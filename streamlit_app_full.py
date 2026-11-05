@@ -2258,6 +2258,10 @@ def main():
 
             total_km = result['total_km']
             coords_ll = result['coords_ll']
+            # Draw the route on the subdivision track where there is one (the ANTT lines are coarse)
+            on_track = 0.0
+            if track_files:
+                coords_ll, on_track = trackdata.snap_to_track(coords_ll, elevation_index(track_files))
 
             # Draw route on map
             preview_station_points = []
@@ -2286,10 +2290,14 @@ def main():
 
             # Compact summary card over the map
             station_count = len(preview_station_points)
-            st.markdown(f"#### ✅ Route complete: {total_km:.1f} km · {station_count} stations")
+            title_col, close_col = st.columns([12, 1], vertical_alignment="center")
+            title_col.markdown(f"#### ✅ Route complete: {total_km:.1f} km · {station_count} stations")
+            # Any rerun clears the card; the route stays on the map
+            close_col.button("✕", key="close_route_card", help="Close (the route stays on the map)", type="tertiary")
             mode_text = "Any network" if routing_mode == ALLOW_ALL else f"{ROUTING_MODE_LABELS[routing_mode]} {networks_text}"
+            track_text = f"  ·  drawn on the subdivision track for {on_track:.0%}" if on_track else ""
             st.caption(
-                f"{' → '.join(order)}  ·  {mode_text}  ·  "
+                f"{' → '.join(order)}  ·  {mode_text}{track_text}  ·  "
                 f"graph {t_graph:.2f}s, routing {t_route:.2f}s, total {t_total:.2f}s"
             )
 

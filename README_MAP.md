@@ -67,6 +67,14 @@ Row 1 is a form: choosing values does nothing until **Compute** or **Commit** is
 route, the rule used (e.g. "Only VLI"), timings, and a table per segment with
 **Distance (km)** and **By operator (km)** (e.g. "MRS 524.4, VLI 47.2, Unknown 2.6").
 Errors such as "No path found…" also appear here; the map stays visible.
+**✕** closes the card; the route stays on the map.
+
+**Drawn on the subdivision track:** the ANTT lines the router uses are coarse — in hilly
+stretches (e.g. Ferrovia do Aço) they are up to ~750 m off the real track. Where the route
+runs along a picked subdivision, the line drawn (and saved on Commit) follows the
+subdivision's own track points (~30 m apart) instead; elsewhere it stays on the ANTT line.
+The caption says how much ("drawn on the subdivision track for 99 %"). The km figures still
+come from the ANTT network.
 
 **⛰️ Elevation** (in the same card, where the route crosses a subdivision in `Subdivs/`):
 a height profile along the route (hover for km, height and subdivision), lowest–highest
