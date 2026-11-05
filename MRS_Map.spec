@@ -1,7 +1,7 @@
 # -*- mode: python ; coding: utf-8 -*-
 from PyInstaller.utils.hooks import collect_all
 
-datas = [('streamlit_app_full.py', '.'), ('routing.py', '.'), ('subdivisions.py', '.'), ('Estacoes', 'Estacoes'), ('LInhas', 'LInhas')]
+datas = [('streamlit_app_full.py', '.'), ('routing.py', '.'), ('subdivisions.py', '.'), ('trackdata.py', '.'), ('Estacoes', 'Estacoes'), ('LInhas', 'LInhas')]
 binaries = []
 hiddenimports = ['streamlit_folium']
 tmp_ret = collect_all('streamlit')

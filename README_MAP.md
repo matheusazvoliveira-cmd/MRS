@@ -68,6 +68,19 @@ route, the rule used (e.g. "Only VLI"), timings, and a table per segment with
 **Distance (km)** and **By operator (km)** (e.g. "MRS 524.4, VLI 47.2, Unknown 2.6").
 Errors such as "No path found…" also appear here; the map stays visible.
 
+**⛰️ Elevation** (in the same card, where the route crosses a subdivision in `Subdivs/`):
+a height profile along the route (hover for km, height and subdivision), lowest–highest
+height, total climb ↑ and descent ↓, and the steepest grade over 1 km with where it is
+(e.g. "max grade -2.1 % (km 518)"). "Data on 88 % of the route: …" says which part has
+data — stretches without a subdivision are gaps in the chart. Heights come from the
+TrackData XML next to each KMZ (the onboard track database); they are GPS (ellipsoid)
+heights, about 5–20 m below sea-level altitude in Brazil, so use them for climbs and
+grades rather than as exact altitudes.
+"⚠️ Height jump of 43 m at km 128.8 (Linha do Centro → Ferrovia do Aco)" means the route
+switches between two tracks at different levels: the ANTT lines meet there although the
+real tracks may cross on different levels (this one is near Jeceaba, MG). The jump is left
+out of the climb and grade figures.
+
 ## 5. Top bar — row 2: explore the map (applies immediately)
 
 | Control | What it does |
@@ -194,8 +207,8 @@ onboard versions of the same data and cannot be read by the app.
   code and use Prefer/Any for stations off the chosen network.
 - **Several stations share a name** (e.g. "Santos Dumont" exists on MRS and VLI); the
   3-letter code in brackets and "(idx=N)" tell them apart.
-- **Subdivision speed units are not confirmed** (the export mixes feet and metres; values
-  15–83 are probably km/h). The app shows the number only.
+- **Subdivision speeds are km/h** (the track databases say so, and their values match the
+  km/h in the railways' change orders). Offsets inside the files are in feet.
 - Subdivision track lines up with the ANTT lines within ~3 m (median).
 - Station "landmark" tiers come from ANTT fields (IndicadorP = port, IndicadorF =
   railway interchange, CodigoEsca = station class) — inferred, not officially documented.

@@ -23,7 +23,8 @@ from shapely.ops import linemerge, substring
 
 KML_NS = '{http://earth.google.com/kml/2.1}'
 
-# Speed limit colour bins (upper bound inclusive) — slower is warmer
+# Speed limit colour bins, km/h (upper bound inclusive) — slower is warmer.  The track databases
+# say SpeedAndWeightUnits = 2 and their values match the km/h in the railways' change orders.
 SPEED_BINS = [
     (20, '#d93025', '≤ 20'),
     (30, '#f29900', '21–30'),
@@ -49,7 +50,7 @@ _SKIP_DIRS = {'.venv', 'venv', '.cache', 'static', 'build', 'dist', '__pycache__
 RAILROADS = {'150': 'Rumo', '125': 'MRS'}
 
 # Bump when load_subdivision() output changes so disk caches are rebuilt
-PARSER_VERSION = 3
+PARSER_VERSION = 4
 
 # Bridge / tunnel signs.  Rumo writes "#Bridge[#Ponte" / "#Tunnel]#Tunel" ([ = start, ] = end);
 # MRS files are free text: "PONTE 12 BEGIN", "BRIDGE-86 END", "PONTE 4A BEGIN", "Bridge 3B" / "Bridge 3E".
@@ -358,7 +359,7 @@ def load_subdivision(path):
                 continue
             speeds.append((limit, _feature(
                 'LineString', coords, color=speed_color(limit), weight=6,
-                popup=_popup(f"Speed limit {limit}", [
+                popup=_popup(f"Speed limit {limit} km/h", [
                     ('Train', d.get('ttype')), ('Direction', d.get('direction')), ('Block', d.get('blockId')),
                     ('Offset', f"{d.get('soffset', '')}–{d.get('eoffset', '')}"),
                 ]))))

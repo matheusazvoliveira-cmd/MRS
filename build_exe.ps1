@@ -51,6 +51,7 @@ $Args = @(
     '--add-data', 'streamlit_app_full.py;.'
     '--add-data', 'routing.py;.'
     '--add-data', 'subdivisions.py;.'
+    '--add-data', 'trackdata.py;.'
     '--add-data', 'Estacoes;Estacoes'
     '--add-data', 'LInhas;LInhas'
     'launcher.py'

@@ -40,8 +40,11 @@ from streamlit_folium import st_folium
 from jinja2 import Template
 from html import escape as html_escape
 
+import altair as alt
+
 import routing
 import subdivisions
+import trackdata
 from routing import (
     FILTER_COLUMN, MRS_CODE, OTHER_NETWORK_PENALTY_DEFAULT, RAIL_OPERATORS, CODE_TO_OPERATOR,
     STRICT, PREFER, ALLOW_ALL,
@@ -1078,13 +1081,69 @@ def _start_subdivision_warmup(paths):
     return True
 
 
+@st.cache_data(show_spinner=False)
+def trackdata_files(entries):
+    """((subdivision name, TrackData XML path, mtime), ...) for the given (name, kmz path,
+    subdivision id, version) entries that have a track database export next to the KMZ."""
+    out = []
+    for name, kmz, subdiv_id, version in entries:
+        xml = trackdata.find_trackdata(kmz, subdiv_id, version)
+        if xml:
+            out.append((name, str(xml), xml.stat().st_mtime_ns))
+    return tuple(out)
+
+
+@st.cache_resource(show_spinner="Loading track elevation data...")
+def elevation_index(files):
+    """ElevationIndex over the TrackData of *files* (from trackdata_files)."""
+    datasets = {}
+    for name, xml, _mtime in files:
+        try:
+            datasets[name] = trackdata.load_trackdata_cached(xml, SUBDIV_CACHE_DIR)
+        except Exception:
+            continue  # a broken file leaves a gap in the profile, nothing more
+    return trackdata.ElevationIndex(datasets)
+
+
+@st.cache_resource(show_spinner=False)
+def _start_trackdata_warmup(xml_paths):
+    """Same as _start_subdivision_warmup, for the TrackData XML (elevation profile)."""
+    if getattr(sys, 'frozen', False):
+        return False
+    todo = [p for p in xml_paths if not trackdata.is_cached(p, SUBDIV_CACHE_DIR)]
+    if todo:
+        subprocess.Popen(
+            [sys.executable, str(Path(trackdata.__file__).resolve()), str(SUBDIV_CACHE_DIR), *todo],
+            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+            creationflags=getattr(subprocess, 'BELOW_NORMAL_PRIORITY_CLASS', 0),
+        )
+    return True
+
+
+def _elevation_chart(profile):
+    """Altair area + line of elevation against km; gaps where there is no data or a height jump."""
+    df = pd.DataFrame({'km': profile['km'], 'Elevation (m)': profile['elevation_m'],
+                       'Subdivision': profile['source']})
+    df['part'] = df['Elevation (m)'].isna().cumsum()  # a new line part after every gap
+    df = df.dropna(subset=['Elevation (m)'])
+    if len(df) > 1500:
+        df = df.iloc[::int(np.ceil(len(df) / 1500))]
+    x = alt.X('km:Q', title='km', scale=alt.Scale(domain=[0, float(profile['km'][-1])], nice=False))
+    y = alt.Y('Elevation (m):Q', scale=alt.Scale(zero=False), title='m')
+    base = alt.Chart(df).encode(x=x, y=y, detail='part:N')
+    area = base.mark_area(color='#1a73e8', opacity=0.12, clip=True)
+    line = base.mark_line(color='#1a73e8', strokeWidth=1.5).encode(
+        tooltip=[alt.Tooltip('km:Q', format='.1f'), alt.Tooltip('Elevation (m):Q', format='.0f'), 'Subdivision:N'])
+    return (area + line).properties(height=170)
+
+
 def _speed_legend_html():
     chips = ''.join(
         f"<span style='display:inline-flex;align-items:center;gap:4px;margin-right:10px'>"
         f"<span style='width:18px;height:5px;border-radius:3px;background:{color}'></span>{label}</span>"
         for _, color, label in subdivisions.SPEED_BINS
     )
-    return f"<div style='font-size:12px;color:#5f6368'>Speed limit · {chips}</div>"
+    return f"<div style='font-size:12px;color:#5f6368'>Speed limit (km/h) · {chips}</div>"
 
 
 # Brazil bounding box — tiles outside this rectangle are never requested
@@ -1335,8 +1394,12 @@ def main():
         chip_key = f"subdiv_on_{rr}"
         st.session_state[chip_key] = [k for k in st.session_state.get(chip_key, []) if k in picked]
     active_subdivisions = [k for rr in sub_railroads for k in st.session_state[f"subdiv_on_{rr}"]]
+    track_files = ()
     if picked:
         _start_subdivision_warmup(tuple(e['path'] for e in picked.values()))
+        track_files = trackdata_files(tuple((e['name'], e['path'], e['subdiv_id'], e['version'])
+                                            for e in picked.values()))
+        _start_trackdata_warmup(tuple(xml for _, xml, _ in track_files))
     st.session_state.active_station_group_systems = [
         s for s in st.session_state.active_station_group_systems if s in group_system_names
     ]
@@ -2243,6 +2306,30 @@ def main():
                 seg_diag.append({'Segment': f"{order[i]} → {order[i+1]}", 'Distance (km)': f"{km:.1f}",
                                  'By operator (km)': operators_text})
             st.dataframe(pd.DataFrame(seg_diag), hide_index=True, use_container_width=True)
+            _show_elevation_profile(coords_ll)
+
+    def _show_elevation_profile(coords_ll):
+        """Elevation along the route from the subdivision track databases, where they cover it."""
+        if not track_files:
+            return
+        profile = trackdata.elevation_profile(coords_ll, elevation_index(track_files))
+        if profile is None:
+            st.caption("⛰️ No elevation data on this route (only subdivisions in Subdivs/ have it).")
+            return
+        grade = (f" · max grade {profile['max_grade_pct']:+.1f} % (km {profile['max_grade_km']:.0f})"
+                 if profile['max_grade_km'] is not None else "")
+        sources = sorted({s for s in profile['source'] if s})
+        st.markdown(
+            f"**⛰️ Elevation** {profile['min_m']:,.0f}–{profile['max_m']:,.0f} m · "
+            f"↑ {profile['ascent_m']:,.0f} m ↓ {profile['descent_m']:,.0f} m{grade}",
+            help="From the subdivision track databases (TrackData XML). Heights are GPS (ellipsoid) "
+                 "heights, about 5–20 m below sea-level altitude in Brazil. Grade over 1 km.")
+        st.altair_chart(_elevation_chart(profile), use_container_width=True)
+        st.caption(f"Data on {profile['coverage']:.0%} of the route: {', '.join(sources)}")
+        for b in profile['breaks']:
+            st.caption(f"⚠️ Height jump of {abs(b['jump_m']):.0f} m at km {b['km']:.1f} "
+                       f"({b['from'] or '?'} → {b['to'] or '?'}): the route changes between tracks at "
+                       f"different levels — the ANTT lines meet there, the real tracks may not.")
 
     # Run routing on button click
     if run_btn:
