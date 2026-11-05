@@ -4,7 +4,7 @@ A visual editor for manipulating saved corridor JSON files without route recalcu
 
 ## What It Does
 
-Load existing corridor JSON files (like "Carrossel do Minerio.json") and:
+Load existing corridor JSON files (in `corridors/`, like "Carrossel do Minerio.json") and:
 - **Change colors** of paths
 - **Rename** systems and paths
 - **Move paths** between systems

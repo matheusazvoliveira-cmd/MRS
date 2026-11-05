@@ -22,6 +22,17 @@ static/
 logs/
 *.log
 
+# Subdivision exports (large, licensed track data): copied next to the app, not versioned
+Subdivs/
+Subdiv Pilot TWC Jan-2026/
+
+# Local notes and tool settings
+.claude/
+.ipynb_checkpoints/
+
+# Backups the app writes before simplifying a path
+*_backup*.json
+
 # IDE
 .vscode/
 .idea/

@@ -42,9 +42,10 @@ def find_corridor_json_files():
         if f.name not in exclude:
             files.append(f)
     
-    # Subdirectory JSONs
-    for f in BASE_DIR.glob('*/*.json'):
-        if f.name not in exclude:
+    # Subdirectory JSONs, and anything under corridors/ (where saved corridors are kept)
+    for f in list(BASE_DIR.glob('*/*.json')) + list((BASE_DIR / 'corridors').glob('*/**/*.json')):
+        if f.name not in exclude and f not in files and f.relative_to(BASE_DIR).parts[0] != 'static' \
+                and not f.relative_to(BASE_DIR).parts[0].startswith('.'):  # generated layers, tool settings
             files.append(f)
     
     return sorted(files, key=lambda x: x.name)

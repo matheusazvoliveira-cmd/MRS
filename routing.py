@@ -1,5 +1,5 @@
 """
-Rail routing shared by the Streamlit app (streamlit_app_full.py) and the CLI (distance_calc.py).
+Rail routing for the Streamlit app (streamlit_app_full.py).
 
 The national rail network is noded ONCE into a junction-to-junction graph and
 cached on disk (keyed by the shapefile's path, size and mtime).  Each route

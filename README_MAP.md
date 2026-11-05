@@ -24,7 +24,6 @@ from subdivision KMZ exports for MRS and Rumo.
 - **From the project folder:** `.venv\Scripts\python.exe -m streamlit run streamlit_app_full.py`,
   then open http://localhost:8501. The `.streamlit/config.toml` in the folder enables the
   required settings (static file serving, Google-style theme).
-- **Packaged version:** `MRS_Map.exe` (built with `build_exe.ps1`) starts the same app.
 - First opening after a start takes ~10–30 s (loading shapefiles); later clicks take
   1–2 s. Computing a route takes about 0.02 s.
 
@@ -239,18 +238,19 @@ onboard versions of the same data and cannot be read by the app.
 | `.cache/` | Routing graph and parsed subdivisions (safe to delete; rebuilt automatically). |
 | `static/` | Map layer files served to the browser (safe to delete; regenerated). |
 
-## 12. Command-line distance (no browser)
+## 12. Repository contents
 
-```
-.venv\Scripts\python.exe distance_calc.py "Barreiro (idx=947) [FBO]" "Brisamar [FBA]"
-.venv\Scripts\python.exe distance_calc.py "Barreiro (idx=947) [FBO]" "Barra do Pirai [FBP]" "Brisamar [FBA]"
-.venv\Scripts\python.exe distance_calc.py --mode strict --network MRS "Barreiro (idx=947) [FBO]" "Cel. João Carlos Guedes [FJC]"
-.venv\Scripts\python.exe distance_calc.py --mode prefer --network MRS,VLI --penalty 10 "Barreiro (idx=947) [FBO]" "Brisamar [FBA]"
-.venv\Scripts\python.exe distance_calc.py --search barreiro    # find exact station names
-```
-Modes: `allow_all` (default), `prefer`, `strict` (`prefer_mrs` / `strict_mrs` = MRS).
-`--network` takes comma-separated names (`MRS,VLI`). Station names must match exactly
-(use `--search`); a partial name works only if it matches a single station.
+| Path | Content |
+|---|---|
+| `streamlit_app_full.py` | The app. |
+| `routing.py`, `subdivisions.py`, `trackdata.py` | Routing graph, subdivision KMZ layers, TrackData XML (elevation, track following). |
+| `LInhas/`, `Estacoes/` | ANTT rail lines and stations shapefiles. |
+| `committed_highlights.json`, `station_groups.json` | Saved systems and station groups (the app reads and writes them). |
+| `corridors/` | Saved corridor exports; load them with **Import** in the side panel or edit them with `corridor_editor.py` (see `README_corridor_editor.md`). |
+| `.streamlit/config.toml` | Static file serving and theme (required). |
+
+Subdivision exports (`Subdivs/`) are not in the repository: copy them into the app
+folder (any depth); they are found automatically.
 
 ## 13. Troubleshooting
 
