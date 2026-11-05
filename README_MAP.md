@@ -69,12 +69,15 @@ route, the rule used (e.g. "Only VLI"), timings, and a table per segment with
 Errors such as "No path found…" also appear here; the map stays visible.
 **✕** closes the card; the route stays on the map.
 
-**Drawn on the subdivision track:** the ANTT lines the router uses are coarse — in hilly
-stretches (e.g. Ferrovia do Aço) they are up to ~750 m off the real track. Where the route
-runs along a picked subdivision, the line drawn (and saved on Commit) follows the
-subdivision's own track points (~30 m apart) instead; elsewhere it stays on the ANTT line.
-The caption says how much ("drawn on the subdivision track for 99 %"). The km figures still
-come from the ANTT network.
+**Follows the subdivision track:** the ANTT lines the router uses are coarse — in hilly
+stretches (e.g. Ferrovia do Aço) they are up to ~750 m off the real track and cut curves
+with straight lines. Where the route runs along a picked subdivision, the route is matched
+to the subdivision's track blocks and then followed block to block through the switches,
+the way a train can go (no reversing through a switch), with the blocks' own points (~30 m
+apart). That line is drawn, saved on Commit, and measured: the km of a segment on a
+subdivision come from the track it follows, and the per-operator km are scaled with it.
+Elsewhere the route stays on the ANTT line. The caption says how much ("on the subdivision
+track for 100 % (drawn and measured)").
 
 **Distances are true km.** The map projection (Web Mercator) stretches lengths by
 1/cos(latitude) — about 6–8 % in the South-East — and routes computed before this change

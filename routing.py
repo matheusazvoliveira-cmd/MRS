@@ -366,7 +366,7 @@ def route(graph, points_xy, mode, penalty_mult=OTHER_NETWORK_PENALTY_DEFAULT, co
     'prefer_mrs' are accepted.
 
     Returns dict(total_km, segment_km, coords_ll [(lat, lon)], segment_codes
-    [{codigo: km}] per segment).  Raises NoPathError(segment_index).
+    [{codigo: km}] per segment, segment_ends [index in coords_ll after each segment's last point]).  Raises NoPathError(segment_index).
     """
     mode = LEGACY_MODES.get(mode, mode)
     codes = tuple(sorted(codes))
@@ -414,6 +414,7 @@ def route(graph, points_xy, mode, penalty_mult=OTHER_NETWORK_PENALTY_DEFAULT, co
     coords = []
     segment_km = []
     segment_codes = []
+    segment_ends = []
     for k in range(len(points_xy) - 1):
         s, t = n + k, n + k + 1
         dist, pred = dijkstra(csr, directed=False, indices=s, return_predecessors=True)
@@ -447,6 +448,7 @@ def route(graph, points_xy, mode, penalty_mult=OTHER_NETWORK_PENALTY_DEFAULT, co
             key = None if np.isnan(code) else int(code)
             codes_km[key] = codes_km.get(key, 0.0) + float(length) / 1000.0
         segment_km.append(seg_m / 1000.0)
+        segment_ends.append(len(coords))
         segment_codes.append(dict(sorted(codes_km.items(), key=lambda kv: (-kv[1], str(kv[0])))))
 
     if coords:
@@ -460,4 +462,5 @@ def route(graph, points_xy, mode, penalty_mult=OTHER_NETWORK_PENALTY_DEFAULT, co
         'segment_km': segment_km,
         'segment_codes': segment_codes,
         'coords_ll': coords_ll,
+        'segment_ends': segment_ends,
     }

@@ -24,6 +24,9 @@ import numpy as np
 import shapely
 from shapely.ops import substring
 from pyproj import Transformer
+from scipy.sparse import coo_matrix
+from scipy.sparse.csgraph import connected_components, dijkstra
+from scipy.spatial import cKDTree
 
 NS = '{http://www.wabtec.com/WRE/SystemTest/Track}'
 TRACKDATA_VERSION = 1   # bump when load_trackdata() output changes
@@ -179,9 +182,83 @@ class ElevationIndex:
                 self.grade_m.append(b['grade_m'])
                 self.source.append(name)
         self.tree = shapely.STRtree(self.lines) if self.lines else None
+        self._build_track_graph()
 
     def __len__(self):
         return len(self.lines)
+
+    def _build_track_graph(self):
+        """Graph for following the track the way a train can.  States are blocks travelled in
+        one direction (2 * block + 0 start->end, + 1 end->start); a state leads to the states
+        that start where it ends (block ends within TRACK_JOIN_M — 98 % of ends touch another
+        within 1 m) without turning back: heading change under 90 degrees, so no reversing
+        through a switch.  Moving into a state costs its block's length."""
+        nb = len(self.lines)
+        self.csr = None
+        if not nb:
+            return
+        ends = np.array([[ln.coords[0], ln.coords[-1]] for ln in self.lines]).reshape(-1, 2)
+        pairs = cKDTree(ends).query_pairs(TRACK_JOIN_M, output_type='ndarray')
+        _, node = connected_components(
+            coo_matrix((np.ones(len(pairs)), (pairs[:, 0], pairs[:, 1])), shape=(2 * nb, 2 * nb)), directed=False)
+        node = node.reshape(-1, 2)
+        length = np.array([ln.length for ln in self.lines])
+        # Heading of travel leaving each end inward (over the first ~20 m)
+        reach = np.minimum(HEADING_M, length / 2)
+        inner0 = shapely.get_coordinates(shapely.line_interpolate_point(self.lines, reach))
+        inner1 = shapely.get_coordinates(shapely.line_interpolate_point(self.lines, length - reach))
+        out0 = inner0 - ends[0::2]   # entering at the start, travelling start->end
+        out1 = inner1 - ends[1::2]   # entering at the end, travelling end->start
+        # Per state: entry node, exit node, heading on entry, heading on exit
+        entry = np.column_stack([node[:, 0], node[:, 1]]).ravel()
+        exit_ = np.column_stack([node[:, 1], node[:, 0]]).ravel()
+        head_in = np.stack([out0, out1], axis=1).reshape(-1, 2)
+        head_out = -np.stack([out1, out0], axis=1).reshape(-1, 2)
+        head_in /= np.maximum(np.hypot(*head_in.T), 1e-9)[:, None]
+        head_out /= np.maximum(np.hypot(*head_out.T), 1e-9)[:, None]
+        # Transitions: state s -> state t where exit(s) == entry(t)
+        by_entry = np.argsort(entry, kind='stable')
+        first = np.searchsorted(entry[by_entry], exit_, side='left')
+        last = np.searchsorted(entry[by_entry], exit_, side='right')
+        cnt = last - first
+        src = np.repeat(np.arange(2 * nb), cnt)
+        dst = by_entry[np.concatenate([np.arange(a, b) for a, b in zip(first, last)])] if cnt.sum() else             np.zeros(0, dtype=np.int64)
+        ok = (dst // 2 != src // 2) & (np.sum(head_out[src] * head_in[dst], axis=1) > 0)
+        src, dst = src[ok], dst[ok]
+        self.state_len = np.repeat(length, 2)
+        self.csr = coo_matrix((np.maximum(self.state_len[dst], 1e-6), (src, dst)), shape=(2 * nb, 2 * nb)).tocsr()
+
+    def track_path(self, a, sa, b, sb, limit):
+        """Points [N, 2] along the track from block *a* at *sa* to block *b* at *sb* (distances
+        along the blocks, EPSG:3857), the way a train can go, or None if that is longer than *limit*."""
+        la, lb = self.lines[a], self.lines[b]
+        if a == b:
+            return shapely.get_coordinates(substring(la, sa, sb))
+        if self.csr is None:
+            return None
+        starts = [2 * a, 2 * a + 1]
+        leave = [la.length - sa, sa]           # start->end leaves by the end; end->start by the start
+        dist, pred = dijkstra(self.csr, directed=True, indices=starts, return_predecessors=True, limit=limit)
+        best = None
+        for i in range(2):
+            for d, enter in ((0, sb), (1, lb.length - sb)):
+                t = 2 * b + d
+                c = leave[i] + dist[i, t] - lb.length + enter
+                if np.isfinite(c) and (best is None or c < best[0]):
+                    best = (c, i, t)
+        if best is None or best[0] > limit:
+            return None
+        _, i, t = best
+        states = [t]
+        while states[-1] != starts[i]:
+            states.append(int(pred[i, states[-1]]))
+        states.reverse()
+        pieces = [shapely.get_coordinates(substring(la, sa, la.length if i == 0 else 0.0))]
+        for st_ in states[1:-1]:
+            xy = shapely.get_coordinates(self.lines[st_ // 2])
+            pieces.append(xy if st_ % 2 == 0 else xy[::-1])
+        pieces.append(shapely.get_coordinates(substring(lb, 0.0 if t % 2 == 0 else lb.length, sb)))
+        return np.concatenate(pieces)
 
 
 SNAP_STEP_M = 50.0           # route sampled every ~50 m for snapping to the track
@@ -193,6 +270,12 @@ SNAP_BETA_M = 20.0           # transition: cost per this many metres of progress
 SNAP_SWITCH_COST = 2.0       # changing block (keeps the match off a parallel track)
 SNAP_OFF_COST = SNAP_RADIUS_M / SNAP_SIGMA_M  # a sample with no track nearby
 SNAP_OFF_SWITCH_COST = 5.0   # entering / leaving the track
+SNAP_BRIDGE_M = 5000.0       # a stretch matched 'off' the track up to this long is joined along the track...
+SNAP_DETOUR = 1.5            # ...if that way is at most this many times the route's length there
+SNAP_DETOUR_EXTRA_M = 1000.0 # ...plus this (also bounds the way between consecutive blocks)
+TRACK_JOIN_M = 1.0           # block ends closer than this are connected
+HEADING_M = 20.0             # a block's heading at an end is taken over this length
+SPUR_MAX_M = 2000.0          # out-and-back excursions shorter than this are cut (a match on a siding)
 
 
 def snap_to_track(coords_ll, index):
@@ -202,8 +285,12 @@ def snap_to_track(coords_ll, index):
     stretches.  Hidden-Markov map matching: the route is sampled every SNAP_STEP_M, each sample
     may sit on one of the nearest blocks or 'off' the track, and Viterbi picks the sequence
     whose distance to the route and progress along the blocks best agree with the route.
-    Stretches on a block are replaced by the block's own points (~30 m apart); stretches off
-    the track keep the route.  Returns (coords_ll, fraction of the route on the track)."""
+    Matched stretches are joined along the track itself (block to block through the
+    switches, ElevationIndex.track_path), so the result follows every curve with the
+    blocks' own points (~30 m apart).  A short stretch matched 'off' the track — where the
+    ANTT line cuts a curve by hundreds of metres — is joined along the track too, if that
+    way is not much longer; longer ones keep the route.
+    Returns (coords_ll, fraction of the route on the track)."""
     if index.tree is None or len(coords_ll) < 2:
         return coords_ll, 0.0
     lat, lon = np.asarray(coords_ll, dtype=float).T
@@ -264,41 +351,62 @@ def snap_to_track(coords_ll, index):
     for i in range(n - 1, 0, -1):
         state[i - 1] = back[i, state[i]]
 
-    # Geometry: block points for runs on a block, the route itself for runs off the track
+    # Geometry: runs of samples on one block, joined along the track; off-track runs keep the route
     sb = blk[np.arange(n), state]
     sa = alo[np.arange(n), state]
-    out = []
-    i = 0
-    while i < n:
-        j = i
-        while j + 1 < n and sb[j + 1] == sb[i]:
-            j += 1
-        if sb[i] < 0:
-            piece = substring(route, dist[max(i - 1, 0)], dist[min(j + 1, n - 1)])
-        else:
-            line = index.lines[sb[i]]
-            a0, a1 = sa[i], sa[j]
-            # Run the block to its end when the next / previous sample is on another block
-            if i > 0 and sb[i - 1] >= 0:
-                a0 = _towards_end(line, a0, a1, step * scale)
-            if j + 1 < n and sb[j + 1] >= 0:
-                a1 = _towards_end(line, a1, a0, step * scale)
-            piece = substring(line, a0, a1)
-        xy = shapely.get_coordinates(piece)
-        if len(xy):
-            out.append(xy)
-        i = j + 1
+    starts = np.flatnonzero(np.concatenate([[True], sb[1:] != sb[:-1]]))
+    ends = np.concatenate([starts[1:] - 1, [n - 1]])
+    runs = [(int(sb[i]), sa[i], sa[j], i, j) for i, j in zip(starts, ends) if sb[i] >= 0]
+    if not runs:
+        return coords_ll, 0.0
+    on = sb >= 0
+    out = [shapely.get_coordinates(substring(route, 0.0, dist[runs[0][3]]))] if runs[0][3] > 0 else []
+    for k, (b, a0, a1, i, j) in enumerate(runs):
+        if k:
+            pb, _, pa1, _, pj = runs[k - 1]
+            gap = (dist[i] - dist[pj]) / scale
+            path = None
+            if gap <= SNAP_BRIDGE_M:
+                limit = (gap * SNAP_DETOUR + SNAP_DETOUR_EXTRA_M) * scale
+                path = index.track_path(pb, pa1, b, a0, limit)
+            if path is not None:
+                out.append(path)
+                on[pj:i] = True
+            elif i - pj > 1:  # off the track in between: the route itself
+                out.append(shapely.get_coordinates(substring(route, dist[pj], dist[i])))
+        out.append(shapely.get_coordinates(substring(index.lines[b], a0, a1)))
+    if runs[-1][4] < n - 1:
+        out.append(shapely.get_coordinates(substring(route, dist[runs[-1][4]], dist[-1])))
     xy = np.concatenate(out)
     keep = np.concatenate([[True], np.any(np.diff(xy, axis=0) != 0, axis=1)])
-    xy = xy[keep]
+    xy = _drop_spurs(xy[keep], TRACK_JOIN_M * scale, SPUR_MAX_M * scale)
     lons, lats = _to_3857.transform(xy[:, 0], xy[:, 1], direction='INVERSE')
-    return list(zip(lats.tolist(), lons.tolist())), float((sb >= 0).mean())
+    return list(zip(lats.tolist(), lons.tolist())), float(on.mean())
 
 
-def _towards_end(line, a, other, reach):
-    """*a* moved to the block end away from *other*, if that end is within *reach*."""
-    end = 0.0 if a < other or (a == other and a < line.length / 2) else line.length
-    return end if abs(end - a) <= reach else a
+def _drop_spurs(xy, tol, max_len):
+    """*xy* without out-and-back excursions: where the line comes back within *tol* of a point
+    it passed less than *max_len* before, the stretch in between is cut.  A sample matched to a
+    siding or the other track for a moment makes the joined line run into it and back."""
+    cum = np.concatenate([[0], np.cumsum(np.hypot(*np.diff(xy, axis=0).T))])
+    near = cKDTree(xy).query_ball_point(xy, tol)
+    keep = []
+    i = 0
+    while i < len(xy):
+        keep.append(i)
+        back = [j for j in near[i] if j > i + 1 and cum[j] - cum[i] < max_len]
+        i = max(back) if back else i + 1
+    return xy[keep]
+
+
+def length_km(coords_ll):
+    """True length of a (lat, lon) polyline in km (haversine)."""
+    if len(coords_ll) < 2:
+        return 0.0
+    lat, lon = np.radians(np.asarray(coords_ll, dtype=float)).T
+    h = (np.sin(np.diff(lat) / 2) ** 2
+         + np.cos(lat[1:]) * np.cos(lat[:-1]) * np.sin(np.diff(lon) / 2) ** 2)
+    return float(np.sum(2 * 6371.0088 * np.arcsin(np.sqrt(h))))
 
 
 def elevation_profile(coords_ll, index):

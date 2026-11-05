@@ -2258,10 +2258,25 @@ def main():
 
             total_km = result['total_km']
             coords_ll = result['coords_ll']
-            # Draw the route on the subdivision track where there is one (the ANTT lines are coarse)
+            # Follow the subdivision track where there is one (the ANTT lines are coarse): segment
+            # by segment, so each segment's km is measured on the track it now follows
             on_track = 0.0
             if track_files:
-                coords_ll, on_track = trackdata.snap_to_track(coords_ll, elevation_index(track_files))
+                index = elevation_index(track_files)
+                snapped, on_km = [], 0.0
+                bounds = [0] + result['segment_ends']
+                for k in range(len(result['segment_km'])):
+                    seg, frac = trackdata.snap_to_track(coords_ll[max(bounds[k] - 1, 0):bounds[k + 1]], index)
+                    km = trackdata.length_km(seg)
+                    if frac and result['segment_km'][k] > 0:
+                        ratio = km / result['segment_km'][k]
+                        result['segment_codes'][k] = {c: v * ratio for c, v in result['segment_codes'][k].items()}
+                        result['segment_km'][k] = km
+                    on_km += frac * km
+                    snapped.extend(seg[1:] if snapped else seg)
+                coords_ll = snapped
+                total_km = sum(result['segment_km'])
+                on_track = on_km / total_km if total_km else 0.0
 
             # Draw route on map
             preview_station_points = []
@@ -2295,7 +2310,7 @@ def main():
             # Any rerun clears the card; the route stays on the map
             close_col.button("✕", key="close_route_card", help="Close (the route stays on the map)", type="tertiary")
             mode_text = "Any network" if routing_mode == ALLOW_ALL else f"{ROUTING_MODE_LABELS[routing_mode]} {networks_text}"
-            track_text = f"  ·  drawn on the subdivision track for {on_track:.0%}" if on_track else ""
+            track_text = f"  ·  on the subdivision track for {on_track:.0%} (drawn and measured)" if on_track else ""
             st.caption(
                 f"{' → '.join(order)}  ·  {mode_text}{track_text}  ·  "
                 f"graph {t_graph:.2f}s, routing {t_route:.2f}s, total {t_total:.2f}s"
